@@ -4,7 +4,7 @@ import './HomePage.css';
 class HomePage extends React.Component{
     render(){
         return (
-            <div>
+            <>
                 {/* Container main image */}
                 <div className="container-home">
                     <img className="img-fluid bg-home" src="/bg-home.jpg" alt="bg-home" />
@@ -88,7 +88,7 @@ class HomePage extends React.Component{
                         </div>
                     </div>
                 </div>
-            </div>
+            </>
         );
     };
 }
