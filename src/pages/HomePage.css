@@ -1,0 +1,98 @@
+.bg-home{
+    height: 100vh;
+    width: 100%;
+}
+
+.container-home{
+    position: relative;
+    text-align: center;
+}
+
+.text-home{
+    position: absolute;
+    bottom: -3%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-bottom: 1px solid white;
+}
+
+.text-home p{
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    font-weight: 800;
+    text-shadow: 2px 2px black;
+}
+
+.container-category{
+    background-color: #30b3ff;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 8px;
+}
+
+.container-course{
+    background-color: #005385;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 8px;
+}
+
+.title h2{
+    color: white;
+    font-weight: 800;
+    font-size: 60px;
+    text-align: center;
+    text-decoration: black;
+    text-shadow: 1px 1px black;
+}
+
+.text p{
+    color: white;
+    font-weight: 500;
+    font-size: 25px;
+    text-align: center;
+    text-decoration: black;
+    text-shadow: 1px 1px black;
+}
+
+.main h3{
+    color: white;
+    font-weight: 800;
+    text-decoration: black;
+    text-shadow: 1px 1px black;
+}
+
+.main i{
+    color: white;
+    font-size: 130px;
+}
+
+.button i{
+    color:white;
+    font-size: 50px;
+}
+
+@media screen and (max-width: 991px) {
+    .text-home p{
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 575px){
+    .text-home p{
+        font-size: 20px;
+    }
+
+    .main i{
+        font-size: 100px;
+    }
+
+    .title h2{
+        font-size: 50px;
+    }
+
+    .main{
+        margin-bottom: 20px;
+    }
+}

@@ -1,8 +1,7 @@
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
-import streamReducer from './streamReducer';
+import categoryReducer from './categoryReducer';
 
 export default combineReducers({
-    form: formReducer,
-    streams: streamReducer
+    categories: categoryReducer
 });

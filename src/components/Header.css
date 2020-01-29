@@ -1,0 +1,116 @@
+.nav{
+    min-height: 80px;
+    background: #fff;
+}
+
+.logo h2,
+.logo span,
+.logo p{
+    font-size: 16px;
+    display: inline-block;
+    margin: 0;
+}
+
+.logo h2{
+    font-weight: 800;
+    text-transform: uppercase;
+    color: black;
+}
+
+.logo .icono{
+    color: #bfbfbf;
+}
+
+.logo p{
+    color: #777777;
+}
+
+.menu{
+    padding: 0;
+}
+
+.menu a{
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    padding: 0 30px;
+}
+
+.menu a div a{
+    display: block;
+    text-decoration: none;
+    padding: 0 30px;
+}
+
+.menu a div span {
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.menu .c-1{
+    background: #30b3ff;
+}
+
+.menu .c-2{
+    background: #005385;
+}
+
+.menu .c-3{
+    background: #2185d0;
+}
+
+.menu .c-1:hover {
+    background: #1babff;
+}
+
+.menu .c-2:hover {
+    background: #00426a;
+}
+
+.menu .c-3:hover {
+    background: #0e78c7;
+}
+
+.bg-dropdown{
+    background: #2185d0;
+}
+
+.bg-dropdown a:hover{
+    background: #0e78c7;
+    color:white;
+}
+
+@media screen and (max-width: 1199px){}
+
+@media screen and (max-width: 991px) {
+    .logo {
+        height: 76px;
+    }
+
+    .menu {
+        min-height: 76px;
+    }
+
+    .menu a {
+        width: 100%;
+    }
+
+    .menu a div {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 575px){
+    header {
+        margin-top: 0;
+        text-align: center;
+    }
+
+    header .logo h2{
+        font-size: 12px;
+    }
+
+    .menu a div {
+        padding: 6px;
+    }
+}

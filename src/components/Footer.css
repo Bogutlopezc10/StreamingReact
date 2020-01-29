@@ -1,0 +1,18 @@
+.foot{
+    background-color: gray;
+    width: 100%;
+    height: auto;
+    position: relative;
+    bottom: 0;
+}
+
+.foot-text p{
+    color: black;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.social-network i{
+    font-size: 50px;
+}
