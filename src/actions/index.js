@@ -5,7 +5,8 @@ import {
     FETCH_CATEGORIES,
     FETCH_CATEGORY,
     DELETE_CATEGORY,
-    EDIT_CATEGORY
+    EDIT_CATEGORY,
+    FETCH_COURSES
 } from './types';
 
 // export const createStream = (formValues) => async (dispatch, getState) => {
@@ -22,6 +23,11 @@ export const fetchCategories = () => async dispatch => {
     dispatch({ type: FETCH_CATEGORIES, payload: response.data });
 }
 
+export const fetchCourses = () => async dispatch => {
+    const response = await streams.get('/Courses');
+
+    dispatch({ type: FETCH_COURSES, payload: response.data });
+}
 // export const fetchStream = (id) => async dispatch => {
 //     const response = await streams.get(`/streams/${id}`);
 

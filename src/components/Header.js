@@ -18,12 +18,12 @@ const Header = () => {
                         <i className="icono fa fa-briefcase mt-1"></i>
                     </div>
                 </Link>
-                <a href="#" className="c-2 d-flex align-items-center">
+                <Link to={'/courses'} className="c-2 d-flex align-items-center">
                     <div className="d-flex flex-column text-center">
                         <span>Cursos</span>
                         <i className="icono fa fa-folder-open mt-1"></i>
                     </div>
-                </a>
+                </Link>
                 <a href="#" className="c-3 d-flex align-items-center dropdown" id="navbarDropdownMenuLink-55" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                     <div className="d-flex flex-column align-items-center">
