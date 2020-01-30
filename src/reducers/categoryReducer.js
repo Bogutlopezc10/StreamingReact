@@ -1,10 +1,6 @@
 import _ from 'lodash';
 import {
-    CREATE_CATERGORY,
     FETCH_CATEGORIES,
-    FETCH_CATEGORY,
-    EDIT_CATEGORY,
-    DELETE_CATEGORY
 } from '../actions/types';
 
 // export default (state={}, action) => {

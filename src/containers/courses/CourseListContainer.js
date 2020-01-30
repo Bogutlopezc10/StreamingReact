@@ -1,8 +1,7 @@
 import React from 'react';
 import CourseList from '../../components/courses/CourseList';
-import { fetchCourses } from '../../actions';
+import { fetchCourses } from '../../actions/course.js';
 import { connect } from 'react-redux';
-import { fetchCategories } from '../../actions';
 
 class CourseListContainer extends React.Component{
 
@@ -16,14 +15,7 @@ class CourseListContainer extends React.Component{
         }
         return (
             <div style={{ marginTop: "100px"}}>
-                <CourseList categories={this.props.courses} />
-            </div>
-        );
-    }
-    render(){
-        return (
-            <div style={{ marginTop: "100px"}}>
-                <CourseList/>
+                <CourseList courses={this.props.courses} />
             </div>
         );
     }

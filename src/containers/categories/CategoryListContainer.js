@@ -1,7 +1,7 @@
 import React from 'react';
 import CategoryList from '../../components/categories/CategoryList';
 import { connect } from 'react-redux';
-import { fetchCategories } from '../../actions';
+import { fetchCategories } from '../../actions/category.js';
 import './CategoryListContainer.css';
 
 class CategoryListContainer extends React.Component{
