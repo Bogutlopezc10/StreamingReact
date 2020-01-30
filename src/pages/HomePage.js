@@ -1,5 +1,6 @@
 import React from 'react';
 import './HomePage.css';
+import { Link } from 'react-router-dom';
 
 class HomePage extends React.Component{
     render(){
@@ -45,7 +46,9 @@ class HomePage extends React.Component{
                         </div>
                         <div className="row mb-4">
                             <div className="col-4 offset-4 d-flex button justify-content-center">
-                                <i className="fa fa-arrow-circle-right"></i>
+                                <Link to={'/categories'}>
+                                    <i className="fa fa-arrow-circle-right"></i>
+                                </Link>
                             </div>
                         </div>
                     </div>

@@ -1,0 +1,18 @@
+.category-title{
+    height: 100px;
+    width: 100%;
+    background-color: #30b3ff;
+}
+
+.category-title h1{
+    color: white;
+    font-weight: 500;
+    font-size: 50px;
+    text-decoration: black;
+    text-shadow: 1px 1px black;
+}
+
+.container-categories{
+    background-color: #f3f3f3;
+    border-top: 5px solid #30b3ff;
+}
