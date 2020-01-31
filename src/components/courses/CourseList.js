@@ -30,7 +30,7 @@ const CourseList = ({ courses }) => {
                             </div>
                         </div>
                         <div className="card-badge shadow rounded-right text-uppercase">{course.categoryName}</div>
-                        <Link to={`courses/CourseDetail/${course.id}`} className="header btn btn-primary">
+                        <Link to={`courses/Detail/${course.name}/${course.id}`} className="header btn btn-primary">
                             Detail
                         </Link>
                     </div>

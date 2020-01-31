@@ -1,9 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux'
-import CourseDetailList from '../../components/courses/CourseDetailList'
+import CourseDetail from '../../components/courses/CourseDetail'
 import {fetchCourse} from '../../actions/course'
 
-class CourseDetailListContainer extends React.Component{
+class CourseDetailContainer extends React.Component{
 
     componentDidMount(){
         this.props.fetchCourse(this.props.courseId);
@@ -12,7 +12,7 @@ class CourseDetailListContainer extends React.Component{
     render(){
         return (
             <div style={{ marginTop: "100px"}}>
-                <CourseDetailList course ={this.props.course}/>
+                <CourseDetail course ={this.props.course}/>
             </div>
         );
     }
@@ -24,4 +24,4 @@ const mapStateToProps = (state, ownProps) =>{
     return {course: state.courses[ownProps.courseId]}
 }
 
-export default connect(mapStateToProps,{fetchCourse})(CourseDetailListContainer);
+export default connect(mapStateToProps,{fetchCourse})(CourseDetailContainer);

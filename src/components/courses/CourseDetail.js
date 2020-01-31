@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CourseDetailList = (props) => {
+const CourseDetail = (props) => {
 
     console.log(props.course)
     return (
@@ -10,4 +10,4 @@ const CourseDetailList = (props) => {
     );
 }
 
-export default CourseDetailList;
+export default CourseDetail;

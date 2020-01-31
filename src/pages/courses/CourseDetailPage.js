@@ -1,13 +1,13 @@
 import React from 'react';
-import CourseDetailListContainer from '../../containers/courses/CourseDetailListContainer';
+import CourseDetailContainer from '../../containers/courses/CourseDetailContainer';
 
-const CourseByCategoryPage = (props) => {
-
+const CourseDetailPage = (props) => {
+    console.log(props.match.params);
     return(
         <div>
-            <CourseDetailListContainer courseId={props.match.params.id}/>
+            <CourseDetailContainer courseId={props.match.params.id}/>
         </div>
     )
 }
 
-export default CourseByCategoryPage;
+export default CourseDetailPage;
