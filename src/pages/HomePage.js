@@ -73,14 +73,14 @@ class HomePage extends React.Component{
                             </div>
                             <div className="col-lg-4 col-md-6 col-sm-6">
                                 <div className="d-flex flex-column main align-items-center">
-                                    <i className="fa fa-user-secret mt-1 mb-2"></i>
-                                    <h3>Seguridad</h3>
+                                    <i className="fab fa-css3-alt mt-1 mb-2"></i>
+                                    <h3>CSS3</h3>
                                 </div>
                             </div>
                             <div className="col-lg-4 col-md-12 col-sm-12">
                                 <div className="d-flex flex-column main align-items-center">
-                                    <i className="fa fa-cloud mt-1 mb-2"></i>
-                                    <h3>Cloud computing</h3>
+                                    <i className="fab fa-react mt-1 mb-2"></i>
+                                    <h3>ReactJS</h3>
                                 </div>
                             </div>
                         </div>

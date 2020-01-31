@@ -3,3 +3,13 @@
 .card{
     border: 1px solid #bcbdbd !important;
 }
+
+.card-title{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.card-text{
+    font-size: 13px;
+    color: gray;
+}

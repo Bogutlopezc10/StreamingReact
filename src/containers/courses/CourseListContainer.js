@@ -2,6 +2,7 @@ import React from 'react';
 import CourseList from '../../components/courses/CourseList';
 import { fetchCourses } from '../../actions/course.js';
 import { connect } from 'react-redux';
+import './CourseListContainer.css'
 
 class CourseListContainer extends React.Component{
 
@@ -11,18 +12,26 @@ class CourseListContainer extends React.Component{
 
     render(){
         if(!this.props.courses){
-            return <div style={{ marginTop: "100px"}}>Vacio</div>
+            return <>Vacio</>
         }
         return (
-            <div style={{ marginTop: "100px"}}>
-                <CourseList courses={this.props.courses} />
-            </div>
+            <>
+                <div className="course-title d-flex align-items-center justify-content-center mb-5">
+                    <h1>Cursos</h1>
+                </div>
+                <div className="container container-courses pt-4 px-4 mb-5">
+                    <div className="row">
+                        <CourseList courses={this.props.courses} />
+                    </div>              
+                </div>
+            </>
         );
     }
 }
 
 
 const mapStateToProps = (state, ownProps) => {
+    console.log(ownProps);
     return { courses: Object.values(state.courses) }
 }
 

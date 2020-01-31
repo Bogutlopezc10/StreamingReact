@@ -9,13 +9,13 @@ const Footer = () => {
                     <div className="container">
                         <div className="row d-flex social-network mt-2 mb-3 justify-content-center">
                             <div className="col-auto">
-                                <i className="fa fa-facebook"></i>
+                                <i className="fab fa-facebook"></i>
                             </div>
                             <div className="col-auto">
-                                <i className="fa fa-twitter"></i>
+                                <i className="fab fa-twitter"></i>
                             </div>
                             <div className="col-auto">
-                                <i className="fa fa-github"></i>
+                                <i className="fab fa-github"></i>
                             </div>
                         </div>
                         <div className="row">

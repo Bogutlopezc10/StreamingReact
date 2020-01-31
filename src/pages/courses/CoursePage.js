@@ -3,7 +3,7 @@ import CourseListContainer from '../../containers/courses/CourseListContainer';
 
 const CoursePage = () => {
     return(
-        <div>
+        <div className="main-container">
             <CourseListContainer />
         </div>
     )
