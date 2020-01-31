@@ -1,5 +1,7 @@
 import React from 'react';
 import './Category.css'
+import {Link} from 'react-router-dom'
+
 
 const CategoryList = ({ categories }) => {
     return (
@@ -12,6 +14,9 @@ const CategoryList = ({ categories }) => {
                             <h5 className="card-title">{categorie.name}</h5>
                             <p className="card-text">{categorie.description}</p>
                         </div>
+                        <Link to={`/courses/ByCategory/${categorie.id}`} className="btn btn-primary">
+                            Ver cursos
+                        </Link>
                     </div>
                 </div>
             )

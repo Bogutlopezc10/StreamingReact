@@ -22,7 +22,7 @@ class CourseListContainer extends React.Component{
 }
 
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
     return { courses: Object.values(state.courses) }
 }
 
