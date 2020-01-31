@@ -6,14 +6,24 @@ import {fetchCourse} from '../../actions/course'
 class CourseDetailContainer extends React.Component{
 
     componentDidMount(){
-        this.props.fetchCourse(this.props.courseId);
-        
+        this.props.fetchCourse(this.props.courseId);  
     }
+
     render(){
+        if(!this.props.course){
+            return <>Vacio</>
+        }
         return (
-            <div style={{ marginTop: "100px"}}>
-                <CourseDetail course ={this.props.course}/>
-            </div>
+            <>
+                <div className="course-title d-flex align-items-center justify-content-center mb-5">
+                    <h1>Detalle del Curso</h1>
+                </div>
+                <div className="container container-courses p-4 mb-5">
+                    <div className="row">
+                        <CourseDetail course ={this.props.course}/>
+                    </div>              
+                </div>
+            </>
         );
     }
 }

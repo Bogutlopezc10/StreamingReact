@@ -31,7 +31,6 @@ class CourseListContainer extends React.Component{
 
 
 const mapStateToProps = (state, ownProps) => {
-    console.log(ownProps);
     return { courses: Object.values(state.courses) }
 }
 

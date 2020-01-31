@@ -2,9 +2,8 @@ import React from 'react';
 import CourseDetailContainer from '../../containers/courses/CourseDetailContainer';
 
 const CourseDetailPage = (props) => {
-    console.log(props.match.params);
     return(
-        <div>
+        <div className="main-container">
             <CourseDetailContainer courseId={props.match.params.id}/>
         </div>
     )

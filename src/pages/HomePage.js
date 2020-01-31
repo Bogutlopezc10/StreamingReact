@@ -86,7 +86,9 @@ class HomePage extends React.Component{
                         </div>
                         <div className="row mb-3">
                             <div className="col-4 offset-4 d-flex button justify-content-center">
-                                <i className="fa fa-arrow-circle-right"></i>
+                                <Link to={'/courses'}>
+                                    <i className="fa fa-arrow-circle-right"></i>
+                                </Link>
                             </div>
                         </div>
                     </div>

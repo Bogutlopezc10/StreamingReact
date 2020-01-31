@@ -1,3 +1,5 @@
+/* CourseList */
+
 .card {
     position:relative;
 }
@@ -55,4 +57,91 @@
     font-family: 'Font Awesome 5 Free';
     font-weight: bold;
     color: #f8ce0b;
+}
+
+.btn-outline-primary{
+    font-weight: bold;
+    border-radius: 0%;
+    color: #005385;
+    border-color: #005385;
+}
+
+.btn-outline-primary:hover{
+    box-shadow: 0px 7px 11px -6px rgba(0,0,0,0.75);
+    border-color: #005385;
+    background-color: #005385;
+}
+
+.btn-outline-primary i{
+    font-size: 17px;
+    position: relative;
+    top: 1px;
+}
+
+/* CourseDetail */
+
+.course-detail h3{
+    font-weight: bold;
+}
+
+.course-detail p{
+    color: gray;
+    font-style: italic;
+}
+
+.container-img{
+    width: 100%;
+    height: 300px;
+    position: relative;
+}
+
+.container-img .card-badge{
+    position:absolute;
+    top: 20px;
+    padding:5px;
+    background:yellow;
+    color:black;
+    font-weight: bold;
+    font-size: 10px;
+}
+
+.container-img img{
+    height: 100%;
+    width: 100%;
+}
+
+.img-teacher p{
+    font-weight: 500;
+    font-style: italic;
+}
+
+.info-teacher h6{
+    font-weight: 700;
+    color: black;
+}
+
+.info-teacher p{
+    color: gray;
+    font-style: italic;
+}
+
+.btn-outline-success{
+    font-weight: bold;
+    border-radius: 0%;
+}
+
+.btn-outline-success:hover{
+    box-shadow: 0px 7px 11px -6px rgba(0,0,0,0.75);
+}
+
+.btn-outline-success i{
+    font-size: 17px;
+    position: relative;
+    top: 1px;
+}
+
+@media screen and (max-width: 991px) {
+    .container-info-course{
+        margin-top: 20px;
+    }
 }

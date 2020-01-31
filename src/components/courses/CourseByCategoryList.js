@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './CourseList.css'
 
 const CourseByCategoryList = ({ courses }) => {
@@ -29,6 +30,12 @@ const CourseByCategoryList = ({ courses }) => {
                             </div>
                         </div>
                         <div className="card-badge shadow rounded-right text-uppercase">{course.categoryName}</div>
+                        <Link to={`/courses/Detail/${course.name}/${course.id}`} className="btn btn-outline-primary">
+                            <div>
+                                <p className="d-inline">VER DETALLE</p> 
+                                <i className="d-inline fas fa-angle-double-right ml-2 mt-2"></i>
+                            </div>
+                        </Link>
                     </div>
                 </div>
             )
