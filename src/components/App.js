@@ -7,6 +7,7 @@ import history from '../history';
 import CategoryPage from '../pages/categories/CategoryPage';
 import CoursePage from '../pages/courses/CoursePage';
 import CourseByCategoryPage from '../pages/courses/CourseByCategoryPage';
+import CourseDetailPage from '../pages/courses/CourseDetailPage';
 
 const App = () => {
     return (
@@ -19,6 +20,7 @@ const App = () => {
                             <Route path="/categories" exact component={CategoryPage} />
                             <Route path="/courses" exact component={CoursePage} />
                             <Route path="/courses/ByCategory/:id" exact component={CourseByCategoryPage} />
+                            <Route path="/courses/CourseDetail/:id" exact component={CourseDetailPage} />
                         </Switch>
                     <Footer />
                 </div>
