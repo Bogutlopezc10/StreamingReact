@@ -1,7 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux'
 import CourseDetail from '../../components/courses/CourseDetail'
-import {fetchCourse} from '../../actions/course'
+import {fetchCourse} from '../../actions/course';
+import {getById} from '../../selectors/index';
 
 class CourseDetailContainer extends React.Component{
 
@@ -20,7 +21,7 @@ class CourseDetailContainer extends React.Component{
                 </div>
                 <div className="container container-courses p-4 mb-5">
                     <div className="row">
-                        <CourseDetail course ={this.props.course}/>
+                        <CourseDetail course={this.props.course}/>
                     </div>              
                 </div>
             </>
@@ -30,8 +31,7 @@ class CourseDetailContainer extends React.Component{
 
 
 const mapStateToProps = (state, ownProps) =>{
-
-    return {course: state.courses[ownProps.courseId]}
+    return { course: getById(state.courses,ownProps.courseId)}
 }
 
 export default connect(mapStateToProps,{fetchCourse})(CourseDetailContainer);

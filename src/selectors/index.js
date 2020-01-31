@@ -9,12 +9,7 @@ export const getCourseByCategory = (state, category) => {
   });
 }
 
-
-
-export const getById = (state, courseId) => {
-
-  return state.filter((array) => {
-    return array.id == courseId
-  });
+export const getById = (state, Id) => {
+  return state[Id];
 }
 

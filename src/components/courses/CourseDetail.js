@@ -1,8 +1,9 @@
 import React from 'react';
+import Moment from 'react-moment';
+import 'moment-timezone';
 import './CourseList.css'
 
 const CourseDetail = ({ course }) => {
-    console.log(course)
     const starPercentage = (course.rating / 5) * 100;
     const starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`;
     return (
@@ -38,7 +39,7 @@ const CourseDetail = ({ course }) => {
                         <h6 className="d-inline">Contacto: </h6><p className="d-inline">{course.emailTeacher}</p> 
                     </div>
                     <div className="col-lg-12 info-teacher mt-2">
-                        <h6 className="d-inline">Publicado: </h6><p className="d-inline">{course.updatedAt}</p>
+                        <h6 className="d-inline">Publicado: </h6><p className="d-inline"><Moment format="DD/MM/YYYY">{course.updatedAt}</Moment></p>
                     </div>
                     <div className="col-lg-12 mt-4">
                         <button className="btn btn-block btn-outline-success">
