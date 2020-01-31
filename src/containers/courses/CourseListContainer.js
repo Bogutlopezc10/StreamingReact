@@ -2,7 +2,7 @@ import React from 'react';
 import CourseList from '../../components/courses/CourseList';
 import { fetchCourses } from '../../actions/course.js';
 import { connect } from 'react-redux';
-import './CourseListContainer.css'
+import './CourseContainer.css'
 
 class CourseListContainer extends React.Component{
 

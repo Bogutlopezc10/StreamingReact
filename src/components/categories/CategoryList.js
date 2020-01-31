@@ -14,8 +14,11 @@ const CategoryList = ({ categories }) => {
                             <h5 className="card-title">{categorie.name}</h5>
                             <p className="card-text">{categorie.description}</p>
                         </div>
-                        <Link to={`/courses/ByCategory/${categorie.id}`} className="btn btn-primary">
-                            Ver cursos
+                        <Link to={`/courses/${categorie.name}/${categorie.id}`} className="btn btn-outline-primary">
+                            <div>
+                                <p className="d-inline">VER CURSOS</p> 
+                                <i className="d-inline fas fa-angle-double-right ml-2 mt-2"></i>
+                            </div>
                         </Link>
                     </div>
                 </div>

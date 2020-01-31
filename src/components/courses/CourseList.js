@@ -12,7 +12,6 @@ const CourseList = ({ courses }) => {
                         <img src="/bg-home.jpg" className="card-img" width="150" height="150" alt="bg-home" />
                         <div className="card-body">
                             <h5 className="card-title">{course.name}</h5>
-                            <p className="card-text">{course.description}</p>
                         </div>
                         <div className="card-footer">
                             <div className="row">

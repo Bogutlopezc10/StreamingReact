@@ -18,7 +18,7 @@ const App = () => {
                             <Route path="/" exact component={HomePage} />
                             <Route path="/categories" exact component={CategoryPage} />
                             <Route path="/courses" exact component={CoursePage} />
-                            <Route path="/courses/ByCategory/:id" exact component={CourseByCategoryPage} />
+                            <Route path="/courses/:CategoryName/:id" exact component={CourseByCategoryPage} />
                         </Switch>
                     <Footer />
                 </div>
