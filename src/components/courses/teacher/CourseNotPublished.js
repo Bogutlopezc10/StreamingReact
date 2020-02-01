@@ -1,9 +1,9 @@
 import React from 'react';
 import './Teacher.css';
 
-const CoursePublished = (props) => {
+const CourseNotPublished = (props) => {
 
-    //console.log(props.courses)
+    console.log(props.courses)
     return (
         <>
             
@@ -11,4 +11,4 @@ const CoursePublished = (props) => {
     )
 }
 
-export default CoursePublished;
+export default CourseNotPublished;
