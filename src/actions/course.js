@@ -39,7 +39,7 @@ export const fetchCourse = (id) => async dispatch => {
 
 export const fetchCourseByUsername = (username) => async dispatch => {
 
-    const response = await streams.get(`/Courses//ByUsername/${username}`);
+    const response = await streams.get(`/Courses/ByUsername/${username}`);
 
     dispatch({ type: FETCH_COURSES_BY_USERNAME, payload: response.data });
 }
