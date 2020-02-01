@@ -20,3 +20,7 @@ export const DELETE_COURSE = 'DELETE_COURSE';
 export const EDIT_COURSE = 'EDIT_COURSE';
 export const FETCH_COURSE_BY_CATEGORY = 'FETCH_COURSE_BY_CATEGORY';
 export const FETCH_COURSES_BY_USERNAME = 'FETCH_COURSES_BY_USERNAME';
+
+
+//current user
+export const CURRENT_USER = 'Mr. Sample';

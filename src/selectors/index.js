@@ -1,5 +1,6 @@
-// Course Selector
+import { CURRENT_USER } from '../actions/types'
 
+// Course Selector
 export const getCourseByCategory = (state, category) => {
 
   const courses = Object.values(state.courses);
@@ -29,16 +30,16 @@ export const getCoursesPublishedByUser = (state) => {
   const courses = Object.values(state.courses);
 
   return courses.filter((course) => {
-    return course.isPublished == true && course.username == "Mr. Sample"
+    return course.isPublished == true && course.username == CURRENT_USER
   });
 }
 
-export const getCoursesUnPublishedByUser = (state) => {
+export const getCoursesNotPublishedByUser = (state) => {
 
   const courses = Object.values(state.courses);
 
   return courses.filter((course) => {
-    return course.isPublished == false && course.username == "Mr. Sample"
+    return course.isPublished == false && course.username == CURRENT_USER
   });
 }
 

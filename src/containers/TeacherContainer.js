@@ -1,14 +1,16 @@
 import React from 'react';
 import CoursePublished from '../components/courses/teacher/CoursePublished';
+import CourseNotPublished from '../components/courses/teacher/CourseNotPublished';
 import './TeacherContainer.css'
 import { connect } from 'react-redux';
 import {fetchCourseByUsername} from '../actions/course'
-import { getCoursesPublishedByUser } from '../selectors/index.js'
+import { getCoursesPublishedByUser, getCoursesNotPublishedByUser } from '../selectors/index.js'
+import { CURRENT_USER } from '../actions/types'
 
 class TeacherContainer extends React.Component{
 
     componentDidMount(){
-        this.props.fetchCourseByUsername("Mr. Sample");
+        this.props.fetchCourseByUsername(CURRENT_USER);
     }
     render(){
         if(!this.props.coursesPublished){
@@ -31,6 +33,18 @@ class TeacherContainer extends React.Component{
                         <CoursePublished courses={this.props.coursesPublished}/>
                     </div>
                 </div>
+                <div className="container mb-2">
+                    <div className="row">
+                        <div className="col-lg-12 d-flex justify-content-start">
+                            <h1 className="title-published">Mis cursos publicados</h1>
+                        </div>
+                    </div>
+                </div>
+                <div className="container container-teacher pt-4 px-4 mb-5 testimonial-group">
+                    <div className="row text-center">
+                        <CourseNotPublished courses={this.props.coursesNotPublished}/>
+                    </div>
+                </div>
             </>
         );
     }
@@ -39,7 +53,10 @@ class TeacherContainer extends React.Component{
 
 const mapStateToProps = (state) => {
 
-    return { coursesPublished: getCoursesPublishedByUser(state) }
+    return ({ 
+            coursesPublished: getCoursesPublishedByUser(state),
+            coursesNotPublished: getCoursesNotPublishedByUser(state) 
+        })
 
 }
 
