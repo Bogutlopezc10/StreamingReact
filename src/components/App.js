@@ -8,6 +8,7 @@ import CategoryPage from '../pages/categories/CategoryPage';
 import CoursePage from '../pages/courses/CoursePage';
 import CourseByCategoryPage from '../pages/courses/CourseByCategoryPage';
 import CourseDetailPage from '../pages/courses/CourseDetailPage';
+import TeacherPage from '../pages/TeacherPage';
 
 const App = () => {
     return (
@@ -21,6 +22,7 @@ const App = () => {
                             <Route path="/courses" exact component={CoursePage} />
                             <Route path="/courses/:CategoryName/:id" exact component={CourseByCategoryPage} />
                             <Route path="/courses/Detail/:CourseName/:id" exact component={CourseDetailPage} />
+                            <Route path="/teacher" exact component={TeacherPage} />
                         </Switch>
                     <Footer />
                 </div>

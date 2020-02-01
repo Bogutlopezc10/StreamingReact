@@ -29,10 +29,6 @@ export default (state={}, action) => {
         case FETCH_COURSE:
             return {...state, [action.payload.id]: action.payload}
         case FETCH_COURSE_BY_CATEGORY:
-            if(action.payload.length<=0) {
-                return {...state};
-            }
-
             return { ...state, ..._.mapKeys(action.payload,'id')};
         default:
             return state;

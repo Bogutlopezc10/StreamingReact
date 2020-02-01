@@ -1,5 +1,6 @@
 import React from 'react';
 import CourseDetailContainer from '../../containers/courses/CourseDetailContainer';
+import './CoursePage.css'
 
 const CourseDetailPage = (props) => {
     return(
