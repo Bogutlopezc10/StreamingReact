@@ -2,6 +2,7 @@ import React from 'react';
 import CourseList from '../../components/courses/CourseList';
 import { fetchCourses } from '../../actions/course.js';
 import { connect } from 'react-redux';
+import { getCoursesPublished } from '../../selectors/index.js'
 import './CourseContainer.css'
 
 class CourseListContainer extends React.Component{
@@ -30,8 +31,9 @@ class CourseListContainer extends React.Component{
 }
 
 
-const mapStateToProps = (state, ownProps) => {
-    return { courses: Object.values(state.courses) }
+const mapStateToProps = (state) => {
+
+     return { courses: getCoursesPublished(state) }
 }
 
 

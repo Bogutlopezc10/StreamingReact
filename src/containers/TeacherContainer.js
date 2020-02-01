@@ -2,9 +2,18 @@ import React from 'react';
 import CoursePublished from '../components/courses/teacher/CoursePublished';
 import './TeacherContainer.css'
 import { connect } from 'react-redux';
+import {fetchCourseByUsername} from '../actions/course'
+import { getCoursesPublishedByUser } from '../selectors/index.js'
 
 class TeacherContainer extends React.Component{
+
+    componentDidMount(){
+        this.props.fetchCourseByUsername("Mr. Sample");
+    }
     render(){
+        if(!this.props.coursesPublished){
+            return <>Vacio</>
+        }
         return (
             <>
                 <div className="teacher-title d-flex align-items-center justify-content-center mb-4">
@@ -19,7 +28,7 @@ class TeacherContainer extends React.Component{
                 </div>
                 <div className="container container-teacher pt-4 px-4 mb-5 testimonial-group">
                     <div className="row text-center">
-                        <CoursePublished />
+                        <CoursePublished courses={this.props.coursesPublished}/>
                     </div>
                 </div>
             </>
@@ -27,4 +36,11 @@ class TeacherContainer extends React.Component{
     }
 }
 
-export default TeacherContainer;
+
+const mapStateToProps = (state) => {
+
+    return { coursesPublished: getCoursesPublishedByUser(state) }
+
+}
+
+export default connect(mapStateToProps, {fetchCourseByUsername})(TeacherContainer);

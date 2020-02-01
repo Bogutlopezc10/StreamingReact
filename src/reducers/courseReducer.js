@@ -2,7 +2,8 @@ import _ from 'lodash';
 import {
     FETCH_COURSES,
     FETCH_COURSE,
-    FETCH_COURSE_BY_CATEGORY
+    FETCH_COURSE_BY_CATEGORY,
+    FETCH_COURSES_BY_USERNAME
 } from '../actions/types';
 
 // export default (state={}, action) => {
@@ -29,6 +30,8 @@ export default (state={}, action) => {
         case FETCH_COURSE:
             return {...state, [action.payload.id]: action.payload}
         case FETCH_COURSE_BY_CATEGORY:
+            return { ...state, ..._.mapKeys(action.payload,'id')};
+        case FETCH_COURSES_BY_USERNAME:
             return { ...state, ..._.mapKeys(action.payload,'id')};
         default:
             return state;

@@ -2,7 +2,8 @@ import streams from '../apis/streams';
 import { 
     FETCH_COURSES,
     FETCH_COURSE_BY_CATEGORY,
-    FETCH_COURSE
+    FETCH_COURSE,
+    FETCH_COURSES_BY_USERNAME
 } from './types';
 
 // export const createStream = (formValues) => async (dispatch, getState) => {
@@ -32,4 +33,13 @@ export const fetchCourse = (id) => async dispatch => {
     const response = await streams.get(`/Courses/${id}`);
 
     dispatch({ type: FETCH_COURSE, payload: response.data });
+}
+
+
+
+export const fetchCourseByUsername = (username) => async dispatch => {
+
+    const response = await streams.get(`/Courses/ByUsername/${username}`);
+
+    dispatch({ type: FETCH_COURSES_BY_USERNAME, payload: response.data });
 }

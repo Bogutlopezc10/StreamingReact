@@ -1,7 +1,9 @@
 import React from 'react';
 import './Teacher.css';
 
-const CoursePublished = () => {
+const CoursePublished = (props) => {
+
+    console.log(props.courses)
     return (
         <>
             
