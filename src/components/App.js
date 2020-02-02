@@ -9,6 +9,7 @@ import CoursePage from '../pages/courses/CoursePage';
 import CourseByCategoryPage from '../pages/courses/CourseByCategoryPage';
 import CourseDetailPage from '../pages/courses/CourseDetailPage';
 import TeacherPage from '../pages/TeacherPage';
+import CourseCreatePage from '../pages/courses/CourseCreatePage';
 
 const App = () => {
     return (
@@ -23,6 +24,7 @@ const App = () => {
                             <Route path="/courses/:CategoryName/:id" exact component={CourseByCategoryPage} />
                             <Route path="/courses/Detail/:CourseName/:id" exact component={CourseDetailPage} />
                             <Route path="/teacher" exact component={TeacherPage} />
+                            <Route path="/courses/Create" exact component={CourseCreatePage} />
                         </Switch>
                     <Footer />
                 </div>
