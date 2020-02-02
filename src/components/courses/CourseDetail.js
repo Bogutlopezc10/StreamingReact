@@ -30,7 +30,7 @@ const CourseDetail = ({ course }) => {
                             <span className="number-rating ml-2 text-muted">{course.rating}</span>
                         </div>
                     </div>
-                    <div className="col-lg-12 img-teacher mt-4 d-flex align-items-center justify-content-start">
+                    <div className="col-lg-12 img-teacher mt-3 d-flex align-items-center justify-content-start">
                         <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" width="50" height="50" className="rounded-circle d-inline z-depth-0"
                         alt="avatar image"/>
                         <p className="d-inline text-muted ml-2">{`${course.nameTeacher} ${course.lastNameTeacher}`}</p>

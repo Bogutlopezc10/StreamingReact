@@ -8,7 +8,7 @@ const CoursePublished = ({ courses }) => {
             const starPercentage = (course.rating / 5) * 100;
             const starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`;
             return(
-                <div key={course.id} className="col-lg-3 mb-4">
+                <div key={course.id} className="card-container col-lg-3 col-md-4 col-sm-6 col-xs-6 mb-4">
                     <div className="card shadow h-100">
                         <img src="/bg-home.jpg" className="card-img" width="150" height="150" alt="bg-home" />
                         <div className="card-body">
@@ -25,7 +25,7 @@ const CoursePublished = ({ courses }) => {
                             </div>
                         </div>
                         <div className="card-badge shadow rounded-right text-uppercase">{course.categoryName}</div>
-                        <Link to={`courses/`} className="btn course-button">
+                        <Link to={`courses/`} className="btn teacher-button">
                             <div>
                                 <p className="d-inline">VER DETALLE</p> 
                                 <i className="d-inline fas fa-angle-double-right ml-2 mt-2"></i>

@@ -12,7 +12,10 @@
     color:black;
     font-weight: bold;
     font-size: 10px;
+}
 
+.card-body{
+    white-space: normal;
 }
 
 .card-title{
@@ -79,7 +82,16 @@
     top: 1px;
 }
 
+.course-button:hover i{
+    transition: all 1s;
+    transform: rotate(360deg) !important;
+}
+
 /* CourseDetail */
+
+.course-detail{
+    word-wrap: break-word;
+}
 
 .course-detail h3{
     font-weight: bold;
@@ -126,19 +138,55 @@
     font-style: italic;
 }
 
-.btn-outline-success{
+.btn-outline-success,
+.btn-outline-danger{
     font-weight: bold;
     border-radius: 0%;
 }
 
-.btn-outline-success:hover{
+.btn-outline-success:hover,
+.btn-outline-danger:hover{
     box-shadow: 0px 7px 11px -6px rgba(0,0,0,0.75);
 }
 
-.btn-outline-success i{
+.btn-outline-success i,
+.btn-outline-danger i{
     font-size: 17px;
     position: relative;
     top: 1px;
+}
+
+.btn-outline-success:hover i,
+.btn-outline-danger:hover i{
+    transition: all 1s;
+    transform: rotate(360deg) !important;
+}
+
+/* Teacher */
+
+.teacher-button{
+    font-weight: bold;
+    border-radius: 0%;
+    color: #2185d0;
+    border-color: #2185d0;
+}
+
+.teacher-button:hover{
+    box-shadow: 0px 7px 11px -6px rgba(0,0,0,0.75);
+    color: white;
+    border-color: #2185d0;
+    background-color: #2185d0;
+}
+
+.teacher-button i{
+    font-size: 17px;
+    position: relative;
+    top: 1px;
+}
+
+.teacher-button:hover i{
+    transition: all 1s;
+    transform: rotate(360deg) !important;
 }
 
 @media screen and (max-width: 991px) {

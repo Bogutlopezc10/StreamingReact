@@ -29,3 +29,8 @@
     position: relative;
     top: 1px;
 }
+
+.btn-outline-primary:hover i{
+    transition: all 1s;
+    transform: rotate(360deg) !important;
+}
