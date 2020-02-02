@@ -14,5 +14,6 @@
 
 .container-categories{
     background-color: #f3f3f3;
+    border-bottom: 5px solid #30b3ff;
     border-top: 5px solid #30b3ff;
 }

@@ -17,6 +17,7 @@
 .container-courses{
     background-color: #f3f3f3;
     border-top: 5px solid #005385;
+    border-bottom: 5px solid #005385;
 }
 
 /* CourseByCategoryListContainer */
@@ -38,4 +39,5 @@
 .container-courses-bycategory{
     background-color: #f3f3f3;
     border-top: 5px solid #30b3ff;
+    border-bottom: 5px solid #30b3ff;
 }
