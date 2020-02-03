@@ -177,6 +177,16 @@
     box-shadow: 0px 7px 11px -6px rgba(0,0,0,0.75);
 }
 
+.btn-outline-success.disabled:hover, .btn-outline-success:disabled:hover {
+    color: white;
+    background-color: #28a745;
+}
+
+.btn-outline-success.disabled, .btn-outline-success:disabled {
+    color: #28a745;
+    background-color: transparent;
+}
+
 .btn-outline-success i,
 .btn-outline-danger i{
     font-size: 17px;
@@ -261,6 +271,23 @@
     transition-delay: 1s;
     transition: all ease-in-out 2s;
     width: 110px;
+}
+
+.error input,
+.error textarea,
+.error select{
+    background-color: white !important;
+    border-color: #9f3a38;
+    color: #9f3a38;
+}
+
+.error label{
+    color: black !important;
+}
+
+.error-message{
+    color: #9f3a38;
+    font-weight: bold;
 }
 
 @media screen and (max-width: 991px) {

@@ -17,7 +17,7 @@ class CourseDetailContainer extends React.Component{
         }
         return (
             <>
-                <MainHeader backgroundHeaderColor="#005385" textHeader="Detalle del Curso" />
+                <MainHeader backgroundHeaderColor="#005385" textHeader="Detalle del curso" />
                 <CourseDetail course={this.props.course} borderTopColor="#005385"/>
             </>
         );
