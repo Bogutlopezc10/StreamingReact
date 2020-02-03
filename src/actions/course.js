@@ -5,7 +5,9 @@ import {
     FETCH_COURSE_BY_CATEGORY,
     FETCH_COURSE,
     FETCH_COURSES_BY_USERNAME,
-    CREATE_COURSE
+    CREATE_COURSE,
+    EDIT_COURSE,
+    CURRENT_USER,
 } from './types';
 
 // export const createStream = (formValues) => async (dispatch, getState) => {
@@ -49,10 +51,20 @@ export const fetchCourseByUsername = (username) => async dispatch => {
 
 export const createCourse = formValues =>async (dispatch) =>{
 
-    const username = "Mr. Sample"
+    const username = CURRENT_USER
     const response = await streams.post('/Courses',{...formValues, username})
 
     dispatch({type: CREATE_COURSE, payload:response.data})
+
+    //activate programmatic navigation
+    history.push('/teacher');
+};
+
+export const editCourse = (id, formValues) =>async (dispatch) =>{
+
+    const response = await streams.put(`/Courses/${id}`,formValues)
+
+    dispatch({type: EDIT_COURSE, payload:response.data})
 
     //activate programmatic navigation
     history.push('/teacher');
