@@ -13,7 +13,7 @@ const CourseNotPublished = ({ course }) => {
                 <div className="card-badge shadow rounded-right text-uppercase">{course.categoryName}</div>
                 <div className="row">
                     <div className="col-lg-12 py-0">
-                        <Link to={`courses/`} className="btn btn-block teacher-button border-left-0 border-right-0 border-teacher">
+                        <Link to={`courses/Edit/${course.name}/${course.id}`} className="btn btn-block teacher-button border-left-0 border-right-0 border-teacher">
                             <div>
                             <p className="d-inline">EDITAR</p> 
                                 <i className="d-inline fas fa-edit ml-2 mt-2"></i>
