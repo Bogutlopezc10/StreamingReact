@@ -34,3 +34,8 @@
     transition: all 1s;
     transform: rotate(360deg) !important;
 }
+
+.container-categories{
+    background-color: #f3f3f3;
+    border-top: 5px solid #30b3ff;
+}

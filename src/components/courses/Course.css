@@ -87,6 +87,30 @@
     transform: rotate(360deg) !important;
 }
 
+.testimonial-group .row {
+    overflow-x: auto;
+    white-space: nowrap;
+    display: block !important;
+}
+
+.testimonial-group .row .col-lg-3,
+.testimonial-group .row .col-md-4,
+.testimonial-group .row .col-sm-6,
+.testimonial-group .row .col-xs-6 {
+    display: inline-block;
+    float: none;
+    word-wrap: break-word;
+}
+
+.title-published{
+    font-weight: bold;
+}
+
+.container-published{
+    background-color: #f3f3f3;
+    border-top: 5px solid;
+}
+
 /* CourseDetail */
 
 .course-detail{
@@ -138,10 +162,14 @@
     font-style: italic;
 }
 
-.btn-outline-success,
-.btn-outline-danger{
+.btn-outline-success{
     font-weight: bold;
     border-radius: 0%;
+}
+
+.btn-outline-danger{
+    font-weight: bold;
+    border-radius: 0%; 
 }
 
 .btn-outline-success:hover,
@@ -168,7 +196,7 @@
     font-weight: bold;
     border-radius: 0%;
     color: #2185d0;
-    border-color: #2185d0;
+    border-color:#2185d0;
 }
 
 .teacher-button:hover{
@@ -189,8 +217,62 @@
     transform: rotate(360deg) !important;
 }
 
+.border-teacher{
+    border-color: gray;
+}
+
+.btn-question{
+    font-weight: bold;
+    border-radius: 0%;
+    border-top-right-radius: 5%;
+    border-bottom-right-radius: 5%;
+    font-size: 12px;
+    position: absolute;
+    top: 82px;
+}
+
+.btn-question p,
+.btn-subject p{
+    display: none;
+}
+
+.btn-question i,
+.btn-subject i{
+    margin-left: 5px;
+}
+
+.btn-question:hover p,
+.btn-subject:hover p{
+    display: inline;
+}
+
+.btn-subject{
+    font-weight: bold;
+    border-radius: 0%;
+    border-top-right-radius: 5%;
+    border-bottom-right-radius: 5%;
+    font-size: 12px;
+    position: absolute;
+    top: 50px;
+}
+
+.btn-subject:hover,
+.btn-question:hover{
+    transition-delay: 1s;
+    transition: all ease-in-out 2s;
+    width: 110px;
+}
+
 @media screen and (max-width: 991px) {
     .container-info-course{
         margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .btn-create{
+        margin-top: 12px;
+        margin-bottom: 12px;
+        align-self: center;
     }
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux'
 import CourseDetail from '../../components/courses/CourseDetail'
+import MainHeader from '../../components/MainHeader';
 import {fetchCourse} from '../../actions/course';
 import {getById} from '../../selectors/index';
 
@@ -16,14 +17,8 @@ class CourseDetailContainer extends React.Component{
         }
         return (
             <>
-                <div className="course-title d-flex align-items-center justify-content-center mb-5">
-                    <h1>Detalle del Curso</h1>
-                </div>
-                <div className="container container-courses p-4 mb-5">
-                    <div className="row">
-                        <CourseDetail course={this.props.course}/>
-                    </div>              
-                </div>
+                <MainHeader backgroundHeaderColor="#005385" textHeader="Detalle del Curso" />
+                <CourseDetail course={this.props.course} borderTopColor="#005385"/>
             </>
         );
     }

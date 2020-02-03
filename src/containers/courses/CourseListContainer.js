@@ -1,9 +1,9 @@
 import React from 'react';
-import CourseList from '../../components/courses/CourseList';
+import MainHeader from '../../components/MainHeader';
+import CoursePublishedList from '../../components/courses/CoursePublishedList';
 import { fetchCourses } from '../../actions/course.js';
 import { connect } from 'react-redux';
 import { getCoursesPublished } from '../../selectors/index.js'
-import './CourseContainer.css'
 
 class CourseListContainer extends React.Component{
 
@@ -17,14 +17,13 @@ class CourseListContainer extends React.Component{
         }
         return (
             <>
-                <div className="course-title d-flex align-items-center justify-content-center mb-5">
-                    <h1>Cursos</h1>
-                </div>
-                <div className="container container-courses pt-4 px-4 mb-5">
-                    <div className="row">
-                        <CourseList courses={this.props.courses} />
-                    </div>              
-                </div>
+                <MainHeader backgroundHeaderColor="#005385" textHeader="Cursos" />
+                <CoursePublishedList 
+                    courses={this.props.courses} 
+                    borderTopColor="#005385" 
+                    teacher={false}
+                    customizeButton="course-button"
+                />
             </>
         );
     }

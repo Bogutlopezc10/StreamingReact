@@ -1,9 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux'
-import CourseByCategoryList from '../../components/courses/CourseByCategoryList';
+import CoursePublishedList from '../../components/courses/CoursePublishedList';
+import MainHeader from '../../components/MainHeader';
 import {fetchCoursesBycategory} from '../../actions/course'
 import { getCourseByCategory } from '../../selectors/index.js'
-import './CourseContainer.css'
 
 class CourseByCategoryListContainer extends React.Component{
 
@@ -18,14 +18,13 @@ class CourseByCategoryListContainer extends React.Component{
         }
         return (
             <>
-                <div className="course-title-bycategory d-flex align-items-center justify-content-center mb-5">
-                    <h1>{this.props.categoryName}</h1>
-                </div>
-                <div className="container container-courses-bycategory pt-4 px-4 mb-5">
-                    <div className="row">
-                        <CourseByCategoryList courses={this.props.courses} />
-                    </div>              
-                </div>
+                <MainHeader backgroundHeaderColor="#30b3ff" textHeader={this.props.categoryName} />
+                <CoursePublishedList 
+                    courses={this.props.courses} 
+                    borderTopColor="#30b3ff" 
+                    teacher={false}
+                    customizeButton="btn-outline-primary"
+                />
             </>
         );
     }
