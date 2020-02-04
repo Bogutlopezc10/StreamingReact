@@ -1,5 +1,6 @@
 import React from 'react';
 import CourseCreate from '../../components/courses/CourseCreate';
+import MainHeader from '../../components/MainHeader';
 import {fetchCategories} from '../../actions/category'
 import { connect } from 'react-redux';
 
@@ -14,9 +15,10 @@ class CourseCreateContainer extends React.Component{
             return <>Vacio</>
         }
         return (
-            <div>
-                <CourseCreate categories ={this.props.categories}/>
-            </div>
+            <>
+                <MainHeader backgroundHeaderColor="#005385" textHeader="Crear curso" />
+                <CourseCreate categories ={this.props.categories} borderTopColor="#005385"/>
+            </>
         )
     }
 }
