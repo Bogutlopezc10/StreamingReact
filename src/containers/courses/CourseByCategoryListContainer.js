@@ -31,7 +31,6 @@ class CourseByCategoryListContainer extends React.Component{
 }
 
 const mapStateToProps = (state, ownProps) => {
-    console.log(state);
     return { courses: getCourseByCategory(state, ownProps) }
 
 }

@@ -1,0 +1,47 @@
+.ui.dimmer{
+    height: calc(100vh - 80px);
+    margin-top: 80px;
+}
+
+.modal {
+    height: auto !important;
+}
+
+.ui.modal,
+.ui.active.modal {
+  margin: 0 auto!important;
+  top: auto !important;
+  left: auto !important;
+  transform-origin: center !important;
+}
+
+.header{
+    font-weight: bold !important;
+    font-size: 30px !important;
+    color: white !important;
+    text-decoration: black;
+    text-shadow: 1px 1px black;
+}
+
+.content h5{
+    color: gray;
+    font-style: italic;
+}
+
+.content p{
+    color: black;
+    font-size: 17px;
+    font-weight: 630;
+    font-style: italic;
+}
+
+.ui.modal .actions{
+    padding: 1rem 1rem !important;
+}
+
+@media screen and (max-width: 991px) {  
+    .ui.dimmer{
+        height: calc(100vh - 150px);
+        margin-top: 150px;
+    }
+}

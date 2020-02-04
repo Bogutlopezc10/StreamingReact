@@ -1,13 +1,14 @@
 import React from 'react'
 import ReactDom from 'react-dom'
+import './Modal.css'
 
 const Modal = props => {
 
     return ReactDom.createPortal(
         <div onClick ={props.onDismiss} 
-            className="ui dimmer modals visible active">
+            className="ui dimmer modals visible active d-flex justify-content-center align-items-center">
             <div onClick = {e => e.stopPropagation()} className="ui standard modal visible active">
-                <div className="header">{props.title}</div>
+                <div className="header" style={{ backgroundColor: props.backgroundHeaderColor }}>{props.title}</div>
                 <div className="content">
                     {props.description}
                 </div>

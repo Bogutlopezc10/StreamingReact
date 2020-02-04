@@ -20,7 +20,7 @@ const CourseNotPublishedList = ({ courses, borderTopColor }) => {
                     </div>
                 </div>
             </div>
-            <div className="container container-published pt-4 px-4 mb-5 testimonial-group" style={{ borderTopColor: borderTopColor }}>
+            <div className="container shadow container-published pt-4 px-4 mb-5 testimonial-group" style={{ borderTopColor: borderTopColor }}>
                 <div className="row">
                     {courses.map( course => 
                         <CourseNotPublished key={course.id} course={course}/>

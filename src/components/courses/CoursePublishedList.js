@@ -25,7 +25,7 @@ class CoursePublishedList extends React.Component{
         return (
             <>
                 {this.renderTitlePublished(teacher)}
-                <div className="container container-published pt-4 px-4 mb-5 testimonial-group" style={{ borderTopColor: borderTopColor }}>
+                <div className="container shadow container-published pt-4 px-4 mb-5 testimonial-group" style={{ borderTopColor: borderTopColor }}>
                     <div className="row">
                         {courses.map( course => 
                             <CoursePublished key={course.id} course={course} teacher={teacher} customizeButton={customizeButton} />

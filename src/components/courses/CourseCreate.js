@@ -15,8 +15,12 @@ class CourseCreate extends React.Component{
     render(){
         return(
             <>
-                <div  style={{ borderTopColor: this.props.borderTopColor }} className="container container-published p-4 mb-5">
-                    <CourseForm categories ={this.props.categories} onSubmit={this.onSubmit} textButton="LIMPIAR" />
+                <div className="row d-flex justify-content-center">
+                    <div className="col-lg-6">
+                        <div  style={{ borderTopColor: this.props.borderTopColor }} className="container shadow container-published p-4 mb-5">
+                            <CourseForm categories ={this.props.categories} onSubmit={this.onSubmit} textButton="LIMPIAR" />
+                        </div>
+                    </div>
                 </div>
             </>
         )

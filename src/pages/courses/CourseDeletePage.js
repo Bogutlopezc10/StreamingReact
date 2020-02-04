@@ -5,10 +5,8 @@ const CourseDeletePage = (props) =>{
 
     
     return(
-        <div className="main-container">
-
+        <div>
             <CourseDeleteContainer courseId={props.match.params.id}/>
-
         </div>
     )
 }

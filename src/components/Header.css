@@ -56,7 +56,9 @@
 }
 
 .menu .c-3{
-    background: #2185d0;
+    background:#e6e6e6;
+    border-top: 1px solid;
+    border-top-color: #cecece;
 }
 
 .menu .c-1:hover {
@@ -68,16 +70,19 @@
 }
 
 .menu .c-3:hover {
-    background: #0e78c7;
+    background:#d2d2d2;
 }
 
 .bg-dropdown{
-    background: #2185d0;
+    background:white;
+}
+
+.bg-dropdown a{
+    color:gray;
 }
 
 .bg-dropdown a:hover{
-    background: #0e78c7;
-    color:white;
+    background: #f1f1f1;
 }
 
 @media screen and (max-width: 1199px){}
