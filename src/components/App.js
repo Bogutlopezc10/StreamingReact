@@ -13,6 +13,7 @@ import CourseCreatePage from '../pages/courses/CourseCreatePage';
 import CourseEditPage from '../pages/courses/CourseEditPage';
 import CourseDelete from './courses/CourseDelete';
 import CourseDeletePage from '../pages/courses/CourseDeletePage';
+import ErrorPage from '../pages/ErrorPage';
 
 const App = () => {
     return (
@@ -30,6 +31,7 @@ const App = () => {
                             <Route path="/courses/Create" exact component={CourseCreatePage} />
                             <Route path="/courses/Edit/:CourseName/:id" exact component={CourseEditPage} />
                             <Route path="/courses/Delete/:CourseName/:id" exact component={CourseDeletePage} />
+                            <Route path="/errors" exact component={ErrorPage} />
                         </Switch>
                     <Footer />
                 </div>
