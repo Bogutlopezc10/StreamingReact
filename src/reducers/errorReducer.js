@@ -27,7 +27,8 @@ export default (state = defaultState, action) => {
                 ...state,
                 isError: false,
                 data: null,
-                code: null
+                code: null,
+                statusText: null
             };
         default:
             return state;

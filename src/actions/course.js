@@ -14,7 +14,17 @@ import {
 
 const createError = (error) => {
 
-    if (error.response.statusText != "Bad Request") {
+    if (!error.response){
+        return(
+            {
+                isError: true,
+                statusText: "Hubo un error en el servidor",
+                data: "Bad Request",
+                code: 400
+            }
+        )
+    }
+    else if (error.response.statusText != "Bad Request") {
         return(
             {
                 isError: true,
@@ -24,10 +34,21 @@ const createError = (error) => {
             }
         )
     }
-    return (
+    else if (error.response){
+        return (
+            {
+                isError: true,
+                statusText: "Request failed with status code 400",
+                data: "Bad Request",
+                code: 400
+            }
+        )
+    }
+
+    return(
         {
             isError: true,
-            statusText: "Request failed with status code 400",
+            statusText: "Request failed with status code 400 servidor caido",
             data: "Bad Request",
             code: 400
         }
