@@ -21,7 +21,7 @@ const CourseNotPublished = ({ course }) => {
                         </Link>
                     </div>
                     <div className="col-lg-12 py-0">
-                        <Link to={`courses/`} className="btn btn-block btn-outline-danger border-teacher border-0">
+                        <Link to={`/courses/Delete/${course.name}/${course.id}`} className="btn btn-block btn-outline-danger border-teacher border-0">
                             <div>
                                 <p className="d-inline">ELIMINAR</p>
                                 <i className="d-inline fas fa-trash-alt ml-2 mt-2"></i>

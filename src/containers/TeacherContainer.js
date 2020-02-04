@@ -40,7 +40,7 @@ const mapStateToProps = (state) => {
     return ({ 
             coursesPublished: getCoursesPublishedByUser(state),
             coursesNotPublished: getCoursesNotPublishedByUser(state) 
-        })
+    })
 
 }
 
