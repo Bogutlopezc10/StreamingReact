@@ -5,7 +5,8 @@ import {
     FETCH_COURSE_BY_CATEGORY,
     FETCH_COURSES_BY_USERNAME,
     CREATE_COURSE,
-    EDIT_COURSE
+    EDIT_COURSE,
+    DELETE_COURSE
 } from '../actions/types';
 
 // export default (state={}, action) => {
@@ -39,6 +40,8 @@ export default (state={}, action) => {
             return { ...state, ..._.mapKeys(action.payload,'id')};
         case FETCH_COURSES_BY_USERNAME:
             return { ...state, ..._.mapKeys(action.payload,'id')};
+        case DELETE_COURSE:
+             return _.omit(state, action.payload);
         default:
             return state;
     }

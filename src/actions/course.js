@@ -8,6 +8,7 @@ import {
     CREATE_COURSE,
     EDIT_COURSE,
     CURRENT_USER,
+    DELETE_COURSE,
 } from './types';
 
 // export const createStream = (formValues) => async (dispatch, getState) => {
@@ -37,6 +38,8 @@ export const fetchCourse = (id) => async dispatch => {
     const response = await streams.get(`/Courses/${id}`);
 
     dispatch({ type: FETCH_COURSE, payload: response.data });
+
+
 }
 
 
@@ -68,4 +71,13 @@ export const editCourse = (id, formValues) =>async (dispatch) =>{
 
     //activate programmatic navigation
     history.push('/teacher');
+};
+
+
+export const deleteCourse = (id) =>async dispatch =>{
+    await streams.delete(`/Courses/${id}`);
+
+    dispatch({type: DELETE_COURSE, payload:id})
+
+     history.push('/teacher');
 };
