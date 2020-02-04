@@ -45,7 +45,7 @@ class CourseForm extends React.Component {
         return (
             <div className={className}>
                 <label>{label}</label>
-                <select className="selectpicker" {...input}>
+                <select {...input}>
                     {children}
                 </select>
                 {this.renderError(meta)}
