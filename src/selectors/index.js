@@ -43,3 +43,13 @@ export const getCoursesNotPublishedByUser = (state) => {
   });
 }
 
+// Subject Selector
+
+export const getSubjectsByCourseId = (state, courseId) => {
+
+  const subjects = Object.values(state.subjects.data);
+
+  return subjects.filter((subject) => {
+    return subject.courseId == courseId
+  });
+}

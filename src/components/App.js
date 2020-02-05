@@ -11,9 +11,9 @@ import CourseDetailPage from '../pages/courses/CourseDetailPage';
 import TeacherPage from '../pages/TeacherPage';
 import CourseCreatePage from '../pages/courses/CourseCreatePage';
 import CourseEditPage from '../pages/courses/CourseEditPage';
-import CourseDelete from './courses/CourseDelete';
 import CourseDeletePage from '../pages/courses/CourseDeletePage';
 import ErrorPage from '../pages/ErrorPage';
+import CourseContentPage from '../pages/courses/CourseContentPage';
 
 const App = () => {
     return (
@@ -31,6 +31,7 @@ const App = () => {
                             <Route path="/courses/Create" exact component={CourseCreatePage} />
                             <Route path="/courses/Edit/:CourseName/:id" exact component={CourseEditPage} />
                             <Route path="/courses/Delete/:CourseName/:id" exact component={CourseDeletePage} />
+                            <Route path="/courses/Content/:CourseName/:id" exact component={CourseContentPage} />
                             <Route path="/errors" exact component={ErrorPage} />
                         </Switch>
                     <Footer />
