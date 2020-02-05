@@ -13,6 +13,7 @@ import CourseCreatePage from '../pages/courses/CourseCreatePage';
 import CourseEditPage from '../pages/courses/CourseEditPage';
 import CourseDeletePage from '../pages/courses/CourseDeletePage';
 import ErrorPage from '../pages/ErrorPage';
+import ModalReact from './ModalReact';
 import CourseContentPage from '../pages/courses/CourseContentPage';
 
 const App = () => {
@@ -33,6 +34,7 @@ const App = () => {
                             <Route path="/courses/Delete/:CourseName/:id" exact component={CourseDeletePage} />
                             <Route path="/courses/Content/:CourseName/:id" exact component={CourseContentPage} />
                             <Route path="/errors" exact component={ErrorPage} />
+                            <Route path="/modal" exact component={ModalReact} />
                         </Switch>
                     <Footer />
                 </div>

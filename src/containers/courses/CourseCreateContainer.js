@@ -25,7 +25,7 @@ class CourseCreateContainer extends React.Component{
 
 const mapStateToProps = (state) => {
 
-    return ({ categories: Object.values(state.categories)})
+    return ({ categories: Object.values(state.categories.data)})
 
 }
 

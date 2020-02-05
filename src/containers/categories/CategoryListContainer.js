@@ -22,8 +22,8 @@ class CategoryListContainer extends React.Component{
     }
 }
 
-const mapStateToProps = (state, ownProps) => {
-    return { categories: Object.values(state.categories) }
+const mapStateToProps = (state) => {
+    return { categories: Object.values(state.categories.data) }
 }
 
 export default connect(mapStateToProps, { fetchCategories })(CategoryListContainer);
