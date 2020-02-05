@@ -33,8 +33,8 @@ class CourseEditContainer extends React.Component{
 
 const mapStateToProps = (state, ownProps) =>{
     return { 
-        course: getById(state.courses,ownProps.courseId),
-        categories: Object.values(state.categories)
+        course: getById(state.courses.data,ownProps.courseId),
+        categories: Object.values(state.categories.data)
     }
 }
 

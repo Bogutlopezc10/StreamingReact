@@ -14,6 +14,8 @@ import CourseEditPage from '../pages/courses/CourseEditPage';
 import CourseDelete from './courses/CourseDelete';
 import CourseDeletePage from '../pages/courses/CourseDeletePage';
 import ErrorPage from '../pages/ErrorPage';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import ModalReact from './ModalReact';
 
 const App = () => {
     return (
@@ -32,6 +34,7 @@ const App = () => {
                             <Route path="/courses/Edit/:CourseName/:id" exact component={CourseEditPage} />
                             <Route path="/courses/Delete/:CourseName/:id" exact component={CourseDeletePage} />
                             <Route path="/errors" exact component={ErrorPage} />
+                            <Route path="/modal" exact component={ModalReact} />
                         </Switch>
                     <Footer />
                 </div>

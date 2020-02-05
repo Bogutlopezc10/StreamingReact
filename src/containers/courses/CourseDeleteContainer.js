@@ -2,6 +2,7 @@ import React from 'react'
 import CourseDelete  from '../../components/courses/CourseDelete'
 import {fetchCourse} from '../../actions/course'
 import {connect} from 'react-redux'
+import {getById} from '../../selectors/index';
 
 class CourseDeleteContainer extends React.Component{
     
@@ -21,7 +22,7 @@ class CourseDeleteContainer extends React.Component{
 }
 
 const mapToStateMapProps =(state, ownProps) =>{
-    return {course: state.courses[ownProps.courseId]}
+    return {course:getById(state.courses.data,ownProps.courseId)}
 }
 
 export default connect(mapToStateMapProps, {fetchCourse})(CourseDeleteContainer);

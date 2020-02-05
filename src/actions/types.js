@@ -29,3 +29,6 @@ export const CURRENT_USER = 'Mr. Sample';
 //error constant
 export const UPDATE_ERROR_WITH_ACTION = 'UPDATE_ERROR_WITH_ACTION'
 export const UPDATE_ERROR_UNMOUNT = 'UPDATE_ERROR_UNMOUNT'
+
+//success
+export const UPDATE_SUCCESS_UNMOUNT = 'UPDATE_SUCCESS_UNMOUNT'
