@@ -3,9 +3,7 @@ import ErrorContainer from './../containers/ErrorContainer'
 const ErrorPage = () => {
     return(
         <div className="main-container">
-
             <ErrorContainer />
-
         </div>
     )
 }

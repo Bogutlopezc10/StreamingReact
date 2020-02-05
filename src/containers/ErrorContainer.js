@@ -11,7 +11,6 @@ class ErrorContainer extends React.Component {
     render(){
         return(
             <>
-                <MainHeader backgroundHeaderColor="#005385" textHeader="Error" />
                 <Error error={this.props.error}/>
             </>
         )
