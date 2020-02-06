@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import {initialState} from '../initialState'
+import {initialState} from './initialState' 
 import {
     FETCH_CATEGORIES,
     UPDATE_SUCCESS_UNMOUNT
