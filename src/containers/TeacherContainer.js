@@ -16,7 +16,7 @@ class TeacherContainer extends React.Component{
 
         this.timerID = setTimeout(
             () => this.props.updateSuccessUnmount(),
-            10000
+            3000
         );
     }
     componentWillUnmount(){

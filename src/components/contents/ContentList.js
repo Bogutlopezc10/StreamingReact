@@ -7,9 +7,11 @@ const ContentList = ({ contents }) =>{
     }
     return (
         <div className="container">
-            { contents.map( content =>
-                <Content key={content.id} content={content} />
-            )}
+            <div className="row">
+                { contents.map( content =>
+                    <Content key={content.id} content={content} />
+                )}
+            </div>
         </div>
     );
 }

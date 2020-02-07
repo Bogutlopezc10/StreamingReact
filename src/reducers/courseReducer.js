@@ -39,14 +39,14 @@ export default (state= defaultState, action) => {
                 ...state,
                 data:{...state.data, [action.payload.id]:action.payload},
                 isSuccess:true,
-                messageSuccess:"El curso fue editado existosamente"
+                messageSuccess:"El curso fue editado exitosamente."
             }
         case CREATE_COURSE:
             return {
                 ...state,
                 data:{...state.data, [action.payload.id]:action.payload},
                 isSuccess:true,
-                messageSuccess:"El curso fue creado existosamente"
+                messageSuccess:"El curso fue creado exitosamente."
             }
         case FETCH_COURSE_BY_CATEGORY:
             return {
@@ -63,7 +63,7 @@ export default (state= defaultState, action) => {
             ...state,
             data: _.omit(state.data, action.payload),
             isSuccess:true,
-            messageSuccess:"El curso fue eliminado existosamente"
+            messageSuccess:"El curso fue eliminado exitosamente."
             };
         case COURSE_CAN_BE_POSTED:
             if(action.payload.status == 204){
@@ -94,7 +94,7 @@ export default (state= defaultState, action) => {
                     ...state,
                     data:{...state.data, [action.payload.id]:action.payload},
                     isSuccess:true,
-                    messageSuccess:"El curso fue publicado existosamente"
+                    messageSuccess:"El curso fue publicado exitosamente."
                 }
         default:
             return state;
