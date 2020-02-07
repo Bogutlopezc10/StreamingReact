@@ -1,12 +1,19 @@
 import React from 'react';
 import './MainHeader.css'
+import {scrollUp} from '../scroll'
 
-const MainHeader = (props) => {
-    return(
-        <div className="header-main d-flex align-items-center justify-content-center mb-5" style={{ backgroundColor: props.backgroundHeaderColor}}>
-            <h1>{props.textHeader}</h1>
-        </div>
-    );
+class MainHeader extends React.Component{
+    
+    componentDidMount(){
+        scrollUp()
+    }
+    render(){
+        return(
+            <div className="header-main d-flex align-items-center justify-content-center mb-5" style={{ backgroundColor: this.props.backgroundHeaderColor}}>
+                <h1>{this.props.textHeader}</h1>
+            </div>
+        );
+    }
 }
 
 export default MainHeader;

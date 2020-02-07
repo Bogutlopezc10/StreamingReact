@@ -1,8 +1,13 @@
 import React from 'react';
 import './HomePage.css';
 import { Link } from 'react-router-dom';
+import {scrollUp} from '../scroll'
 
 class HomePage extends React.Component{
+
+    componentDidMount(){
+        scrollUp()
+    }
     render(){
         return (
             <>

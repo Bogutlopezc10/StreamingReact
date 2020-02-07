@@ -13,10 +13,11 @@ class TeacherContainer extends React.Component{
 
     componentDidMount(){
         this.props.fetchCourseByUsername(CURRENT_USER);
+
         this.timerID = setTimeout(
             () => this.props.updateSuccessUnmount(),
             10000
-          );
+        );
     }
     componentWillUnmount(){
         clearTimeout(this.timerID);
