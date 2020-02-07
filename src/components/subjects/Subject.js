@@ -4,7 +4,7 @@ import Accordion from 'react-bootstrap/Accordion';
 import ContentListContainer from '../../containers/contents/ContentListContainer';
 import './Subject.css'
 
-const Subject = ({ subject }) => {
+const Subject = ({ subject, onClickEditSubject }) => {
     return (
         <>
             <Card>
@@ -22,7 +22,7 @@ const Subject = ({ subject }) => {
                 </Accordion.Collapse>
                 <div className="row">
                     <div className="col-6 p-0">
-                        <button className="btn btn-block teacher-button mr-0 border-teacher">
+                        <button onClick={() => onClickEditSubject(subject.id)} className="btn btn-block teacher-button mr-0 border-subject">
                             <div>
                             <p className="d-inline">EDITAR</p> 
                                 <i className="d-inline fas fa-edit ml-2 mt-2"></i>
@@ -30,10 +30,10 @@ const Subject = ({ subject }) => {
                         </button>
                     </div>
                     <div className="col-6 p-0">
-                        <button className="btn btn-block btn-outline-danger ml-0 border-teacher">
+                        <button className="btn btn-block btn-outline-danger ml-0 border-subject">
                             <div>
                             <p className="d-inline">ELIMINAR</p> 
-                                <i className="d-inline fas fa-edit ml-2 mt-2"></i>
+                                <i className="d-inline fas fa-trash-alt ml-2 mt-2"></i>
                             </div>
                         </button>
                     </div>

@@ -38,7 +38,7 @@ class SubjectForm extends React.Component {
                 <Field name="name" type="text" component={this.renderInput} label="Nombre" />
                 <button className ="btn btn-outline-success mt-2" disabled={pristine || submitting} style={{ borderRadius: ".25rem" }}>
                     <div>
-                        <p className="d-inline">CREAR</p> 
+                        <p className="d-inline">ENVIAR</p> 
                         <i className="d-inline fas fa-share ml-2 mt-2"></i>
                     </div>
                 </button>
