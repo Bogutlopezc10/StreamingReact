@@ -13,7 +13,6 @@ class CourseDeleteContainer extends React.Component{
         this.props.fetchCourse(this.props.courseId)
     }
     render (){
-
         
         return (
             <>
