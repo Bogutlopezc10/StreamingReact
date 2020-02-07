@@ -52,3 +52,14 @@ export const getSubjectsByCourseId = (state, courseId) => {
     return subject.courseId == courseId
   });
 }
+
+// Content Selector
+
+export const getContentsBySubjectId = (state, subjectId) => {
+
+  const contents = Object.values(state.contents.data);
+
+  return contents.filter((content) => {
+    return content.subjectId == subjectId
+  });
+}

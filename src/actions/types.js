@@ -33,6 +33,13 @@ export const UPDATE_ERROR_UNMOUNT = 'UPDATE_ERROR_UNMOUNT'
 // Subject constant
 
 export const FETCH_SUBJECTS = 'FETCH_SUBJECTS';
+export const CREATE_SUBJECT = 'CREATE_SUBJECT';
+export const IS_CREATING_SUBJECT = 'IS_CREATING_SUBJECT';
+export const IS_NOT_CREATING_SUBJECT = 'IS_NOT_CREATING_SUBJECT';
+
+// Content constant
+
+export const FETCH_CONTENTS = 'FETCH_CONTENTS';
 
 //success
 export const UPDATE_SUCCESS_UNMOUNT = 'UPDATE_SUCCESS_UNMOUNT'

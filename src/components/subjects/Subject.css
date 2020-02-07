@@ -2,3 +2,17 @@
     background-color: white;
     border-top: 5px solid;
 }
+
+.card-header{
+    background-color: #969696;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: black;
+    text-shadow: 1px 1px black;
+}
+
+.create-form{
+    background-color: white;
+    border-top: 5px #28a745 solid;
+}
