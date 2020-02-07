@@ -5,13 +5,13 @@ import Card from 'react-bootstrap/Card';
 import Accordion from 'react-bootstrap/Accordion';
 import './Subject.css'
 
-const SubjectList = ({ borderTopColor, subjects }) => {
+const SubjectList = ({ borderTopColor, subjects, onClickEditSubject }) => {
     return (
         <>
             <div className="container shadow container-subject p-4" style={{ borderTopColor: borderTopColor }}>
                 <Accordion defaultActiveKey="0">
                     { subjects.map( subject => 
-                        <Subject key={subject.id} subject={subject} />
+                        <Subject onClickEditSubject={onClickEditSubject} key={subject.id} subject={subject} />
                     )}
                 </Accordion>
             </div>

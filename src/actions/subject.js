@@ -6,13 +6,27 @@ import {
     UPDATE_ERROR_WITH_ACTION,
     IS_CREATING_SUBJECT,
     IS_NOT_CREATING_SUBJECT,
-    CREATE_SUBJECT
+    CREATE_SUBJECT,
+    EDIT_SUBJECT,
+    IS_EDITING_SUBJECT,
+    IS_NOT_EDITING_SUBJECT
 } from '../actions/types';
 
 export const fetchSubjects = (id) => async dispatch => {
     try{
         const response = await streams.get(`/Subjects/ByCourse/${id}`);
         dispatch({ type: FETCH_SUBJECTS, payload: response.data });
+    }
+    catch(error){
+        dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+        history.push('/errors');
+    }
+}
+
+export const fecthEditingSubject = (id) => async dispatch => {
+    try{
+        const response = await streams.get(`/Subjects/${id}`);
+        dispatch({ type: IS_EDITING_SUBJECT, payload: response.data });
     }
     catch(error){
         dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
@@ -29,6 +43,24 @@ export const createSubject = (formValues, courseId) => async dispatch => {
         dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
         history.push('/errors');
     }
+}
+
+export const editSubject = (id, formValues) =>async (dispatch) =>{
+
+    try{
+        const response = await streams.put(`/Subjects/${id}`,formValues)
+        dispatch({type: EDIT_SUBJECT, payload:response.data})
+    }
+    catch(error){
+        dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+        history.push('/errors');
+    }
+};
+
+export const isNotEditingSubject = () => async dispatch =>{
+
+    dispatch({ type: IS_NOT_EDITING_SUBJECT, payload: false })
+
 }
 
 export const isCreatingSubject = () => async dispatch => {

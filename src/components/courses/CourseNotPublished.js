@@ -39,7 +39,7 @@ const CourseNotPublished = ({ course }) => {
                 </div>
                 <Link to={`/courses/Content/${course.name}/${course.id}`} className="btn btn-success btn-subject">
                     <div>
-                        <p>TEMAS</p> 
+                        <p>CONTENIDO</p> 
                         <i className="fas fa-file-alt mt-1 mb-1"></i>
                     </div>
                 </Link>

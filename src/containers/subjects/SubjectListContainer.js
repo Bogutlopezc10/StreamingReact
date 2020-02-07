@@ -16,7 +16,7 @@ class SubjectListContainer extends React.Component{
         }
         return (
             <> 
-                <SubjectList subjects={subjects} borderTopColor={borderTopColor} />
+                <SubjectList subjects={subjects} borderTopColor={borderTopColor} onClickEditSubject={this.props.onClickEditSubject}/>
             </>
         )
     }

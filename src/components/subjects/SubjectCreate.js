@@ -52,7 +52,7 @@ class SubjectCreate extends React.Component{
                     <button onClick={this.props.onClickIsNotCreating} className="btn btn-outline-danger">
                         <div>
                             <p className="d-inline">CANCELAR</p> 
-                            <i className="d-inline fas fa-plus-circle ml-2 mt-2"></i>
+                            <i className="d-inline fas fa-times ml-2 mt-2"></i>
                         </div>
                     </button>
                 </div>
