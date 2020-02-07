@@ -6,7 +6,8 @@ import {
     EDIT_SUBJECT,
     IS_EDITING_SUBJECT,
     IS_NOT_EDITING_SUBJECT,
-    FETCH_SUBJECT
+    FETCH_SUBJECT,
+    DELETE_SUBJECT
  } from '../actions/types'; 
 import _ from 'lodash';
 
@@ -60,6 +61,13 @@ export default (state = defaultState, action) => {
                 isEditing: action.payload,
                 currentSubject: null
             }
+        case DELETE_SUBJECT:
+            return {
+            ...state,
+            data: _.omit(state.data, action.payload),
+            isSuccess:true,
+            messageSuccess:"El tema fue eliminado existosamente"
+            };
         default:
             return state;
     }

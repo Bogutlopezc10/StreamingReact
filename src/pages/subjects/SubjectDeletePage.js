@@ -6,7 +6,11 @@ const SubjectDeletePage = (props) => {
 
     return(
         
-        <SubjectDeleteContainer subjectId={props.match.params.id} name = {props.match.params.SubjectName}/>
+        <SubjectDeleteContainer 
+            subjectId={props.match.params.subjectId} 
+            courseName = {props.match.params.CourseName}
+            courseId ={props.match.params.id}
+        />
     )
 }
 

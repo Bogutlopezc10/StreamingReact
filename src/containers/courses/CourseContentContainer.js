@@ -8,6 +8,7 @@ import SubjectEditContainer from '../subjects/SubjectEditContainer';
 
 
 class CourseContentContainer extends React.Component{
+
     onClickEditSubject = (subjectId) => {
         this.props.fecthEditingSubject(subjectId);
     }
@@ -25,7 +26,12 @@ class CourseContentContainer extends React.Component{
             <>
                 <MainHeader backgroundHeaderColor="#005385" textHeader="Contenido del curso" />
                 <SubjectCreateContainer courseId={this.props.courseId} />
-                <SubjectListContainer onClickEditSubject={this.onClickEditSubject} courseId={this.props.courseId} borderTopColor="#005385"/>
+                <SubjectListContainer
+                 onClickEditSubject={this.onClickEditSubject}
+                 courseId={this.props.courseId} 
+                 borderTopColor="#005385"
+                 CourseName = {this.props.CourseName}
+                 />
             </>
         )
     }

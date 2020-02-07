@@ -2,6 +2,7 @@ import React from 'react'
 import Modal from '../Modal'
 import history from '../../history'
 import {connect} from 'react-redux'
+import {deleteSubject} from '../../actions/subject'
 
 class SubjectDelete extends React.Component {
 
@@ -9,13 +10,13 @@ class SubjectDelete extends React.Component {
         const id = this.props.subjectId;
         return(
             <>
-                <button type="button" className="btn course-button mr-3" data-dismiss="modal" style={{ borderRadius: ".25rem" }}>
+                <button type="button" className="btn course-button mr-3" onClick={()=>this.props.deleteSubject(id,this.props.courseName, this.props.courseId)} data-dismiss="modal" style={{ borderRadius: ".25rem" }}>
                     <div>
                         <p className="d-inline">CONFIRMAR</p> 
                         <i className="d-inline fas fa-check ml-2 mt-2"></i>
                     </div>
                 </button>
-                <button  type="button" className="btn btn-outline-danger" data-dismiss="modal" onClick={()=>history.push(`/courses/Content/${this.props.subject.name}/${this.props.subject.id}'`)} style={{ borderRadius: ".25rem" }}>
+                <button  type="button" className="btn btn-outline-danger" data-dismiss="modal" onClick={()=>history.push(`/courses/Content/${this.props.courseName}/${this.props.courseId}`)} style={{ borderRadius: ".25rem" }}>
                     <div>
                         <p className="d-inline">CANCELAR</p> 
                         <i className="d-inline fas fa-times ml-2 mt-2"></i>
@@ -36,7 +37,6 @@ class SubjectDelete extends React.Component {
         );
     }
     render(){
-        
         return (
             <>
                 <div style={{ height: "100vh" }}>
@@ -45,7 +45,7 @@ class SubjectDelete extends React.Component {
                         description ={this.renderContent()}
                         backgroundHeaderColor = {this.props.backgroundHeaderColor}
                         actions ={this.renderActions()}
-                        onDismiss={()=> history.push('/CourseContentPage')}
+                        onDismiss={()=> history.push(`/courses/Content/${this.props.courseName}/${this.props.courseId}`)}
                     />
                 </div>
             </>
@@ -53,4 +53,4 @@ class SubjectDelete extends React.Component {
     }
 }
 
-export default SubjectDelete;
+export default connect(null, {deleteSubject})(SubjectDelete);

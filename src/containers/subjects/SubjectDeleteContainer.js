@@ -12,11 +12,14 @@ class SubjectDeleteContainer extends React.Component {
         this.props.fetchSubject(this.props.subjectId);
     }
     render(){
+        
         return(
             <> 
                 <SubjectDelete
                  subject ={this.props.subject}
                  subjectId={this.props.subjectId}
+                 courseName = {this.props.courseName}
+                 courseId ={this.props.courseId}
                  backgroundHeaderColor="#005385"
                 />
             </>

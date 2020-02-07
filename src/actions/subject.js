@@ -9,8 +9,9 @@ import {
     CREATE_SUBJECT,
     EDIT_SUBJECT,
     IS_EDITING_SUBJECT,
-    IS_NOT_EDITING_SUBJEC
-    FETCH_SUBJECT
+    IS_NOT_EDITING_SUBJECT,
+    FETCH_SUBJECT,
+    DELETE_SUBJECT
 } from '../actions/types';
 
 export const fetchSubjects = (id) => async dispatch => {
@@ -86,3 +87,16 @@ export const fetchSubject = (id) => async dispatch => {
         history.push('/errors');
     }
 }
+
+export const deleteSubject = (id, courseName, courseId) =>async dispatch =>{
+
+    try{
+        await streams.delete(`/Subjects/${id}`);
+        dispatch({type: DELETE_SUBJECT, payload:id})
+        history.push(`/Courses/Content/${courseName}/${courseId}`);
+    }
+    catch(error){
+        dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+        history.push('/errors');
+    }
+};
