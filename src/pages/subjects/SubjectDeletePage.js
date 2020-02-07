@@ -2,11 +2,11 @@ import React from 'react'
 import SubjectDeleteContainer from '../../containers/subjects/SubjectDeleteContainer'
 
 
-const SubjectDeletePage = () => {
+const SubjectDeletePage = (props) => {
 
     return(
         
-        <SubjectDeleteContainer />
+        <SubjectDeleteContainer subjectId={props.match.params.id} name = {props.match.params.SubjectName}/>
     )
 }
 

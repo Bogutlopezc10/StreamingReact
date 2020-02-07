@@ -9,7 +9,8 @@ import {
     CREATE_SUBJECT,
     EDIT_SUBJECT,
     IS_EDITING_SUBJECT,
-    IS_NOT_EDITING_SUBJECT
+    IS_NOT_EDITING_SUBJEC
+    FETCH_SUBJECT
 } from '../actions/types';
 
 export const fetchSubjects = (id) => async dispatch => {
@@ -73,4 +74,15 @@ export const isNotCreatingSubject = () => async dispatch => {
         
     dispatch({ type: IS_NOT_CREATING_SUBJECT, payload: false })
 
+}
+
+export const fetchSubject = (id) => async dispatch => {
+
+    try {
+        const response = await streams.get(`/Subjects/${id}`);
+        dispatch({ type: FETCH_SUBJECT, payload: response.data });
+    } catch (error) {
+        dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+        history.push('/errors');
+    }
 }
