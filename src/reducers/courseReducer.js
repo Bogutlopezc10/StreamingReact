@@ -8,11 +8,21 @@ import {
     CREATE_COURSE,
     EDIT_COURSE,
     DELETE_COURSE,
-    UPDATE_SUCCESS_UNMOUNT
+    UPDATE_SUCCESS_UNMOUNT,
+    POST_COURSE,
+    COURSE_CAN_BE_POSTED,
+    UNMOUNT_CAN_BE_POSTED
 } from '../actions/types';
 
 
-export default (state= initialState(), action) => {
+const defaultState = {
+    data:{},
+    isSuccess:false,
+    messageSuccess:null,
+    canBePosted: null,
+}
+
+export default (state= defaultState, action) => {
     switch (action.type){
         case FETCH_COURSES:
             return {
@@ -49,18 +59,43 @@ export default (state= initialState(), action) => {
                 data:{...state.data,..._.mapKeys(action.payload,'id')}
             };
         case DELETE_COURSE:
-             return {
-                ...state,
-                data: _.omit(state.data, action.payload),
-                 isSuccess:true,
-                messageSuccess:"El curso fue eliminado existosamente"
-             };
-        case UPDATE_SUCCESS_UNMOUNT:
-        return {
+            return {
             ...state,
-            isSuccess:false,
-            messageSuccess:null
-        };
+            data: _.omit(state.data, action.payload),
+            isSuccess:true,
+            messageSuccess:"El curso fue eliminado existosamente"
+            };
+        case COURSE_CAN_BE_POSTED:
+            if(action.payload.status == 204){
+                return {
+                    ...state,
+                    canBePosted: false
+                }
+            }
+            return {
+                ...state,
+                data:{...state.data, [action.payload.data.id]:action.payload.data},
+                canBePosted: true
+            };
+        case UPDATE_SUCCESS_UNMOUNT:
+            return {
+                ...state,
+                isSuccess:false,
+                messageSuccess:null,
+                canBePosted: false,
+            };
+        case UNMOUNT_CAN_BE_POSTED:
+                return {
+                    ...state,
+                    canBePosted: null,
+            };
+        case POST_COURSE:
+                return {
+                    ...state,
+                    data:{...state.data, [action.payload.id]:action.payload},
+                    isSuccess:true,
+                    messageSuccess:"El curso fue publicado existosamente"
+                }
         default:
             return state;
     }

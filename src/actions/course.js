@@ -11,6 +11,8 @@ import {
     CURRENT_USER,
     DELETE_COURSE,
     UPDATE_ERROR_WITH_ACTION,
+    POST_COURSE,
+    COURSE_CAN_BE_POSTED
 } from './types';
 
 export const fetchCourses = () => async dispatch => {
@@ -92,12 +94,39 @@ export const editCourse = (id, formValues) =>async (dispatch) =>{
     }
 };
 
+export const CourseCanBePosted = (id) =>async (dispatch) =>{
+
+    try{
+        const response = await streams.get(`/Courses/CourseCanBePosted/${id}`)
+
+        dispatch({type: COURSE_CAN_BE_POSTED, payload:response})
+        //history.push('/teacher');
+    }
+    catch(error){
+        dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+        history.push('/errors');
+    }
+};
 
 export const deleteCourse = (id) =>async dispatch =>{
 
     try{
         await streams.delete(`/Courses/${id}`);
         dispatch({type: DELETE_COURSE, payload:id})
+        history.push('/teacher');
+    }
+    catch(error){
+        dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+        history.push('/errors');
+    }
+};
+
+
+export const postCourse = (id) =>async (dispatch) =>{
+
+    try{
+        const response = await streams.put(`/Courses/PostCourse/${id}`)
+        dispatch({type: POST_COURSE, payload:response.data})
         history.push('/teacher');
     }
     catch(error){
