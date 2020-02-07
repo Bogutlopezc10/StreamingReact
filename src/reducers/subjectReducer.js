@@ -2,7 +2,9 @@ import {
     FETCH_SUBJECTS,
     IS_NOT_CREATING_SUBJECT,
     IS_CREATING_SUBJECT,
-    CREATE_SUBJECT
+    CREATE_SUBJECT,
+    IS_EDITING_SUBJECT,
+    FETCH_SUBJECT
  } from '../actions/types'; 
 import _ from 'lodash';
 
@@ -10,7 +12,9 @@ const defaultState = {
     data:{},
     isSuccess:false,
     messageSuccess:null,
-    isCreating:false
+    isCreating:false,
+    isEditing:false,
+    currentSubject:null
 }
 
 export default (state = defaultState, action) => {
@@ -25,7 +29,14 @@ export default (state = defaultState, action) => {
                 messageSuccess:"El tema fue creado existosamente",
                 isCreating:false
             }
+        case FETCH_SUBJECT:
+            return {
+                ...state,
+                data:{...state.data, [action.payload.id]:action.payload}
+            }
         case IS_CREATING_SUBJECT:
+            return { ...state, isCreating: action.payload}
+        case IS_EDITING_SUBJECT:
             return { ...state, isCreating: action.payload}
         case IS_NOT_CREATING_SUBJECT:
             return { ...state, isCreating: action.payload}
