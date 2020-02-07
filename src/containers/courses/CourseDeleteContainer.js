@@ -3,11 +3,13 @@ import CourseDelete  from '../../components/courses/CourseDelete'
 import {fetchCourse} from '../../actions/course'
 import {connect} from 'react-redux'
 import {getById} from '../../selectors/index';
+import {scrollUp} from '../../scroll'
 
 class CourseDeleteContainer extends React.Component{
     
 
     componentDidMount(){
+        scrollUp()
         this.props.fetchCourse(this.props.courseId)
     }
     render (){

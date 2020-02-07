@@ -4,10 +4,12 @@ import {CourseCanBePosted} from '../../actions/course'
 import {getById} from '../../selectors/index';
 import {connect} from 'react-redux'
 import {unmountCanBePosted} from '../../actions/success'
+import {scrollUp} from '../../scroll'
 
 class CoursePostContainer extends React.Component {
 
     componentDidMount(){
+        scrollUp()
         this.props.CourseCanBePosted(this.props.courseId)
     }
     componentWillUnmount(){
