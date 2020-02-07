@@ -11,9 +11,9 @@ class ContentListContainer extends React.Component{
 
     render(){
         return (
-            <div>
+            <>
                 <ContentList contents={this.props.contents} />
-            </div>
+            </>
         ); 
     }
 }
