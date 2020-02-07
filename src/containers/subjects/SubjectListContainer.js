@@ -10,13 +10,20 @@ class SubjectListContainer extends React.Component{
     }
 
     render(){
-        const { subjects, borderTopColor } = this.props;
+        //console.log(CourseName)
+        const { subjects, borderTopColor, courseId, CourseName } = this.props;
         if(!subjects){
             return <>Vacio</>
         }
         return (
             <> 
-                <SubjectList subjects={subjects} borderTopColor={borderTopColor} onClickEditSubject={this.props.onClickEditSubject}/>
+                <SubjectList 
+                 subjects={subjects} 
+                 borderTopColor={borderTopColor} 
+                 onClickEditSubject={this.props.onClickEditSubject}
+                 CourseName = {CourseName}
+                 courseId = {courseId}
+                />
             </>
         )
     }

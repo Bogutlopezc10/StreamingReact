@@ -1,10 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import Accordion from 'react-bootstrap/Accordion';
 import ContentListContainer from '../../containers/contents/ContentListContainer';
 import './Subject.css'
 
-const Subject = ({ subject, onClickEditSubject }) => {
+const Subject = ({ subject, onClickEditSubject, courseName, courseId }) => {
+    
     return (
         <>
             <Card>
@@ -24,18 +26,18 @@ const Subject = ({ subject, onClickEditSubject }) => {
                     <div className="col-6 p-0">
                         <button onClick={() => onClickEditSubject(subject.id)} className="btn btn-block teacher-button mr-0 border-subject">
                             <div>
-                            <p className="d-inline">EDITAR</p> 
+                              <p className="d-inline">EDITAR</p> 
                                 <i className="d-inline fas fa-edit ml-2 mt-2"></i>
                             </div>
                         </button>
                     </div>
                     <div className="col-6 p-0">
-                        <button className="btn btn-block btn-outline-danger ml-0 border-subject">
+                        <Link to={`/subjects/Delete/${courseName}/${courseId}/${subject.name}/${subject.id}`} className="btn btn-block btn-outline-danger ml-0 border-subject">
                             <div>
                             <p className="d-inline">ELIMINAR</p> 
                                 <i className="d-inline fas fa-trash-alt ml-2 mt-2"></i>
                             </div>
-                        </button>
+                        </Link>
                     </div>
                 </div>
                 

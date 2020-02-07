@@ -35,7 +35,7 @@ const App = () => {
                             <Route path="/courses/Delete/:CourseName/:id" exact component={CourseDeletePage} />
                             <Route path="/courses/Content/:CourseName/:id" exact component={CourseContentPage} />
                             <Route path="/courses/Post/:CourseName/:id" exact component={CoursePostPage} />
-                            <Route path="/subjects/Delete/:SubjectName/:id" exact component={SubjectDeletePage} />
+                            <Route path="/subjects/Delete/:CourseName/:id/:subjectName/:subjectId" exact component={SubjectDeletePage} />
                             <Route path="/errors" exact component={ErrorPage} />
                         </Switch>
                     <Footer />
