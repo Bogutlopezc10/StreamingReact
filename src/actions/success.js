@@ -1,10 +1,15 @@
 import { 
-    UPDATE_SUCCESS_UNMOUNT
+    UPDATE_SUCCESS_UNMOUNT,
+    UNMOUNT_CAN_BE_POSTED
 } from './types';
 
 
-export const updateSuccessUnmount = () => async dispatch => {
+export const updateSuccessUnmount = () =>({
 
-    dispatch({ type: UPDATE_SUCCESS_UNMOUNT});
+    type: UPDATE_SUCCESS_UNMOUNT
+    
+})
 
-}
+export const unmountCanBePosted = () => ({
+    type: UNMOUNT_CAN_BE_POSTED
+})

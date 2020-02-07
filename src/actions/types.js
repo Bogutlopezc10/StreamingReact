@@ -20,8 +20,8 @@ export const DELETE_COURSE = 'DELETE_COURSE';
 export const EDIT_COURSE = 'EDIT_COURSE';
 export const FETCH_COURSE_BY_CATEGORY = 'FETCH_COURSE_BY_CATEGORY';
 export const FETCH_COURSES_BY_USERNAME = 'FETCH_COURSES_BY_USERNAME';
-
-
+export const POST_COURSE = 'POST_COURSE';
+export const COURSE_CAN_BE_POSTED = 'COURSE_CAN_BE_POSTED';
 //current user
 export const CURRENT_USER = 'Mr. Sample';
 
@@ -36,3 +36,6 @@ export const FETCH_SUBJECTS = 'FETCH_SUBJECTS';
 
 //success
 export const UPDATE_SUCCESS_UNMOUNT = 'UPDATE_SUCCESS_UNMOUNT'
+
+//Unmount  CanBePosted
+export const UNMOUNT_CAN_BE_POSTED = 'UNMOUNT_CAN_BE_POSTED'

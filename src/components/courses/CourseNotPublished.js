@@ -29,7 +29,7 @@ const CourseNotPublished = ({ course }) => {
                         </Link>
                     </div>
                     <div className="col-lg-12 py-0">
-                        <Link to={`courses/`} className="btn btn-block btn-outline-success border-left-0 border-right-0 border-teacher">
+                        <Link to={`courses/Post/${course.name}/${course.id}`} className="btn btn-block btn-outline-success border-left-0 border-right-0 border-teacher">
                             <div>
                                 <p className="d-inline">PUBLICAR</p> 
                                 <i className="d-inline fas fa-share ml-2 mt-2"></i>
