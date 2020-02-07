@@ -27,7 +27,10 @@ class SubjectCreate extends React.Component{
     renderButtton = () => {
         if(!this.props.isCreating){
             return(
-                <div className="row d-flex justify-content-end">
+                <div className="row align-items-center justify-content-between">
+                    <div className="col-auto">
+                        <h1 className="title-published">Temas</h1>
+                    </div>
                     <div className="col-auto">
                         <button onClick={this.props.onClickIsCreating} className="btn btn-outline-success">
                             <div>
@@ -41,7 +44,10 @@ class SubjectCreate extends React.Component{
         }
 
         return(
-            <div className="row d-flex justify-content-end">
+            <div className="row align-items-center justify-content-between">
+                <div className="col-auto">
+                    <h1 className="title-published">Temas</h1>
+                </div>
                 <div className="col-auto">
                     <button onClick={this.props.onClickIsNotCreating} className="btn btn-outline-danger">
                         <div>

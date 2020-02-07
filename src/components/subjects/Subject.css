@@ -3,13 +3,17 @@
     border-top: 5px solid;
 }
 
+.card {
+    border: 1px solid #d2d2d2 !important;
+}
+
 .card-header{
-    background-color: #969696;
-    color: white;
+    background-color: #d2d2d2;
+    color: black;
     font-weight: bold;
     font-size: 18px;
-    text-decoration: black;
-    text-shadow: 1px 1px black;
+    text-decoration: white;
+    text-shadow: 1px 1px white;
 }
 
 .create-form{
