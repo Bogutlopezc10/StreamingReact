@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import {
     UPDATE_ERROR_UNMOUNT,
     UPDATE_ERROR_WITH_ACTION

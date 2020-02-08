@@ -29,7 +29,7 @@ export default (state = defaultState, action) => {
                 ...state,
                 data:{...state.data, [action.payload.id]:action.payload},
                 isSuccess:true,
-                messageSuccess:"El tema fue creado existosamente",
+                messageSuccess:"El tema fue creado exitosamente.",
                 isCreating:false
             }
         case EDIT_SUBJECT:
@@ -37,7 +37,7 @@ export default (state = defaultState, action) => {
                 ...state,
                 data:{...state.data, [action.payload.id]:action.payload},
                 isSuccess:true,
-                messageSuccess:"El tema fue editado existosamente",
+                messageSuccess:"El tema fue editado exitosamente.",
                 isCreating:false,
                 isEditing:false,
                 currentSubject:null

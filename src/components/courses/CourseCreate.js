@@ -5,10 +5,6 @@ import CourseForm from  '../../components/courses/CourseForm'
 
 class CourseCreate extends React.Component{
 
-    constructor(props){
-        super(props);
-    }
-
     onSubmit = (formValues)=>{
         this.props.createCourse(formValues);
     }
