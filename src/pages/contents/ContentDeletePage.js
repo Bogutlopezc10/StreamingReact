@@ -3,6 +3,8 @@ import ContentDeleteContainer from '../../containers/contents/ContentDeleteConta
 
 const ContentDeletePage  = (props) => {
 
+
+    
     return(
         <>
             <ContentDeleteContainer

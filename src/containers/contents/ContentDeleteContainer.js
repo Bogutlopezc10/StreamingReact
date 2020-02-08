@@ -13,12 +13,12 @@ class ContentDeleteContainer extends React.Component{
         this.props.fetchContent(this.props.contentId);
     }
     render(){
-        //console.log(this.props.content)
+        
         return(
             <>
                 <ContentDelete
                     contentId={this.props.contentId} 
-                    courseName = {this.props.CourseName}
+                    courseName = {this.props.courseName}
                     content = {this.props.content}
                     courseId ={this.props.courseId}
                     backgroundHeaderColor="#005385"

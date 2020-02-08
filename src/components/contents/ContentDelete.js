@@ -1,14 +1,17 @@
 import React from 'react'
 import Modal from '../Modal'
 import history from '../../history'
+import {connect} from 'react-redux'
+import {deleteContent} from '../../actions/content'
 
 class ContentDelete  extends React.Component {
 
+    
     renderActions(){
         const id = this.props.contentId;
         return(
             <>
-                <button type="button" className="btn course-button mr-3"  data-dismiss="modal" style={{ borderRadius: ".25rem" }}>
+                <button type="button" className="btn course-button mr-3" onClick={()=>this.props.deleteContent(id,this.props.courseName, this.props.courseId)}  data-dismiss="modal" style={{ borderRadius: ".25rem" }}>
                     <div>
                         <p className="d-inline">CONFIRMAR</p> 
                         <i className="d-inline fas fa-check ml-2 mt-2"></i>
@@ -35,6 +38,7 @@ class ContentDelete  extends React.Component {
         );
     }
     render(){
+        
         return (
             <>
                 <div style={{ height: "100vh" }}>
@@ -53,4 +57,4 @@ class ContentDelete  extends React.Component {
 
 
 
-export default ContentDelete;
+export default connect(null, {deleteContent})(ContentDelete);
