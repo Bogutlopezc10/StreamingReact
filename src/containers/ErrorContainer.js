@@ -1,6 +1,5 @@
 import React from 'react'
 import Error from '../components/Error'
-import MainHeader from '../components/MainHeader'
 import { connect } from 'react-redux';
 import {updateErrorUnmount} from '../actions/error'
 import history from '../history'

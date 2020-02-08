@@ -10,7 +10,6 @@ class SubjectListContainer extends React.Component{
     }
 
     render(){
-        //console.log(CourseName)
         const { subjects, borderTopColor, courseId, CourseName } = this.props;
         if(!subjects){
             return <>Vacio</>

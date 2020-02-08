@@ -9,7 +9,7 @@ const Subject = ({ subject, onClickEditSubject, courseName, courseId }) => {
     
     return (
         <>
-            <Card>
+            <Card className="card-content-course">
                 <Accordion.Toggle as={Card.Header} eventKey={subject.id}>
                     <div className="row d-flex">
                         <div className="col-lg-12">
@@ -24,9 +24,9 @@ const Subject = ({ subject, onClickEditSubject, courseName, courseId }) => {
                 </Accordion.Collapse>
                 <div className="row">
                     <div className="col-6 p-0">
-                        <button onClick={() => onClickEditSubject(subject.id)} className="btn btn-block teacher-button mr-0 border-subject">
+                        <button onClick={() => onClickEditSubject(subject.id)} className="btn btn-block course-button mr-0 border-subject">
                             <div>
-                              <p className="d-inline">EDITAR</p> 
+                              <p className="d-inline">EDITAR TEMA</p> 
                                 <i className="d-inline fas fa-edit ml-2 mt-2"></i>
                             </div>
                         </button>
@@ -34,7 +34,7 @@ const Subject = ({ subject, onClickEditSubject, courseName, courseId }) => {
                     <div className="col-6 p-0">
                         <Link to={`/subjects/Delete/${courseName}/${courseId}/${subject.name}/${subject.id}`} className="btn btn-block btn-outline-danger ml-0 border-subject">
                             <div>
-                            <p className="d-inline">ELIMINAR</p> 
+                            <p className="d-inline">ELIMINAR TEMA</p> 
                                 <i className="d-inline fas fa-trash-alt ml-2 mt-2"></i>
                             </div>
                         </Link>

@@ -1,5 +1,77 @@
-.card-body p{
+.content-name p{
     color: gray;
-    font-weight: 600;
+    font-weight: 500;
     font-style: italic;
-}   
+}
+
+.card-body{
+    background-color: white;
+}
+
+.card-shadow{
+    box-shadow: 4px 2px 9px -4px rgba(0,0,0,0.75);
+}
+
+.content-name{
+    background-color:white !important;
+}
+
+.title-content{
+    font-size: 24px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.btn-edit-content p,
+.btn-delete-content p{
+    display: none;
+}
+
+.btn-edit-content i,
+.btn-delete-content i{
+    margin-left: 2px;
+}
+
+.btn-edit-content:hover i,
+.btn-delete-content:hover i{
+    margin-left: 9px;
+}
+
+.btn-edit-content:hover p,
+.btn-delete-content:hover p{
+    display: inline;
+}
+
+.btn-edit-content{
+    font-weight: bold;
+    border-radius: 0%;
+    border-top-right-radius: 5%;
+    border-bottom-right-radius: 5%;
+    font-size: 12px;
+    position: absolute;
+    top: 0px;
+}
+
+.btn-delete-content{
+    font-weight: bold;
+    border-radius: 0%;
+    border-top-right-radius: 5%;
+    border-bottom-right-radius: 5%;
+    font-size: 12px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.btn-edit-content:hover{
+    transition-delay: 1s;
+    transition: all ease-in-out 2s;
+    width: 90px;
+}
+
+.btn-delete-content:hover{
+    transition-delay: 1s;
+    transition: all ease-in-out 2s;
+    width: 110px;
+}
+

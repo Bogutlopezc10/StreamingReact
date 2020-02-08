@@ -1,5 +1,4 @@
 import _ from 'lodash';
-import {initialState} from './initialState' 
 import {
     FETCH_COURSES,
     FETCH_COURSE,

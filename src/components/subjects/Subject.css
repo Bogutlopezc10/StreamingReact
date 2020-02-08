@@ -3,26 +3,24 @@
     border-top: 5px solid;
 }
 
-.card {
-    border: 1px solid #d2d2d2 !important;
+.card-content-course {
+    border: 1px solid #c5c5c5 !important;
 }
 
-.card:hover{
-    border: 1px solid #b7b7b7 !important;
+.card-content-course:hover{
+    border: 1px solid #c5c5c5 !important;
 }
 
 .card-header{
-    background-color: #d2d2d2;
+    background-color: #c5c5c5;
     cursor: pointer;
-    color: black;
+    color:black;
     font-weight: bold;
-    font-size: 18px;
-    text-decoration: white;
-    text-shadow: 1px 1px white;
+    font-size: 20px;
 }
 
 .card-header:hover{
-    background-color: #b7b7b7;
+    background-color: #c5c5c5;
 }
 
 .create-form{
