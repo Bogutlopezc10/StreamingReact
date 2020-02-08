@@ -43,8 +43,8 @@ export const IS_NOT_CREATING_SUBJECT = 'IS_NOT_CREATING_SUBJECT';
 export const DELETE_SUBJECT = 'DELETE_SUBJECT';
 
 // Content constant
-
 export const FETCH_CONTENTS = 'FETCH_CONTENTS';
+export const FETCH_CONTENT = 'FETCH_CONTENT';
 
 //success
 export const UPDATE_SUCCESS_UNMOUNT = 'UPDATE_SUCCESS_UNMOUNT'
