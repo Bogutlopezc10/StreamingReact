@@ -1,5 +1,19 @@
-.card-body p{
+.content-name p{
     color: gray;
-    font-weight: 600;
+    font-weight: 5s00;
     font-style: italic;
-}   
+}
+
+.card-body{
+    background-color: #f7f7f7;
+}
+
+.content-name{
+    background-color:white !important;
+}
+
+.title-content{
+    font-size: 24px;
+    font-weight: bold;
+    font-style: italic;
+}

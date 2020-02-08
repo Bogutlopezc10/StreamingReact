@@ -1,7 +1,8 @@
 import React from 'react';
 import ContentList from '../../components/contents/ContentList';
+import ContentCreateContainer from '../../containers/contents/ContentCreateContainer';
 import { connect } from 'react-redux';
-import { fetchContents } from '../../actions/content';
+import { fetchContents, isCreatingContent, isNotCreatingContent } from '../../actions/content';
 import { getContentsBySubjectId } from '../../selectors/index';
 
 class ContentListContainer extends React.Component{
@@ -9,17 +10,32 @@ class ContentListContainer extends React.Component{
         this.props.fetchContents(this.props.subjectId);
     }
 
+    onClickIsCreatingContent = () => {
+        this.props.isCreatingContent();
+    }
+
     render(){
-        return (
-            <>
-                <ContentList contents={this.props.contents} />
-            </>
-        ); 
+        if(this.props.isCreating){
+            return (
+                <>
+                    <ContentCreateContainer subjectId={this.props.subjectId} />
+                </>
+            );
+        }else{
+            return(
+                <>
+                    <ContentList contents={this.props.contents} onClickIsCreatingContent={this.onClickIsCreatingContent} />
+                </>
+            )
+        }
     }
 }
 
 const mapStateToProps = (state, ownProps) =>{
-    return { contents: getContentsBySubjectId(state,ownProps.subjectId) }
+    return { 
+        contents: getContentsBySubjectId(state,ownProps.subjectId),
+        isCreating: state.contents.isCreating
+    }
 }
 
-export default connect(mapStateToProps, {fetchContents})(ContentListContainer);
+export default connect(mapStateToProps, {fetchContents, isCreatingContent, isNotCreatingContent})(ContentListContainer);

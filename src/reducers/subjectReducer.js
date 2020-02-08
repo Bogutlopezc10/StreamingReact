@@ -52,6 +52,7 @@ export default (state = defaultState, action) => {
         case IS_EDITING_SUBJECT:
             return { ...state, 
                 isEditing: true,
+                isCreating:false,
                 currentSubject: action.payload
             }
         case IS_NOT_CREATING_SUBJECT:
@@ -59,6 +60,7 @@ export default (state = defaultState, action) => {
         case IS_NOT_EDITING_SUBJECT:
             return { ...state, 
                 isEditing: action.payload,
+                isCreating:false,
                 currentSubject: null
             }
         case DELETE_SUBJECT:
@@ -66,7 +68,7 @@ export default (state = defaultState, action) => {
             ...state,
             data: _.omit(state.data, action.payload),
             isSuccess:true,
-            messageSuccess:"El tema fue eliminado existosamente"
+            messageSuccess:"El tema fue eliminado exitosamente."
             };
         default:
             return state;
