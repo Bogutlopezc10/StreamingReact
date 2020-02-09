@@ -9,7 +9,7 @@ const SubjectList = ({ borderTopColor, subjects, onClickEditSubject, CourseName,
 
     return (
         <>
-            <div className="container shadow container-subject p-4" style={{ borderTopColor: borderTopColor }}>
+            <div className="container subject-shadow container-subject p-4" style={{ borderTopColor: borderTopColor }}>
                 <Accordion defaultActiveKey="0">
                     { subjects.map( subject => 
                         <Subject 

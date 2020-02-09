@@ -80,6 +80,7 @@ body, html{
 
 .button i:hover{
     transition: all 1s;
+    text-shadow: 2px 3px 6px black; 
     transform: scale(1.2) rotate(360deg) !important;
 }
 

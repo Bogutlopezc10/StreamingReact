@@ -16,7 +16,7 @@ class CourseEdit extends React.Component{
             <>
                 <div className="row d-flex justify-content-center">
                     <div className="col-lg-6">
-                        <div  style={{ borderTopColor: this.props.borderTopColor }} className="container shadow container-published p-4">
+                        <div  style={{ borderTopColor: this.props.borderTopColor }} className="container course-shadow container-published p-4">
                             <CourseForm
                                 categories ={categories}
                                 initialValues ={_.pick(course,'name','description','categoryId')}

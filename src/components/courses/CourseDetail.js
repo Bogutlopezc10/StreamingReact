@@ -8,7 +8,7 @@ const CourseDetail = ({ course, borderTopColor }) => {
     const starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`;
     return (
         <>
-            <div  style={{ borderTopColor: borderTopColor }} className="container shadow container-published p-4">
+            <div  style={{ borderTopColor: borderTopColor }} className="container course-shadow container-published p-4">
                 <div className="row">
                     <div className="col-lg-6">
                         <div className="row">

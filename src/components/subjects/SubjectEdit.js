@@ -36,7 +36,7 @@ class SubjectEdit extends React.Component{
             <div className="container">
                 {this.renderButtton()}
                 <div className="row">
-                    <div className="col-12 shadow mb-4 create-form p-3">
+                    <div className="col-12 subject-shadow mb-4 create-form p-3">
                         <SubjectForm textButton="DESHACER CAMBIOS" onSubmit={this.onSubmit} initialValues ={_.pick(currentSubject,'name')}/>
                     </div>
                 </div>

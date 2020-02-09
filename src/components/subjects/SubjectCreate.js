@@ -14,7 +14,7 @@ class SubjectCreate extends React.Component{
         if(this.props.isCreating){
             return (
                 <>
-                    <div className="col-12 shadow mb-4 create-form p-3">
+                    <div className="col-12 subject-shadow mb-4 create-form p-3">
                         <SubjectForm onSubmit={this.onSubmit} textButton="LIMPIAR" />
                     </div>
                 </>

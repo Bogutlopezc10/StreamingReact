@@ -42,7 +42,7 @@ class CoursePublished extends React.Component{
         const { course, customizeButton } = this.props;
         return(
             <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6 mb-4">
-                <div className="card shadow h-100">
+                <div className="card shadow-sm h-100">
                     <img src="/bg-home.jpg" className="card-img" width="150" height="150" alt="bg-home" />
                     <div className="card-body">
                         <h5 className="card-title">{course.name}</h5>
