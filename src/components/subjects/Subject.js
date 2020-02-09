@@ -19,7 +19,11 @@ const Subject = ({ subject, onClickEditSubject, courseName, courseId }) => {
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey={subject.id}>
                     <Card.Body>
-                        <ContentListContainer subjectId={subject.id} />
+                        <ContentListContainer
+                         subjectId={subject.id} 
+                         courseName ={courseName}
+                         courseId = {courseId}
+                        />
                     </Card.Body>
                 </Accordion.Collapse>
                 <div className="row">

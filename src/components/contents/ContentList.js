@@ -38,7 +38,12 @@ class ContentList extends React.Component{
                 <hr/>
                 <div className="row">
                     { this.props.contents.map( content =>
-                        <Content onClickIsEditingContent={this.props.onClickIsEditingContent} key={content.id} content={content} />
+                        <Content 
+                         onClickIsEditingContent={this.props.onClickIsEditingContent} 
+                         key={content.id} content={content} 
+                         courseName ={this.props.courseName}
+                         courseId ={this.props.courseId}
+                        />
                     )}
                 </div>
             </div>

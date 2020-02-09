@@ -16,6 +16,7 @@ import ErrorPage from '../pages/ErrorPage';
 import CourseContentPage from '../pages/courses/CourseContentPage';
 import CoursePostPage from '../pages/courses/CoursePostPage';
 import SubjectDeletePage from '../pages/subjects/SubjectDeletePage';
+import ContentDeletePage from '../pages/contents/ContentDeletePage';
 
 const App = () => {
     return (
@@ -36,6 +37,7 @@ const App = () => {
                             <Route path="/courses/Content/:CourseName/:id" exact component={CourseContentPage} />
                             <Route path="/courses/Post/:CourseName/:id" exact component={CoursePostPage} />
                             <Route path="/subjects/Delete/:CourseName/:id/:subjectName/:subjectId" exact component={SubjectDeletePage} />
+                            <Route path="/contents/Delete/:CourseName/:id/:contentName/:contentId" exact component={ContentDeletePage} />
                             <Route path="/errors" exact component={ErrorPage} />
                         </Switch>
                     <Footer />

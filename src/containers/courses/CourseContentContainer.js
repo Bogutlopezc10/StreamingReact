@@ -5,12 +5,14 @@ import MainHeader from '../../components/MainHeader';
 import SubjectListContainer from '../subjects/SubjectListContainer';
 import SubjectCreateContainer from '../subjects/SubjectCreateContainer';
 import SubjectEditContainer from '../subjects/SubjectEditContainer';
+import {scrollUp} from '../../scroll'
 
 
 class CourseContentContainer extends React.Component{
 
     onClickEditSubject = (subjectId) => {
         this.props.fecthEditingSubject(subjectId);
+        scrollUp()
     }
 
     render(){

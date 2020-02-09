@@ -3,11 +3,13 @@ import _ from 'lodash';
 import { connect } from 'react-redux';
 import { editSubject } from '../../actions/subject';
 import SubjectForm from './SubjectForm';
+import {scrollUp} from '../../scroll'
 
 class SubjectEdit extends React.Component{
 
     onSubmit = (formValues) => {
         this.props.editSubject(this.props.currentSubject.id,formValues);
+        scrollUp()
     }
 
     renderButtton = () => {

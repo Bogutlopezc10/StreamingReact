@@ -1,12 +1,15 @@
-import { 
-    FETCH_CONTENTS,
+import {
+    FETCH_CONTENTS, 
     IS_CREATING_CONTENT,
     IS_NOT_CREATING_CONTENT,
     CREATE_CONTENT,
     EDIT_CONTENT,
     IS_EDITING_CONTENT,
-    IS_NOT_EDITING_CONTENT
-} from '../actions/types';
+    IS_NOT_EDITING_CONTENT,
+    FETCH_CONTENT,
+    DELETE_CONTENT
+     } from '../actions/types';
+import {initialState} from './initialState' 
 import _ from 'lodash';
 
 const defaultState = {
@@ -56,6 +59,19 @@ export default (state = defaultState, action) => {
                 isCreating:false,
                 currentContent: null
             }
+
+        case FETCH_CONTENT:
+            return {
+                ...state,
+                data:{...state.data, [action.payload.id]:action.payload}
+            }
+        case DELETE_CONTENT:
+            return {
+            ...state,
+            data: _.omit(state.data, action.payload),
+            isSuccess:true,
+            messageSuccess:"El contenido fue eliminado exitosamente."
+            };
         default:
             return state;
     }

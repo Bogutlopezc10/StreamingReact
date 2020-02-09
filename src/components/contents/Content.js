@@ -1,7 +1,8 @@
 import React from 'react';
 import './Content.css'
+import { Link } from 'react-router-dom';
 
-const Content = ({ content,onClickIsEditingContent }) =>{
+const Content = ({ content,onClickIsEditingContent,courseName, courseId }) =>{
     
     return(
         <div className="col-3 mb-3">
@@ -17,12 +18,12 @@ const Content = ({ content,onClickIsEditingContent }) =>{
                         <i className="fas fa-edit mt-1 mb-1"></i>
                     </div>
                 </button>
-                <button className="btn btn-danger btn-delete-content">
+                <Link to={`/contents/Delete/${courseName}/${courseId}/${content.name}/${content.id}`} className="btn btn-danger btn-delete-content">
                     <div>
                         <p>ELIMINAR</p> 
                         <i className="fas fa-times mt-1 mb-1"></i>
                     </div>
-                </button>
+                </Link>
             </div>
         </div>
     );
