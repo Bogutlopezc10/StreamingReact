@@ -12,7 +12,8 @@ import {
     DELETE_COURSE,
     UPDATE_ERROR_WITH_ACTION,
     POST_COURSE,
-    COURSE_CAN_BE_POSTED
+    COURSE_CAN_BE_POSTED,
+    UNMOUNT_COURSE_CONTENT
 } from './types';
 
 export const fetchCourses = () => async dispatch => {
@@ -134,3 +135,9 @@ export const postCourse = (id) =>async (dispatch) =>{
         history.push('/errors');
     }
 };
+
+export const unMountCourseContent = () => async dispatch => {
+        
+    dispatch({ type: UNMOUNT_COURSE_CONTENT })
+
+}

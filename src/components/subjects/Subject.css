@@ -3,24 +3,16 @@
     border-top: 5px solid;
 }
 
-.card-content-course {
-    border: 1px solid #eaeaea !important;
-}
-
-.card-content-course:hover{
-    border: 1px solid #eaeaea !important;
-}
-
 .card-header{
     background-color: #eaeaea;
     cursor: pointer;
     color:black;
-    font-weight: bold;
-    font-size: 20px;
+    font-weight: 600;
+    font-size: 18px;
 }
 
 .card-header:hover{
-    background-color: #eaeaea;
+    background-color: #e0e0e0;
 }
 
 .create-form{

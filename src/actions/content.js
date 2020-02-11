@@ -11,7 +11,8 @@ import {
     IS_EDITING_CONTENT,
     IS_NOT_EDITING_CONTENT,
     FETCH_CONTENT,
-    DELETE_CONTENT
+    DELETE_CONTENT,
+    UNMOUNT_CONTENT
 } from '../actions/types';
 
 export const fetchContents = (id) => async dispatch => {
@@ -63,6 +64,12 @@ export const fecthEditingContent = (id) => async dispatch => {
 export const isNotEditingContent = () => async dispatch =>{
 
     dispatch({ type: IS_NOT_EDITING_CONTENT, payload: false })
+
+}
+
+export const unMountContent = () => async dispatch =>{
+
+    dispatch({ type: UNMOUNT_CONTENT })
 
 }
 

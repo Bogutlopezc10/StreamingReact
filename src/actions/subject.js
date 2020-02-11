@@ -11,7 +11,8 @@ import {
     IS_EDITING_SUBJECT,
     IS_NOT_EDITING_SUBJECT,
     FETCH_SUBJECT,
-    DELETE_SUBJECT
+    DELETE_SUBJECT,
+    UNMOUNT_SUBJECT_LIST
 } from '../actions/types';
 
 export const fetchSubjects = (id) => async dispatch => {

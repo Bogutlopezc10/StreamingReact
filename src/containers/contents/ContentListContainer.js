@@ -46,7 +46,8 @@ const mapStateToProps = (state, ownProps) =>{
     return { 
         contents: getContentsBySubjectId(state,ownProps.subjectId),
         isCreating: state.contents.isCreating,
-        isEditing: state.contents.isEditing
+        isEditing: state.contents.isEditing,
+        currentContent: state.contents.currentContent
     }
 }
 
