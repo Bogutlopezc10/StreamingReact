@@ -39,3 +39,7 @@
     background-color: white;
     border-top: 5px solid #30b3ff;
 }
+
+.category-shadow{
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+}

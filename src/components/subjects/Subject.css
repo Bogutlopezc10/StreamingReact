@@ -3,29 +3,25 @@
     border-top: 5px solid;
 }
 
-.card-content-course {
-    border: 1px solid #c5c5c5 !important;
-}
-
-.card-content-course:hover{
-    border: 1px solid #c5c5c5 !important;
-}
-
 .card-header{
-    background-color: #c5c5c5;
+    background-color: #eaeaea;
     cursor: pointer;
     color:black;
-    font-weight: bold;
-    font-size: 20px;
+    font-weight: 600;
+    font-size: 18px;
 }
 
 .card-header:hover{
-    background-color: #c5c5c5;
+    background-color: #e0e0e0;
 }
 
 .create-form{
     background-color: white;
     border-top: 5px #28a745 solid;
+}
+
+.subject-shadow{
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
 }
 
 .border-subject {

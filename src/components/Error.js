@@ -9,7 +9,7 @@ const Error = (props) => {
                 <div className="col-lg-6 error-col">
                     <div className="row">
                          <div className="col-lg-12 d-flex align-items-center justify-content-center">
-                            <i class="fas fa-exclamation-triangle"></i>
+                            <i className="fas fa-exclamation-triangle"></i>
                          </div>
                          <div className="col-lg-12 mt-4 d-flex align-items-center justify-content-center">
                             <h1>¡ALGO SALIÓ MAL!</h1>

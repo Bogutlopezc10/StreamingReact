@@ -31,7 +31,7 @@ class ContentCreate extends React.Component{
             <div className="container">
                 {this.renderButton()}
                 <div className="row mt-3 mb-3 d-flex justify-content-start">
-                    <div className="col-12 shadow create-form p-3">
+                    <div className="col-12 card-shadow create-form p-3">
                         <ContentForm onSubmit={this.onSubmit} textButton="LIMPIAR" />
                     </div>
                 </div>

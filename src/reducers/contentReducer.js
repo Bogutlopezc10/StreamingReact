@@ -7,9 +7,11 @@ import {
     IS_EDITING_CONTENT,
     IS_NOT_EDITING_CONTENT,
     FETCH_CONTENT,
-    DELETE_CONTENT
+    DELETE_CONTENT,
+    IS_EDITING_SUBJECT,
+    UNMOUNT_COURSE_CONTENT,
+    UNMOUNT_CONTENT
      } from '../actions/types';
-import {initialState} from './initialState' 
 import _ from 'lodash';
 
 const defaultState = {
@@ -72,6 +74,30 @@ export default (state = defaultState, action) => {
             isSuccess:true,
             messageSuccess:"El contenido fue eliminado exitosamente."
             };
+        case IS_EDITING_SUBJECT:
+            return { ...state, 
+                isSuccess:false,
+                messageSuccess:null,
+                isCreating:false,
+                isEditing:false,
+                currentContent:null
+            }
+        case UNMOUNT_CONTENT:
+            return { ...state, 
+                isSuccess:false,
+                messageSuccess:null,
+                isCreating:false,
+                isEditing:false,
+                currentContent:null
+            }
+        case UNMOUNT_COURSE_CONTENT:
+            return { ...state, 
+                isSuccess:false,
+                messageSuccess:null,
+                isCreating:false,
+                isEditing:false,
+                currentContent:null
+            }
         default:
             return state;
     }

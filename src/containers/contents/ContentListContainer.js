@@ -35,13 +35,7 @@ class ContentListContainer extends React.Component{
         }else{
             return(
                 <>
-                    <ContentList 
-                     contents={this.props.contents} 
-                     onClickIsEditingContent={this.onClickIsEditingContent} 
-                     onClickIsCreatingContent={this.onClickIsCreatingContent} 
-                     courseName ={this.props.courseName}
-                     courseId ={this.props.courseId}
-                    />
+                    <ContentList contents={this.props.contents} onClickIsEditingContent={this.onClickIsEditingContent} onClickIsCreatingContent={this.onClickIsCreatingContent} />
                 </>
             )
         }
@@ -52,7 +46,8 @@ const mapStateToProps = (state, ownProps) =>{
     return { 
         contents: getContentsBySubjectId(state,ownProps.subjectId),
         isCreating: state.contents.isCreating,
-        isEditing: state.contents.isEditing
+        isEditing: state.contents.isEditing,
+        currentContent: state.contents.currentContent
     }
 }
 
