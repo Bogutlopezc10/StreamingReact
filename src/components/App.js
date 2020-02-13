@@ -17,6 +17,7 @@ import CourseContentPage from '../pages/courses/CourseContentPage';
 import CoursePostPage from '../pages/courses/CoursePostPage';
 import SubjectDeletePage from '../pages/subjects/SubjectDeletePage';
 import ContentDeletePage from '../pages/contents/ContentDeletePage';
+import CourseQuestionPage from '../pages/courses/CourseQuestionPage';
 
 const App = () => {
     return (
@@ -38,6 +39,7 @@ const App = () => {
                             <Route path="/courses/Post/:CourseName/:id" exact component={CoursePostPage} />
                             <Route path="/subjects/Delete/:CourseName/:id/:subjectName/:subjectId" exact component={SubjectDeletePage} />
                             <Route path="/contents/Delete/:CourseName/:id/:contentName/:contentId" exact component={ContentDeletePage} />
+                            <Route path="/questions/:CourseName/:id/" exact component={CourseQuestionPage} />
                             <Route path="/errors" exact component={ErrorPage} />
                         </Switch>
                     <Footer />

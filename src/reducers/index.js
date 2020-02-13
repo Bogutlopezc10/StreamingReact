@@ -5,6 +5,7 @@ import {reducer as formReducer} from 'redux-form'
 import errorReducer from './errorReducer';
 import subjectReducer from './subjectReducer';
 import contentReducer from './contentReducer';
+import questionReducer from './questionReducer';
 
 export default combineReducers({
     categories: categoryReducer,
@@ -12,5 +13,6 @@ export default combineReducers({
     courses: courseReducer,
     contents: contentReducer,
     subjects: subjectReducer,
-    error: errorReducer
+    error: errorReducer,
+    questions: questionReducer
 });
