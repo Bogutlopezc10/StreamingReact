@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import Accordion from 'react-bootstrap/Accordion';
 
-const Question = ({question, courseName, courseId}) =>{
+const Question = ({question, courseName, courseId, onClickEditQuestion}) =>{
 
     return (
         <>
@@ -22,7 +22,7 @@ const Question = ({question, courseName, courseId}) =>{
                 </Accordion.Collapse>
                 <div className="row">
                     <div className="col-6 p-0">
-                        <button  className="btn btn-block course-button mr-0 border-subject">
+                        <button onClick={() => onClickEditQuestion(question.id)}  className="btn btn-block course-button mr-0 border-subject">
                             <div>
                               <p className="d-inline">EDITAR PREGUNTA</p> 
                                 <i className="d-inline fas fa-edit ml-2 mt-2"></i>
@@ -30,7 +30,7 @@ const Question = ({question, courseName, courseId}) =>{
                         </button>
                     </div>
                     <div className="col-6 p-0">
-                        <Link className="btn btn-block btn-outline-danger ml-0 border-subject">
+                        <Link to={`/questions/Delete/${courseName}/${courseId}/${question.id}`} className="btn btn-block btn-outline-danger ml-0 border-subject">
                             <div>
                             <p className="d-inline">ELIMINAR PREGUNTA</p> 
                                 <i className="d-inline fas fa-trash-alt ml-2 mt-2"></i>

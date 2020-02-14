@@ -2,7 +2,7 @@ import React from 'react'
 import Question from './Question'
 import Accordion from 'react-bootstrap/Accordion';
 
-const QuestionList = ({questions, courseName, id }) =>{
+const QuestionList = ({questions, courseName, id, onClickEditQuestion }) =>{
 
     return(
         <>
@@ -14,6 +14,7 @@ const QuestionList = ({questions, courseName, id }) =>{
                             question={question} 
                             courseName={courseName}
                             courseId={id}
+                            onClickEditQuestion={onClickEditQuestion}
                         />
                     )}
                 </Accordion>

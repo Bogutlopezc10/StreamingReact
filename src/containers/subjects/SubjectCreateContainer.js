@@ -4,6 +4,7 @@ import { isCreatingSubject, isNotCreatingSubject } from '../../actions/subject';
 import { connect } from 'react-redux';
 
 class SubjectCreateContainer extends React.Component{
+    
     onClickIsCreating = () => {
         this.props.isCreatingSubject();
     }
@@ -16,7 +17,11 @@ class SubjectCreateContainer extends React.Component{
     render(){
         return (
             <> 
-                <SubjectCreate courseId={this.props.courseId} isCreating={this.props.isCreating} onClickIsCreating={this.onClickIsCreating} onClickIsNotCreating={this.onClickIsNotCreating} />
+                <SubjectCreate 
+                 courseId={this.props.courseId} 
+                 isCreating={this.props.isCreating} 
+                 onClickIsCreating={this.onClickIsCreating} 
+                 onClickIsNotCreating={this.onClickIsNotCreating} />
             </>
         );
     }
