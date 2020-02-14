@@ -63,3 +63,16 @@ export const getContentsBySubjectId = (state, subjectId) => {
     return content.subjectId == subjectId
   });
 }
+
+
+//Question Selector
+
+export const getQuestionsByCourseId = (state, courseId) => {
+
+  const questions = Object.values(state.questions.data);
+
+  return questions.filter((question) => {
+    return question.courseId == courseId
+  });
+}
+

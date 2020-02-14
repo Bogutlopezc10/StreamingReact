@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import SubjectEdit from '../../components/subjects/SubjectEdit';
 
 class SubjectEditContainer extends React.Component{
+
     onClickIsNotEditing = () => {
         this.props.isNotEditingSubject();
     }
@@ -11,7 +12,10 @@ class SubjectEditContainer extends React.Component{
     render(){
         return (
             <>
-                <SubjectEdit onClickIsNotEditing={this.onClickIsNotEditing} currentSubject={this.props.currentSubject} />
+                <SubjectEdit 
+                 onClickIsNotEditing={this.onClickIsNotEditing} 
+                 currentSubject={this.props.currentSubject} 
+                />
             </>
         );
     }
