@@ -8,6 +8,7 @@ import {
     IS_NOT_EDITING_SUBJECT,
     FETCH_SUBJECT,
     DELETE_SUBJECT,
+    UNMOUNT_CREATE_SUBJECT_FORM,
     UNMOUNT_COURSE_CONTENT
  } from '../actions/types'; 
 import _ from 'lodash';
@@ -71,6 +72,10 @@ export default (state = defaultState, action) => {
             isSuccess:true,
             messageSuccess:"El tema fue eliminado exitosamente."
             };
+        case UNMOUNT_CREATE_SUBJECT_FORM: 
+            return { ...state, 
+                isCreating: action.payload
+            }
         case UNMOUNT_COURSE_CONTENT:
             return { ...state, 
                 isSuccess:false,

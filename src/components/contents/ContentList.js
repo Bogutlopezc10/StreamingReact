@@ -33,20 +33,23 @@ class ContentList extends React.Component{
             );
         }
         return (
-            <div className="container">
-                {this.renderButton()}
-                <hr/>
-                <div className="row">
-                    { this.props.contents.map( content =>
-                        <Content 
-                         onClickIsEditingContent={this.props.onClickIsEditingContent} 
-                         key={content.id} content={content} 
-                         courseName ={this.props.courseName}
-                         courseId ={this.props.courseId}
-                        />
-                    )}
+            <>
+                <div className="container">
+                    {this.renderButton()}
                 </div>
-            </div>
+                <div className="container border pt-3 arrow-group">
+                    <div className="row">
+                        { this.props.contents.map( content =>
+                            <Content 
+                            onClickIsEditingContent={this.props.onClickIsEditingContent} 
+                            key={content.id} content={content} 
+                            courseName ={this.props.courseName}
+                            courseId ={this.props.courseId}
+                            />
+                        )}
+                    </div>
+                </div>
+            </>
         );
     }
 }

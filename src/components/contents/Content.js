@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Content = ({ content,onClickIsEditingContent,courseName, courseId }) =>{
     
     return(
-        <div className="col-3 mb-3">
+        <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6 mb-3">
             <div className="card card-shadow">
                 <iframe src={content.url.replace('watch?v=','embed/')}
                 height="150" frameBorder="0" style={{ width: "100%" }} allowFullScreen></iframe>   

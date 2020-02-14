@@ -12,7 +12,7 @@ import {
     IS_NOT_EDITING_SUBJECT,
     FETCH_SUBJECT,
     DELETE_SUBJECT,
-    UNMOUNT_SUBJECT_LIST
+    UNMOUNT_CREATE_SUBJECT_FORM
 } from '../actions/types';
 
 export const fetchSubjects = (id) => async dispatch => {
@@ -76,6 +76,10 @@ export const isNotCreatingSubject = () => async dispatch => {
         
     dispatch({ type: IS_NOT_CREATING_SUBJECT, payload: false })
 
+}
+
+export const unMountCreateForm = () => async dispatch => {
+    dispatch({ type: UNMOUNT_CREATE_SUBJECT_FORM, payload: false })
 }
 
 export const fetchSubject = (id) => async dispatch => {

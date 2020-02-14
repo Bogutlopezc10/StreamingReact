@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fecthEditingSubject } from '../../actions/subject';
+import { fecthEditingSubject, unMountCreateForm } from '../../actions/subject';
 import { unMountCourseContent } from '../../actions/course';
 import MainHeader from '../../components/MainHeader';
 import SubjectListContainer from '../subjects/SubjectListContainer';
@@ -12,6 +12,7 @@ import {scrollUp} from '../../scroll'
 class CourseContentContainer extends React.Component{
 
     onClickEditSubject = (subjectId) => {
+        this.props.unMountCreateForm();
         this.props.fecthEditingSubject(subjectId);
         scrollUp()
     }
@@ -48,4 +49,4 @@ const mapStateToProps = (state) => {
     return { isEditing: state.subjects.isEditing }
 }
 
-export default connect(mapStateToProps, { fecthEditingSubject, unMountCourseContent })(CourseContentContainer);
+export default connect(mapStateToProps, { fecthEditingSubject, unMountCreateForm, unMountCourseContent })(CourseContentContainer);

@@ -17,7 +17,7 @@
 }
 
 .title-content{
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
     font-style: italic;
 }
@@ -75,3 +75,17 @@
     width: 110px;
 }
 
+.arrow-group .row {
+    overflow-x: auto;
+    white-space: nowrap;
+    display: block !important;
+}
+
+.arrow-group .row .col-lg-3,
+.arrow-group .row .col-md-4,
+.arrow-group .row .col-sm-6,
+.arrow-group .row .col-xs-6 {
+    display: inline-block;
+    float: none;
+    word-wrap: break-word;
+}

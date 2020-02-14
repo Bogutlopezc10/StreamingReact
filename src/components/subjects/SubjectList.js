@@ -1,7 +1,5 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
 import Subject from './Subject';
-import Card from 'react-bootstrap/Card';
 import Accordion from 'react-bootstrap/Accordion';
 import './Subject.css'
 

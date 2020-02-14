@@ -2,22 +2,28 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import Accordion from 'react-bootstrap/Accordion';
+import { connect } from 'react-redux';
+import { getContentsBySubjectId } from '../../selectors/index';
 import ContentListContainer from '../../containers/contents/ContentListContainer';
 import './Subject.css'
 
 class Subject extends React.Component{
     render(){
-        const { subject, onClickEditSubject, onClickUnMountContent, courseName, courseId } = this.props;
+        const { subject, amountContent, onClickEditSubject, onClickUnMountContent, courseName, courseId } = this.props;
         return (
             <>
                 <Card className="card-content-course">
                     <Accordion.Toggle as={Card.Header} onClick={()=>onClickUnMountContent()} eventKey={subject.id}>
-                        <div className="row d-flex">
-                            <div className="col-lg-12">
-                                {subject.name}
-                            </div>
-                            <div className="col-lg-12">
-                                <small style={{ color:"gray" }}>11/11 | 42min</small>
+                        <div className="row d-flex align-items-center justify-content-between">
+                            <div className="col-auto">
+                                <div className="row">
+                                    <div className="col-lg-12">
+                                        {subject.name}
+                                    </div>
+                                    <div className="col-lg-12">
+                                        <small style={{ color:"gray" }}>{amountContent}/{amountContent} | 42min</small>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </Accordion.Toggle>
@@ -55,4 +61,8 @@ class Subject extends React.Component{
     }
 }
 
-export default Subject;
+const mapStateToProps = (state, ownProps) => {
+    return { amountContent: getContentsBySubjectId(state,ownProps.subject.id).length }
+}
+
+export default connect(mapStateToProps,null)(Subject);
