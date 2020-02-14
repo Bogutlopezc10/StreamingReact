@@ -35,7 +35,13 @@ class ContentListContainer extends React.Component{
         }else{
             return(
                 <>
-                    <ContentList contents={this.props.contents} onClickIsEditingContent={this.onClickIsEditingContent} onClickIsCreatingContent={this.onClickIsCreatingContent} />
+                    <ContentList 
+                        courseName ={this.props.courseName}
+                        courseId ={this.props.courseId} 
+                        contents={this.props.contents} 
+                        onClickIsEditingContent={this.onClickIsEditingContent} 
+                        onClickIsCreatingContent={this.onClickIsCreatingContent} 
+                    />
                 </>
             )
         }

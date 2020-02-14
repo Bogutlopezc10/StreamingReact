@@ -3,7 +3,7 @@ import Subject from './Subject';
 import Accordion from 'react-bootstrap/Accordion';
 import './Subject.css'
 
-const SubjectList = ({ borderTopColor, subjects, onClickEditSubject, onClickUnMountContent, CourseName, courseId }) => {
+const SubjectList = ({ borderTopColor, subjects, onClickEditSubject, onClickUnMountContent, courseName, courseId }) => {
 
     return (
         <>
@@ -13,7 +13,7 @@ const SubjectList = ({ borderTopColor, subjects, onClickEditSubject, onClickUnMo
                         <Subject 
                             onClickEditSubject={onClickEditSubject} 
                             key={subject.id} subject={subject} 
-                            courseName={CourseName}
+                            courseName={courseName}
                             courseId={courseId}
                             onClickUnMountContent={onClickUnMountContent}
                         />
