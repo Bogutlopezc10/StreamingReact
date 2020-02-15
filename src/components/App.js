@@ -19,6 +19,7 @@ import SubjectDeletePage from '../pages/subjects/SubjectDeletePage';
 import ContentDeletePage from '../pages/contents/ContentDeletePage';
 import CourseQuestionPage from '../pages/courses/CourseQuestionPage';
 import QuestionDeletePage from '../pages/questions/QuestionDeletePage';
+import OptionCreatePage from '../pages/options/OptionCreatePage';
 
 const App = () => {
     return (
@@ -42,6 +43,7 @@ const App = () => {
                             <Route path="/contents/Delete/:CourseName/:id/:contentName/:contentId" exact component={ContentDeletePage} />
                             <Route path="/questions/:CourseName/:id/" exact component={CourseQuestionPage} />
                             <Route path="/questions/Delete/:CourseName/:id/:questionId" exact component={QuestionDeletePage} />
+                            <Route path="/options/Create/:courseName/:courseId/:questionId" exact component={OptionCreatePage} />
                             <Route path="/errors" exact component={ErrorPage} />
                         </Switch>
                     <Footer />

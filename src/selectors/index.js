@@ -76,3 +76,13 @@ export const getQuestionsByCourseId = (state, courseId) => {
   });
 }
 
+//Option selector
+
+export const getOptionsByQuestionId = (state, questionId) => {
+
+  const options = Object.values(state.options.data);
+
+  return options.filter((option) => {
+    return option.questionId == questionId
+  });
+}

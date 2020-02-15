@@ -6,6 +6,7 @@ import errorReducer from './errorReducer';
 import subjectReducer from './subjectReducer';
 import contentReducer from './contentReducer';
 import questionReducer from './questionReducer';
+import optionReducer from './optionReducer';
 
 export default combineReducers({
     categories: categoryReducer,
@@ -14,5 +15,6 @@ export default combineReducers({
     contents: contentReducer,
     subjects: subjectReducer,
     error: errorReducer,
-    questions: questionReducer
+    questions: questionReducer,
+    options: optionReducer
 });
