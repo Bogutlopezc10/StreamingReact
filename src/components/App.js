@@ -19,6 +19,7 @@ import SubjectDeletePage from '../pages/subjects/SubjectDeletePage';
 import ContentDeletePage from '../pages/contents/ContentDeletePage';
 import CourseQuestionPage from '../pages/courses/CourseQuestionPage';
 import QuestionDeletePage from '../pages/questions/QuestionDeletePage';
+import UserCoursePage from '../pages/userCourses/UserCoursePage';
 
 const App = () => {
     return (
@@ -33,6 +34,7 @@ const App = () => {
                             <Route path="/courses/:CategoryName/:id" exact component={CourseByCategoryPage} />
                             <Route path="/courses/Detail/:CourseName/:id" exact component={CourseDetailPage} />
                             <Route path="/teacher" exact component={TeacherPage} />
+                            <Route path="/userCourses" exact component={UserCoursePage} />
                             <Route path="/courses/Create" exact component={CourseCreatePage} />
                             <Route path="/courses/Edit/:CourseName/:id" exact component={CourseEditPage} />
                             <Route path="/courses/Delete/:CourseName/:id" exact component={CourseDeletePage} />

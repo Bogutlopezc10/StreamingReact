@@ -76,3 +76,22 @@ export const getQuestionsByCourseId = (state, courseId) => {
   });
 }
 
+// UserCourse Selector
+
+export const getUserCoursesFinishedByUser = (state) => {
+
+  const userCourses = Object.values(state.userCourses.data);
+
+  return userCourses.filter((userCourse) => {
+    return userCourse.isEnd == true && userCourse.username == CURRENT_USER
+  });
+}
+
+export const getUserCoursesNotFinishedByUser = (state) => {
+
+  const userCourses = Object.values(state.userCourses.data);
+
+  return userCourses.filter((userCourse) => {
+    return userCourse.isEnd == false && userCourse.username == CURRENT_USER
+  });
+}

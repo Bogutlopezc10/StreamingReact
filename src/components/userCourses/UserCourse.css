@@ -1,0 +1,92 @@
+.container-usercourse{
+    background-color: white;
+    border-top: 5px solid;
+}
+
+.usercourse-group .card-group {
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    overflow-x: auto;
+    white-space: nowrap;
+    display: block !important;
+}
+
+.usercourse-group .card-group .col-lg-6,
+.usercourse-group .card-group .col-md-12,
+.usercourse-group .card-group .col-sm-12,
+.usercourse-group .card-group .col-xs-12 {
+    display: inline-block;
+    float: none;
+    word-wrap: break-word;
+}
+
+.content-usercourse{
+    white-space: normal;
+}
+
+.progress{
+    height: 10px;
+    background: #d4d4d5;
+    border-radius: 0;
+}
+
+.progress-bar {
+    background: #21ba45;
+    line-height: 25px;
+    text-align: left;
+    padding-left: 20px;
+}
+
+
+.content-usercourse h6{
+    color:black;
+    font-weight: 620;
+    margin-right: 9%;
+    margin-top: 20px;
+    font-size: 17px;
+}
+
+.stars-usercourse{
+    bottom: 10px;
+    position: absolute;
+    padding-left: 0%;
+}
+
+.container-card{
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+.card-usercourse:hover{
+    box-shadow: 6px 9px 13px -10px rgba(0,0,0,0.75);
+    opacity: 0.9;
+}
+
+.card-usercourse i{
+    position: absolute;
+    color: #f7f7f7;
+    font-size: 80px;
+    top: 35px;
+    left: 18%;
+    z-index: 1000;
+    visibility: hidden;
+}
+
+.card-usercourse:hover i{
+    visibility: visible;
+    transition: all 0.6s;
+    text-shadow: 2px 3px 6px black; 
+    transform: scale(1.2) rotate(360deg) !important;
+    opacity: 1 !important;
+}
+
+@media screen and (max-width: 575px){
+    .card-usercourse i{
+        left: 15%;
+    }
+}
+
+a:hover{
+    text-decoration: none;
+}

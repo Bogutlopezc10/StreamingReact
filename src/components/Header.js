@@ -36,7 +36,9 @@ const Header = () => {
                     <Link className="dropdown-item" to="/teacher">
                         Panel de control
                     </Link>
-                    <a className="dropdown-item" href="#">Another action</a>
+                    <Link className="dropdown-item" to="/userCourses">
+                        Mis cursos
+                    </Link>
                     <a className="dropdown-item" href="#">Something else here</a>
                 </div>
             </nav>
