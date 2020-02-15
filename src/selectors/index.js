@@ -86,6 +86,7 @@ export const getOptionsByQuestionId = (state, questionId) => {
     return option.questionId == questionId
   });
 }
+
 // UserCourse Selector
 
 export const getUserCoursesFinishedByUser = (state) => {
