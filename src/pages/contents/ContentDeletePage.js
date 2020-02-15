@@ -2,9 +2,6 @@ import React from 'react'
 import ContentDeleteContainer from '../../containers/contents/ContentDeleteContainer'
 
 const ContentDeletePage  = (props) => {
-
-
-    
     return(
         <>
             <ContentDeleteContainer
