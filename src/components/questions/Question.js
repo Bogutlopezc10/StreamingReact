@@ -2,8 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import Accordion from 'react-bootstrap/Accordion';
+import OptionListContainer from '../../containers/options/OptionListContainer'
+import {getOptionsByQuestionId} from '../../selectors/index'
+import {connect} from 'react-redux'
 
-const Question = ({question, courseName, courseId, onClickEditQuestion}) =>{
+const Question = ({question, courseName, courseId, onClickEditQuestion, amountOptions}) =>{
 
     return (
         <>
@@ -13,11 +16,18 @@ const Question = ({question, courseName, courseId, onClickEditQuestion}) =>{
                         <div className="col-lg-12">
                             {question.content}
                         </div>
+                        <div className="col-lg-12">
+                            <small style={{ color:"gray" }}>{amountOptions}/{amountOptions}</small>
+                        </div>
                     </div>
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey={question.id}>
                     <Card.Body>
-                        <h1>dkjnfnf</h1>
+                        <OptionListContainer
+                             questionId={question.id} 
+                             courseName ={courseName}
+                             courseId = {courseId}
+                        />
                     </Card.Body>
                 </Accordion.Collapse>
                 <div className="row">
@@ -43,6 +53,8 @@ const Question = ({question, courseName, courseId, onClickEditQuestion}) =>{
         </>
     )
 }
+const mapStateToProps = (state, ownProps) => {
+    return { amountOptions: getOptionsByQuestionId(state,ownProps.question.id).length }
+}
 
-
-export default Question;
+export default connect(mapStateToProps,null)(Question);

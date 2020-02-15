@@ -6,6 +6,7 @@ import errorReducer from './errorReducer';
 import subjectReducer from './subjectReducer';
 import contentReducer from './contentReducer';
 import questionReducer from './questionReducer';
+import optionReducer from './optionReducer';
 import userCourseReducer from './userCourseReducer';
 
 export default combineReducers({
@@ -16,5 +17,6 @@ export default combineReducers({
     subjects: subjectReducer,
     error: errorReducer,
     questions: questionReducer,
+    options: optionReducer,
     userCourses: userCourseReducer
 });
