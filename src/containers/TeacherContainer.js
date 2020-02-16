@@ -39,7 +39,7 @@ class TeacherContainer extends React.Component{
         }
         return (
             <>  
-                <MainHeader backgroundHeaderColor="#2185d0" textHeader="Panel de control" />
+                <MainHeader backgroundHeaderColor="#005385" textHeader="Panel de control" />
                 {this.renderMessage()}
                 <CoursePublishedList 
                     courses={this.props.coursesPublished} 
