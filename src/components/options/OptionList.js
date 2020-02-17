@@ -33,6 +33,16 @@ class OptionList extends React.Component{
                             />
                         )}
                     </div>
+                    <Link to ={`/options/Edit/${this.props.courseName}/${this.props.courseId}/${this.props.questionId}`} className="btn btn-primary">
+                        <div>
+                            <p>EDITAR OPCIONES</p> 
+                        </div>
+                    </Link>
+                    <Link to ={`/options/Delete/${this.props.courseName}/${this.props.courseId}/${this.props.questionId}`} className="btn btn-success">
+                        <div>
+                            <p>ELIMINAR OPCIONES</p> 
+                        </div>
+                    </Link>
                 </div>
             </>
         );

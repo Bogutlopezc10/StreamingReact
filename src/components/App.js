@@ -21,6 +21,8 @@ import CourseQuestionPage from '../pages/courses/CourseQuestionPage';
 import QuestionDeletePage from '../pages/questions/QuestionDeletePage';
 import OptionCreatePage from '../pages/options/OptionCreatePage';
 import UserCoursePage from '../pages/userCourses/UserCoursePage';
+import OptionEditPage from '../pages/options/OptionEditPage';
+import OptionDeletePage from '../pages/options/OptionDeletePage';
 
 const App = () => {
     return (
@@ -46,6 +48,8 @@ const App = () => {
                             <Route path="/questions/:CourseName/:id/" exact component={CourseQuestionPage} />
                             <Route path="/questions/Delete/:CourseName/:id/:questionId" exact component={QuestionDeletePage} />
                             <Route path="/options/Create/:courseName/:courseId/:questionId" exact component={OptionCreatePage} />
+                            <Route path="/options/Edit/:courseName/:courseId/:questionId" exact component={OptionEditPage} />
+                            <Route path="/options/Delete/:courseName/:courseId/:questionId" exact component={OptionDeletePage} />
                             <Route path="/errors" exact component={ErrorPage} />
                         </Switch>
                     <Footer />

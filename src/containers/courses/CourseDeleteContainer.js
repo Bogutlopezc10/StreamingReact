@@ -16,7 +16,9 @@ class CourseDeleteContainer extends React.Component{
         
         return (
             <>
-                <CourseDelete course ={this.props.course} courseId={this.props.courseId} backgroundHeaderColor="#005385" />
+                <CourseDelete course ={this.props.course}
+                courseId={this.props.courseId}
+                backgroundHeaderColor="#005385" />
             </>
         )
     }
