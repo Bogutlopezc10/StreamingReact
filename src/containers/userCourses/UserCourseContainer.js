@@ -14,7 +14,7 @@ class UserCourseContainer extends React.Component{
     render(){
         return (
             <>
-                <MainHeader backgroundHeaderColor="#2185d0" textHeader="Mis cursos" />
+                <MainHeader backgroundHeaderColor="#005385" textHeader="Mis cursos" />
                 <UserCourseFinishedList 
                     userCoursesFinished={this.props.userCoursesFinished} 
                     borderTopColor="#2185d0" 

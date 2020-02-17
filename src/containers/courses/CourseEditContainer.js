@@ -23,7 +23,7 @@ class CourseEditContainer extends React.Component{
                     course={this.props.course} 
                     categories={this.props.categories}
                     courseId ={this.props.courseId}
-                    borderTopColor="#005385"
+                    borderTopColor="#2185d0"
                 />
             </>
         );
