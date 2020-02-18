@@ -18,12 +18,13 @@ class OptionEditContainer extends React.Component{
     render(){
         return(
             <>
-                <MainHeader backgroundHeaderColor="#005385" textHeader="Editar Opciones" />
+                <MainHeader backgroundHeaderColor="#005385" textHeader="Editar opciones" />
                 <OptionEdit 
                     courseName={this.props.courseName}
                     courseId = {this.props.courseId}
                     questionId = {this.props.questionId}
                     optionsEdit = {this.props.options}
+                    borderTopColor="#2185d0"
                 />
             </>
         )

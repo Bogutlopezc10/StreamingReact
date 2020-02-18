@@ -21,6 +21,7 @@ class QuestionListContainer extends React.Component {
                     courseName = {this.props.courseName}
                     id = {this.props.id}
                     questions = {this.props.questions}
+                    borderTopColor = {this.props.borderTopColor}
                     onClickEditQuestion={this.props.onClickEditQuestion}
                 />
             </>

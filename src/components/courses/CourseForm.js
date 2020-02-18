@@ -63,13 +63,21 @@ class CourseForm extends React.Component {
         
         return(
             <form onSubmit ={this.props.handleSubmit(this.onSubmit)} className="ui form error">
-                <Field name="name" type="text" component={this.renderInput} label="Nombre" />
-                <Field name="description" component={this.renderTextArea} label="Descripción" />
-                <Field name="categoryId" component={this.renderSelect} label="Categorias">
-                        <option value="">Seleccione una categoria</option>
-                        { categories.map(category =>
-                        <option key ={category.id} value={category.id}>{category.name}</option>) }
-                </Field>
+                <div className="row">
+                    <div className="col-lg-6 mb-3">
+                        <Field name="name" type="text" component={this.renderInput} label="Nombre" />
+                    </div>
+                    <div className="col-lg-6 mb-3">
+                        <Field name="categoryId" component={this.renderSelect} label="Categoria">
+                            <option value="">Seleccione una categoria</option>
+                            { categories.map(category =>
+                            <option key ={category.id} value={category.id}>{category.name}</option>) }
+                        </Field>
+                    </div>
+                    <div className="col-lg-12 mb-3">
+                        <Field name="description" component={this.renderTextArea} label="Descripción" />
+                    </div>
+                </div>
                 <button className ="btn btn-outline-success mt-2" disabled={pristine || submitting} style={{ borderRadius: ".25rem" }}>
                     <div>
                         <p className="d-inline">ENVIAR</p> 

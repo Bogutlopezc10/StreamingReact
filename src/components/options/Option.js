@@ -1,17 +1,26 @@
 import React from 'react'
 
-const Option = ({option, courseName, courseId}) =>{
+class Option extends React.Component{
 
-    return(
-        <div>
-            <ul>
-                <li>
-                    <span class="badge badge-primary">{option.isCorrect ? 'Opcion correcta' : ''}</span>
-                    <span class="dot"></span>{option.content}
-                </li>
-            </ul>
-        </div>
-    )
+    renderBadge = () =>{
+        if(this.props.option.isCorrect){
+            return <span className="badge badge-success badge-pill"><i class="fas fa-check"></i></span>
+        }
+    }
+
+    render(){
+        const { option } = this.props;
+        return(
+            <div className="col-lg-12 pl-0 pr-0">
+                <ul className="list-group">
+                    <li className={option.isCorrect ? 'list-group-item d-flex justify-content-between align-items-center border-color-success list-group-item-success':'list-group-item border-color d-flex justify-content-between align-items-center'}>
+                        <h5>{option.content}</h5>
+                        {this.renderBadge()}
+                    </li>
+                </ul>
+            </div>
+        )
+    }
 }
 
 export default Option;

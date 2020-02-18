@@ -2,11 +2,11 @@ import React from 'react'
 import Question from './Question'
 import Accordion from 'react-bootstrap/Accordion';
 
-const QuestionList = ({questions, courseName, id, onClickEditQuestion }) =>{
+const QuestionList = ({questions, courseName, id, borderTopColor, onClickEditQuestion }) =>{
 
     return(
         <>
-            <div className="container shadow container-subject p-4">
+            <div className="container subject-shadow container-subject p-4" style={{ borderTopColor: borderTopColor }}>
                 <Accordion defaultActiveKey="0">
                     { questions.map( question => 
                         <Question
