@@ -49,7 +49,7 @@ class CoursePost extends React.Component {
 
             return (
                 <Modal 
-                        title = "Publicar curso curso"
+                        title = "Publicar curso"
                         description ={this.renderContent()}
                         backgroundHeaderColor = {this.props.backgroundHeaderColor}
                         actions ={this.renderActions()}

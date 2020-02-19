@@ -81,7 +81,7 @@ export default (state= defaultState, action) => {
                 ...state,
                 isSuccess:false,
                 messageSuccess:null,
-                canBePosted: false,
+                canBePosted: null,
             };
         case UNMOUNT_CAN_BE_POSTED:
                 return {
