@@ -3,7 +3,7 @@ import Moment from 'react-moment';
 import 'moment-timezone';
 import './Course.css'
 
-const CourseDetail = ({ course, borderTopColor }) => {
+const CourseDetail = ({ course, borderTopColor, onClickCreateUserCourse }) => {
     const starPercentage = (course.rating / 5) * 100;
     const starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`;
     return (
@@ -44,7 +44,7 @@ const CourseDetail = ({ course, borderTopColor }) => {
                                 <h6 className="d-inline">Publicado: </h6><p className="d-inline"><Moment format="DD/MM/YYYY">{course.updatedAt}</Moment></p>
                             </div>
                             <div className="col-lg-12 mt-4">
-                                <button className="btn btn-block btn-outline-success">
+                                <button className="btn btn-block btn-outline-success" onClick={()=>onClickCreateUserCourse(course.id)}>
                                     <div>
                                         <p className="d-inline">MATRICULARME</p> 
                                         <i className="d-inline fas fa-angle-double-right ml-2 mt-2"></i>
