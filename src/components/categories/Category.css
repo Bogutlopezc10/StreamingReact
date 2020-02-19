@@ -43,3 +43,66 @@
 .category-shadow{
     box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
 }
+
+.btn-edit-category p,
+.btn-delete-category p{
+    display: none;
+}
+
+.btn-edit-category i,
+.btn-delete-category i{
+    margin-left: 2px;
+}
+
+.btn-edit-category:hover i,
+.btn-delete-category:hover i{
+    margin-left: 9px;
+}
+
+.btn-edit-category:hover p,
+.btn-delete-category:hover p{
+    display: inline;
+}
+
+.btn-edit-category{
+    font-weight: bold;
+    border-radius: 0%;
+    border-top-right-radius: 5%;
+    border-bottom-right-radius: 5%;
+    font-size: 12px;
+    position: absolute;
+    top: 0px;
+}
+
+.btn-delete-category{
+    font-weight: bold;
+    border-radius: 0%;
+    border-top-right-radius: 5%;
+    border-bottom-right-radius: 5%;
+    font-size: 12px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.btn-edit-category:hover{
+    transition-delay: 1s;
+    transition: all ease-in-out 2s;
+    width: 90px;
+}
+
+.btn-delete-category:hover{
+    transition-delay: 1s;
+    transition: all ease-in-out 2s;
+    width: 110px;
+}
+
+.btn-outline-primary.disabled:hover, .btn-outline-primary:disabled:hover {
+    color: white;
+    background-color: #007bff;
+}
+
+.btn-outline-primary.disabled, .btn-outline-primary:disabled {
+    color: #007bff;
+    background-color: transparent;
+}

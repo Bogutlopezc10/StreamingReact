@@ -12,7 +12,7 @@ class OptionCreateContainer extends React.Component{
                      courseName={this.props.courseName}
                      courseId = {this.props.courseId}
                      questionId = {this.props.questionId}
-                     borderTopColor="#2185d0"
+                     borderTopColor="#005385"
                 />
             </>
         )

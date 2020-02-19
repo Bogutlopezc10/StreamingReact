@@ -16,6 +16,18 @@ const Category = ({ category }) => {
                         <i className="d-inline fas fa-angle-double-right ml-2 mt-2"></i>
                     </div>
                 </Link>
+                <Link to={`/categories/Edit/${category.name}/${category.id}`} className="btn btn-primary btn-edit-category">
+                    <div>
+                        <p>EDITAR</p> 
+                        <i className="fas fa-edit mt-1 mb-1"></i>
+                    </div>
+                </Link>
+                <Link to={`/categories/Delete/${category.name}/${category.id}`}  className="btn btn-danger btn-delete-category">
+                    <div>
+                        <p>ELIMINAR</p> 
+                        <i className="fas fa-times mt-1 mb-1"></i>
+                    </div>
+                </Link>
             </div>
         </div>
     )
