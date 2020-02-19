@@ -38,6 +38,7 @@ class CourseQuestionContainer extends React.Component {
                 <QuestionListContainer 
                     courseName = {this.props.courseName}
                     id = {this.props.id}
+                    borderTopColor="#005385"
                     onClickEditQuestion={this.onClickEditQuestion}
                 />
             </>

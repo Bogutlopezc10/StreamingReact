@@ -18,7 +18,7 @@ class OptionCreate extends React.Component{
         return(
             <>
                 <div className="row d-flex justify-content-center">
-                    <div className="col-lg-6">
+                    <div className="col-lg-8">
                         <div  style={{ borderTopColor: this.props.borderTopColor }} className="container course-shadow container-published p-4">
                             <OptionForm 
                                 textButton="LIMPIAR"

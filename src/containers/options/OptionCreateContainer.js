@@ -7,11 +7,12 @@ class OptionCreateContainer extends React.Component{
     render(){
         return(
             <>
-                <MainHeader backgroundHeaderColor="#005385" textHeader="Crear Opciones" />
+                <MainHeader backgroundHeaderColor="#005385" textHeader="Crear opciones" />
                 <OptionCreate 
                      courseName={this.props.courseName}
                      courseId = {this.props.courseId}
                      questionId = {this.props.questionId}
+                     borderTopColor="#2185d0"
                 />
             </>
         )

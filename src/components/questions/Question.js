@@ -17,7 +17,7 @@ const Question = ({question, courseName, courseId, onClickEditQuestion, amountOp
                             {question.content}
                         </div>
                         <div className="col-lg-12">
-                            <small style={{ color:"gray" }}>{amountOptions}/{amountOptions}</small>
+                            <small style={{ color:"gray" }}>{amountOptions}/{amountOptions} opciones</small>
                         </div>
                     </div>
                 </Accordion.Toggle>

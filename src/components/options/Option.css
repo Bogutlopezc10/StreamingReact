@@ -1,0 +1,30 @@
+.list-group-item{
+    border-radius: 0% !important;
+}
+
+.border-color{
+    border-color: #b9b9b9 !important
+}
+
+.border-color-success{
+    border-color:#28a745 !important
+}
+
+.list-group-item h5{
+    margin-bottom: 0px;
+    font-size: 15px;
+    font-style: italic;
+}
+
+.option-label{
+    color: #8a8a8a !important;
+    font-weight: 500 !important;
+    font-style: italic;
+    font-size: 13px;
+}
+
+@media screen and (max-width: 769px){
+    .btn-menu-options{
+        margin-top: 10px;
+    }
+}

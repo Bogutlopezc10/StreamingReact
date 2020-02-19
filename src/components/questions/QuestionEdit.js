@@ -15,7 +15,7 @@ class QuestionEdit extends React.Component{
         return(
             <div className="row align-items-center mb-3 justify-content-between">
                 <div className="col-auto">
-                    <h1 className="title-published">Editar Pregunta</h1>
+                    <h1 className="title-published">Editar pregunta</h1>
                 </div>
                 <div className="col-auto">
                     <button onClick={()=>this.props.onClickIsNotEditing()} className="btn btn-outline-danger">
