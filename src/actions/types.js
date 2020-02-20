@@ -6,7 +6,7 @@ export const CAMILO = 'http://localhost:56757/api';
 
 // Categories constant
 
-export const CREATE_CATERGORY = 'CREATE_CATERGORY';
+export const CREATE_CATEGORY = 'CREATE_CATEGORY';
 export const FETCH_CATEGORIES = 'FETCH_CATEGORIES';
 export const FETCH_CATEGORY = 'FETCH_CATEGORY';
 export const DELETE_CATEGORY = 'DELETE_CATEGORY';

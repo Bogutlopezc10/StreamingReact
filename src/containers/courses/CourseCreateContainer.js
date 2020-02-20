@@ -17,7 +17,7 @@ class CourseCreateContainer extends React.Component{
         return (
             <>
                 <MainHeader backgroundHeaderColor="#005385" textHeader="Crear curso" />
-                <CourseCreate categories ={this.props.categories} borderTopColor="#2185d0"/>
+                <CourseCreate categories ={this.props.categories} borderTopColor="#005385"/>
             </>
         )
     }
