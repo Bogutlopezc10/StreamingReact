@@ -11,7 +11,8 @@ class ContentListPlayer extends React.Component{
                         { this.props.contents.map( content =>
                             <ContentPlayer 
                                 key={content.id} 
-                                content={content} 
+                                content={content}
+                                userContents = {this.props.userContents}
                             />
                         )}
                     </div>

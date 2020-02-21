@@ -20,7 +20,8 @@ const defaultState = {
     messageSuccess:null,
     isCreating:false,
     isEditing:false,
-    currentContent:null
+    currentContent:null,
+    currentPlayerContent:null
 }
 
 export default (state = defaultState, action) => {

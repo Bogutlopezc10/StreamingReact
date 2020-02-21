@@ -64,6 +64,15 @@ export const getContentsBySubjectId = (state, subjectId) => {
   });
 }
 
+//userContent Selector 
+export const getUserContentsByUsername = (state, username) => {
+
+  const userContents = Object.values(state.userContents);
+
+  return userContents.filter((userContent) => {
+    return userContent.username == username
+  });
+}
 
 //Question Selector
 
