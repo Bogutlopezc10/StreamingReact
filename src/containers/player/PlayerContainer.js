@@ -9,13 +9,19 @@ class PlayerContainer extends React.Component{
         const {courseId, userCourseId} = this.props
         return(
             <>
-                <MainHeader backgroundHeaderColor="#005385" textHeader="Reproductor de videos" />
-                <SubjectListPlayerContainer 
-                    courseId={courseId}
-                />
-                <CoursePlayerContainer
-                    userCourseId = {userCourseId}
-                />
+                <MainHeader backgroundHeaderColor="#005385" player={true} textHeader="Reproductor del curso" />
+                <div className="row">
+                    <div className="col-lg-8">
+                        <CoursePlayerContainer
+                            userCourseId = {userCourseId}
+                        />
+                    </div>
+                    <div className="col-lg-4">
+                        <SubjectListPlayerContainer 
+                            courseId={courseId}
+                        />
+                    </div>
+                </div>
             </>
         );
     }

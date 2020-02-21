@@ -6,7 +6,7 @@ class ContentListPlayer extends React.Component{
     render(){
         return(
             <>
-                <div className="container border pt-3 arrow-group">
+                <div className="container">
                     <div className="row">
                         { this.props.contents.map( content =>
                             <ContentPlayer 

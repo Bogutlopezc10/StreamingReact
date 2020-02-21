@@ -1,12 +1,13 @@
 import React from 'react'
 import SubjectPlayer from '../../components/player/SubjectPlayer'
 import Accordion from 'react-bootstrap/Accordion';
+import './Player.css';
 
 const SubjectListPlayer = (props) => {
 
     return(
         <>
-            <div>
+            <div className="container-subject-player">
                 <Accordion>
                     { props.subjects.map( subject => 
                         <SubjectPlayer
