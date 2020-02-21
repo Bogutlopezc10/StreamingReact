@@ -1,6 +1,7 @@
 import React from 'react';
 import UserCourse from './UserCourse';
 import './UserCourse.css';
+import { Link } from 'react-router-dom';
 
 class UserCourseNotFinishedList extends React.Component{
     render(){
@@ -13,7 +14,7 @@ class UserCourseNotFinishedList extends React.Component{
                                 <h1 className="title-published">Mis cursos no terminados</h1>
                             </div>
                         </div>
-                    </div>
+                </div>
                 <div className="container course-shadow container-usercourse pt-4 px-4 mb-5 usercourse-group" style={{ borderTopColor: borderTopColor }}>
                     <div className="card-group">
                         { userCoursesNotFinished.map( userCourse =>

@@ -6,7 +6,7 @@ const UserCourse = ({ userCourse }) =>{
     const starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`;
     return (
         <div className="col-lg-6 col-md-12 col-sm-12 col-xs-12 mb-4">
-            <Link>
+            <Link to={`/Player/${userCourse.courseId}/${userCourse.id}`}>
                 <div className="card card-usercourse">
                     <div className="row container-card">
                         <div className="col-6" style={{ paddingLeft: "0px" }}>
