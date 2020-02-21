@@ -8,6 +8,7 @@ import {
     CREATE_USERCOURSE_BY_USERNAME,
     MOUNT_ERROR_USER_COURSE,
     UNMOUNT_ERROR_USER_COURSE,
+    FETCH_USERCOURSE,
 } from './types';
 
 export const fetchUserCoursesByUserName = () => async dispatch => {
@@ -54,3 +55,18 @@ export const unMountUserCourse = () => async dispatch => {
     dispatch({ type: UNMOUNT_ERROR_USER_COURSE })
 
 }
+
+export const fetchUserCourse = (id) => async dispatch => {
+
+    try{
+        const response = await streams.get(`/UsersCourses/${id}`);
+        dispatch({ type: FETCH_USERCOURSE, payload: response.data });
+    }
+    catch(error){
+        dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+        history.push('/errors');
+    }
+
+}
+
+
