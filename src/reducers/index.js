@@ -8,6 +8,7 @@ import contentReducer from './contentReducer';
 import questionReducer from './questionReducer';
 import optionReducer from './optionReducer';
 import userCourseReducer from './userCourseReducer';
+import userContentReducer from './userContentReducer';
 
 export default combineReducers({
     categories: categoryReducer,
@@ -18,5 +19,6 @@ export default combineReducers({
     error: errorReducer,
     questions: questionReducer,
     options: optionReducer,
-    userCourses: userCourseReducer
+    userCourses: userCourseReducer,
+    userContents: userContentReducer
 });
