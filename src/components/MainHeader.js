@@ -8,8 +8,9 @@ class MainHeader extends React.Component{
         scrollUp()
     }
     render(){
+        const className=`header-main d-flex align-items-center justify-content-center ${this.props.player ? '' : 'mb-5' }`
         return(
-            <div className="header-main d-flex align-items-center justify-content-center mb-5" style={{ backgroundColor: this.props.backgroundHeaderColor}}>
+            <div className={className} style={{ backgroundColor: this.props.backgroundHeaderColor}}>
                 <h1>{this.props.textHeader}</h1>
             </div>
         );

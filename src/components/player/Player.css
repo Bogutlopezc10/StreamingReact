@@ -1,0 +1,24 @@
+.container-subject-player{
+    height: calc(100vh - 180px);
+    background-color: #cccccc;
+    overflow-y: auto;
+}
+
+.container-player-content:hover{
+    background-color: #f7f7f7;
+    cursor: pointer;
+}
+
+.container-player-content h5{
+    font-size: 17px;
+}
+
+.container-player-content i,
+.container-player-content p{
+    color:gray;
+}
+
+.container-player-content p{
+    font-style: italic;
+    font-size: 13px;
+}
