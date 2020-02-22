@@ -13,6 +13,7 @@ class ContentListPlayer extends React.Component{
                                 key={content.id} 
                                 content={content}
                                 userContents = {this.props.userContents}
+                                onClickCurrentContentPlayer= {this.props.onClickCurrentContentPlayer}
                             />
                         )}
                     </div>

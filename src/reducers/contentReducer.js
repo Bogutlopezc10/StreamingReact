@@ -10,7 +10,9 @@ import {
     DELETE_CONTENT,
     IS_EDITING_SUBJECT,
     UNMOUNT_COURSE_CONTENT,
-    UNMOUNT_CONTENT
+    UNMOUNT_CONTENT,
+    CURRENT_CONTENT_PLAYER,
+    UNMOUNT_CONTENT_PLAYER
      } from '../actions/types';
 import _ from 'lodash';
 
@@ -98,6 +100,16 @@ export default (state = defaultState, action) => {
                 isCreating:false,
                 isEditing:false,
                 currentContent:null
+            }
+        case CURRENT_CONTENT_PLAYER:
+            return{
+                ...state,
+                currentPlayerContent: action.payload.contentPlayer
+            }
+        case UNMOUNT_CONTENT_PLAYER:
+            return{
+                ...state,
+                currentPlayerContent: null
             }
         default:
             return state;

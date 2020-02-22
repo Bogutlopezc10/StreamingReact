@@ -2,6 +2,7 @@ import React from 'react'
 import MainHeader from '../../components/MainHeader'
 import SubjectListPlayerContainer from '../../containers/player/SubjectListPlayerContainer'
 import CoursePlayerContainer from '../../containers/player/CoursePlayerContainer'
+import CurrentContentPlayerContainer from '../../containers/player/CurrentContentPlayerContainer'
 
 class PlayerContainer extends React.Component{
 
@@ -15,11 +16,15 @@ class PlayerContainer extends React.Component{
                         <CoursePlayerContainer
                             userCourseId = {userCourseId}
                         />
+                         <CurrentContentPlayerContainer />
                     </div>
                     <div className="col-lg-4">
                         <SubjectListPlayerContainer 
                             courseId={courseId}
                         />
+                    </div>
+                    <div>
+
                     </div>
                 </div>
             </>

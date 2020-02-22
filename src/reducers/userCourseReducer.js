@@ -4,7 +4,8 @@ import {
     CREATE_USERCOURSE_BY_USERNAME,
     MOUNT_ERROR_USER_COURSE,
     UNMOUNT_ERROR_USER_COURSE,
-    FETCH_USERCOURSE
+    FETCH_USERCOURSE,
+    CURRENT_CONTENT_PLAYER
 } from '../actions/types';
 
 
@@ -27,6 +28,11 @@ export default (state= defaultState, action) => {
             return {
                 ...state,
                 data:{...state.data, [action.payload.id]:action.payload},
+            }
+        case CURRENT_CONTENT_PLAYER:
+            return {
+                ...state,
+                data:{...state.data, [action.payload.userCoursePlayer.id]:action.payload.userCoursePlayer},
             }
         case FETCH_USERCOURSE:
             return {

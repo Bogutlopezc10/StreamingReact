@@ -5,6 +5,7 @@ import {getContentsBySubjectId} from '../../selectors/index'
 import ContentListPlayer from '../../components/player/ContentListPlayer'
 import {fetchUserContentByUserName} from '../../actions/userContent'
 import {getUserContentsByUsername} from '../../selectors/index'
+import {fetchContentCurrentPlayer,unMountCourseContent} from '../../actions/content'
 
 class ContentListPlayerContainer  extends React.Component{
 
@@ -12,12 +13,21 @@ class ContentListPlayerContainer  extends React.Component{
         this.props.fetchContents(this.props.subjectId)
         this.props.fetchUserContentByUserName()
     }
+
+    onClickCurrentContentPlayer = (id) =>{
+        this.props.fetchContentCurrentPlayer(id);
+    }
+
+    componentWillUnmount(){
+        this.props.unMountCourseContent()
+    }
     render(){
         return(
             <>
                 <ContentListPlayer
                     contents = {this.props.contents}
                     userContents = {this.props.userContents}
+                    onClickCurrentContentPlayer = {this.onClickCurrentContentPlayer}
                 />
             </>
         )
@@ -31,4 +41,9 @@ const mapStateToProps = (state, ownProps) =>{
     }
 }
 
-export default connect(mapStateToProps, {fetchContents, fetchUserContentByUserName})(ContentListPlayerContainer);
+export default connect(mapStateToProps,
+     {fetchContents,
+         fetchUserContentByUserName, 
+         fetchContentCurrentPlayer,
+         unMountCourseContent
+    })(ContentListPlayerContainer);

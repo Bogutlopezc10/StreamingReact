@@ -18,9 +18,9 @@ class ContentPlayer extends React.Component{
         )
     }
     render(){
-        const{content} = this.props;
+        const{content,onClickCurrentContentPlayer} = this.props;
         return(
-            <div className="col-12 p-3 container-player-content">
+            <div onClick={() => onClickCurrentContentPlayer(content.id)} className="col-12 p-3 container-player-content">
                 <div className="row">
                     <div className="col-1 ml-2 d-flex align-items-center justify-content-center">
                         {this.isReadContent()}
