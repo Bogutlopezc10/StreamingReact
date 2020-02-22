@@ -4,7 +4,7 @@ class Option extends React.Component{
 
     renderBadge = () =>{
         if(this.props.option.isCorrect){
-            return <span className="badge badge-success badge-pill"><i class="fas fa-check"></i></span>
+            return <span className="badge ml-4 badge-success badge-pill"><i class="fas fa-check"></i></span>
         }
     }
 

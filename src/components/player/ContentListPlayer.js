@@ -6,8 +6,8 @@ class ContentListPlayer extends React.Component{
     render(){
         return(
             <>
-                <div className="container">
-                    <div className="row">
+                <div>
+                    <div className="row" style={{ marginLeft: "0px"}}>
                         { this.props.contents.map( content =>
                             <ContentPlayer 
                                 key={content.id} 
