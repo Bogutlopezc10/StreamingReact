@@ -12,19 +12,18 @@ class PlayerContainer extends React.Component{
             <>
                 <MainHeader backgroundHeaderColor="#005385" player={true} textHeader="Reproductor del curso" />
                 <div className="row">
-                    <div className="col-lg-8">
-                        <CoursePlayerContainer
-                            userCourseId = {userCourseId}
-                        />
+                    <div className="col-lg-9 pr-0">
                          <CurrentContentPlayerContainer />
                     </div>
-                    <div className="col-lg-4">
+                    <div className="col-lg-3 pl-0">
                         <SubjectListPlayerContainer 
                             courseId={courseId}
                         />
                     </div>
-                    <div>
-
+                    <div className="col-lg-12">
+                        <CoursePlayerContainer
+                            userCourseId = {userCourseId}
+                        />
                     </div>
                 </div>
             </>

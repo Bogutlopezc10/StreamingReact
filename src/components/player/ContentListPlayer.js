@@ -14,6 +14,7 @@ class ContentListPlayer extends React.Component{
                                 content={content}
                                 userContents = {this.props.userContents}
                                 onClickCurrentContentPlayer= {this.props.onClickCurrentContentPlayer}
+                                currentContent={this.props.currentContent}
                             />
                         )}
                     </div>

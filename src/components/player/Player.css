@@ -1,7 +1,37 @@
 .container-subject-player{
-    height: calc(100vh - 180px);
-    background-color: #cccccc;
+    height: calc(100vh - 250px);
+    background-color: #eaeaea;
     overflow-y: auto;
+}
+
+.container-subject-header{
+    height: 70px;
+    border: 1px solid #bcbdbd;
+    width: 100%;
+    background-color: white;
+}
+
+.container-subject-header h5{
+    color: black;
+    font-weight: 600;
+}
+
+.selected-content{
+    background-color: #e6f2f5;
+}
+
+.selected-content:hover{
+    background-color: #dceef3 !important;
+}
+
+.selected-icon{
+    color:#005385cf !important;
+}
+
+.container-current-player{
+    height: calc(100vh - 180px);
+    width: 100%;
+    background-color: #cccccc;
 }
 
 .container-player-content:hover{
@@ -10,7 +40,7 @@
 }
 
 .container-player-content h5{
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .container-player-content i,

@@ -28,6 +28,7 @@ class ContentListPlayerContainer  extends React.Component{
                     contents = {this.props.contents}
                     userContents = {this.props.userContents}
                     onClickCurrentContentPlayer = {this.onClickCurrentContentPlayer}
+                    currentContent={this.props.currentContent}
                 />
             </>
         )
@@ -37,7 +38,8 @@ class ContentListPlayerContainer  extends React.Component{
 const mapStateToProps = (state, ownProps) =>{
     return {
         contents: getContentsBySubjectId(state,ownProps.subjectId),
-        userContents: getUserContentsByUsername(state, "Mr. Sample")
+        userContents: getUserContentsByUsername(state, "Mr. Sample"),
+        currentContent: state.contents.currentPlayerContent
     }
 }
 

@@ -18,9 +18,17 @@ class ContentPlayer extends React.Component{
         )
     }
     render(){
-        const{content,onClickCurrentContentPlayer} = this.props;
+        const{content,onClickCurrentContentPlayer, currentContent} = this.props;
+        var classNameContainer = 'col-12 p-3 container-player-content'
+        var classNameIcon = 'd-inline fas fa-play-circle'
+        if(currentContent){
+            if(currentContent.id == content.id){
+                classNameContainer = 'col-12 p-3 container-player-content selected-content'
+                classNameIcon = 'd-inline fas fa-play-circle selected-icon'
+            }
+        }
         return(
-            <div onClick={() => onClickCurrentContentPlayer(content.id)} className="col-12 p-3 container-player-content">
+            <div onClick={() => onClickCurrentContentPlayer(content.id)} className={classNameContainer}>
                 <div className="row">
                     <div className="col-1 ml-2 d-flex align-items-center justify-content-center">
                         {this.isReadContent()}
@@ -33,7 +41,7 @@ class ContentPlayer extends React.Component{
                                 </h5>
                             </div>
                             <div className="col-12">
-                                <i className="d-inline fas fa-play-circle"></i>
+                                <i className={classNameIcon}></i>
                                 <p className="d-inline ml-2">6 min.</p>
                             </div>
                         </div>

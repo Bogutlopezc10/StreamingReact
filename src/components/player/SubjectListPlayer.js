@@ -7,6 +7,11 @@ const SubjectListPlayer = (props) => {
 
     return(
         <>
+            <div className="d-flex align-items-center pl-0 container-subject-header">
+                <div className="col-lg-12">
+                    <h5>Contenido del curso</h5>
+                </div>
+            </div>
             <div className="container-subject-player">
                 <Accordion>
                     { props.subjects.map( subject => 
