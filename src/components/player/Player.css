@@ -39,7 +39,7 @@
 .container-current-player{
     height: calc(100vh - 287px);
     width: 100%;
-    background-color: black;
+    background-color:black;
 }
 
 .col-current{
