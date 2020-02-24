@@ -7,21 +7,23 @@ const SubjectListPlayer = (props) => {
 
     return(
         <>
-            <div className="d-flex align-items-center pl-0 container-subject-header">
-                <div className="col-lg-12">
-                    <h5>Contenido del curso</h5>
+            <div className="col-lg-4 col-subject">
+                <div className="d-flex align-items-center pl-0 container-subject-header">
+                    <div className="col-lg-12">
+                        <h5>Contenido del curso</h5>
+                    </div>
                 </div>
-            </div>
-            <div className="container-subject-player">
-                <Accordion>
-                    { props.subjects.map( subject => 
-                        <SubjectPlayer
-                            key={subject.id} 
-                            subject={subject} 
-                            courseId={props.courseId}
-                        />
-                    )}
-                </Accordion>
+                <div className="container-subject-player">
+                    <Accordion>
+                        { props.subjects.map( subject => 
+                            <SubjectPlayer
+                                key={subject.id} 
+                                subject={subject} 
+                                courseId={props.courseId}
+                            />
+                        )}
+                    </Accordion>
+                </div>      
             </div>
         </>
     )

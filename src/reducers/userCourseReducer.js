@@ -5,7 +5,8 @@ import {
     MOUNT_ERROR_USER_COURSE,
     UNMOUNT_ERROR_USER_COURSE,
     FETCH_USERCOURSE,
-    CURRENT_CONTENT_PLAYER
+    CURRENT_CONTENT_PLAYER,
+    UPDATE_RATING_USERCOURSE
 } from '../actions/types';
 
 
@@ -34,12 +35,15 @@ export default (state= defaultState, action) => {
                 ...state,
                 data:{...state.data, [action.payload.userCoursePlayer.id]:action.payload.userCoursePlayer},
             }
+        case UPDATE_RATING_USERCOURSE:
+            return {
+                ...state,
+                data:{...state.data, [action.payload.id]:action.payload},
+            }
         case FETCH_USERCOURSE:
             return {
                 ...state,
                 data:{...state.data, [action.payload.id]:action.payload},
-                isSuccess:true,
-                messageSuccess:"El curso fue creado exitosamente."
             }
         case MOUNT_ERROR_USER_COURSE:
             return {

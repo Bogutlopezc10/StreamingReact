@@ -9,6 +9,7 @@ import {
     MOUNT_ERROR_USER_COURSE,
     UNMOUNT_ERROR_USER_COURSE,
     FETCH_USERCOURSE,
+    UPDATE_RATING_USERCOURSE
 } from './types';
 
 export const fetchUserCoursesByUserName = () => async dispatch => {
@@ -22,6 +23,17 @@ export const fetchUserCoursesByUserName = () => async dispatch => {
         history.push('/errors');
     }
 
+}
+
+export const updateRatingUserCourse = (id,rating) => async dispatch => {
+    try{
+        const response = await streams.put(`/UsersCourses/${id}`,rating);
+        dispatch({ type: UPDATE_RATING_USERCOURSE, payload: response.data });
+    }
+    catch(error){
+        dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+        history.push('/errors');
+    }
 }
 
 

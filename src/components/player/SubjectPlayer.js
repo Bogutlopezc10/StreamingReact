@@ -15,7 +15,7 @@ class SubjectPlayer extends React.Component{
                         <div className="row d-flex align-items-center justify-content-between">
                             <div className="col-auto">
                                 <div className="row">
-                                    <div className="col-lg-12">
+                                    <div className="col-lg-12 card-header-player">
                                         {subject.name}
                                     </div>
                                     <div className="col-lg-12">

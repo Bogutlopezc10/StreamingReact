@@ -1,19 +1,27 @@
 .container-subject-player{
-    height: calc(100vh - 250px);
+    height: calc(100vh - 342px);
     background-color: #eaeaea;
     overflow-y: auto;
+    border-bottom: 3px solid #005385;
+    border-right: 1px solid #bcbdbd;
+}
+
+.card-header-player{
+    font-size: 15px !important;
 }
 
 .container-subject-header{
-    height: 70px;
+    height: 55px;
     border: 1px solid #bcbdbd;
     width: 100%;
     background-color: white;
+    border-top: 3px solid #005385;
 }
 
 .container-subject-header h5{
-    color: black;
-    font-weight: 600;
+    color: gray;
+    font-size: 17px;
+    font-style: italic;
 }
 
 .selected-content{
@@ -29,9 +37,17 @@
 }
 
 .container-current-player{
-    height: calc(100vh - 180px);
+    height: calc(100vh - 287px);
     width: 100%;
     background-color:black;
+}
+
+.col-current{
+    padding-right: 0px;
+}
+
+.col-subject{
+    padding-left: 0px;
 }
 
 .container-player-content:hover{
@@ -60,4 +76,40 @@
 .icon-uncheck,
 .icon-check{
   font-size: 18px;
+}
+
+.container-course-player{
+    background-color: white;
+}
+
+.container-course-player h6{
+    font-size: 15px;
+    color:black;
+}
+
+input[type="radio"]{
+    display: none;
+}
+
+.star{
+    cursor: pointer;
+    transition: 200ms;
+}
+
+.detail-course-player{
+    border-bottom: 1px solid #bcbdbd;
+}
+
+.container-stars{
+    margin-top: -5px;
+}
+
+@media screen and (max-width: 991px) {
+    .col-current{
+        padding-right: 15px !important;
+    }
+    
+    .col-subject{
+        padding-left: 15px !important;
+    }
 }

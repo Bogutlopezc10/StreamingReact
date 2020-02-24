@@ -5,13 +5,6 @@ import {connect} from 'react-redux'
 class CurrentContentPlayerContainer extends React.Component{
     
     render(){
-        if(!this.props.currentContent){
-            return(
-                <div>
-                    Aun no hay un video
-                </div>
-            )
-        }
         return(
             <CurrentContentPlayer
                 currentContent = {this.props.currentContent}
