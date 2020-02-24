@@ -1,6 +1,6 @@
 import React from 'react'
 import CoursePlayer from '../../components/player/CoursePlayer'
-import {fetchUserCourse} from '../../actions/userCourse'
+import {fetchUserCourse, updateRatingUserCourse} from '../../actions/userCourse'
 import {connect} from 'react-redux'
 import {getById} from '../../selectors/index'
 
@@ -9,15 +9,20 @@ class CoursePlayerContainer extends React.Component{
     componentDidMount(){
         this.props.fetchUserCourse(this.props.userCourseId)
     }
-    render(){
 
-        if(!this.props.course){
-            return <div>Cargando....................</div>
+    onClickUpdateRating = (id,rating) => {
+        const updateRating = {
+            rating: rating
         }
+        this.props.updateRatingUserCourse(id,updateRating);
+    }
+
+    render(){
         return(
             <>
                 <CoursePlayer
                     course = {this.props.course}
+                    onClickUpdateRating = {this.onClickUpdateRating}
                 />
             </>
         )
@@ -28,4 +33,4 @@ const mapStateToProps = (state, ownProps) =>{
     return {course: getById(state.userCourses.data,ownProps.userCourseId)}
 }
 
-export default connect(mapStateToProps, {fetchUserCourse})(CoursePlayerContainer);
+export default connect(mapStateToProps, {fetchUserCourse, updateRatingUserCourse})(CoursePlayerContainer);
