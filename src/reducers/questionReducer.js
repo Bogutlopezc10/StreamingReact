@@ -9,7 +9,8 @@ import {
     UNMOUNT_QUESTION,
     UNMOUNT_CREATE_QUESTION_FORM,
     FETCH_QUESTION,
-    DELETE_QUESTION
+    DELETE_QUESTION,
+    FETCH_QUESTIONS_EXAM
  } from '../actions/types'; 
 import _ from 'lodash';
 
@@ -25,6 +26,8 @@ const defaultState = {
 export default (state = defaultState, action) => {
     switch(action.type){
         case FETCH_QUESTIONS_BY_COURSE_ID:
+            return { ...state, data:{...state.data, ..._.mapKeys(action.payload,'id')}};
+        case FETCH_QUESTIONS_EXAM:
             return { ...state, data:{...state.data, ..._.mapKeys(action.payload,'id')}};
         case IS_CREATING_QUESTION:
             return { ...state, isCreating: action.payload}

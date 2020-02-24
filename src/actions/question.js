@@ -13,7 +13,8 @@ import {
     UNMOUNT_QUESTION,
     UNMOUNT_CREATE_QUESTION_FORM,
     FETCH_QUESTION,
-    DELETE_QUESTION
+    DELETE_QUESTION,
+    FETCH_QUESTIONS_EXAM
 } from './types';
 
 
@@ -22,6 +23,18 @@ export const fetchQuestionsByCourseId = (id) => async dispatch => {
     try{
         const response = await streams.get(`/Questions/ByCourse/${id}`);
         dispatch({ type: FETCH_QUESTIONS_BY_COURSE_ID, payload: response.data });
+    }
+    catch(error){
+        dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+        history.push('/errors');
+    }
+}
+
+export const fetchQuestionsExamByCourseId = (id) => async dispatch => {
+
+    try{
+        const response = await streams.get(`/Questions/QuestionExam/${id}`);
+        dispatch({ type: FETCH_QUESTIONS_EXAM, payload: response.data });
     }
     catch(error){
         dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });

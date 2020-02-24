@@ -66,3 +66,15 @@ export const unMountOptions = () => async dispatch => {
     dispatch({ type: SUCCESS_UNMOUNT_OPTIONS })
 
 }
+
+export const validateAnswersExam = (answersExam) => async dispatch => {
+
+    try{
+        const response = await streams.post(`/Options/ValidateExam`,answersExam);
+        console.log(response.data)
+    }
+    catch(error){
+        dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+        history.push('/errors');
+    }
+}
