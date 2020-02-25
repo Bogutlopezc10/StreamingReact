@@ -8,7 +8,7 @@ import './Player.css'
 class CoursePlayer extends React.Component{
 
     renderButtonExam = () => {
-        const { course } = this.props;
+        const { course, userCourseId, courseId} = this.props;
         if (course.isEnd){
             return (
                 <>
@@ -17,7 +17,7 @@ class CoursePlayer extends React.Component{
                             <span className="text-isEnd">¡Has terminado el curso!</span>
                         </div>
                         <div className="col-lg-12 d-flex justify-content-center mt-2 mb-2">
-                            <Link className="btn btn-outline-success" to="/">
+                            <Link className="btn btn-outline-success" to={`/questions/exam/${courseId}/${userCourseId}`}>
                                 <div>
                                     <p className="d-inline">REALIZAR EXAMEN</p> 
                                     <i className="d-inline fas fa-file-alt ml-2 mt-2"></i>

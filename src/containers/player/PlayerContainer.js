@@ -19,6 +19,7 @@ class PlayerContainer extends React.Component{
                         />
                         <CoursePlayerContainer
                             userCourseId = {userCourseId}
+                            courseId={courseId}
                         />
                     </div>
                 </div>

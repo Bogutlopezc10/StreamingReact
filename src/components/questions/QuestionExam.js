@@ -13,12 +13,12 @@ class QuestionExam extends React.Component{
                 options:optionsValForm,
                 userCourseId:this.props.userCourseId
             }
-            this.props.onSubmit(answersExam);
+            this.props.onSubmit(answersExam, this.props.courseId, this.props.userCourseId);
         }
     }
     render(){
         const {pristine, submitting } = this.props
-        const {courseName, courseId, questions} = this.props
+        const {questions} = this.props
         return(
             <form onSubmit ={this.props.handleSubmit(this.onSubmit)} className="ui form error">
                 <div>

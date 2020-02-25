@@ -22,6 +22,8 @@ class CoursePlayerContainer extends React.Component{
             <>
                 <CoursePlayer
                     course = {this.props.course}
+                    userCourseId = {this.props.userCourseId}
+                    courseId={this.props.courseId}
                     onClickUpdateRating = {this.onClickUpdateRating}
                 />
             </>

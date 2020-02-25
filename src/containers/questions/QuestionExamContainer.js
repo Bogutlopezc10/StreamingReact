@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import QuestionExam from '../../components/questions/QuestionExam'
 import {fetchQuestionsExamByCourseId} from '../../actions/question'
-import {getQuestionsByCourseId} from '../../selectors/index'
+import {getQuestionsExamByCourseId} from '../../selectors/index'
 import MainHeader from '../../components/MainHeader'
 import {validateAnswersExam} from '../../actions/option'
 
@@ -12,8 +12,8 @@ class QuestionExamContainer extends React.Component{
         this.props.fetchQuestionsExamByCourseId(this.props.courseId)
     }
 
-    onSubmit = (answersExam)=>{
-        this.props.validateAnswersExam(answersExam);
+    onSubmit = (answersExam, courseId, userCourseId)=>{
+        this.props.validateAnswersExam(answersExam, courseId, userCourseId);
     }
     render(){
         if(this.props.questions.length == 0){
@@ -28,7 +28,6 @@ class QuestionExamContainer extends React.Component{
            <>
              <MainHeader backgroundHeaderColor="#005385" textHeader="Examen del curso" />
             <QuestionExam
-                courseName ={this.props.courseName}
                 courseId = {this.props.courseId}
                 questions = {this.props.questions}
                 onSubmit = {this.onSubmit}
@@ -40,6 +39,6 @@ class QuestionExamContainer extends React.Component{
 }
 
 const mapStateToProps = (state, ownProps) =>{
-    return { questions: getQuestionsByCourseId(state, ownProps.courseId) }
+    return { questions: getQuestionsExamByCourseId(state, ownProps.courseId) }
 }
 export default connect(mapStateToProps, {fetchQuestionsExamByCourseId, validateAnswersExam})(QuestionExamContainer);

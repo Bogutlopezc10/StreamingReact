@@ -6,7 +6,8 @@ import {
     UNMOUNT_ERROR_USER_COURSE,
     FETCH_USERCOURSE,
     CURRENT_CONTENT_PLAYER,
-    UPDATE_RATING_USERCOURSE
+    UPDATE_RATING_USERCOURSE,
+    UPDATE_USER_COURSE_CORRECTANSWERS
 } from '../actions/types';
 
 
@@ -26,6 +27,11 @@ export default (state= defaultState, action) => {
                  data:{...state.data,..._.mapKeys(action.payload,'id')}
             };
         case CREATE_USERCOURSE_BY_USERNAME:
+            return {
+                ...state,
+                data:{...state.data, [action.payload.id]:action.payload},
+            }
+        case UPDATE_USER_COURSE_CORRECTANSWERS:
             return {
                 ...state,
                 data:{...state.data, [action.payload.id]:action.payload},

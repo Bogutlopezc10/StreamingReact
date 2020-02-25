@@ -1,11 +1,10 @@
 import React from 'react'
-import QuestionExamContainer from '../../containers/questions/QuestionExamContainer'
+import ValidateAnswersContainer from '../containers/ValidateAnswersContainer'
 
-const QuestionExamPage = (props) => {
-
+const ValidateAnswersPage = (props) => {
     return(
         <div className="main-container">
-            <QuestionExamContainer
+           <ValidateAnswersContainer
                 courseId = {props.match.params.courseId}
                 userCourseId = {props.match.params.userCourseId}
             />
@@ -13,4 +12,4 @@ const QuestionExamPage = (props) => {
     )
 }
 
-export default QuestionExamPage;
+export default ValidateAnswersPage;

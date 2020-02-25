@@ -7,7 +7,8 @@ import {
     CREATE_OPTIONS,
     EDIT_OPTIONS,
     SUCCESS_UNMOUNT_OPTIONS,
-    DELETE_OPTIONS
+    DELETE_OPTIONS,
+    UPDATE_USER_COURSE_CORRECTANSWERS
 } from './types';
 
 export const fetchOptionsByQuestionId = (id) => async dispatch => {
@@ -67,11 +68,12 @@ export const unMountOptions = () => async dispatch => {
 
 }
 
-export const validateAnswersExam = (answersExam) => async dispatch => {
+export const validateAnswersExam = (answersExam, courseId, userCourseId) => async dispatch => {
 
     try{
-        const response = await streams.post(`/Options/ValidateExam`,answersExam);
-        console.log(response.data)
+        const response = await streams.put(`/Options/ValidateExam`,answersExam);
+        dispatch({ type: UPDATE_USER_COURSE_CORRECTANSWERS, payload: response.data});
+        history.push(`/ValidateAnswersPage/${courseId}/${userCourseId}`);
     }
     catch(error){
         dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
