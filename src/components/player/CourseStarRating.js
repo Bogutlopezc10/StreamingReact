@@ -11,6 +11,7 @@ const CourseStarRating = ({ rating, userCourseId, onClickUpdateRating }) =>{
                 return (
                     <label key={ratingValue} >
                         <input 
+                            className="input-stars"
                             type="radio" 
                             name="rating" 
                             value={ratingValue} 
