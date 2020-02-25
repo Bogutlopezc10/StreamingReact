@@ -75,7 +75,7 @@ class CoursePost extends React.Component {
                         backgroundHeaderColor = {this.props.backgroundHeaderColor}
                         actions ={this.renderClose()}
                         onDismiss={()=> history.push('/Teacher')}
-                />
+            />
         )
     }
     render (){

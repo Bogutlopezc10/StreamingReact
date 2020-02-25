@@ -10,7 +10,8 @@ class QuestionExam extends React.Component{
         if(optionsValForm.length == 5){
 
             const answersExam ={
-                options:optionsValForm
+                options:optionsValForm,
+                userCourseId:this.props.userCourseId
             }
             this.props.onSubmit(answersExam);
         }

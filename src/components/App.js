@@ -59,7 +59,7 @@ const App = () => {
                             <Route path="/options/Edit/:courseName/:courseId/:questionId" exact component={OptionEditPage} />
                             <Route path="/options/Delete/:courseName/:courseId/:questionId" exact component={OptionDeletePage} />
                             <Route path="/player/:courseId/:userCourseId" exact component={PlayerPage} />
-                            <Route path="/questions/exam/:courseName/:courseId" exact component={QuestionExamPage} />
+                            <Route path="/questions/exam/:courseName/:courseId/:userCourseId" exact component={QuestionExamPage} />
                             <Route path="/errors" exact component={ErrorPage} />
                         </Switch>
                     <Footer />

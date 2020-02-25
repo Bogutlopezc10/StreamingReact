@@ -7,7 +7,8 @@ const QuestionExamPage = (props) => {
         <div className="main-container">
             <QuestionExamContainer
                 courseName = {props.match.params.courseName}
-                courseId ={props.match.params.courseId}
+                courseId = {props.match.params.courseId}
+                userCourseId = {props.match.params.userCourseId}
             />
         </div>
     )

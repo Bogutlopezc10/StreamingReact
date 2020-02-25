@@ -32,6 +32,7 @@ class QuestionExamContainer extends React.Component{
                 courseId = {this.props.courseId}
                 questions = {this.props.questions}
                 onSubmit = {this.onSubmit}
+                userCourseId = {this.props.userCourseId}
             />
            </>
         )
