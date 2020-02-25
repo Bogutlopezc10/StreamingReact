@@ -41,7 +41,7 @@ const CourseDetail = ({ course, borderTopColor, onClickCreateUserCourse }) => {
                                 <h6 className="d-inline">Contacto: </h6><p className="d-inline">{course.emailTeacher}</p> 
                             </div>
                             <div className="col-lg-12 info-teacher mt-2">
-                                <h6 className="d-inline">Publicado: </h6><p className="d-inline"><Moment format="DD/MM/YYYY">{course.updatedAt}</Moment></p>
+                                <h6 className="d-inline">Publicado: </h6><p className="d-inline"><Moment format="DD/MM/YYYY">{course.postedAt}</Moment></p>
                             </div>
                             <div className="col-lg-12 mt-4">
                                 <button className="btn btn-block btn-outline-success" onClick={()=>onClickCreateUserCourse(course.id)}>
