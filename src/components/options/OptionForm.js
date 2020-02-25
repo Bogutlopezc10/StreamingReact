@@ -181,22 +181,22 @@ class OptionForm extends React.Component {
                     </div>
                 </div>
                 <div className="row mb-1">
-                    <div className="col-auto d-flex alig-items-center justify-content-center">
+                    <div className="col-auto d-flex align-items-center justify-content-center">
                         <label>
                             <Field name="isCorrect" component={this.renderInput} type="radio" label="Opción 1" value="isCorrect1" checked={true}/>{' '}
                         </label>
                     </div>
-                    <div className="col-auto d-flex alig-items-center justify-content-center">
+                    <div className="col-auto d-flex align-items-center justify-content-center">
                         <label>
                             <Field name="isCorrect" component={this.renderInput} type="radio" label="Opción 2" value="isCorrect2" />{' '}
                         </label>
                     </div>
-                    <div className="col-auto d-flex alig-items-center justify-content-center">
+                    <div className="col-auto d-flex align-items-center justify-content-center">
                         <label>
                             <Field name="isCorrect" component={this.renderInput} label="Opción 3" type="radio" value="isCorrect3" />{' '}
                         </label>
                     </div>
-                    <div className="col-auto d-flex alig-items-center justify-content-center">
+                    <div className="col-auto d-flex align-items-center justify-content-center">
                         <label>
                             <Field name="isCorrect" component={this.renderInput} label="Opción 4" type="radio" value="isCorrect4" />{' '}
                         </label>

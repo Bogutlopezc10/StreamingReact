@@ -46,5 +46,5 @@ class QuestionExam extends React.Component{
 }
 
 export default  reduxForm({
-    form: 'examForm',
+    form: 'examForm'
 })(QuestionExam);
