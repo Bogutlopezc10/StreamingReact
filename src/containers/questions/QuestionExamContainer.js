@@ -25,9 +25,6 @@ class QuestionExamContainer extends React.Component{
     }
     render(){
         const{questions, userCourse, userCourseId, courseId} = this.props
-        if(userCourse.correctAnswers >= 3 || !userCourse.isEnd){
-            history.push('/')
-        }
         if(questions.length == 0 || !userCourse){
             return(
                 <div>
@@ -35,6 +32,9 @@ class QuestionExamContainer extends React.Component{
                     <h1>Loading..............</h1>
                 </div>
             )
+        }
+        if(userCourse.correctAnswers >= 3 || !userCourse.isEnd){
+            history.push('/')
         }
         return(
            <>
