@@ -14,7 +14,8 @@ import {
     UNMOUNT_CREATE_QUESTION_FORM,
     FETCH_QUESTION,
     DELETE_QUESTION,
-    FETCH_QUESTIONS_EXAM
+    FETCH_QUESTIONS_EXAM,
+    UNMOUNT_QUESTION_EXAM
 } from './types';
 
 
@@ -134,3 +135,9 @@ export const deleteQuestion = (id, courseName, courseId) =>async dispatch =>{
         history.push('/errors');
     }
 };
+
+export const unMountQuestionExam = () => dispatch => {
+        
+    dispatch({ type: UNMOUNT_QUESTION_EXAM })
+
+}

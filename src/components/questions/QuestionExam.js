@@ -1,5 +1,5 @@
 import React from 'react'
-import {Field, reduxForm} from 'redux-form';
+import {reduxForm} from 'redux-form';
 import OptionExamListContainer from '../../containers/options/OptionExamListContainer'
 
 class QuestionExam extends React.Component{
@@ -19,6 +19,7 @@ class QuestionExam extends React.Component{
     render(){
         const {pristine, submitting } = this.props
         const {questions} = this.props
+        //console.log(questions);
         return(
             <form onSubmit ={this.props.handleSubmit(this.onSubmit)} className="ui form error">
                 <div>
@@ -31,6 +32,7 @@ class QuestionExam extends React.Component{
                                 <OptionExamListContainer
                                     questionId ={question.id}
                                 />
+                                <br></br>
                             </div>
                         </>
                     )}

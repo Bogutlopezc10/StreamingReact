@@ -1,13 +1,14 @@
 import React from 'react'
 import OptionExamList from '../../components/options/OptionExamList'
 import {getOptionsByQuestionId} from '../../selectors/index'
-import {fetchOptionsByQuestionId} from '../../actions/option'
+import {fetchOptionsExamByQuestionId} from '../../actions/option'
 import {connect} from 'react-redux'
 
 class OptionExamListContainer extends React.Component {
 
     componentDidMount(){
-        this.props.fetchOptionsByQuestionId(this.props.questionId);
+        console.log(this.props.questionId)
+        this.props.fetchOptionsExamByQuestionId(this.props.questionId);
     }
     render(){
         if(this.props.options.length  == 0){
@@ -25,9 +26,9 @@ class OptionExamListContainer extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) =>{
-    return { 
+    return {
         options: getOptionsByQuestionId(state,ownProps.questionId),
     }
 }
 
-export default connect(mapStateToProps, {fetchOptionsByQuestionId})(OptionExamListContainer);
+export default connect(mapStateToProps, {fetchOptionsExamByQuestionId})(OptionExamListContainer);

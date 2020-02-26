@@ -10,7 +10,8 @@ import {
     UNMOUNT_CREATE_QUESTION_FORM,
     FETCH_QUESTION,
     DELETE_QUESTION,
-    FETCH_QUESTIONS_EXAM
+    FETCH_QUESTIONS_EXAM,
+    UNMOUNT_QUESTION_EXAM
  } from '../actions/types'; 
 import _ from 'lodash';
 
@@ -73,6 +74,10 @@ export default (state = defaultState, action) => {
                 isCreating:false,
                 isEditing:false,
                 currentQuestion:null
+            }
+        case UNMOUNT_QUESTION_EXAM:
+            return { ...state, 
+                questionsExam:[]
             }
         case UNMOUNT_CREATE_QUESTION_FORM:
             return { ...state, 

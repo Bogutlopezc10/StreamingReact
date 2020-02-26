@@ -3,7 +3,8 @@ import {
     CREATE_OPTIONS,
     EDIT_OPTIONS,
     SUCCESS_UNMOUNT_OPTIONS,
-    DELETE_OPTIONS
+    DELETE_OPTIONS,
+    FETCH_OPTIONS_EXAMS_BY_QUESTION_ID
  } from '../actions/types'; 
 import _ from 'lodash';
 
@@ -19,6 +20,8 @@ const defaultState = {
 export default (state = defaultState, action) => {
     switch(action.type){
         case FETCH_OPTIONS_BY_QUESTION_ID:
+            return { ...state, data:{...state.data, ..._.mapKeys(action.payload,'id')}};
+        case FETCH_OPTIONS_EXAMS_BY_QUESTION_ID:
             return { ...state, data:{...state.data, ..._.mapKeys(action.payload,'id')}};
         case CREATE_OPTIONS:
             return{
