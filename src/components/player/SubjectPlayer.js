@@ -7,7 +7,7 @@ import ContentListPlayerContainer from '../../containers/player/ContentListPlaye
 
 class SubjectPlayer extends React.Component{
     render(){
-        const { subject, amountContent } = this.props;
+        const { subject, amountContent,numSubject } = this.props;
         return(
             <>
                 <Card className="card-content-course">
@@ -16,7 +16,7 @@ class SubjectPlayer extends React.Component{
                             <div className="col-auto">
                                 <div className="row">
                                     <div className="col-lg-12 card-header-player">
-                                        {subject.name}
+                                        {numSubject}. {subject.name}
                                     </div>
                                     <div className="col-lg-12">
                                         <small style={{ color:"gray" }}>{amountContent}/{amountContent} | 42min</small>
