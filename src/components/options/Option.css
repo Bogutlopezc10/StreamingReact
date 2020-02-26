@@ -23,6 +23,11 @@
     font-size: 13px;
 }
 
+.option-exam{
+    font-style: italic;
+    color: gray;
+}
+
 @media screen and (max-width: 769px){
     .btn-menu-options{
         margin-top: 10px;

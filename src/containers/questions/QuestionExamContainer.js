@@ -26,7 +26,7 @@ class QuestionExamContainer extends React.Component{
         }
         return(
            <>
-             <MainHeader backgroundHeaderColor="#005385" textHeader="Examen del curso" />
+            <MainHeader backgroundHeaderColor="#005385" textHeader="Examen del curso" />
             <QuestionExam
                 courseId = {this.props.courseId}
                 questions = {this.props.questions}

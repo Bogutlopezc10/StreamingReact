@@ -1,5 +1,5 @@
 .container-subject-player{
-    height: calc(100vh - 342px);
+    height: calc(100vh - 341px);
     background-color: #eaeaea;
     overflow-y: auto;
     border-bottom: 3px solid #005385;
@@ -37,7 +37,7 @@
 }
 
 .container-current-player{
-    height: calc(100vh - 287px);
+    height: calc(100vh - 286px);
     width: 100%;
     background-color:black;
 }

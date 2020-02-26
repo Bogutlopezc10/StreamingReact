@@ -15,13 +15,17 @@ const SubjectListPlayer = (props) => {
                 </div>
                 <div className="container-subject-player">
                     <Accordion>
-                        { props.subjects.map( subject => 
-                            <SubjectPlayer
-                                key={subject.id} 
-                                subject={subject} 
-                                courseId={props.courseId}
-                            />
-                        )}
+                        { props.subjects.map( (subject,i) => {
+                            const numSubject = i + 1;
+                            return(
+                                <SubjectPlayer
+                                    key={subject.id} 
+                                    subject={subject} 
+                                    courseId={props.courseId}
+                                    numSubject={numSubject}
+                                />
+                            );
+                        })}
                     </Accordion>
                 </div>      
             </div>
