@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Moment from 'react-moment';
 import 'moment-timezone';
 import './Player.css'
+import CreatePdf from '../CreatePdf'
 
 class CoursePlayer extends React.Component{
 
@@ -24,6 +25,7 @@ class CoursePlayer extends React.Component{
                                 </div>
                             </Link>
                         </div>
+                        <CreatePdf course = {course}/>
                     </div>
                     <hr/>
                 </>

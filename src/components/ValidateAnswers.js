@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import CreatePdf from '../components/CreatePdf'
 
 class ValidateAnswers extends React.Component{
 
@@ -25,7 +26,9 @@ class ValidateAnswers extends React.Component{
                 <>
                     <h1>HAS GANADO EL EXAMEN</h1>
                     <h2>sacaste: {userCourse.correctAnswers}/5</h2>
-                    <button className="btn btn-primary">Descargar Pdf</button>
+                    <CreatePdf
+                        course = {userCourse}
+                    />
                     <br></br>
                     {this.renderButton()}
                 </>
