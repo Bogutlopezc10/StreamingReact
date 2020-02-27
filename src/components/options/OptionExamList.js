@@ -11,7 +11,7 @@ class OptionExamList extends React.Component {
                         <OptionExam 
                             key={option.id}
                             option={option}
-                            questionId = {this.props.questionId}
+                            numQuestion = {this.props.numQuestion}
                         />
                     )}
                 </div>

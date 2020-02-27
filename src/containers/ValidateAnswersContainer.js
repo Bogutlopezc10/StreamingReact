@@ -11,10 +11,9 @@ class ValidateAnswersContainer extends React.Component{
         this.props.fetchUserCourse(this.props.userCourseId);
     }
     render(){
-        console.log(this.props.userCourse)
         return(
             <>
-                <MainHeader backgroundHeaderColor="#005385" textHeader="Resultados del curso" />
+                <MainHeader backgroundHeaderColor="#005385" textHeader="Examen del curso" />
                 <ValidateAnswers
                     courseId = {this.props.courseId}
                     userCourseId = {this.props.userCourseId}

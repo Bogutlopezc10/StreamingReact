@@ -22,12 +22,6 @@ const Category = ({ category }) => {
                         <i className="fas fa-edit mt-1 mb-1"></i>
                     </div>
                 </Link>
-                <Link to={`/categories/Delete/${category.name}/${category.id}`}  className="btn btn-danger btn-delete-category">
-                    <div>
-                        <p>ELIMINAR</p> 
-                        <i className="fas fa-times mt-1 mb-1"></i>
-                    </div>
-                </Link>
             </div>
         </div>
     )

@@ -1,0 +1,25 @@
+.container-result{
+    background-color: white;
+    border-top: 5px solid;
+    border-top-color: #005385;
+    min-height: calc(100vh - 260px);
+}
+
+.container-result h1{
+    font-weight: bold;
+}
+
+.container-result h5{
+    font-style: italic;
+    color:gray;
+}
+
+.color-icon-bad{
+    color:#dc3545;
+    font-size: 120px;
+}
+
+.color-icon-good{
+    color: #28a745;
+    font-size: 120px;
+}

@@ -108,6 +108,7 @@
 
 .title-published{
     font-weight: bold;
+    font-size: 30px;
 }
 
 .container-published{
@@ -232,7 +233,7 @@
 }
 
 .border-teacher{
-    border-color: gray;
+    border-color: #b7b7b7;
 }
 
 .btn-question,

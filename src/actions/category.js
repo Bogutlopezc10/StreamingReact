@@ -6,7 +6,6 @@ import {
     FETCH_CATEGORY,
     CREATE_CATEGORY,
     EDIT_CATEGORY,
-    DELETE_CATEGORY,
     UPDATE_ERROR_WITH_ACTION
 } from './types';
 
@@ -46,19 +45,6 @@ export const editCategory = (id, formValues) =>async (dispatch) =>{
     try{
         const response = await streams.put(`/Categories/${id}`,formValues)
         dispatch({type: EDIT_CATEGORY, payload:response.data})
-        history.push('/categories');
-    }
-    catch(error){
-        dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
-        history.push('/errors');
-    }
-};
-
-export const deleteCategory = (id) =>async dispatch =>{
-
-    try{
-        await streams.delete(`/Categories/${id}`);
-        dispatch({type: DELETE_CATEGORY, payload:id})
         history.push('/categories');
     }
     catch(error){

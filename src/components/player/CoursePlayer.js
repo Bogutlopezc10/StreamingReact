@@ -8,24 +8,46 @@ import CreatePdf from '../CreatePdf'
 
 class CoursePlayer extends React.Component{
 
-    renderButtonExam = () => {
+    renderMessage = () => {
         const { course, userCourseId, courseId} = this.props;
+        if(course.correctAnswers >= 3){
+            return(
+                <>
+                    <div className="col-lg-12 d-flex justify-content-center">
+                        <span className="text-isEnd d-inline">!Felicitaciones! Aprobaste el curso</span>
+                        <i className="icon-success d-inline ml-2 mt-2 far fa-check-circle"></i>
+                    </div>
+                    <div className="col-lg-12 d-flex justify-content-center mt-2 mb-2">
+                        <CreatePdf course = {course}/>
+                    </div>
+                </>
+            );
+        }else{
+            return(
+                <>
+                    <div className="col-lg-12 d-flex justify-content-center">
+                        <span className="text-isEnd">¡Has terminado el curso!</span>
+                    </div>
+                    <div className="col-lg-12 d-flex justify-content-center mt-2 mb-2">
+                        <Link className="btn btn-outline-success" to={`/questions/exam/${courseId}/${userCourseId}`}>
+                            <div>
+                                <p className="d-inline">REALIZAR EXAMEN</p> 
+                                <i className="d-inline fas fa-file-alt ml-2 mt-2"></i>
+                            </div>
+                        </Link>
+                    </div>
+                </>
+            );
+        }
+    }
+
+    renderButtonExam = () => {
+        const { course } = this.props;
         if (course.isEnd){
             return (
                 <>
                     <div className="row mt-3">
-                        <div className="col-lg-12 d-flex justify-content-center">
-                            <span className="text-isEnd">¡Has terminado el curso!</span>
-                        </div>
-                        <div className="col-lg-12 d-flex justify-content-center mt-2 mb-2">
-                            <Link className="btn btn-outline-success" to={`/questions/exam/${courseId}/${userCourseId}`}>
-                                <div>
-                                    <p className="d-inline">REALIZAR EXAMEN</p> 
-                                    <i className="d-inline fas fa-file-alt ml-2 mt-2"></i>
-                                </div>
-                            </Link>
-                        </div>
-                        <CreatePdf course = {course}/>
+                        {this.renderMessage()}
                     </div>
                     <hr/>
                 </>

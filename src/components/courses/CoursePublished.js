@@ -38,6 +38,21 @@ class CoursePublished extends React.Component{
         }
     }
 
+    renderButtonQuestionTeacher = () => {
+        const { course, teacher } = this.props;
+        if(teacher){
+            return(
+                <Link to={`/questions/${course.name}/${course.id}`} className="btn btn-danger btn-question-published">
+                    <div>
+                        <p>PREGUNTAS</p> 
+                        <i className="fas fa-question mt-1 mb-1"></i>
+                    </div>
+                </Link>
+            )            
+        }
+        
+    } 
+
     render(){
         const { course, customizeButton } = this.props;
         return(
@@ -57,12 +72,7 @@ class CoursePublished extends React.Component{
                             <i className="d-inline fas fa-angle-double-right ml-2 mt-2"></i>
                         </div>
                     </Link>
-                    <Link to={`/questions/${course.name}/${course.id}`} className="btn btn-danger btn-question-published">
-                        <div>
-                            <p>PREGUNTAS</p> 
-                            <i className="fas fa-question mt-1 mb-1"></i>
-                        </div>
-                    </Link>
+                    {this.renderButtonQuestionTeacher()}
                 </div>
             </div>
         )

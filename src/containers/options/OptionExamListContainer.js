@@ -7,7 +7,6 @@ import {connect} from 'react-redux'
 class OptionExamListContainer extends React.Component {
 
     componentDidMount(){
-        console.log(this.props.questionId)
         this.props.fetchOptionsExamByQuestionId(this.props.questionId);
     }
     render(){
@@ -19,7 +18,7 @@ class OptionExamListContainer extends React.Component {
         return(
             <OptionExamList
                 options = {this.props.options}
-                questionId = {this.props.questionId}
+                numQuestion = {this.props.numQuestion}
             />
         )
     }

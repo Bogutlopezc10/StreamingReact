@@ -5,7 +5,6 @@ import {
     FETCH_CATEGORY,
     CREATE_CATEGORY,
     EDIT_CATEGORY,
-    DELETE_CATEGORY,
     UPDATE_SUCCESS_UNMOUNT
 } from '../actions/types';
 
@@ -36,13 +35,6 @@ export default (state = initialState() , action) => {
                 isSuccess:true,
                 messageSuccess:"La categoría fue editada exitosamente."
             }
-        case DELETE_CATEGORY:
-            return {
-                ...state,
-                data: _.omit(state.data, action.payload),
-                isSuccess:true,
-                messageSuccess:"La categoría fue eliminada exitosamente."
-            };
         case UPDATE_SUCCESS_UNMOUNT:
             return {
                 ...state,

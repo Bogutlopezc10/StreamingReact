@@ -41,10 +41,16 @@
 
 .content-usercourse h6{
     color:black;
-    font-weight: 620;
-    margin-right: 9%;
-    margin-top: 20px;
-    font-size: 17px;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    margin-right: 4%;
+}
+
+.content-usercourse span{
+    color:gray;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    font-style: italic;
 }
 
 .stars-usercourse{
@@ -63,7 +69,7 @@
     opacity: 0.9;
 }
 
-.card-usercourse i{
+.icon-play-usercourse{
     position: absolute;
     color: #f7f7f7;
     font-size: 80px;
@@ -73,7 +79,25 @@
     visibility: hidden;
 }
 
-.card-usercourse:hover i{
+.icon-success-usercourse,
+.icon-wrong-usercourse{
+    position: absolute;
+    font-weight: bold;
+    font-size: 30px;
+    top: 5px;
+    right: 4px;
+    z-index: 1000;
+}
+
+.icon-wrong-usercourse{
+    color:#d8d8d8;
+}
+
+.icon-success-usercourse{
+    color:#2185d0;
+}
+
+.card-usercourse:hover .icon-play-usercourse{
     visibility: visible;
     transition: all 0.6s;
     text-shadow: 2px 3px 6px black; 
@@ -82,7 +106,7 @@
 }
 
 @media screen and (max-width: 575px){
-    .card-usercourse i{
+    .icon-play-usercourse{
         left: 15%;
     }
 }

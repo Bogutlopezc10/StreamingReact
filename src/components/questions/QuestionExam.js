@@ -1,5 +1,5 @@
 import React from 'react'
-import {reduxForm} from 'redux-form';
+import {reduxForm, Field } from 'redux-form';
 import OptionExamListContainer from '../../containers/options/OptionExamListContainer'
 import './Question.css'
 
@@ -17,10 +17,23 @@ class QuestionExam extends React.Component{
             this.props.onSubmit(answersExam, this.props.courseId, this.props.userCourseId);
         }
     }
+
+    renderError({meta}){
+        if(meta.touched && meta.error){
+            return(
+                <div className="error-message">
+                    <i className="d-inline fas fa-exclamation-circle"></i>
+                    <p className="d-inline ml-2">{meta.error}</p>
+                </div>
+            );
+        }
+
+        return '';
+    }
+
     render(){
         const {pristine, submitting } = this.props
         const {questions} = this.props
-        //console.log(questions);
         return(
             <div className="container course-shadow container-published pt-4 px-4 mb-5" style={{ borderTopColor: "#005385" }}>
                 <form onSubmit ={this.props.handleSubmit(this.onSubmit)} className="ui form error">
@@ -35,7 +48,11 @@ class QuestionExam extends React.Component{
                                     <div className="col-lg-12 mb-2">
                                         <OptionExamListContainer
                                             questionId ={question.id}
+                                            numQuestion = {numQuestion}
                                         />
+                                    </div>
+                                    <div className="col-lg-12">
+                                        <Field name={`opcion${numQuestion}`} component={this.renderError}/>
                                     </div>
                                 </div>
                                 <hr/>
@@ -58,6 +75,27 @@ class QuestionExam extends React.Component{
     }
 }
 
+const validate = (formValues) => {
+    const errors ={};
+    if (!formValues.opcion1){
+        errors.opcion1 = 'Debes responder todas las preguntas'
+    }
+    if (!formValues.opcion2){
+        errors.opcion2 = 'Debes responder todas las preguntas'
+    }
+    if (!formValues.opcion3){
+        errors.opcion3 = 'Debes responder todas las preguntas'
+    }
+    if (!formValues.opcion4){
+        errors.opcion4 = 'Debes responder todas las preguntas'
+    }
+    if (!formValues.opcion5){
+        errors.opcion5 = 'Debes responder todas las preguntas'
+    }
+    return errors;
+}
+
 export default  reduxForm({
-    form: 'examForm'
+    form: 'examForm',
+    validate
 })(QuestionExam);

@@ -12,16 +12,15 @@
 
 .container-subject-header{
     height: 55px;
-    border: 1px solid #bcbdbd;
     width: 100%;
     background-color: white;
     border-top: 3px solid #005385;
 }
 
 .container-subject-header h5{
-    color: gray;
+    color: black;
     font-size: 17px;
-    font-style: italic;
+    font-style: normal;
 }
 
 .selected-content{
@@ -44,6 +43,10 @@
 
 .col-current{
     padding-right: 0px;
+}
+
+.icon-success{
+    font-size: 21px;
 }
 
 .col-subject{
