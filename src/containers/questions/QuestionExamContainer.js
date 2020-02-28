@@ -18,11 +18,17 @@ class QuestionExamContainer extends React.Component{
         this.props.fetchUserCourse(this.props.userCourseId)
     }
 
-    onSubmit = (answersExam, courseId, userCourseId, endExam)=>{
+    onSubmit = (answersExam, endExam)=>{
+        console.log(answersExam)
         if(endExam){
-            // this.props.validateAnswersExam(answersExam, courseId, userCourseId);
-            console.log(answersExam);
-        }{
+
+            const answersExamViewModel = {
+                options: Object.values(answersExam),
+                userCourseId: this.props.userCourseId
+            }
+            this.props.validateAnswersExam(answersExamViewModel, this.props.courseId, this.props.userCourseId);
+        }
+        else {
             this.props.nextQuestionExam();
         }
         
@@ -43,7 +49,14 @@ class QuestionExamContainer extends React.Component{
             )
         }
         if(userCourse.correctAnswers >= 3 || !userCourse.isEnd){
-            history.push('/')
+            return (
+                <>
+                    <MainHeader backgroundHeaderColor="#005385" textHeader="Examen del curso" />
+                    <div>
+                        <button className="btn btn-primary">Ir al Curso</button>
+                    </div>
+                </>
+            )
         }
         return(
            <>

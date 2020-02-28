@@ -4,14 +4,15 @@ import OptionExam from '../../components/options/OptionExam'
 
 class OptionExamList extends React.Component {
     onSubmit = (formValues)=>{
-        console.log(formValues);
+        //console.log(formValues);
         const {currentNumberQuestion} = this.props;
         var endExam = false;
         if(currentNumberQuestion == 5){
             endExam = true;
-            this.props.onSubmit(formValues, this.props.courseId, this.props.userCourseId, endExam);
-        }else{
-            this.props.onSubmit(null, this.props.courseId, this.props.userCourseId, endExam);
+            this.props.onSubmit(formValues, endExam);
+        }
+        else{
+            this.props.onSubmit(null, endExam);
         }
         
     }
