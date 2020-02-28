@@ -1,8 +1,9 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import QuestionExam from '../../components/questions/QuestionExam'
-import {fetchQuestionsExamByCourseId} from '../../actions/question'
-import {getQuestionsExamByCourseId, getById} from '../../selectors/index'
+import {fetchQuestionsExamByCourseId, nextQuestionExam} from '../../actions/question'
+import {fetchOptionsExamByCourseId} from '../../actions/option'
+import {getById} from '../../selectors/index'
 import MainHeader from '../../components/MainHeader'
 import {validateAnswersExam} from '../../actions/option'
 import {fetchUserCourse} from '../../actions/userCourse'
@@ -13,19 +14,27 @@ class QuestionExamContainer extends React.Component{
 
     componentDidMount(){
         this.props.fetchQuestionsExamByCourseId(this.props.courseId)
+        this.props.fetchOptionsExamByCourseId(this.props.courseId)
         this.props.fetchUserCourse(this.props.userCourseId)
     }
 
-    onSubmit = (answersExam, courseId, userCourseId)=>{
-        this.props.validateAnswersExam(answersExam, courseId, userCourseId);
+    onSubmit = (answersExam, courseId, userCourseId, endExam)=>{
+        if(endExam){
+            // this.props.validateAnswersExam(answersExam, courseId, userCourseId);
+            console.log(answersExam);
+        }{
+            this.props.nextQuestionExam();
+        }
+        
     }
 
     componentWillUnmount(){
         this.props.unMountQuestionExam();
     }
+
     render(){
-        const{questions, userCourse, userCourseId, courseId} = this.props
-        if(questions.length == 0 || !userCourse){
+        const{currentQuestionExam, currentNumberQuestion, userCourse, userCourseId, courseId} = this.props
+        if(currentQuestionExam == null || !userCourse){
             return(
                 <div>
                     <MainHeader backgroundHeaderColor="#005385" textHeader="Examen del curso" />
@@ -41,7 +50,8 @@ class QuestionExamContainer extends React.Component{
             <MainHeader backgroundHeaderColor="#005385" textHeader="Examen del curso" />
             <QuestionExam
                 courseId = {courseId}
-                questions = {questions}
+                currentQuestionExam = {currentQuestionExam}
+                currentNumberQuestion = {currentNumberQuestion}
                 onSubmit = {this.onSubmit}
                 userCourseId = {userCourseId}
             />
@@ -52,15 +62,18 @@ class QuestionExamContainer extends React.Component{
 
 const mapStateToProps = (state, ownProps) =>{
     return { 
-        questions: getQuestionsExamByCourseId(state, ownProps.courseId),
+        currentQuestionExam: state.questions.currentQuestionExam,
+        currentNumberQuestion: state.questions.currentNumberQuestion,
         userCourse: getById(state.userCourses.data, ownProps.userCourseId)
     }
 }
 export default connect(mapStateToProps,
-    {
-        fetchQuestionsExamByCourseId,
-        validateAnswersExam,
-        fetchUserCourse,
-        unMountQuestionExam
-    })
-     (QuestionExamContainer);
+{
+    fetchQuestionsExamByCourseId,
+    fetchOptionsExamByCourseId,
+    validateAnswersExam,
+    fetchUserCourse,
+    unMountQuestionExam,
+    nextQuestionExam
+})
+(QuestionExamContainer);

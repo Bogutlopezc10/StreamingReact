@@ -115,14 +115,3 @@ export const getUserCoursesNotFinishedByUser = (state) => {
     return userCourse.isEnd == false && userCourse.username == CURRENT_USER
   });
 }
-
-
-//exam selector
-export const getQuestionsExamByCourseId = (state, courseId) => {
-
-  const questions = state.questions.questionsExam;
-
-  return questions.filter((question) => {
-    return question.courseId == courseId
-  });
-}
