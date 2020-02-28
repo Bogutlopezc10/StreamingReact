@@ -87,7 +87,9 @@ export default (state = defaultState, action) => {
             }
         case UNMOUNT_QUESTION_EXAM:
             return { ...state, 
-                questionsExam:[]
+                questionsExam:[],
+                currentQuestionExam:null,
+                currentNumberQuestion:0
             }
         case UNMOUNT_CREATE_QUESTION_FORM:
             return { ...state, 

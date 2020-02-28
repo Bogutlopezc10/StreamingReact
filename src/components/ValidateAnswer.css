@@ -2,7 +2,7 @@
     background-color: white;
     border-top: 5px solid;
     border-top-color: #005385;
-    min-height: calc(100vh - 260px);
+    height: auto;
 }
 
 .container-result h1{
@@ -20,6 +20,6 @@
 }
 
 .color-icon-good{
-    color: #28a745;
+    color: #379a70;
     font-size: 120px;
 }
