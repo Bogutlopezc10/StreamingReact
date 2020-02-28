@@ -3,6 +3,7 @@ import CategoryList from '../../components/categories/CategoryList';
 import MainHeader from '../../components/MainHeader';
 import { connect } from 'react-redux';
 import { fetchCategories } from '../../actions/category.js';
+import {getDataOrderByCreatedAt} from '../../selectors/index'
 
 class CategoryListContainer extends React.Component{
     componentDidMount(){
@@ -23,7 +24,7 @@ class CategoryListContainer extends React.Component{
 }
 
 const mapStateToProps = (state) => {
-    return { categories: Object.values(state.categories.data) }
+    return { categories: getDataOrderByCreatedAt(state.categories.data)}
 }
 
 export default connect(mapStateToProps, { fetchCategories })(CategoryListContainer);
