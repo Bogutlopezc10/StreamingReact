@@ -7,9 +7,6 @@ import { fetchContents, isCreatingContent, isNotCreatingContent, fecthEditingCon
 import { getContentsBySubjectId } from '../../selectors/index';
 
 class ContentListContainer extends React.Component{
-    componentDidMount(){
-        this.props.fetchContents(this.props.subjectId);
-    }
 
     onClickIsCreatingContent = () => {
         this.props.isCreatingContent();
@@ -57,4 +54,4 @@ const mapStateToProps = (state, ownProps) =>{
     }
 }
 
-export default connect(mapStateToProps, {fetchContents, isCreatingContent, isNotCreatingContent, fecthEditingContent})(ContentListContainer);
+export default connect(mapStateToProps, {isCreatingContent, isNotCreatingContent, fecthEditingContent})(ContentListContainer);

@@ -9,7 +9,8 @@ import {
     SUCCESS_UNMOUNT_OPTIONS,
     DELETE_OPTIONS,
     UPDATE_USER_COURSE_CORRECTANSWERS,
-    FETCH_OPTIONS_EXAMS_BY_COURSE_ID
+    FETCH_OPTIONS_EXAMS_BY_COURSE_ID,
+    FETCH_OPTIONS
 } from './types';
 
 export const fetchOptionsByQuestionId = (id) => async dispatch => {
@@ -17,6 +18,18 @@ export const fetchOptionsByQuestionId = (id) => async dispatch => {
     try{
         const response = await streams.get(`/Options/ByQuestion/${id}`);
         dispatch({ type: FETCH_OPTIONS_BY_QUESTION_ID, payload: response.data });
+    }
+    catch(error){
+        dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+        history.push('/errors');
+    }
+}
+
+export const fetchOptions = () => async dispatch => {
+
+    try{
+        const response = await streams.get(`/Options`);
+        dispatch({ type: FETCH_OPTIONS, payload: response.data });
     }
     catch(error){
         dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });

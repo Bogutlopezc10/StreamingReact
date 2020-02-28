@@ -18,9 +18,9 @@ import {
     UNMOUNT_CONTENT_PLAYER
 } from '../actions/types';
 
-export const fetchContents = (id) => async dispatch => {
+export const fetchContents = () => async dispatch => {
     try{
-        const response = await streams.get(`/Contents/BySubject/${id}`);
+        const response = await streams.get(`/Contents`);
         dispatch({ type: FETCH_CONTENTS, payload: response.data });
     }
     catch(error){

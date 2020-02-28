@@ -1,14 +1,11 @@
 import React from 'react'
 import OptionList from '../../components/options/OptionList'
-import {fetchOptionsByQuestionId} from '../../actions/option'
 import {connect} from 'react-redux'
 import {getOptionsByQuestionId} from '../../selectors/index'
 
 class OptionListContainer extends React.Component{
 
-    componentDidMount(){
-        this.props.fetchOptionsByQuestionId(this.props.questionId);
-    }
+    
     render(){
         return(
             <>
@@ -29,4 +26,4 @@ const mapStateToProps = (state, ownProps) =>{
     }
 }
 
-export default connect(mapStateToProps, {fetchOptionsByQuestionId})(OptionListContainer);
+export default connect(mapStateToProps, null)(OptionListContainer);
