@@ -4,7 +4,6 @@ import OptionExam from '../../components/options/OptionExam'
 
 class OptionExamList extends React.Component {
     onSubmit = (formValues)=>{
-        //console.log(formValues);
         const {currentNumberQuestion} = this.props;
         var endExam = false;
         if(currentNumberQuestion == 5){
@@ -22,19 +21,19 @@ class OptionExamList extends React.Component {
         if(meta.error == true){
             if(currentNumberQuestion == 5){
                 return(
-                    <button className ="btn btn-outline-success mt-1 mb-4" disabled style={{ borderRadius: ".25rem" }}>
+                    <button className ="btn btn-outline-exam mt-1 mb-4" disabled style={{ borderRadius: ".25rem" }}>
                         <div>
-                            <p className="d-inline">ENVIAR</p> 
+                            <p className="d-inline">FINALIZAR</p> 
                             <i className="d-inline fas fa-share ml-2 mt-2"></i>
                         </div>
                     </button>
                 );
             }else{
                 return(
-                    <button className ="btn btn-outline-success mt-1 mb-4" disabled style={{ borderRadius: ".25rem" }}>
+                    <button className ="btn btn-outline-exam mt-1 mb-4" disabled style={{ borderRadius: ".25rem" }}>
                         <div>
                             <p className="d-inline">SIGUIENTE</p> 
-                            <i className="d-inline fas fa-share ml-2 mt-2"></i>
+                            <i className="d-inline fas fa-angle-double-right ml-2 mt-2"></i>
                         </div>
                     </button>
                 );
@@ -42,19 +41,19 @@ class OptionExamList extends React.Component {
         }else{
             if(currentNumberQuestion == 5){
                 return(
-                    <button className ="btn btn-outline-success mt-1 mb-4" style={{ borderRadius: ".25rem" }}>
+                    <button className ="btn btn-outline-exam mt-1 mb-4" style={{ borderRadius: ".25rem" }}>
                         <div>
-                            <p className="d-inline">ENVIAR</p> 
+                            <p className="d-inline">FINALIZAR</p> 
                             <i className="d-inline fas fa-share ml-2 mt-2"></i>
                         </div>
                     </button>
                 );
             }else{
                 return(
-                    <button className ="btn btn-outline-success mt-1 mb-4" style={{ borderRadius: ".25rem" }}>
+                    <button className ="btn btn-outline-exam mt-1 mb-4" style={{ borderRadius: ".25rem" }}>
                         <div>
                             <p className="d-inline">SIGUIENTE</p> 
-                            <i className="d-inline fas fa-share ml-2 mt-2"></i>
+                            <i className="d-inline fas fa-angle-double-right ml-2 mt-2"></i>
                         </div>
                     </button>
                 );
@@ -63,35 +62,69 @@ class OptionExamList extends React.Component {
         
     }
 
+    renderIconNumberQuestion = (currentNumberQuestion) =>{
+        if(currentNumberQuestion==1){
+            return(
+                <img src="/QuestionIcon1.png" className="img-question-icon" alt="question-1" />
+            )
+        }else  if(currentNumberQuestion==2){
+            return(
+                <img src="/QuestionIcon2.png" className="img-question-icon" alt="question-2" />
+            )
+        }else  if(currentNumberQuestion==3){
+            return(
+                <img src="/QuestionIcon3.png" className="img-question-icon" alt="question-3" />
+            )
+        }else  if(currentNumberQuestion==4){
+            return(
+                <img src="/QuestionIcon4.png" className="img-question-icon" alt="question-4" />
+            )
+        }else{
+            return(
+                <img src="/QuestionIcon5.png" className="img-question-icon" alt="question-5" />
+            )
+        }
+    }
+
     render(){
         const {currentQuestionExam, currentNumberQuestion} = this.props;
         return(
             <>
-                <div className="container course-shadow container-published pt-4 px-4 mb-5" style={{ borderTopColor: "#005385" }}>
-                    <form onSubmit ={this.props.handleSubmit(this.onSubmit)} className="ui form error">
-                        <div className="row">
-                            <div className="col-lg-12 question-exam mt-1 mb-2">
-                                <h5>{currentNumberQuestion}. {currentQuestionExam.content}</h5>
-                            </div>
-                            <div className="col-lg-12 mb-2">
-                                <div className="row">
-                                    { this.props.options.map( option =>
-                                        <OptionExam 
-                                            key={option.id}
-                                            option={option}
-                                            numQuestion = {currentNumberQuestion}
-                                        />
-                                    )}
+                <div className="row d-flex justify-content-center">
+                    <div className="col-lg-6">
+                        <div className="container course-shadow container-published pt-4 px-4 mb-5" style={{ borderTopColor: "#005385" }}>
+                            <form onSubmit ={this.props.handleSubmit(this.onSubmit)} className="ui form error">
+                                <div className="row question-title d-flex justify-content-center">
+                                    <div className="col-auto">
+                                        {this.renderIconNumberQuestion(currentNumberQuestion)}
+                                    </div>
                                 </div>
-                            </div>
+                                <hr></hr>
+                                <div className="row">
+                                    <div className="col-lg-12 question-exam mt-1 mb-2">
+                                        <h5>{currentQuestionExam.content}</h5>
+                                    </div>
+                                    <div className="col-lg-12 mb-2">
+                                        <div className="row">
+                                            { this.props.options.map( option =>
+                                                <OptionExam 
+                                                    key={option.id}
+                                                    option={option}
+                                                    numQuestion = {currentNumberQuestion}
+                                                />
+                                            )}
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr/>
+                                <div className="row d-flex justify-content-center">
+                                    <div className="col-auto">
+                                        <Field name={`opcion${currentNumberQuestion}`} component={this.renderButtonExam}/>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                        <hr/>
-                        <div className="row d-flex justify-content-center">
-                            <div className="col-auto">
-                                <Field name={`opcion${currentNumberQuestion}`} component={this.renderButtonExam}/>
-                            </div>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </>
         )

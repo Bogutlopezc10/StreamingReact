@@ -184,11 +184,11 @@
 
 .btn-outline-success.disabled:hover, .btn-outline-success:disabled:hover {
     color: white;
-    background-color: #28a745;
+    background-color: #379a70;
 }
 
 .btn-outline-success.disabled, .btn-outline-success:disabled {
-    color: #28a745;
+    color: #379a70;
     background-color: transparent;
 }
 
