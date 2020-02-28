@@ -15,7 +15,8 @@ import {
     FETCH_QUESTION,
     DELETE_QUESTION,
     FETCH_QUESTIONS_EXAM,
-    UNMOUNT_QUESTION_EXAM
+    UNMOUNT_QUESTION_EXAM,
+    NEXT_QUESTION_EXAM
 } from './types';
 
 
@@ -139,5 +140,11 @@ export const deleteQuestion = (id, courseName, courseId) =>async dispatch =>{
 export const unMountQuestionExam = () => dispatch => {
         
     dispatch({ type: UNMOUNT_QUESTION_EXAM })
+
+}
+
+export const nextQuestionExam = () => dispatch => {
+        
+    dispatch({ type: NEXT_QUESTION_EXAM })
 
 }

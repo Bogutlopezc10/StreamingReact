@@ -9,7 +9,7 @@ import {
     SUCCESS_UNMOUNT_OPTIONS,
     DELETE_OPTIONS,
     UPDATE_USER_COURSE_CORRECTANSWERS,
-    FETCH_OPTIONS_EXAMS_BY_QUESTION_ID
+    FETCH_OPTIONS_EXAMS_BY_COURSE_ID
 } from './types';
 
 export const fetchOptionsByQuestionId = (id) => async dispatch => {
@@ -82,11 +82,11 @@ export const validateAnswersExam = (answersExam, courseId, userCourseId) => asyn
     }
 }
 
-export const fetchOptionsExamByQuestionId = (id) => async dispatch => {
+export const fetchOptionsExamByCourseId = (id) => async dispatch => {
 
     try{
-        const response = await streams.get(`/Options/ByQuestion/${id}`);
-        dispatch({ type: FETCH_OPTIONS_EXAMS_BY_QUESTION_ID, payload: response.data });
+        const response = await streams.get(`/Options/ByCourse/${id}`);
+        dispatch({ type: FETCH_OPTIONS_EXAMS_BY_COURSE_ID, payload: response.data });
     }
     catch(error){
         dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });

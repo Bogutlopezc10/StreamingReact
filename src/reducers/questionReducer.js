@@ -11,7 +11,8 @@ import {
     FETCH_QUESTION,
     DELETE_QUESTION,
     FETCH_QUESTIONS_EXAM,
-    UNMOUNT_QUESTION_EXAM
+    UNMOUNT_QUESTION_EXAM,
+    NEXT_QUESTION_EXAM
  } from '../actions/types'; 
 import _ from 'lodash';
 
@@ -22,7 +23,9 @@ const defaultState = {
     isCreating:false,
     isEditing:false,
     currentQuestion:null,
-    questionsExam:[]
+    questionsExam:[],
+    currentQuestionExam:null,
+    currentNumberQuestion:0
 }
 
 export default (state = defaultState, action) => {
@@ -31,7 +34,14 @@ export default (state = defaultState, action) => {
             return { ...state, data:{...state.data, ..._.mapKeys(action.payload,'id')}};
         case FETCH_QUESTIONS_EXAM:
             return { ...state,
-                 questionsExam: action.payload
+                questionsExam: action.payload,
+                currentQuestionExam: action.payload[0],
+                currentNumberQuestion: 1
+            };
+        case NEXT_QUESTION_EXAM:
+            return { ...state,
+                currentNumberQuestion: state.currentNumberQuestion + 1,
+                currentQuestionExam: state.questionsExam[state.currentNumberQuestion]
             };
         case IS_CREATING_QUESTION:
             return { ...state, isCreating: action.payload}
