@@ -173,6 +173,14 @@ export const getUserCoursesNotFinishedByUser = (state) => {
   }).sort(compareValuesCreatedAt('createdAt', 'desc'));
 }
 
+export const getUserCoursesByUser = (state) => {
+
+  const userCourses = Object.values(state.userCourses.data);
+
+  return userCourses.filter((userCourse) => {
+    return userCourse.username == CURRENT_USER
+  });
+}
 
 // category selector
 export const getDataOrderByCreatedAt = (data) => {

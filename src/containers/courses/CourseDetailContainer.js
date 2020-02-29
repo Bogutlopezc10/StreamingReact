@@ -3,15 +3,15 @@ import {connect} from 'react-redux'
 import CourseDetail from '../../components/courses/CourseDetail'
 import MainHeader from '../../components/MainHeader';
 import {fetchCourse} from '../../actions/course';
-import {createUserCourse} from '../../actions/userCourse'
-import {getById} from '../../selectors/index';
-import ErrorGeneric from '../../components/ErrorGeneric'
+import {createUserCourse, fetchUserCoursesByUserName} from '../../actions/userCourse'
+import {getById, getUserCoursesByUser} from '../../selectors/index';
 import {unMountUserCourse} from '../../actions/userCourse'
 
 class CourseDetailContainer extends React.Component{
 
     componentDidMount(){
         this.props.fetchCourse(this.props.courseId); 
+        this.props.fetchUserCoursesByUserName();
     }
     
     componentWillUnmount(){
@@ -22,27 +22,21 @@ class CourseDetailContainer extends React.Component{
         this.props.createUserCourse(courseId)
     }
 
-
-    renderMessage(){
-        if(this.props.errorUserCourse){
-            return(
+    render(){
+        console.log(this.props.userCourses)
+        if(!this.props.course || !this.props.userCourses){
+            return (
                 <>
-                 <ErrorGeneric message={this.props.messageErrorUserCourse}/>
+                    <MainHeader backgroundHeaderColor="#005385" textHeader="Detalle del curso" />
                 </>
             )
-        }
-    }
-
-    render(){
-        if(!this.props.course){
-            return <>Vacio</>
         }
         return (
             <>
                 <MainHeader backgroundHeaderColor="#005385" textHeader="Detalle del curso" />
-                {this.renderMessage()}
                 <CourseDetail 
-                    course={this.props.course} 
+                    course={this.props.course}
+                    userCourses = {this.props.userCourses}
                     borderTopColor="#005385"
                     onClickCreateUserCourse={this.onClickCreateUserCourse}
                 />
@@ -55,9 +49,15 @@ class CourseDetailContainer extends React.Component{
 const mapStateToProps = (state, ownProps) =>{
     return {
          course: getById(state.courses.data,ownProps.courseId),
-         messageErrorUserCourse:state.userCourses.messageError,
+         userCourses: getUserCoursesByUser(state),
          errorUserCourse:state.userCourses.isError
     }
 }
 
-export default connect(mapStateToProps,{fetchCourse, createUserCourse, unMountUserCourse})(CourseDetailContainer);
+export default connect(mapStateToProps,
+    {
+        fetchCourse,
+        createUserCourse,
+        unMountUserCourse,
+        fetchUserCoursesByUserName
+    })(CourseDetailContainer);
