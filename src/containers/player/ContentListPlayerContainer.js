@@ -10,7 +10,6 @@ import {fetchContentCurrentPlayer,unMountCourseContent} from '../../actions/cont
 class ContentListPlayerContainer  extends React.Component{
 
     componentDidMount(){
-        this.props.fetchContents(this.props.subjectId)
         this.props.fetchUserContentByUserName()
     }
 
@@ -44,7 +43,7 @@ const mapStateToProps = (state, ownProps) =>{
 }
 
 export default connect(mapStateToProps,
-     {fetchContents,
+     {
          fetchUserContentByUserName, 
          fetchContentCurrentPlayer,
          unMountCourseContent
