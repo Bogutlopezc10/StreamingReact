@@ -3,19 +3,34 @@ import './Player.css'
 
 class CurrentContentPlayer extends React.Component{
 
+    renderAllowPlay = () =>{
+        if(this.props.firstTimePlayer){
+            return(
+                <iframe src={this.props.currentContent.url.replace('watch?v=','embed/')}
+                height="100%" frameBorder="0" style={{ width: "100%" }} allowFullScreen></iframe>  
+            )
+        }else{
+            return(
+                <iframe allow="autoplay" src={this.props.currentContent.url.replace('watch?v=','embed/').concat("?autoplay=1&enablejsapi=1")}
+                height="100%" frameBorder="0" style={{ width: "100%" }} allowFullScreen></iframe> 
+            )
+        }
+    }
+
     render(){
         if(!this.props.currentContent){
             return(
                 <div className="col-lg-8 col-current">
-                    Aun no hay un video
+                    <div className="container-current-player">
+                        <img src="/Youtube.jpg" width="100%" height="100%" alt="youtube" />
+                    </div>
                 </div>
             )
         }
         return(
             <div className="col-lg-8 col-current">
                 <div className="container-current-player">
-                    <iframe allow="autoplay" src={this.props.currentContent.url.replace('watch?v=','embed/').concat("?autoplay=1&enablejsapi=1")}
-                    height="100%" frameBorder="0" style={{ width: "100%" }} allowFullScreen></iframe>   
+                    {this.renderAllowPlay()} 
                 </div>
             </div>
         )

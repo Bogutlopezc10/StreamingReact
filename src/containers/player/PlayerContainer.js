@@ -13,7 +13,9 @@ class PlayerContainer extends React.Component{
                 <MainHeader backgroundHeaderColor="#005385" textHeader="Reproductor del curso" />
                 <div className="container pl-0 pr-0" style={{ boxShadow: "2px 2px 5px 0px rgba(0,0,0,0.75)"}}>
                     <div className="row">
-                        <CurrentContentPlayerContainer />
+                        <CurrentContentPlayerContainer 
+                            courseId={courseId} 
+                        />
                         <SubjectListPlayerContainer 
                             courseId={courseId}
                         />

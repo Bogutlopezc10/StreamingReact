@@ -1,11 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\src",
-    "\\src\\apis",
-    "\\src\\components",
-    "\\src\\components\\questions"
+    ""
   ],
-  "SelectedNode": "\\src\\components\\questions\\QuestionExam.js",
   "PreviewInSolutionExplorer": false
 }

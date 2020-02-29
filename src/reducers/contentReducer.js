@@ -12,8 +12,9 @@ import {
     UNMOUNT_COURSE_CONTENT,
     UNMOUNT_CONTENT,
     CURRENT_CONTENT_PLAYER,
-    UNMOUNT_CONTENT_PLAYER
-     } from '../actions/types';
+    UNMOUNT_CONTENT_PLAYER,
+    FETCH_LAST_CONTENT_DESCENDING
+} from '../actions/types';
 import _ from 'lodash';
 
 const defaultState = {
@@ -23,7 +24,8 @@ const defaultState = {
     isCreating:false,
     isEditing:false,
     currentContent:null,
-    currentPlayerContent:null
+    currentPlayerContent:null,
+    firstTimePlayer: true
 }
 
 export default (state = defaultState, action) => {
@@ -101,15 +103,22 @@ export default (state = defaultState, action) => {
                 isEditing:false,
                 currentContent:null
             }
+        case FETCH_LAST_CONTENT_DESCENDING:
+            return{
+                ...state,
+                currentPlayerContent: action.payload
+            }
         case CURRENT_CONTENT_PLAYER:
             return{
                 ...state,
-                currentPlayerContent: action.payload.contentPlayer
+                currentPlayerContent: action.payload.contentPlayer,
+                firstTimePlayer: false
             }
         case UNMOUNT_CONTENT_PLAYER:
             return{
                 ...state,
-                currentPlayerContent: null
+                currentPlayerContent: null,
+                firstTimePlayer: true
             }
         default:
             return state;

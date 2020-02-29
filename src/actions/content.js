@@ -15,6 +15,7 @@ import {
     UNMOUNT_CONTENT,
     CURRENT_CONTENT_PLAYER,
     CURRENT_USER,
+    FETCH_LAST_CONTENT_DESCENDING,
     UNMOUNT_CONTENT_PLAYER
 } from '../actions/types';
 
@@ -121,6 +122,19 @@ export const fetchContentCurrentPlayer = (id) => async dispatch => {
         const response = await streams.get(`/Contents/GetReadContent/${username}/${id}`);
 
         dispatch({ type: CURRENT_CONTENT_PLAYER, payload: response.data});
+    }
+    catch(error){
+        dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+        history.push('/errors');
+    }
+}
+
+export const fetchLastContentByUserNameDescending = (courseId) => async dispatch => {
+
+    const username = CURRENT_USER
+    try{
+        const response = await streams.get(`/Contents/GetLastContentDescending/${courseId}/${username}`);
+        dispatch({ type: FETCH_LAST_CONTENT_DESCENDING, payload: response.data });
     }
     catch(error){
         dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
