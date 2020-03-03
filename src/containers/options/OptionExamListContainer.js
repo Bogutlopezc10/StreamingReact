@@ -6,11 +6,6 @@ import {connect} from 'react-redux'
 class OptionExamListContainer extends React.Component {
 
     render(){
-        if(this.props.options.length  == 0){
-            return(
-            <div>Loading..........</div>
-            )
-        }
         return(
             <OptionExamList
                 options = {this.props.options}

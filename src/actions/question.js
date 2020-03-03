@@ -16,7 +16,8 @@ import {
     DELETE_QUESTION,
     FETCH_QUESTIONS_EXAM,
     UNMOUNT_QUESTION_EXAM,
-    NEXT_QUESTION_EXAM
+    NEXT_QUESTION_EXAM,
+    UNMOUNT_QUESTIONS_LOADING
 } from './types';
 
 
@@ -146,5 +147,11 @@ export const unMountQuestionExam = () => dispatch => {
 export const nextQuestionExam = () => dispatch => {
         
     dispatch({ type: NEXT_QUESTION_EXAM })
+
+}
+
+export const UnmountQuestionsLoading = () => dispatch => {
+        
+    dispatch({ type: UNMOUNT_QUESTIONS_LOADING })
 
 }

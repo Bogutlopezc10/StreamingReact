@@ -15,7 +15,8 @@ const defaultState = {
     messageSuccess:null,
     isCreating:false,
     isEditing:false,
-    currentQuestion:null
+    currentQuestion:null,
+    isLoading:true
 }
 
 export default (state = defaultState, action) => {
@@ -24,6 +25,10 @@ export default (state = defaultState, action) => {
             return { ...state, data:{...state.data, ..._.mapKeys(action.payload,'id')}};
         case FETCH_OPTIONS_EXAMS_BY_COURSE_ID:
             return { ...state, data:{...state.data, ..._.mapKeys(action.payload,'id')}};
+        case FETCH_OPTIONS_BY_QUESTION_ID:
+            return { 
+                ...state, data:{...state.data, ..._.mapKeys(action.payload,'id')},
+            };
         case CREATE_OPTIONS:
             return{
                 ...state,

@@ -3,7 +3,7 @@ import CourseEdit from '../../components/courses/CourseEdit'
 import MainHeader from '../../components/MainHeader';
 import {connect} from 'react-redux'
 import {fetchCourse} from '../../actions/course'
-import {fetchCategories} from '../../actions/category'
+import {fetchCategories, unMountCategory} from '../../actions/category'
 import {getById} from '../../selectors/index';
 
 class CourseEditContainer extends React.Component{
@@ -13,9 +13,6 @@ class CourseEditContainer extends React.Component{
         this.props.fetchCategories();
     }
     render(){
-        if(!this.props.course){
-            return <>Vacio</>
-        }
         return(
             <>
                 <MainHeader backgroundHeaderColor="#005385" textHeader="Editar curso" />
@@ -39,4 +36,9 @@ const mapStateToProps = (state, ownProps) =>{
 }
 
 
-export default connect(mapStateToProps, {fetchCourse, fetchCategories})(CourseEditContainer);
+export default connect(mapStateToProps,
+{
+    fetchCourse, 
+    fetchCategories, 
+    unMountCategory
+})(CourseEditContainer);

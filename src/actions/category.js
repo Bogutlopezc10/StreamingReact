@@ -6,7 +6,8 @@ import {
     FETCH_CATEGORY,
     CREATE_CATEGORY,
     EDIT_CATEGORY,
-    UPDATE_ERROR_WITH_ACTION
+    UPDATE_ERROR_WITH_ACTION,
+    UNMOUNT_CATEGORY
 } from './types';
 
 export const fetchCategories = () => async dispatch => {
@@ -52,3 +53,9 @@ export const editCategory = (id, formValues) =>async (dispatch) =>{
         history.push('/errors');
     }
 };
+
+export const unMountCategory = () => dispatch => {
+        
+    dispatch({ type: UNMOUNT_CATEGORY })
+
+}

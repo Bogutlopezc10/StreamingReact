@@ -13,7 +13,9 @@ import {
     UPDATE_ERROR_WITH_ACTION,
     POST_COURSE,
     COURSE_CAN_BE_POSTED,
-    UNMOUNT_COURSE_CONTENT
+    UNMOUNT_COURSE_CONTENT,
+    UNMOUNT_LOADING_COURSE,
+    UNMOUNT_DETAIL_COURSE
 } from './types';
 
 export const fetchCourses = () => async dispatch => {
@@ -139,5 +141,17 @@ export const postCourse = (id) =>async (dispatch) =>{
 export const unMountCourseContent = () => async dispatch => {
         
     dispatch({ type: UNMOUNT_COURSE_CONTENT })
+
+}
+
+export const unMountLoadingCourse= () => dispatch => {
+        
+    dispatch({ type: UNMOUNT_LOADING_COURSE })
+
+}
+
+export const unMountDetailCourse= () => dispatch => {
+        
+    dispatch({ type: UNMOUNT_DETAIL_COURSE })
 
 }

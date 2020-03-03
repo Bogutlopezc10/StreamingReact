@@ -1,7 +1,7 @@
 import React from 'react'
 import QuestionList from '../../components/questions/QuestionList'
-import {fetchQuestionsByCourseId} from '../../actions/question'
-import {fetchOptions} from '../../actions/option'
+import {fetchQuestionsByCourseId, UnmountQuestionsLoading} from '../../actions/question'
+import {fetchOptions, fetchOptionsExamByCourseId} from '../../actions/option'
 import { connect } from 'react-redux';
 import {getQuestionsByCourseId} from '../../selectors/index'
 
@@ -9,14 +9,13 @@ class QuestionListContainer extends React.Component {
 
     componentDidMount(){
         this.props.fetchQuestionsByCourseId(this.props.id);
-        this.props.fetchOptions();
+        this.props.fetchOptionsExamByCourseId(this.props.id);
+    }
+    
+    componentWillUnmount(){
+        this.props.UnmountQuestionsLoading();
     }
     render(){
-        if(!this.props.questions){
-            return(
-                <div>Vacio.</div>
-            )
-        }
         return(
             <>  
                 <QuestionList 
@@ -25,6 +24,7 @@ class QuestionListContainer extends React.Component {
                     questions = {this.props.questions}
                     borderTopColor = {this.props.borderTopColor}
                     onClickEditQuestion={this.props.onClickEditQuestion}
+                    loadingQuestions = {this.props.loadingQuestions}
                 />
             </>
         )
@@ -33,7 +33,16 @@ class QuestionListContainer extends React.Component {
 
 
 const mapStateToProps = (state, ownProps) =>{
-    return { questions: getQuestionsByCourseId(state, ownProps.id) }
+    return { 
+        questions: getQuestionsByCourseId(state, ownProps.id),
+        loadingQuestions: state.questions.isLoading
+    }
 }
 
-export default connect(mapStateToProps, {fetchQuestionsByCourseId, fetchOptions})(QuestionListContainer);
+export default connect(mapStateToProps, 
+{
+    fetchQuestionsByCourseId, 
+    fetchOptions, 
+    UnmountQuestionsLoading,
+    fetchOptionsExamByCourseId
+})(QuestionListContainer);

@@ -12,7 +12,8 @@ import {
     IS_NOT_EDITING_SUBJECT,
     FETCH_SUBJECT,
     DELETE_SUBJECT,
-    UNMOUNT_CREATE_SUBJECT_FORM
+    UNMOUNT_CREATE_SUBJECT_FORM,
+    UNMOUNT_SUBJECTS_LOADING
 } from '../actions/types';
 
 export const fetchSubjects = (id) => async dispatch => {
@@ -105,3 +106,9 @@ export const deleteSubject = (id, courseName, courseId) =>async dispatch =>{
         history.push('/errors');
     }
 };
+
+export const unMountSubjectsLoading = () => dispatch => {
+        
+    dispatch({ type: UNMOUNT_SUBJECTS_LOADING})
+
+}

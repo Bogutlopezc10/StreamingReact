@@ -25,7 +25,8 @@ const defaultState = {
     isEditing:false,
     currentContent:null,
     currentPlayerContent:null,
-    firstTimePlayer: true
+    firstTimePlayer: true,
+    isLoading:true
 }
 
 export default (state = defaultState, action) => {

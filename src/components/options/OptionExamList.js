@@ -3,6 +3,7 @@ import {reduxForm, Field } from 'redux-form';
 import OptionExam from '../../components/options/OptionExam'
 
 class OptionExamList extends React.Component {
+
     onSubmit = (formValues)=>{
         const {currentNumberQuestion} = this.props;
         var endExam = false;
@@ -85,47 +86,40 @@ class OptionExamList extends React.Component {
             )
         }
     }
-
     render(){
         const {currentQuestionExam, currentNumberQuestion} = this.props;
         return(
             <>
-                <div className="row d-flex justify-content-center">
-                    <div className="col-lg-6">
-                        <div className="container course-shadow container-published pt-4 px-4 mb-5" style={{ borderTopColor: "#005385" }}>
-                            <form onSubmit ={this.props.handleSubmit(this.onSubmit)} className="ui form error">
-                                <div className="row question-title d-flex justify-content-center">
-                                    <div className="col-auto">
-                                        {this.renderIconNumberQuestion(currentNumberQuestion)}
-                                    </div>
-                                </div>
-                                <hr></hr>
-                                <div className="row">
-                                    <div className="col-lg-12 question-exam mt-1 mb-2">
-                                        <h5>{currentQuestionExam.content}</h5>
-                                    </div>
-                                    <div className="col-lg-12 mb-2">
-                                        <div className="row">
-                                            { this.props.options.map( option =>
-                                                <OptionExam 
-                                                    key={option.id}
-                                                    option={option}
-                                                    numQuestion = {currentNumberQuestion}
-                                                />
-                                            )}
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr/>
-                                <div className="row d-flex justify-content-center">
-                                    <div className="col-auto">
-                                        <Field name={`opcion${currentNumberQuestion}`} component={this.renderButtonExam}/>
-                                    </div>
-                                </div>
-                            </form>
+                <form onSubmit ={this.props.handleSubmit(this.onSubmit)} className="ui form error">
+                    <div className="row question-title d-flex justify-content-center">
+                        <div className="col-auto">
+                            {this.renderIconNumberQuestion(currentNumberQuestion)}
                         </div>
                     </div>
-                </div>
+                    <hr></hr>
+                    <div className="row">
+                        <div className="col-lg-12 question-exam mt-1 mb-2">
+                            <h5>{currentQuestionExam.content}</h5>
+                        </div>
+                        <div className="col-lg-12 mb-2">
+                            <div className="row">
+                                { this.props.options.map( option =>
+                                    <OptionExam 
+                                        key={option.id}
+                                        option={option}
+                                        numQuestion = {currentNumberQuestion}
+                                    />
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                    <hr/>
+                    <div className="row d-flex justify-content-center">
+                        <div className="col-auto">
+                            <Field name={`opcion${currentNumberQuestion}`} component={this.renderButtonExam}/>
+                        </div>
+                    </div>
+                </form>           
             </>
         )
     }

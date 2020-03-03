@@ -3,11 +3,27 @@ import Subject from './Subject';
 import Accordion from 'react-bootstrap/Accordion';
 import './Subject.css'
 
-const SubjectList = ({ borderTopColor, subjects, onClickEditSubject, onClickUnMountContent, courseName, courseId }) => {
+class SubjectList extends React.Component{
 
-    return (
-        <>
-            <div className="container subject-shadow container-subject p-4" style={{ borderTopColor: borderTopColor }}>
+    renderData = () => {
+        const {subjects, onClickEditSubject, onClickUnMountContent, courseName, courseId, loadingSubjects } = this.props;
+
+        if(subjects.length == 0 && loadingSubjects){
+            return(
+                <>
+                    LOADING......
+                </>
+            )
+        }
+        else if(subjects.length == 0 && !loadingSubjects){
+            return(
+                <>
+                    NO HAY TEMAS 
+                </>
+            )
+        }
+        else{
+            return(
                 <Accordion>
                     { subjects.map( subject => 
                         <Subject 
@@ -19,9 +35,19 @@ const SubjectList = ({ borderTopColor, subjects, onClickEditSubject, onClickUnMo
                         />
                     )}
                 </Accordion>
-            </div>
-        </>
-    );
+            )
+        }
+    }
+    render(){
+        const { borderTopColor} = this.props;
+        return (
+            <>
+                <div className="container subject-shadow container-subject p-4" style={{ borderTopColor: borderTopColor }}>
+                    {this.renderData()}
+                </div>
+            </>
+        );
+    }
 }
 
 export default SubjectList;

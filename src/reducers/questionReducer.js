@@ -12,7 +12,8 @@ import {
     DELETE_QUESTION,
     FETCH_QUESTIONS_EXAM,
     UNMOUNT_QUESTION_EXAM,
-    NEXT_QUESTION_EXAM
+    NEXT_QUESTION_EXAM,
+    UNMOUNT_QUESTIONS_LOADING
  } from '../actions/types'; 
 import _ from 'lodash';
 
@@ -25,13 +26,17 @@ const defaultState = {
     currentQuestion:null,
     questionsExam:[],
     currentQuestionExam:null,
-    currentNumberQuestion:0
+    currentNumberQuestion:0,
+    isLoading:true
 }
 
 export default (state = defaultState, action) => {
     switch(action.type){
         case FETCH_QUESTIONS_BY_COURSE_ID:
-            return { ...state, data:{...state.data, ..._.mapKeys(action.payload,'id')}};
+            return { 
+                ...state, data:{...state.data, ..._.mapKeys(action.payload,'id')},
+                isLoading:false
+            };
         case FETCH_QUESTIONS_EXAM:
             return { ...state,
                 questionsExam: action.payload,
@@ -107,6 +112,11 @@ export default (state = defaultState, action) => {
             isSuccess:true,
             messageSuccess:"la pregunta fue eliminada exitosamente."
             };
+        case UNMOUNT_QUESTIONS_LOADING:
+            return {
+                ...state,
+                isLoading: true
+            }
         default:
             return state;
     }

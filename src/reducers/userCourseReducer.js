@@ -2,12 +2,12 @@ import _ from 'lodash';
 import {
     FETCH_USERCOURSES_BY_USERNAME,
     CREATE_USERCOURSE_BY_USERNAME,
-    MOUNT_ERROR_USER_COURSE,
-    UNMOUNT_ERROR_USER_COURSE,
     FETCH_USERCOURSE,
     CURRENT_CONTENT_PLAYER,
     UPDATE_RATING_USERCOURSE,
-    UPDATE_USER_COURSE_CORRECTANSWERS
+    UPDATE_USER_COURSE_CORRECTANSWERS,
+    UNMOUNT_DETAIL_COURSE,
+    UNMOUNT_LOADING_USERCOURSE
 } from '../actions/types';
 
 
@@ -16,7 +16,8 @@ const defaultState = {
     isSuccess:false,
     messageSuccess:null,
     isError:false,
-    messageError:null
+    messageError:null,
+    isLoading:true
 }
 
 export default (state= defaultState, action) => {
@@ -24,7 +25,8 @@ export default (state= defaultState, action) => {
         case FETCH_USERCOURSES_BY_USERNAME:
             return {
                  ...state, 
-                 data:{...state.data,..._.mapKeys(action.payload,'id')}
+                 data:{...state.data,..._.mapKeys(action.payload,'id')},
+                 isLoading: false
             };
         case CREATE_USERCOURSE_BY_USERNAME:
             return {
@@ -51,18 +53,16 @@ export default (state= defaultState, action) => {
                 ...state,
                 data:{...state.data, [action.payload.id]:action.payload},
             }
-        case MOUNT_ERROR_USER_COURSE:
+        case UNMOUNT_DETAIL_COURSE:
             return {
                 ...state,
-                isError: true,
-                messageError: "Ya estas matriculado en este curso"
-            }
-        case UNMOUNT_ERROR_USER_COURSE:
+                isLoading: true,
+            };
+        case UNMOUNT_LOADING_USERCOURSE:
             return {
                 ...state,
-                isError: false,
-                messageError: null
-            }
+                isLoading: true,
+            };
         default:
             return state;
     }

@@ -6,10 +6,9 @@ import {
     UPDATE_ERROR_WITH_ACTION,
     CURRENT_USER,
     CREATE_USERCOURSE_BY_USERNAME,
-    MOUNT_ERROR_USER_COURSE,
-    UNMOUNT_ERROR_USER_COURSE,
     FETCH_USERCOURSE,
-    UPDATE_RATING_USERCOURSE
+    UPDATE_RATING_USERCOURSE,
+    UNMOUNT_LOADING_USERCOURSE
 } from './types';
 
 export const fetchUserCoursesByUserName = () => async dispatch => {
@@ -47,14 +46,8 @@ export const createUserCourse = courseIdV =>async (dispatch) =>{
     }
     try{
         const response = await streams.post('/UsersCourses',userCourseValues)
-        
-        if(response.status == 204){
-            dispatch({type: MOUNT_ERROR_USER_COURSE})
-        }
-        else{
-            dispatch({type: CREATE_USERCOURSE_BY_USERNAME, payload:response.data})
-            history.push('/userCourses');
-        }
+        dispatch({type: CREATE_USERCOURSE_BY_USERNAME, payload:response.data})
+        history.push('/userCourses');
     }
     catch(error){
         dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
@@ -62,11 +55,6 @@ export const createUserCourse = courseIdV =>async (dispatch) =>{
     }
 
 };
-
-export const unMountUserCourse = () => async dispatch => {
-    dispatch({ type: UNMOUNT_ERROR_USER_COURSE })
-
-}
 
 export const fetchUserCourse = (id) => async dispatch => {
 
@@ -81,4 +69,9 @@ export const fetchUserCourse = (id) => async dispatch => {
 
 }
 
+export const unMountLoadingUserCourse= () => dispatch => {
+        
+    dispatch({ type: UNMOUNT_LOADING_USERCOURSE })
+
+}
 

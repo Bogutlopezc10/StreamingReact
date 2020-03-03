@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux'
 import CoursePublishedList from '../../components/courses/CoursePublishedList';
 import MainHeader from '../../components/MainHeader';
-import {fetchCoursesBycategory} from '../../actions/course'
+import {fetchCoursesBycategory, unMountLoadingCourse} from '../../actions/course'
 import { getCourseByCategory } from '../../selectors/index.js'
 
 class CourseByCategoryListContainer extends React.Component{
@@ -12,10 +12,11 @@ class CourseByCategoryListContainer extends React.Component{
         this.props.fetchCoursesBycategory(id);
         
     }
+
+    componentWillUnmount(){
+        this.props.unMountLoadingCourse()
+    }
     render(){
-        if(!this.props.courses){
-            return <>Vacio</>
-        }
         return (
             <>
                 <MainHeader backgroundHeaderColor="#30b3ff" textHeader={this.props.categoryName} />
@@ -24,6 +25,7 @@ class CourseByCategoryListContainer extends React.Component{
                     borderTopColor="#30b3ff" 
                     teacher={false}
                     customizeButton="btn-outline-primary"
+                    loadingCourse = {this.props.loadingCourse}
                 />
             </>
         );
@@ -31,9 +33,12 @@ class CourseByCategoryListContainer extends React.Component{
 }
 
 const mapStateToProps = (state, ownProps) => {
-    return { courses: getCourseByCategory(state, ownProps) }
+    return { 
+        courses: getCourseByCategory(state, ownProps),
+        loadingCourse: state.courses.isLoading
+    }
 
 }
 
 
-export default connect(mapStateToProps, {fetchCoursesBycategory})(CourseByCategoryListContainer);
+export default connect(mapStateToProps, {fetchCoursesBycategory, unMountLoadingCourse})(CourseByCategoryListContainer);

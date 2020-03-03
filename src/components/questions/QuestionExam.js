@@ -3,16 +3,47 @@ import OptionExamListContainer from '../../containers/options/OptionExamListCont
 import './Question.css'
 
 class QuestionExam extends React.Component{
-    render(){
-        const {currentQuestionExam, currentNumberQuestion, onSubmit} = this.props;
+
+    renderData = () =>{
+        const {currentQuestionExam, currentNumberQuestion, onSubmit, userCourse} = this.props;
+        if(currentQuestionExam == null || !userCourse){
+            return(
+                <>
+                LOADING.....
+                </>
+            )
+        }
+        if(userCourse.correctAnswers >= 3 || !userCourse.isEnd){
+            return (
+                <>
+                    <div>
+                        <button className="btn btn-primary">Ir al Curso</button>
+                    </div>
+                </>
+            )
+        }
         return(
-            <OptionExamListContainer
-                questionId ={currentQuestionExam.id}
-                numQuestion = {currentNumberQuestion}
-                currentQuestionExam = {currentQuestionExam}
-                currentNumberQuestion = {currentNumberQuestion}
-                onSubmit = {onSubmit}
-            />
+            <>
+                <OptionExamListContainer
+                    questionId ={currentQuestionExam.id}
+                    numQuestion = {currentNumberQuestion}
+                    currentQuestionExam = {currentQuestionExam}
+                    currentNumberQuestion = {currentNumberQuestion}
+                    onSubmit = {onSubmit}
+                />
+            </>
+        )
+    }
+    render(){
+        return(
+            <div className="row d-flex justify-content-center">
+                <div className="col-lg-6">
+                    <div className="container course-shadow container-published pt-4 px-4 mb-5" style={{ borderTopColor: "#005385" }}>
+                        {this.renderData()}
+                    </div>
+                </div>
+            </div>
+           
         )
     }
 }

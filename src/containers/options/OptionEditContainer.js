@@ -25,6 +25,7 @@ class OptionEditContainer extends React.Component{
                     questionId = {this.props.questionId}
                     optionsEdit = {this.props.options}
                     borderTopColor="#005385"
+                    loadingOptions = {this.props.loadingOptions}
                 />
             </>
         )

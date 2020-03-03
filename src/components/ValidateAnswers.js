@@ -17,7 +17,7 @@ class ValidateAnswers extends React.Component{
         )
     }
 
-    validateExam(){
+    renderData = () =>{
         const {userCourse, courseId, userCourseId} = this.props;
         if(!userCourse){
             return(
@@ -29,77 +29,75 @@ class ValidateAnswers extends React.Component{
         if(userCourse.correctAnswers >= 3){
             return(
                 <>
-                    <div className="row d-flex justify-content-center">
-                        <div className="col-lg-6">
-                            <div className="container course-shadow container-result py-4 px-4">
-                                <div className="row">
-                                    <div className="col-lg-12 d-flex justify-content-center">
-                                        <i className="color-icon-good fas fa-graduation-cap"></i>
-                                    </div>
-                                    <div className="col-lg-12 mt-1 d-flex justify-content-center">
-                                        <h1>¡Aprobaste!</h1> 
-                                    </div>
-                                    <hr/>
-                                    <div className="col-lg-12 mt-2 d-flex justify-content-center">
-                                        <h3>Tu puntuación fue: {userCourse.correctAnswers}/5 correctas.</h3>
-                                    </div>
-                                    <div className="col-lg-12 mt-2 d-flex justify-content-center">
-                                        <h5>Felicitaciones, terminaste con éxito el curso</h5>
-                                    </div>
-                                    <div className="col-lg-12 mt-1 d-flex justify-content-center">
-                                        <h5><strong>{userCourse.courseName}</strong></h5>
-                                    </div>
-                                    <div className="col-lg-12 mt-4 d-flex justify-content-center">
-                                        <CreatePdf
-                                            course = {userCourse}
-                                        />
-                                        {this.renderButton()}
-                                    </div>
-                                </div>
-                            </div>
+
+                    <div className="row">
+                        <div className="col-lg-12 d-flex justify-content-center">
+                            <i className="color-icon-good fas fa-graduation-cap"></i>
                         </div>
-                    </div>
+                        <div className="col-lg-12 mt-1 d-flex justify-content-center">
+                            <h1>¡Aprobaste!</h1> 
+                        </div>
+                        <hr/>
+                        <div className="col-lg-12 mt-2 d-flex justify-content-center">
+                            <h3>Tu puntuación fue: {userCourse.correctAnswers}/5 correctas.</h3>
+                        </div>
+                        <div className="col-lg-12 mt-2 d-flex justify-content-center">
+                            <h5>Felicitaciones, terminaste con éxito el curso</h5>
+                        </div>
+                        <div className="col-lg-12 mt-1 d-flex justify-content-center">
+                            <h5><strong>{userCourse.courseName}</strong></h5>
+                        </div>
+                        <div className="col-lg-12 mt-4 d-flex justify-content-center">
+                            <CreatePdf
+                                course = {userCourse}
+                            />
+                            {this.renderButton()}
+                        </div>
+                        </div>
+
                 </>
             )
         }
         return(
             <>  
-                <div className="row d-flex justify-content-center">
-                    <div className="col-lg-6">
-                        <div className="container course-shadow container-result py-4 px-4">
-                            <div className="row">
-                                <div className="col-lg-12 d-flex justify-content-center">
-                                    <i className="far color-icon-bad fa-times-circle"></i>
-                                </div>
-                                <div className="col-lg-12 mt-1 d-flex justify-content-center">
-                                    <h1>¡No aprobaste!</h1> 
-                                </div>
-                                <div className="col-lg-12 mt-2 d-flex justify-content-center">
-                                    <h3>Tu puntuación fue: {userCourse.correctAnswers}/5 correctas.</h3>
-                                </div>
-                                <div className="col-lg-12 mt-3 d-flex justify-content-center">
-                                    <h5>No te rindas <strong>¡Sigue intentando!</strong></h5>
-                                </div>
-                                <div className="col-lg-12 mt-4 d-flex justify-content-center">
-                                    <Link to={`/questions/exam/${courseId}/${userCourseId}`} className="btn mr-1 btn-outline-exam">
-                                        <div>
-                                            <p className="d-inline">REINTENTAR</p>
-                                            <i className="d-inline fas fa-redo ml-2 mt-2"></i>
-                                        </div>
-                                    </Link>
-                                    {this.renderButton()}
-                                </div>
+
+                <div className="row">
+                    <div className="col-lg-12 d-flex justify-content-center">
+                        <i className="far color-icon-bad fa-times-circle"></i>
+                    </div>
+                    <div className="col-lg-12 mt-1 d-flex justify-content-center">
+                        <h1>¡No aprobaste!</h1> 
+                    </div>
+                    <div className="col-lg-12 mt-2 d-flex justify-content-center">
+                        <h3>Tu puntuación fue: {userCourse.correctAnswers}/5 correctas.</h3>
+                    </div>
+                    <div className="col-lg-12 mt-3 d-flex justify-content-center">
+                        <h5>No te rindas <strong>¡Sigue intentando!</strong></h5>
+                    </div>
+                    <div className="col-lg-12 mt-4 d-flex justify-content-center">
+                        <Link to={`/questions/exam/${courseId}/${userCourseId}`} className="btn mr-1 btn-outline-exam">
+                            <div>
+                                <p className="d-inline">REINTENTAR</p>
+                                <i className="d-inline fas fa-redo ml-2 mt-2"></i>
                             </div>
-                        </div>
+                        </Link>
+                        {this.renderButton()}
                     </div>
                 </div>
+
             </>
         )
     }
     render(){
         return(
             <>
-                {this.validateExam()}
+                 <div className="row d-flex justify-content-center">
+                    <div className="col-lg-6">
+                        <div className="container course-shadow container-result py-4 px-4">
+                            {this.renderData()}
+                        </div>
+                    </div>
+                </div>
             </>
         )
     }

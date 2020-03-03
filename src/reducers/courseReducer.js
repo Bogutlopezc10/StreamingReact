@@ -10,7 +10,9 @@ import {
     UPDATE_SUCCESS_UNMOUNT,
     POST_COURSE,
     COURSE_CAN_BE_POSTED,
-    UNMOUNT_CAN_BE_POSTED
+    UNMOUNT_CAN_BE_POSTED,
+    UNMOUNT_LOADING_COURSE,
+    UNMOUNT_DETAIL_COURSE
 } from '../actions/types';
 
 
@@ -19,6 +21,7 @@ const defaultState = {
     isSuccess:false,
     messageSuccess:null,
     canBePosted: null,
+    isLoading:true
 }
 
 export default (state= defaultState, action) => {
@@ -26,12 +29,14 @@ export default (state= defaultState, action) => {
         case FETCH_COURSES:
             return {
                  ...state, 
-                 data:{...state.data,..._.mapKeys(action.payload,'id')}
+                 data:{...state.data,..._.mapKeys(action.payload,'id')},
+                 isLoading: false
             };
         case FETCH_COURSE:
             return {
                 ...state,
-                data:{...state.data, [action.payload.id]:action.payload}
+                data:{...state.data, [action.payload.id]:action.payload},
+                isLoading: false
             }
         case EDIT_COURSE:
             return {
@@ -50,12 +55,14 @@ export default (state= defaultState, action) => {
         case FETCH_COURSE_BY_CATEGORY:
             return {
                 ...state, 
-                data:{...state.data,..._.mapKeys(action.payload,'id')}
+                data:{...state.data,..._.mapKeys(action.payload,'id')},
+                isLoading: false
             };
         case FETCH_COURSES_BY_USERNAME:
             return {
                 ...state, 
-                data:{...state.data,..._.mapKeys(action.payload,'id')}
+                data:{...state.data,..._.mapKeys(action.payload,'id')},
+                isLoading: false
             };
         case DELETE_COURSE:
             return {
@@ -95,6 +102,11 @@ export default (state= defaultState, action) => {
                     isSuccess:true,
                     messageSuccess:"El curso fue publicado exitosamente."
                 }
+        case UNMOUNT_LOADING_COURSE:
+            return {
+                ...state,
+                isLoading: true,
+        };
         default:
             return state;
     }

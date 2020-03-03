@@ -19,7 +19,6 @@ class QuestionExamContainer extends React.Component{
     }
 
     onSubmit = (answersExam, endExam)=>{
-        console.log(answersExam)
         if(endExam){
 
             const answersExamViewModel = {
@@ -40,24 +39,6 @@ class QuestionExamContainer extends React.Component{
 
     render(){
         const{currentQuestionExam, currentNumberQuestion, userCourse, userCourseId, courseId} = this.props
-        if(currentQuestionExam == null || !userCourse){
-            return(
-                <div>
-                    <MainHeader backgroundHeaderColor="#005385" textHeader="Examen del curso" />
-                    <h1>Loading..............</h1>
-                </div>
-            )
-        }
-        if(userCourse.correctAnswers >= 3 || !userCourse.isEnd){
-            return (
-                <>
-                    <MainHeader backgroundHeaderColor="#005385" textHeader="Examen del curso" />
-                    <div>
-                        <button className="btn btn-primary">Ir al Curso</button>
-                    </div>
-                </>
-            )
-        }
         return(
            <>
             <MainHeader backgroundHeaderColor="#005385" textHeader="Examen del curso" />
@@ -67,6 +48,7 @@ class QuestionExamContainer extends React.Component{
                 currentNumberQuestion = {currentNumberQuestion}
                 onSubmit = {this.onSubmit}
                 userCourseId = {userCourseId}
+                userCourse = {userCourse}
             />
            </>
         )

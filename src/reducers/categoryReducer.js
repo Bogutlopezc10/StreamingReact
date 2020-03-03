@@ -5,7 +5,8 @@ import {
     FETCH_CATEGORY,
     CREATE_CATEGORY,
     EDIT_CATEGORY,
-    UPDATE_SUCCESS_UNMOUNT
+    UPDATE_SUCCESS_UNMOUNT,
+    UNMOUNT_CATEGORY
 } from '../actions/types';
 
 
@@ -13,7 +14,8 @@ export default (state = initialState() , action) => {
     switch (action.type){
         case FETCH_CATEGORIES:
             return {
-                ...state, 
+                ...state,
+                isLoading: false,
                 data:{...state.data,..._.mapKeys(action.payload,'id')}
            };
         case FETCH_CATEGORY:
@@ -40,6 +42,11 @@ export default (state = initialState() , action) => {
                 ...state,
                 isSuccess:false,
                 messageSuccess:null
+        };
+        case UNMOUNT_CATEGORY:
+            return {
+                ...state,
+                isLoading: true
         };
         default:
             return state;

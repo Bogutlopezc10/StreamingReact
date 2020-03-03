@@ -2,14 +2,23 @@ import React from 'react';
 import Moment from 'react-moment';
 import 'moment-timezone';
 import './Course.css'
+import { Link } from 'react-router-dom';
 
 class  CourseDetail extends React.Component{
 
     renderButtons (){
-        const { course, userCourses, onClickCreateUserCourse} = this.props;
-        const isEnroll =userCourses.some(e=> e.courseId == course.id);
+        const { course, userCourses, onClickCreateUserCourse, loadingUserCourse} = this.props;
+        const isEnroll =userCourses.find(e=> e.courseId == course.id);
 
-        if(!isEnroll){
+
+        if(!isEnroll && loadingUserCourse){
+            return(
+                <>
+                    LOADING........
+                </>
+            )
+        }
+        else if(!isEnroll && !loadingUserCourse){
             return(
                 <button className="btn btn-block btn-outline-success" onClick={()=>onClickCreateUserCourse(course.id)}>
                     <div>
@@ -19,9 +28,25 @@ class  CourseDetail extends React.Component{
                 </button>
             )
         }
+        return(
+            <Link to = {`/player/${course.id}/${isEnroll.id}`} className="btn btn-block course-button">
+                <div>
+                    <p className="d-inline">IR AL CURSO</p> 
+                    <i className="d-inline fas fa-angle-double-right ml-2 mt-2"></i>
+                </div>
+            </Link>
+        )
     }
     render(){
         const { course, borderTopColor } = this.props;
+       
+        if(!course){
+            return (
+                <>
+                    LOADING..........
+                </>
+            )
+        }
         const starPercentage = (course.rating / 5) * 100;
         const starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`;
 

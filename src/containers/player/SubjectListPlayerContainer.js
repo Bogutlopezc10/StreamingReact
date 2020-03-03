@@ -13,11 +13,6 @@ class SubjectListPlayerContainer extends React.Component{
         this.props.fetchContents();
     }
     render(){
-        if(!this.props.subjects){
-            return(
-                <div>Vacio</div>
-            )
-        }
         return(
             <SubjectListPlayer
                 courseId = {this.props.courseId}

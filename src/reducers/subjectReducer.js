@@ -9,7 +9,8 @@ import {
     FETCH_SUBJECT,
     DELETE_SUBJECT,
     UNMOUNT_CREATE_SUBJECT_FORM,
-    UNMOUNT_COURSE_CONTENT
+    UNMOUNT_COURSE_CONTENT,
+    UNMOUNT_SUBJECTS_LOADING
  } from '../actions/types'; 
 import _ from 'lodash';
 
@@ -19,13 +20,17 @@ const defaultState = {
     messageSuccess:null,
     isCreating:false,
     isEditing:false,
-    currentSubject:null
+    currentSubject:null,
+    isLoading:true
 }
 
 export default (state = defaultState, action) => {
     switch(action.type){
         case FETCH_SUBJECTS:
-            return { ...state, data:{...state.data, ..._.mapKeys(action.payload,'id')}};
+            return { 
+                ...state, data:{...state.data, ..._.mapKeys(action.payload,'id')},
+                isLoading:false
+            };
         case CREATE_SUBJECT:
             return{
                 ...state,
@@ -83,6 +88,10 @@ export default (state = defaultState, action) => {
                 isCreating:false,
                 isEditing:false,
                 currentSubject:null
+            }
+        case UNMOUNT_SUBJECTS_LOADING: 
+            return { ...state, 
+                isLoading: true
             }
         default:
             return state;

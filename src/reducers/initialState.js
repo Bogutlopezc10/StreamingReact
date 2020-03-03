@@ -3,7 +3,8 @@ export const initialState = () => {
         {
             data:{},
             isSuccess:false,
-            messageSuccess:null
+            messageSuccess:null,
+            isLoading:true
         }
     )
   }

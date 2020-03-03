@@ -2,10 +2,9 @@ import React from 'react';
 import {connect} from 'react-redux'
 import CourseDetail from '../../components/courses/CourseDetail'
 import MainHeader from '../../components/MainHeader';
-import {fetchCourse} from '../../actions/course';
+import {fetchCourse, unMountDetailCourse} from '../../actions/course';
 import {createUserCourse, fetchUserCoursesByUserName} from '../../actions/userCourse'
 import {getById, getUserCoursesByUser} from '../../selectors/index';
-import {unMountUserCourse} from '../../actions/userCourse'
 
 class CourseDetailContainer extends React.Component{
 
@@ -15,7 +14,7 @@ class CourseDetailContainer extends React.Component{
     }
     
     componentWillUnmount(){
-        this.props.unMountUserCourse();
+        this.props.unMountDetailCourse();
     }
 
     onClickCreateUserCourse = (courseId) =>{
@@ -23,14 +22,6 @@ class CourseDetailContainer extends React.Component{
     }
 
     render(){
-        console.log(this.props.userCourses)
-        if(!this.props.course || !this.props.userCourses){
-            return (
-                <>
-                    <MainHeader backgroundHeaderColor="#005385" textHeader="Detalle del curso" />
-                </>
-            )
-        }
         return (
             <>
                 <MainHeader backgroundHeaderColor="#005385" textHeader="Detalle del curso" />
@@ -39,6 +30,7 @@ class CourseDetailContainer extends React.Component{
                     userCourses = {this.props.userCourses}
                     borderTopColor="#005385"
                     onClickCreateUserCourse={this.onClickCreateUserCourse}
+                    loadingUserCourse = {this.props.loadingUserCourse}
                 />
             </>
         );
@@ -50,7 +42,8 @@ const mapStateToProps = (state, ownProps) =>{
     return {
          course: getById(state.courses.data,ownProps.courseId),
          userCourses: getUserCoursesByUser(state),
-         errorUserCourse:state.userCourses.isError
+         errorUserCourse:state.userCourses.isError,
+         loadingUserCourse: state.userCourses.isLoading
     }
 }
 
@@ -58,6 +51,6 @@ export default connect(mapStateToProps,
     {
         fetchCourse,
         createUserCourse,
-        unMountUserCourse,
-        fetchUserCoursesByUserName
+        fetchUserCoursesByUserName,
+        unMountDetailCourse
     })(CourseDetailContainer);

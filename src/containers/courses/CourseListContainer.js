@@ -1,7 +1,7 @@
 import React from 'react';
 import MainHeader from '../../components/MainHeader';
 import CoursePublishedList from '../../components/courses/CoursePublishedList';
-import { fetchCourses } from '../../actions/course.js';
+import { fetchCourses, unMountLoadingCourse } from '../../actions/course.js';
 import { connect } from 'react-redux';
 import { getCoursesPublished } from '../../selectors/index.js'
 
@@ -10,11 +10,11 @@ class CourseListContainer extends React.Component{
     componentDidMount(){
         this.props.fetchCourses();
     }
-
+    
+    componentWillUnmount(){
+        this.props.unMountLoadingCourse()
+    }
     render(){
-        if(!this.props.courses){
-            return <>Vacio</>
-        }
         return (
             <>
                 <MainHeader backgroundHeaderColor="#005385" textHeader="Cursos" />
@@ -23,6 +23,7 @@ class CourseListContainer extends React.Component{
                     borderTopColor="#005385" 
                     teacher={false}
                     customizeButton="course-button"
+                    loadingCourse = {this.props.loadingCourse}
                 />
             </>
         );
@@ -31,9 +32,12 @@ class CourseListContainer extends React.Component{
 
 
 const mapStateToProps = (state) => {
-    //console.log(state);
-    return { courses: getCoursesPublished(state) }
+
+    return { 
+        courses: getCoursesPublished(state),
+        loadingCourse: state.courses.isLoading
+    }
 }
 
 
-export default connect(mapStateToProps,{fetchCourses})(CourseListContainer);
+export default connect(mapStateToProps,{fetchCourses, unMountLoadingCourse})(CourseListContainer);

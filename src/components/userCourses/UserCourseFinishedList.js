@@ -3,8 +3,34 @@ import UserCourse from './UserCourse';
 import './UserCourse.css';
 
 class UserCourseFinishedList extends React.Component{
+
+    renderData = () =>{
+        const {userCoursesFinished, userCoursesLoading } = this.props;
+
+        if(userCoursesFinished.length == 0 && userCoursesLoading){
+            return(
+                <>
+                    LOADING..........
+                </>
+            )
+        }
+        else if(userCoursesFinished.length == 0 && !userCoursesLoading){
+            return(
+                <>
+                    NO TIENES CURSOS TERMINADOS
+                </>
+            )
+        }
+        return(
+            <>
+                { userCoursesFinished.map( userCourse =>
+                    <UserCourse key={userCourse.id} userCourse={userCourse} />
+                )}
+            </>
+        )
+    }
     render(){
-        const { borderTopColor, userCoursesFinished } = this.props;
+        const { borderTopColor} = this.props;
         return (
             <>
                 <div className="container mb-3">
@@ -16,9 +42,7 @@ class UserCourseFinishedList extends React.Component{
                     </div>
                 <div className="container course-shadow container-usercourse pt-4 px-4 mb-5 usercourse-group" style={{ borderTopColor: borderTopColor }}>
                     <div className="card-group">
-                        { userCoursesFinished.map( userCourse =>
-                            <UserCourse key={userCourse.id} userCourse={userCourse} />
-                        )}
+                        {this.renderData()}
                     </div>
                 </div>
             </>
