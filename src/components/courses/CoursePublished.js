@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import moment from 'moment'
 import './Course.css';
 
 class CoursePublished extends React.Component{
@@ -51,7 +52,16 @@ class CoursePublished extends React.Component{
             )            
         }
         
-    } 
+    }
+    
+    renderNewBadge = () => {
+        const { course, teacher } = this.props;
+        if(moment().diff(course.postedAt, 'days') <= 4 && !teacher){
+            return (
+                <div className="card-badge-new shadow rounded-right text-uppercase">Nuevo</div>
+            )
+        }
+    }
 
     render(){
         const { course, customizeButton } = this.props;
@@ -66,6 +76,7 @@ class CoursePublished extends React.Component{
                         {this.renderTeacherExclusive()}
                     </div>
                     <div className="card-badge shadow rounded-right text-uppercase">{course.categoryName}</div>
+                    {this.renderNewBadge()}
                     <Link to={`/courses/Detail/${course.name}/${course.id}`} className={`btn ${customizeButton}`}>
                         <div>
                             <p className="d-inline">VER DETALLE</p> 

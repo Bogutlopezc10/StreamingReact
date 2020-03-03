@@ -120,7 +120,6 @@ export const fetchContentCurrentPlayer = (id) => async dispatch => {
 
     try{
         const response = await streams.get(`/Contents/GetReadContent/${username}/${id}`);
-
         dispatch({ type: CURRENT_CONTENT_PLAYER, payload: response.data});
     }
     catch(error){
