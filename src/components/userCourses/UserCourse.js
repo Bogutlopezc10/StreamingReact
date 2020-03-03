@@ -6,14 +6,16 @@ import 'moment-timezone';
 class UserCourse extends React.Component{
     renderCertificated = () =>{
         const { userCourse } = this.props;
-        if (userCourse.correctAnswers >= 3){
-            return(
-                <i className="icon-success-usercourse fas fa-graduation-cap"></i>
-            );
-        }else{
-            return(
-                <i className="icon-wrong-usercourse fas fa-graduation-cap"></i>
-            );
+        if(userCourse.isEnd){
+            if (userCourse.correctAnswers >= 3){
+                return(
+                    <i className="icon-success-usercourse fas fa-graduation-cap"></i>
+                );
+            }else{
+                return(
+                    <i className="icon-wrong-usercourse fas fa-graduation-cap"></i>
+                );
+            }
         }
     }
 

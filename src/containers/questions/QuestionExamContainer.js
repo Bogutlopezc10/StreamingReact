@@ -19,9 +19,7 @@ class QuestionExamContainer extends React.Component{
     }
 
     onSubmit = (answersExam, endExam)=>{
-        console.log(answersExam)
         if(endExam){
-
             const answersExamViewModel = {
                 options: Object.values(answersExam),
                 userCourseId: this.props.userCourseId
