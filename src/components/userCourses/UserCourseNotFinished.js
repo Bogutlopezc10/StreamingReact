@@ -1,7 +1,8 @@
 import React from 'react';
 import UserCourse from './UserCourse';
 import './UserCourse.css';
-import { Link } from 'react-router-dom';
+import Spinner from '../Spinner';
+import EmptyData from '../EmptyData';
 
 class UserCourseNotFinishedList extends React.Component{
     
@@ -10,15 +11,27 @@ class UserCourseNotFinishedList extends React.Component{
 
         if(userCoursesNotFinished.length == 0 && userCoursesLoading){
             return(
-                <>
-                    LOADING..........
+                <>  
+                    <div className="row d-flex align-items-center justify-content-center mb-4" style={{height:"172px", marginRight:"0px"}}>
+                        <div className="col-auto">
+                            <Spinner />
+                        </div>
+                    </div>  
                 </>
             )
         }
         else if(userCoursesNotFinished.length == 0 && !userCoursesLoading){
             return(
                 <>
-                    NO TIENES CURSOS EMPEZADOS
+                    <div className="row d-flex align-items-center justify-content-center mb-4" style={{height:"172px", marginRight:"0px"}}>
+                        <div className="col-auto">
+                            <EmptyData 
+                                message="No tienes cursos en curso." 
+                                heightImage="110px"
+                                widthImage="110px" 
+                            />
+                        </div>
+                    </div>  
                 </>
             )
         }

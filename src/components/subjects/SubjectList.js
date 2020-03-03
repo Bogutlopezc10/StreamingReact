@@ -1,6 +1,8 @@
 import React from 'react';
 import Subject from './Subject';
 import Accordion from 'react-bootstrap/Accordion';
+import Spinner from '../Spinner';
+import EmptyData from '../EmptyData';
 import './Subject.css'
 
 class SubjectList extends React.Component{
@@ -10,15 +12,28 @@ class SubjectList extends React.Component{
 
         if(subjects.length == 0 && loadingSubjects){
             return(
-                <>
-                    LOADING......
+                <>  
+                    <div className="row d-flex align-items-center justify-content-center" style={{height:"250px"}}>
+                        <div className="col-auto">
+                            <Spinner />
+                        </div>
+                    </div>     
                 </>
             )
         }
         else if(subjects.length == 0 && !loadingSubjects){
             return(
                 <>
-                    NO HAY TEMAS 
+                    <div className="row d-flex align-items-center justify-content-center" style={{height:"250px"}}>
+                        <div className="col-auto">
+                            <EmptyData 
+                                message="El curso no tiene temas." 
+                                heightImage="150px"
+                                widthImage="150px" 
+                                marginBottom="5px" 
+                            />
+                        </div>
+                    </div>
                 </>
             )
         }

@@ -1,5 +1,7 @@
 import React from 'react'
 import Question from './Question'
+import Spinner from '../Spinner';
+import EmptyData from '../EmptyData';
 import Accordion from 'react-bootstrap/Accordion';
 
 class QuestionList extends React.Component{
@@ -10,14 +12,27 @@ class QuestionList extends React.Component{
         if(questions.length == 0 && loadingQuestions){
             return(
                 <>
-                    LOADING..........
+                    <div className="row d-flex align-items-center justify-content-center" style={{height:"250px"}}>
+                        <div className="col-auto">
+                            <Spinner />
+                        </div>
+                    </div>  
                 </>
             )
         }
         else if(questions.length == 0 && !loadingQuestions){
             return(
                 <>
-                    NO HAY PREGUNTAS
+                    <div className="row d-flex align-items-center justify-content-center" style={{height:"250px"}}>
+                        <div className="col-auto">
+                            <EmptyData 
+                                message="El curso no tiene preguntas." 
+                                heightImage="150px"
+                                widthImage="150px" 
+                                marginBottom="5px" 
+                            />
+                        </div>
+                    </div>
                 </>
             )
         }

@@ -42,6 +42,7 @@ class TeacherContainer extends React.Component{
                 <CoursePublishedList 
                     courses={this.props.coursesPublished} 
                     borderTopColor="#2185d0" 
+                    iconColor="#2185d0" 
                     teacher={true}
                     customizeButton="teacher-button"
                     loadingCourse = {this.props.loadingCourse}
@@ -49,6 +50,7 @@ class TeacherContainer extends React.Component{
                 <CourseNotPublishedList
                     courses={this.props.coursesNotPublished} 
                     borderTopColor="#2185d0"
+                    colorIcon="#2185d0"
                     loadingCourse = {this.props.loadingCourse}
                 />
             </>

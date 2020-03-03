@@ -2,6 +2,7 @@ import React from 'react'
 import _ from 'lodash';
 import { editCategory } from '../../actions/category'
 import { connect } from 'react-redux';
+import Spinner from '../Spinner';
 import CategoryForm from './CategoryForm';
 
 class CategoryEdit extends React.Component{
@@ -16,7 +17,9 @@ class CategoryEdit extends React.Component{
         if(!category){
             return (
                 <>
-                    LOADING..........
+                    <div className="col-auto d-flex align-items-center justify-content-center" style={{height:"265px"}}>
+                        <Spinner />
+                    </div>
                 </>
             )
         }

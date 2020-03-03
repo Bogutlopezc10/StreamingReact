@@ -1,5 +1,7 @@
 import React from 'react';
 import UserCourse from './UserCourse';
+import Spinner from '../Spinner';
+import EmptyData from '../EmptyData';
 import './UserCourse.css';
 
 class UserCourseFinishedList extends React.Component{
@@ -10,14 +12,26 @@ class UserCourseFinishedList extends React.Component{
         if(userCoursesFinished.length == 0 && userCoursesLoading){
             return(
                 <>
-                    LOADING..........
+                    <div className="row d-flex align-items-center justify-content-center mb-4" style={{height:"172px", marginRight:"0px"}}>
+                        <div className="col-auto">
+                            <Spinner />
+                        </div>
+                    </div>  
                 </>
             )
         }
         else if(userCoursesFinished.length == 0 && !userCoursesLoading){
             return(
                 <>
-                    NO TIENES CURSOS TERMINADOS
+                    <div className="row d-flex align-items-center justify-content-center mb-4" style={{height:"172px", marginRight:"0px"}}>
+                        <div className="col-auto">
+                            <EmptyData 
+                                message="No has terminado ningún curso." 
+                                heightImage="110px"
+                                widthImage="110px"  
+                            />
+                        </div>
+                    </div>  
                 </>
             )
         }

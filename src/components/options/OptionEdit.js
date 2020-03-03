@@ -1,6 +1,7 @@
 import React from 'react'
 import {editOptions} from '../../actions/option'
 import {connect} from 'react-redux'
+import Spinner from '../Spinner';
 import OptionForm from '../../components/options/OptionForm'
 
 class OptionEdit extends React.Component{
@@ -30,8 +31,12 @@ class OptionEdit extends React.Component{
         const {optionsEdit} = this.props
         if(optionsEdit.length == 0){
             return (
-                <>
-                    LOADING.....
+                <>  
+                    <div className="row container-spinner-option d-flex align-items-center justify-content-center">
+                        <div className="col-auto">
+                            <Spinner />
+                        </div>
+                    </div>
                 </>
             )
         }

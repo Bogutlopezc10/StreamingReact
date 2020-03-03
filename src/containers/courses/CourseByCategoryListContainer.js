@@ -23,6 +23,7 @@ class CourseByCategoryListContainer extends React.Component{
                 <CoursePublishedList 
                     courses={this.props.courses} 
                     borderTopColor="#30b3ff" 
+                    iconColor="#30b3ff"
                     teacher={false}
                     customizeButton="btn-outline-primary"
                     loadingCourse = {this.props.loadingCourse}

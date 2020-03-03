@@ -1,6 +1,7 @@
 import React from 'react'
 import SubjectPlayer from '../../components/player/SubjectPlayer'
 import Accordion from 'react-bootstrap/Accordion';
+import Spinner from '../Spinner';
 import './Player.css';
 
 class SubjectListPlayer extends React.Component{
@@ -11,7 +12,11 @@ class SubjectListPlayer extends React.Component{
         if(subjects.length == 0){
             return(
                 <>
-                    LOADING...........
+                    <div className="row d-flex align-items-center justify-content-center" style={{height:"100%", marginRight:"0px"}}>
+                        <div className="col-auto">
+                            <Spinner />
+                        </div>
+                    </div> 
                 </>
             )
         }
