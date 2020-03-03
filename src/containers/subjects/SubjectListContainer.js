@@ -3,13 +3,13 @@ import SubjectList from '../../components/subjects/SubjectList';
 import { connect } from 'react-redux';
 import { fetchSubjects, unMountSubjectsLoading } from '../../actions/subject';
 import { unMountContent } from '../../actions/content';
-import {fetchContents} from '../../actions/content'
+import {fetchContentsByCourseId} from '../../actions/content'
 import { getSubjectsByCourseId } from '../../selectors/index';
 
 class SubjectListContainer extends React.Component{
     componentDidMount(){
         this.props.fetchSubjects(this.props.courseId);
-        this.props.fetchContents();
+        this.props.fetchContentsByCourseId(this.props.courseId);
     }
 
     onClickUnMountContent = () => {
@@ -47,7 +47,7 @@ const mapStateToProps = (state, ownProps) =>{
 export default connect(mapStateToProps,
 { 
     fetchSubjects, 
-    fetchContents, 
+    fetchContentsByCourseId, 
     unMountContent,
     unMountSubjectsLoading
 })(SubjectListContainer);
