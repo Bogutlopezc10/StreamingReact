@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux';
 import SubjectListPlayer from '../../components/player/SubjectListPlayer'
 import { fetchSubjects } from '../../actions/subject';
-import {fetchContents} from '../../actions/content'
+import {fetchContentsByCourseId} from '../../actions/content'
 import {getSubjectsByCourseId} from '../../selectors/index'
 
 class SubjectListPlayerContainer extends React.Component{
@@ -10,7 +10,7 @@ class SubjectListPlayerContainer extends React.Component{
 
     componentDidMount(){
         this.props.fetchSubjects(this.props.courseId)
-        this.props.fetchContents();
+        this.props.fetchContentsByCourseId(this.props.courseId);
     }
     render(){
         return(
@@ -26,4 +26,4 @@ const mapStateToProps = (state, ownProps) =>{
     return { subjects: getSubjectsByCourseId(state, ownProps.courseId) }
 }
 
-export default connect(mapStateToProps, {fetchSubjects, fetchContents})(SubjectListPlayerContainer);
+export default connect(mapStateToProps, {fetchSubjects, fetchContentsByCourseId})(SubjectListPlayerContainer);
