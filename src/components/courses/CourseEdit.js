@@ -3,7 +3,7 @@ import _ from 'lodash';
 import {connect} from 'react-redux'
 import CourseForm from '../../components/courses/CourseForm'
 import Spinner from '../Spinner';
-import {editCourse} from '../../actions/course'
+import {editCourse, editingCourse} from '../../actions/course'
 
 class CourseEdit extends React.Component{
 
