@@ -12,7 +12,7 @@ class CoursePublishedList extends React.Component{
                 <div className="container mb-3">
                     <div className="row">
                         <div className="col-lg-12 d-flex justify-content-start">
-                            <h1 className="title-published">Mis cursos publicados</h1>
+                            <h1 className="title-published">Publicados</h1>
                         </div>
                     </div>
                 </div>

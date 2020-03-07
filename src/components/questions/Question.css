@@ -3,3 +3,9 @@
     font-size: 18px;
     font-weight: bold;
 }
+
+.access-denied{
+    color: gray;
+    font-style: italic;
+    font-size: 17px;
+}

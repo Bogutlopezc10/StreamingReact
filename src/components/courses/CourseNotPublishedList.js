@@ -48,7 +48,7 @@ class CourseNotPublishedList extends React.Component{
                 <div className="container mb-3">
                     <div className="row align-items-center justify-content-between">
                         <div className="col-auto">
-                            <h1 className="title-published">Mis cursos no publicados</h1>
+                            <h1 className="title-published">En curso</h1>
                         </div>
                         <div className="col-auto btn-create">
                             <Link className="btn btn-outline-success" to="/courses/Create">

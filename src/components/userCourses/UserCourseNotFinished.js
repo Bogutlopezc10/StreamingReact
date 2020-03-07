@@ -50,7 +50,7 @@ class UserCourseNotFinishedList extends React.Component{
                 <div className="container mb-3">
                         <div className="row">
                             <div className="col-lg-12 d-flex justify-content-start">
-                                <h1 className="title-published">Mis cursos no terminados</h1>
+                                <h1 className="title-published">En curso</h1>
                             </div>
                         </div>
                 </div>

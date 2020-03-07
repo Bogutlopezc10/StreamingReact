@@ -332,6 +332,13 @@
     font-weight: bold;
 }
 
+/* Course Post */
+
+.icon-post{
+    color:#dc3545;
+    font-size: 60px;
+}
+
 @media screen and (max-width: 991px) {
     .container-info-course{
         margin-top: 20px;

@@ -1,6 +1,8 @@
 import React from 'react'
 import {createCourse, creatingCourse} from '../../actions/course'
 import { connect } from 'react-redux';
+import Spinner from '../Spinner';
+import EmptyData from '../EmptyData';
 import CourseForm from  '../../components/courses/CourseForm'
 
 class CourseCreate extends React.Component{
@@ -15,14 +17,23 @@ class CourseCreate extends React.Component{
         if(categories.length == 0 && loadingCategory){
             return(
                 <>
-                    LOADING.......
+                    <div className="col-auto container-spinner-edit d-flex align-items-center justify-content-center">
+                        <Spinner />
+                    </div>
                 </>
             )
         }
         else if (categories.length == 0 && !loadingCategory){
             return(
                 <>
-                    NO HAY CATEGORIAS PARA CREAR EL CURSO
+                    <div className="col-auto container-spinner-edit d-flex align-items-center justify-content-center">
+                            <EmptyData 
+                                message="No se encontraron categorías." 
+                                heightImage="150px"
+                                widthImage="150px" 
+                                marginBottom="10px"
+                            />
+                    </div>
                 </>
             )  
         }

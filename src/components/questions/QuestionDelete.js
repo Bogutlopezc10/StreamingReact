@@ -2,6 +2,7 @@ import React from 'react'
 import Modal from '../Modal'
 import history from '../../history'
 import {connect} from 'react-redux'
+import Spinner from '../Spinner';
 import {deleteQuestion} from '../../actions/question'
 
 class QuestionDelete extends React.Component{
@@ -28,20 +29,28 @@ class QuestionDelete extends React.Component{
     }
     renderContent(){
         if(!this.props.question){
-            return <><h5>Estas seguro que quieres eliminar esta pregunta?</h5></>
+            return (
+                <div className="row d-flex justify-content-center">
+                    <div className="col-auto">
+                        <Spinner />
+                    </div>
+                </div>
+            )
         }
         return (
-            <>
-                <h5 className="d-inline">Estas seguro que quieres eliminar la pregunta con el contenido: </h5>
-                <p className="d-inline">{this.props.question.content}</p>
-            </>
+            <div className="row">
+                <div className="col-auto py-2">
+                    <h5 className="d-inline">Estas seguro que quieres eliminar la pregunta con el contenido: </h5>
+                    <p className="d-inline">{this.props.question.content}</p>
+                </div>
+            </div>
         );
     }
     render(){
         return(
             <div style={{ height: "100vh" }}>
                 <Modal 
-                    title = "Eliminar Pregunta"
+                    title = "Eliminar pregunta"
                     description ={this.renderContent()}
                     backgroundHeaderColor = {this.props.backgroundHeaderColor}
                     actions ={this.renderActions()}

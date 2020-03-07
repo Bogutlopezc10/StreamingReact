@@ -2,6 +2,7 @@ import React from 'react'
 import Modal from '../Modal'
 import history from '../../history'
 import {connect} from 'react-redux'
+import Spinner from '../Spinner';
 import {deleteSubject} from '../../actions/subject'
 
 class SubjectDelete extends React.Component {
@@ -27,13 +28,21 @@ class SubjectDelete extends React.Component {
     }
     renderContent(){
         if(!this.props.subject){
-            return <><h5>Estas seguro que quieres eliminar este tema?</h5></>
+            return (
+                <div className="row d-flex justify-content-center">
+                    <div className="col-auto">
+                        <Spinner />
+                    </div>
+                </div>
+            )
         }
         return (
-            <>
-                <h5 className="d-inline">Estas seguro que quieres eliminar el tema con nombre: </h5>
-                <p className="d-inline">{this.props.subject.name}</p>
-            </>
+            <div className="row">
+                <div className="col-auto py-2">
+                    <h5 className="d-inline">Estas seguro que quieres eliminar el tema con nombre: </h5>
+                    <p className="d-inline">{this.props.subject.name}</p>
+                </div>
+            </div>
         );
     }
     render(){
@@ -41,7 +50,7 @@ class SubjectDelete extends React.Component {
             <>
                 <div style={{ height: "100vh" }}>
                     <Modal 
-                        title = "Eliminar Tema"
+                        title = "Eliminar tema"
                         description ={this.renderContent()}
                         backgroundHeaderColor = {this.props.backgroundHeaderColor}
                         actions ={this.renderActions()}
