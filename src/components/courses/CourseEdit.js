@@ -7,9 +7,9 @@ import {editCourse} from '../../actions/course'
 
 class CourseEdit extends React.Component{
 
-
-    onSubmit = (formValues) => {
-        this.props.editCourse(this.props.courseId, formValues)
+    onSubmit = (formValues, formData) => {
+        this.props.editingCourse();
+        this.props.editCourse(this.props.courseId, formValues, formData)
     }
 
     renderData = () =>{
@@ -31,6 +31,8 @@ class CourseEdit extends React.Component{
                 initialValues ={_.pick(course,'name','description','categoryId')}
                 onSubmit={this.onSubmit}
                 textButton="DESHACER CAMBIOS"
+                isEditing = {true}
+                isCreating = {this.props.isCreating}
             />
         )
     }
@@ -49,5 +51,7 @@ class CourseEdit extends React.Component{
     }
 }
 
-
-export default connect(null, {editCourse})(CourseEdit);
+const mapStateToProps = (state) =>{
+    return {isCreating: state.courses.isCreating}
+}
+export default connect(mapStateToProps, {editCourse, editingCourse})(CourseEdit);

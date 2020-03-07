@@ -1,5 +1,5 @@
 import React from 'react'
-import {createCourse} from '../../actions/course'
+import {createCourse, creatingCourse} from '../../actions/course'
 import { connect } from 'react-redux';
 import Spinner from '../Spinner';
 import EmptyData from '../EmptyData';
@@ -7,8 +7,9 @@ import CourseForm from  '../../components/courses/CourseForm'
 
 class CourseCreate extends React.Component{
 
-    onSubmit = (formValues)=>{
-        this.props.createCourse(formValues);
+    onSubmit = (formValues,formData)=>{
+        this.props.creatingCourse();
+        this.props.createCourse(formValues, formData);
     }
     renderData = () =>{
         const {loadingCategory, categories} = this.props;
@@ -40,7 +41,9 @@ class CourseCreate extends React.Component{
             <CourseForm 
                 categories ={this.props.categories} 
                 onSubmit={this.onSubmit} 
-                textButton="LIMPIAR" 
+                textButton="LIMPIAR"
+                isEditing = {false}
+                isCreating = {this.props.isCreating}
             />
         )
     }
@@ -59,5 +62,8 @@ class CourseCreate extends React.Component{
     }
 }
 
-export default connect(null,{createCourse})(CourseCreate);
+const mapStateToProps = (state) =>{
+    return {isCreating: state.courses.isCreating}
+}
+export default connect(mapStateToProps,{createCourse, creatingCourse})(CourseCreate);
 
