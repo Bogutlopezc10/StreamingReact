@@ -2,6 +2,7 @@ import React from 'react'
 import Modal from '../Modal'
 import history from '../../history'
 import {connect} from 'react-redux'
+import Spinner from '../Spinner';
 import {deleteContent} from '../../actions/content'
 
 class ContentDelete  extends React.Component {
@@ -28,13 +29,21 @@ class ContentDelete  extends React.Component {
     }
     renderContent(){
         if(!this.props.content){
-            return <><h5>Estas seguro que quieres eliminar este contenido?</h5></>
+            return (
+                <div className="row d-flex justify-content-center">
+                    <div className="col-auto">
+                        <Spinner />
+                    </div>
+                </div>
+            )
         }
         return (
-            <>
-                <h5 className="d-inline">Estas seguro que quieres eliminar el contenido con nombre: </h5>
-                <p className="d-inline">{this.props.content.name}</p>
-            </>
+            <div className="row">
+                <div className="col-auto py-2">
+                    <h5 className="d-inline">Estas seguro que quieres eliminar el contenido con nombre: </h5>
+                    <p className="d-inline">{this.props.content.name}</p>
+                </div>
+            </div>
         );
     }
     render(){
@@ -43,7 +52,7 @@ class ContentDelete  extends React.Component {
             <>
                 <div style={{ height: "100vh" }}>
                     <Modal 
-                        title = "Eliminar Contenido"
+                        title = "Eliminar contenido"
                         description ={this.renderContent()}
                         backgroundHeaderColor = {this.props.backgroundHeaderColor}
                         actions ={this.renderActions()}

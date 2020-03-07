@@ -26,7 +26,7 @@ class UserCourseFinishedList extends React.Component{
                     <div className="row d-flex align-items-center justify-content-center mb-4" style={{height:"172px", marginRight:"0px"}}>
                         <div className="col-auto">
                             <EmptyData 
-                                message="No has terminado ningún curso." 
+                                message="No has finalizado ningún curso." 
                                 heightImage="110px"
                                 widthImage="110px"  
                             />
@@ -50,7 +50,7 @@ class UserCourseFinishedList extends React.Component{
                 <div className="container mb-3">
                         <div className="row">
                             <div className="col-lg-12 d-flex justify-content-start">
-                                <h1 className="title-published">Mis cursos terminados</h1>
+                                <h1 className="title-published">Finalizados</h1>
                             </div>
                         </div>
                     </div>

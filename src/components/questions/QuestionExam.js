@@ -1,6 +1,7 @@
 import React from 'react'
 import OptionExamListContainer from '../../containers/options/OptionExamListContainer'
 import Spinner from '../Spinner';
+import {Link} from 'react-router-dom';
 import './Question.css'
 
 class QuestionExam extends React.Component{
@@ -21,8 +22,21 @@ class QuestionExam extends React.Component{
         if(userCourse.correctAnswers >= 3 || !userCourse.isEnd){
             return (
                 <>
-                    <div>
-                        <button className="btn btn-primary">Ir al Curso</button>
+                    <div className="row" style={{height:"273px"}}>
+                        <div className="col-lg-12 d-flex align-items-center justify-content-center">
+                            <img src="/ordenador.png" style={{ height: "140px", width: "140px"}} alt="caja" />
+                        </div>
+                        <div className="col-lg-12 d-flex align-items-center justify-content-center" style={{marginTop:"-22px"}}>
+                            <h5 className="access-denied"><strong>¡Acceso denegado! </strong>La página que solicitaste no esta disponible.</h5>
+                        </div>
+                        <div className="col-12 d-flex align-items-center justify-content-center">
+                            <Link to="/" className="btn course-button" style={{marginTop:"-20px"}}>
+                                <div>
+                                    <p className="d-inline">IR A HOME</p> 
+                                    <i className="d-inline fas fa-home ml-2 mt-2"></i>
+                                </div>
+                            </Link>
+                        </div>
                     </div>
                 </>
             )
