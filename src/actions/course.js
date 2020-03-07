@@ -15,7 +15,9 @@ import {
     COURSE_CAN_BE_POSTED,
     UNMOUNT_COURSE_CONTENT,
     UNMOUNT_LOADING_COURSE,
-    UNMOUNT_DETAIL_COURSE
+    UNMOUNT_DETAIL_COURSE,
+    CREATING_COURSE,
+    EDITING_COURSE
 } from './types';
 
 export const fetchCourses = () => async dispatch => {
@@ -69,12 +71,19 @@ export const fetchCourseByUsername = (username) => async dispatch => {
 }
 
 
-export const createCourse = formValues =>async (dispatch) =>{
+export const createCourse = (formValues, formData) =>async (dispatch) =>{
 
     const username = CURRENT_USER
     try{
-        const response = await streams.post('/Courses',{...formValues, username})
-        dispatch({type: CREATE_COURSE, payload:response.data})
+        const config = {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+            }
+        };
+        const response = await streams.post(`Courses/SavePhoto`,formData, config)
+        const responseCourse = await streams.post(`Courses`,{...formValues, username, photo: response.data})
+
+        dispatch({type: CREATE_COURSE, payload:responseCourse.data})
         history.push('/teacher');
     }
     catch(error){
@@ -84,11 +93,18 @@ export const createCourse = formValues =>async (dispatch) =>{
 
 };
 
-export const editCourse = (id, formValues) =>async (dispatch) =>{
+export const editCourse = (id, formValues, formData) =>async (dispatch) =>{
 
     try{
-        const response = await streams.put(`/Courses/${id}`,formValues)
-        dispatch({type: EDIT_COURSE, payload:response.data})
+        const config = {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+            }
+        }
+        const response = await streams.post(`Courses/SavePhoto`,formData, config)
+        const responseCourse = await streams.put(`/Courses/${id}`,{...formValues, photo:response.data})
+
+        dispatch({type: EDIT_COURSE, payload:responseCourse.data})
         history.push('/teacher');
     }
     catch(error){
@@ -154,4 +170,14 @@ export const unMountDetailCourse= () => dispatch => {
         
     dispatch({ type: UNMOUNT_DETAIL_COURSE })
 
+}
+
+export const creatingCourse= () => dispatch => {
+        
+    dispatch({ type: CREATING_COURSE })
+
+}
+
+export const editingCourse= () => dispatch => {
+    dispatch({ type: EDITING_COURSE })
 }

@@ -24,7 +24,8 @@ export const POST_COURSE = 'POST_COURSE';
 export const COURSE_CAN_BE_POSTED = 'COURSE_CAN_BE_POSTED';
 export const UNMOUNT_LOADING_COURSE = 'UNMOUNT_LOADING_COURSE';
 export const UNMOUNT_DETAIL_COURSE = 'UNMOUNT_DETAIL_COURSE';
-
+export const CREATING_COURSE = 'CREATING_COURSE';
+export const EDITING_COURSE = 'EDITING_COURSE';
 
 //current user
 export const CURRENT_USER = 'Mr. Sample';
