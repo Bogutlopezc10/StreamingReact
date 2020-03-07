@@ -21,6 +21,7 @@ class CourseListContainer extends React.Component{
                 <CoursePublishedList 
                     courses={this.props.courses} 
                     borderTopColor="#005385" 
+                    iconColor="#005385"
                     teacher={false}
                     customizeButton="course-button"
                     loadingCourse = {this.props.loadingCourse}

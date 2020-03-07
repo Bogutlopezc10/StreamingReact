@@ -157,6 +157,24 @@
     font-size: 10px;
 }
 
+.container-img .card-badge-new{
+    position:absolute;
+    top: 55px;
+    padding:5px;
+    background:#21ba45;
+    color:white;
+    font-weight: bold;
+    font-size: 10px;
+}
+
+.container-spinner{
+    height: 300px;
+}
+
+.container-spinner-edit{
+    height: 267px;
+}
+
 .container-img img{
     height: 100%;
     width: 100%;
@@ -317,6 +335,14 @@
 @media screen and (max-width: 991px) {
     .container-info-course{
         margin-top: 20px;
+    }
+
+    .container-spinner{
+        height: 700px;
+    }
+
+    .container-spinner-edit{
+        height: 343px;
     }
 }
 

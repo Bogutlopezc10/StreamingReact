@@ -1,6 +1,7 @@
 import React from 'react'
 import Option from '../../components/options/Option'
 import { Link } from 'react-router-dom';
+import EmptyData from '../EmptyData';
 import './Option.css'
 
 class OptionList extends React.Component{
@@ -53,8 +54,14 @@ class OptionList extends React.Component{
                 <div className="container">
                     {this.renderButton()}
                     <hr/>
-                    <div className="row">
-                        La pregunta no tiene opciones.
+                    <div className="row d-flex align-items-center justify-content-center" style={{height:"150px"}}>
+                        <div className="col-auto" >
+                            <EmptyData 
+                                message="La pregunta no tiene opciones." 
+                                heightImage="110px"
+                                widthImage="110px" 
+                            />
+                        </div>  
                     </div>
                 </div>
             );

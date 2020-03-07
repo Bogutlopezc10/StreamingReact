@@ -1,4 +1,5 @@
 import React from 'react';
+import EmptyData from '../EmptyData';
 import Content from './Content';
 
 class ContentList extends React.Component{
@@ -26,8 +27,14 @@ class ContentList extends React.Component{
                 <div className="container">
                     {this.renderButton()}
                     <hr/>
-                    <div className="row">
-                        El tema no tiene contenidos.
+                    <div className="row d-flex align-items-center justify-content-center" style={{height:"150px"}}>
+                        <div className="col-auto" >
+                            <EmptyData 
+                                message="El tema no tiene contenidos." 
+                                heightImage="110px"
+                                widthImage="110px" 
+                            />
+                        </div>  
                     </div>
                 </div>
             );

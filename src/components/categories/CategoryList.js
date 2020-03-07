@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Category from './Category';
+import Spinner from '../Spinner';
+import EmptyData from '../EmptyData';
 import './Category.css'
 
 
@@ -10,14 +12,23 @@ class CategoryList extends React.Component{
         if(categories.length == 0 && loadingCategory){
             return (
                 <>
-                    LOADING..........
+                    <div className="col-auto d-flex align-items-center justify-content-center mb-4" style={{height:"250px"}}>
+                        <Spinner />
+                    </div>
                 </>
             )
         }
         if(categories.length == 0 && !loadingCategory){
             return (
                 <>
-                    NO HAY DATOS PARA CARGAR
+                    <div className="col-auto d-flex align-items-center justify-content-center mb-4" style={{height:"250px"}}>
+                        <EmptyData 
+                            message="No se encontraron categorías." 
+                            heightImage="150px"
+                            widthImage="150px" 
+                            marginBottom="10px"
+                        />
+                    </div>                
                 </>
             )
         }

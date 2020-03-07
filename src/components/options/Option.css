@@ -74,6 +74,16 @@
     transform: rotate(360deg) !important;
 }
 
+.container-spinner-option{
+    height:398px;
+}
+
+@media screen and (max-width: 991px) {
+    .container-spinner-option{
+        height:696px;
+    }
+}
+
 @media screen and (max-width: 769px){
     .btn-menu-options{
         margin-top: 10px;

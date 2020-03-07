@@ -2,7 +2,7 @@ import React from 'react'
 import CourseEdit from '../../components/courses/CourseEdit'
 import MainHeader from '../../components/MainHeader';
 import {connect} from 'react-redux'
-import {fetchCourse} from '../../actions/course'
+import {fetchCourse, unMountLoadingCourse} from '../../actions/course'
 import {fetchCategories, unMountCategory} from '../../actions/category'
 import {getById} from '../../selectors/index';
 
@@ -11,6 +11,10 @@ class CourseEditContainer extends React.Component{
     componentDidMount(){
         this.props.fetchCourse(this.props.courseId)
         this.props.fetchCategories();
+    }
+
+    componentWillUnmount(){
+        this.props.unMountLoadingCourse();
     }
     render(){
         return(
@@ -40,5 +44,6 @@ export default connect(mapStateToProps,
 {
     fetchCourse, 
     fetchCategories, 
-    unMountCategory
+    unMountCategory,
+    unMountLoadingCourse
 })(CourseEditContainer);

@@ -1,5 +1,6 @@
 import React from 'react'
 import OptionExamListContainer from '../../containers/options/OptionExamListContainer'
+import Spinner from '../Spinner';
 import './Question.css'
 
 class QuestionExam extends React.Component{
@@ -9,7 +10,11 @@ class QuestionExam extends React.Component{
         if(currentQuestionExam == null || !userCourse){
             return(
                 <>
-                LOADING.....
+                    <div className="row d-flex align-items-center justify-content-center" style={{height:"273px"}}>
+                        <div className="col-auto mb-4">
+                            <Spinner />
+                        </div>
+                    </div>
                 </>
             )
         }

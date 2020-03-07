@@ -1,23 +1,34 @@
 import React from 'react';
 import CourseNotPublished from './CourseNotPublished';
+import Spinner from '../Spinner';
+import EmptyData from '../EmptyData'
 import { Link } from 'react-router-dom';
 
 class CourseNotPublishedList extends React.Component{
     
     renderData(){
-        const { courses, loadingCourse } = this.props;
+        const { courses, loadingCourse, colorIcon } = this.props;
 
         if(courses.length == 0 && loadingCourse){
             return (
                 <>
-                    LOADING..........
+                    <div className="col-auto d-flex align-items-center justify-content-center mb-4" style={{height:"280px"}}>
+                        <Spinner />
+                    </div>
                 </>
             )
         }
         if(courses.length == 0 && !loadingCourse){
             return (
                 <>
-                    NO HAY DATOS PARA CARGAR
+                    <div className="col-auto d-flex align-items-center justify-content-center mb-4" style={{height:"280px"}}>
+                        <EmptyData 
+                            message="No se encontraron cursos." 
+                            heightImage="150px"
+                            widthImage="150px" 
+                            marginBottom="10px" 
+                        />
+                    </div>                  
                 </>
             )
         }

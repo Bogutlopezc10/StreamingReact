@@ -2,7 +2,8 @@ import React from 'react'
 import _ from 'lodash';
 import {connect} from 'react-redux'
 import CourseForm from '../../components/courses/CourseForm'
-import {editCourse, editingCourse} from '../../actions/course'
+import Spinner from '../Spinner';
+import {editCourse} from '../../actions/course'
 
 class CourseEdit extends React.Component{
 
@@ -17,7 +18,9 @@ class CourseEdit extends React.Component{
         if(!course || categories.length == 0){
             return(
                 <>
-                    LOADING...........
+                    <div className="col-auto container-spinner-edit d-flex align-items-center justify-content-center">
+                        <Spinner />
+                    </div>
                 </>
             )
         }

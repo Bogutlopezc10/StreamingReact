@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import CreatePdf from '../components/CreatePdf'
+import Spinner from './Spinner';
 import './ValidateAnswer.css'
 
 class ValidateAnswers extends React.Component{
@@ -21,8 +22,10 @@ class ValidateAnswers extends React.Component{
         const {userCourse, courseId, userCourseId} = this.props;
         if(!userCourse){
             return(
-                <div>
-                    Loading........
+                <div className="row d-flex align-items-center justify-content-center" style={{height:"300px"}}>
+                    <div className="col-auto">
+                        <Spinner />
+                    </div>
                 </div>
             )
         }

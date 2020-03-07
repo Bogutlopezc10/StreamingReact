@@ -1,5 +1,7 @@
 import React from 'react';
 import './Course.css'
+import Spinner from '../Spinner';
+import EmptyData from '../EmptyData';
 import CoursePublished from './CoursePublished';
 
 class CoursePublishedList extends React.Component{
@@ -21,19 +23,28 @@ class CoursePublishedList extends React.Component{
     }
 
     renderData(){
-        const { courses, loadingCourse, teacher, customizeButton } = this.props;
+        const { courses, loadingCourse, teacher, customizeButton, iconColor } = this.props;
 
         if(courses.length == 0 && loadingCourse){
             return (
                 <>
-                    LOADING..........
+                    <div className="col-auto d-flex align-items-center justify-content-center mb-4" style={{height:"280px"}}>
+                        <Spinner />
+                    </div>
                 </>
             )
         }
         if(courses.length == 0 && !loadingCourse){
             return (
                 <>
-                    NO HAY DATOS PARA CARGAR
+                    <div className="col-auto d-flex align-items-center justify-content-center mb-4" style={{height:"280px"}}>
+                        <EmptyData 
+                            message="No se encontraron cursos." 
+                            heightImage="150px"
+                            widthImage="150px" 
+                            marginBottom="15px"
+                        />
+                    </div>                 
                 </>
             )
         }

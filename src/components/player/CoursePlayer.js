@@ -2,6 +2,7 @@ import React from 'react'
 import CourseStarRating from './CourseStarRating';
 import { Link } from 'react-router-dom';
 import Moment from 'react-moment';
+import Spinner from '../Spinner';
 import 'moment-timezone';
 import './Player.css'
 import CreatePdf from '../CreatePdf'
@@ -58,7 +59,17 @@ class CoursePlayer extends React.Component{
     render(){
         const { course, onClickUpdateRating } = this.props;
         if(!course){
-            return <div className="col-lg-12">Cargando...</div>
+            return (
+                <div className="col-lg-12">
+                    <div className="container container-course-player">
+                        <div className="row d-flex align-items-center justify-content-center" style={{height:"200px"}}>
+                            <div className="col-auto">
+                                <Spinner />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )
         }
         return(
             <div className="col-lg-12">
