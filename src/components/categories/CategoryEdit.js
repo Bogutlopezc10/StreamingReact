@@ -1,14 +1,15 @@
 import React from 'react'
 import _ from 'lodash';
-import { editCategory } from '../../actions/category'
+import { editCategory, creatingCategory} from '../../actions/category'
 import { connect } from 'react-redux';
 import Spinner from '../Spinner';
 import CategoryForm from './CategoryForm';
 
 class CategoryEdit extends React.Component{
 
-    onSubmit = (formValues) =>{
-        this.props.editCategory(this.props.category.id,formValues);
+    onSubmit = (formValues, formData) =>{
+        this.props.creatingCategory();
+        this.props.editCategory(this.props.category.id,formValues, formData);
     }
 
     renderData = () => {
@@ -27,7 +28,9 @@ class CategoryEdit extends React.Component{
             <CategoryForm 
                 initialValues ={_.pick(category,'name','description')} 
                 onSubmit={this.onSubmit} 
-                textButton="DESHACER CAMBIOS" 
+                textButton="DESHACER CAMBIOS"
+                isCreating = {this.props.isCreating}
+                isEditing = {true}
             />
         )
 
@@ -46,5 +49,7 @@ class CategoryEdit extends React.Component{
         )
     }
 }
-
-export default connect(null,{editCategory})(CategoryEdit);
+const mapStateToProps = (state) =>{
+    return {isCreating: state.categories.isCreating}
+}
+export default connect(mapStateToProps,{editCategory, creatingCategory})(CategoryEdit);

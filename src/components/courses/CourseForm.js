@@ -14,6 +14,7 @@ class CourseForm extends React.Component {
 
 
     renderError({error, touched}){
+        
         if(touched && error){
             return(
                 <div className="mt-2 error-message">
@@ -141,7 +142,7 @@ class CourseForm extends React.Component {
         )
     }
     render(){
-       
+        
         const {categories, textButton} = this.props;
         return(
             <form onSubmit ={this.props.handleSubmit(this.onSubmit)} className="ui form error">
