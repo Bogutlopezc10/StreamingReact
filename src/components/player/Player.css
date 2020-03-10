@@ -141,6 +141,7 @@
 .img-course-player{
     height: 120px;
     width: 100%;
+    border: 1px solid #e5e5e5;
 }
 
 .text-contact-teacher{

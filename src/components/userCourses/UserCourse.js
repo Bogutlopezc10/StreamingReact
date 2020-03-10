@@ -29,7 +29,7 @@ class UserCourse extends React.Component{
                     <div className="card card-usercourse">
                         <div className="row container-card">
                             <div className="col-6" style={{ paddingLeft: "0px" }}>
-                                <img src={`${userCourse.photo}`} className="card-img" width="100" height="150" alt="bg-home" />
+                                <img src={`${userCourse.photo}`} style={{ borderRight: "1px solid #bfbfbf" }} className="card-img" width="100" height="150" alt="bg-home" />
                             </div>
                             <div className="col-6 content-usercourse" style={{ paddingRight: "5px" }}>
                                 <div className="row">
@@ -49,7 +49,7 @@ class UserCourse extends React.Component{
                             </div>
                         </div>
                         <i className="icon-play-usercourse far fa-play-circle"></i>
-                        <div className="card-badge shadow rounded-right text-uppercase">{userCourse.categoryName}</div>
+                        <div className="card-badge rounded-right text-uppercase">{userCourse.categoryName}</div>
                         <div className="progress">
                             <div className="progress-bar" style={{ width:`${userCourse.progress}%`}}></div>
                         </div>

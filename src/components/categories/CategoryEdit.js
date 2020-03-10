@@ -18,7 +18,7 @@ class CategoryEdit extends React.Component{
         if(!category){
             return (
                 <>
-                    <div className="col-auto d-flex align-items-center justify-content-center" style={{height:"265px"}}>
+                    <div className="col-auto d-flex align-items-center justify-content-center" style={{height:"340px"}}>
                         <Spinner />
                     </div>
                 </>
