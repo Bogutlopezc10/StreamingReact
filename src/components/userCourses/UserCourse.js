@@ -29,7 +29,7 @@ class UserCourse extends React.Component{
                     <div className="card card-usercourse">
                         <div className="row container-card">
                             <div className="col-6" style={{ paddingLeft: "0px" }}>
-                                <img src="/bg-home.jpg" className="card-img" width="100" height="150" alt="bg-home" />
+                                <img src={`${userCourse.photo}`} className="card-img" width="100" height="150" alt="bg-home" />
                             </div>
                             <div className="col-6 content-usercourse" style={{ paddingRight: "5px" }}>
                                 <div className="row">

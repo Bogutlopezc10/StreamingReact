@@ -1,5 +1,6 @@
 import React from 'react';
 import {Field, reduxForm} from 'redux-form';
+import { Dropdown } from 'semantic-ui-react';
 
 class CourseForm extends React.Component {
 
@@ -35,16 +36,7 @@ class CourseForm extends React.Component {
             </div>
         );
     }
-    renderInputFile = ({input, label, meta})=> {
-        const className =`field ${meta.error && meta.touched ? 'error': ''}`
-        return (
-            <div className={className}>
-                <label>{label}</label>
-                <input {...input} />
-                {this.renderError(meta)}
-            </div>
-        );
-    }
+    
     renderTextArea = ({input, label, meta})=> {
         const className =`field ${meta.error && meta.touched ? 'error': ''}`
         return (
@@ -56,14 +48,25 @@ class CourseForm extends React.Component {
         );
     }
 
-    renderSelect = ({input, label, meta, children })=> {
-        const className =`field ${meta.error && meta.touched ? 'error': ''}`
+    renderSelect = ({input, label, meta })=> {
+        const { categories } = this.props;
+        var arrayCategories = [];
+        for(var i = 0;i < categories.length; i++){
+            arrayCategories.push({key:categories[i].id,value:categories[i].id,text:categories[i].name})
+        }
+        const className ="field"
         return (
             <div className={className}>
                 <label>{label}</label>
-                <select {...input}>
-                    {children}
-                </select>
+                <Dropdown
+                    {...input} 
+                    placeholder='Seleccione una categoría'
+                    fluid
+                    error={meta.error && meta.touched}
+                    selection
+                    options={arrayCategories}
+                    onChange={(e, { value }) => input.onChange(value)}
+                />
                 {this.renderError(meta)}
             </div>
         );
@@ -84,8 +87,11 @@ class CourseForm extends React.Component {
             this.props.onSubmit(formValues,formData);
         }
     }
+
     setFile(e) {
-        this.setState({ file: e.target.files[0],isError:false,name:e.target.files[0].name});
+        if(e.target.files[0]){
+            this.setState({ file: e.target.files[0],isError:false,name:e.target.files[0].name});
+        }
     }
 
     renderErrorInputFile(){
@@ -95,7 +101,7 @@ class CourseForm extends React.Component {
                 return(
                     <div className="mt-2 error-message">
                         <i className="d-inline fas fa-exclamation-circle"></i>
-                        <p className="d-inline ml-2">Debes de seleccionar una imagen</p>
+                        <p className="d-inline ml-2">Debes seleccionar una imagen</p>
                     </div>
                 )
             }
@@ -128,9 +134,8 @@ class CourseForm extends React.Component {
         if(isCreating){
             return(
                 <div>
-                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                    <p className="d-inline">ENVIANDO</p> 
-                    <i className="d-inline fas fa-share ml-2 mt-2"></i>
+                    <p className="d-inline">ENVIAR</p> 
+                    <span className="spinner-border spinner-sending spinner-border-sm ml-2" role="status" aria-hidden="true"></span>
                 </div>
             )
         }
@@ -142,8 +147,8 @@ class CourseForm extends React.Component {
         )
     }
     render(){
-        
-        const {categories, textButton} = this.props;
+       
+        const {textButton} = this.props;
         return(
             <form onSubmit ={this.props.handleSubmit(this.onSubmit)} className="ui form error">
                 <div className="row">
@@ -151,23 +156,28 @@ class CourseForm extends React.Component {
                         <Field name="name" type="text" component={this.renderInput} label="Nombre" />
                     </div>
                     <div className="col-lg-6 mb-3">
-                        <Field name="categoryId" component={this.renderSelect} label="Categoria">
-                            <option value="">Seleccione una categoria</option>
-                            { categories.map(category =>
-                            <option key ={category.id} value={category.id}>{category.name}</option>) }
-                        </Field>
+                        <Field name="categoryId" component={this.renderSelect} label="Categoria" />
                     </div>
                     <div className="col-lg-12 mb-3">
                         <Field name="description" component={this.renderTextArea} label="Descripción" />
                     </div>
-                    <div className="col-lg-12 mb-3 custom-file">
-                        <input className="custom-file-input form-control"
-                            name = "photo"
-                            type='file'
-                            accept="image/x-png,image/gif,image/jpeg"
-                            onChange={e => this.setFile(e)}
-                        />
-                        <label className="custom-file-label">{this.state.name==null ? 'Seleccione una imagen': this.state.name}</label>
+                    <div className="col-lg-12 mb-3">
+                        <label><strong>Imagen</strong></label>
+                        <div className="input-group">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text" id="inputGroupFileAddon01"><i className="far fa-image"></i></span>
+                            </div>
+                            <div className="custom-file">
+                                <input className="custom-file-input form-control"
+                                    name = "photo"
+                                    type='file'
+                                    accept="image/x-png,image/gif,image/jpeg"
+                                    onChange={e => this.setFile(e)}
+                                    onClick={e => (e.target.value = null)}
+                                />
+                                <label className={`${this.state.name==null ? 'color-file':''} custom-file-label`}>{this.state.name==null ? 'Seleccione una imagen': this.state.name}</label>
+                            </div>
+                        </div>
                         {this.renderErrorInputFile()}
                     </div>
                 </div>
@@ -186,7 +196,7 @@ class CourseForm extends React.Component {
 }
 
 const validate = (formValues) => {
-
+    console.log(formValues)
     const errors ={};
     if (!formValues.name){
         errors.name = 'Debes ingresar el nombre'
