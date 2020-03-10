@@ -2,8 +2,8 @@ import React from 'react';
 import CategoryList from '../../components/categories/CategoryList';
 import MainHeader from '../../components/MainHeader';
 import { connect } from 'react-redux';
-import { fetchCategories, unMountCategory } from '../../actions/category.js';
-import {getDataOrderByCreatedAt} from '../../selectors/index'
+import { fetchCategories, unMountCategory, countCategories } from '../../actions/category.js';
+import {getDataOrderByCreatedAt, getAllCategories} from '../../selectors/index'
 
 class CategoryListContainer extends React.Component{
 
@@ -15,13 +15,20 @@ class CategoryListContainer extends React.Component{
         this.props.unMountCategory()
     }
 
-    render(){ 
+    onClickMoresCategories = () => {
+        this.props.countCategories();
+    }
+
+    render(){
         return (
             <>
                 <MainHeader backgroundHeaderColor="#30b3ff" textHeader="Categorias" />
                 <CategoryList 
                     categories={this.props.categories}
                     loadingCategory = {this.props.loadingCategory}
+                    onClickMoresCategories = {this.onClickMoresCategories}
+                    counterCategories = {this.props.counterCategories}
+                    getAllCategories = {this.props.getAllCategories}
                 />
             </>
         );
@@ -29,10 +36,12 @@ class CategoryListContainer extends React.Component{
 }
 
 const mapStateToProps = (state) => {
-    return { 
-        categories: getDataOrderByCreatedAt(state.categories.data),
+    return {
+        counterCategories: state.categories.countCategories,
+        getAllCategories: getAllCategories(state.categories.data),
+        categories: getDataOrderByCreatedAt(state.categories.data, state.categories.countCategories),
         loadingCategory: state.categories.isLoading
     }
 }
 
-export default connect(mapStateToProps, { fetchCategories, unMountCategory})(CategoryListContainer);
+export default connect(mapStateToProps, { fetchCategories, unMountCategory, countCategories})(CategoryListContainer);

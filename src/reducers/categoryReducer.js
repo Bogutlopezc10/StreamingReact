@@ -7,7 +7,8 @@ import {
     EDIT_CATEGORY,
     UPDATE_SUCCESS_UNMOUNT,
     UNMOUNT_CATEGORY,
-    CREATING_CATEGORY
+    CREATING_CATEGORY,
+    COUNT_CATEGORIES
 } from '../actions/types';
 
 
@@ -48,12 +49,18 @@ export default (state = initialState() , action) => {
         case UNMOUNT_CATEGORY:
             return {
                 ...state,
-                isLoading: true
+                isLoading: true,
+                countCategories: 4
         };
         case CREATING_CATEGORY:
             return {
                 ...state,
                 isCreating: true
+        };
+        case COUNT_CATEGORIES:
+            return {
+                ...state,
+                countCategories: state.countCategories + 4
         };
         default:
             return state;

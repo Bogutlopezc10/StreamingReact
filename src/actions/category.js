@@ -8,7 +8,8 @@ import {
     EDIT_CATEGORY,
     UPDATE_ERROR_WITH_ACTION,
     UNMOUNT_CATEGORY,
-    CREATING_CATEGORY
+    CREATING_CATEGORY,
+    COUNT_CATEGORIES
 } from './types';
 
 export const fetchCategories = () => async dispatch => {
@@ -77,5 +78,11 @@ export const unMountCategory = () => dispatch => {
 export const creatingCategory = () => dispatch => {
         
     dispatch({ type: CREATING_CATEGORY })
+
+}
+
+export const countCategories = () => dispatch => {
+        
+    dispatch({ type: COUNT_CATEGORIES })
 
 }

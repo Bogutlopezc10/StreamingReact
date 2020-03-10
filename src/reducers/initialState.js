@@ -5,7 +5,8 @@ export const initialState = () => {
             isSuccess:false,
             messageSuccess:null,
             isLoading:true,
-            isCreating: false
+            isCreating: false,
+            countCategories: 4
         }
     )
   }
