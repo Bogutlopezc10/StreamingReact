@@ -15,6 +15,7 @@ class CourseForm extends React.Component {
 
 
     renderError({error, touched}){
+        
         if(touched && error){
             return(
                 <div className="mt-2 error-message">

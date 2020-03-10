@@ -4,7 +4,8 @@ export const initialState = () => {
             data:{},
             isSuccess:false,
             messageSuccess:null,
-            isLoading:true
+            isLoading:true,
+            isCreating: false
         }
     )
   }
