@@ -73,7 +73,7 @@ class  CourseDetail extends React.Component{
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="container-img">
-                                    <img src="/bg-home.jpg" className="img-fluid" alt="course-detail" />
+                                    <img src={`${course.photo}`} className="img-fluid" alt="course-detail" />
                                     <div className="card-badge shadow rounded-right text-uppercase">{course.categoryName}</div>
                                     {this.renderNewBadge()}
                                 </div>

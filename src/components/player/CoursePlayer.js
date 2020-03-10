@@ -110,7 +110,7 @@ class CoursePlayer extends React.Component{
                             <hr/>
                             <div className="row mb-4">
                                 <div className="col-lg-4 mt-1 mb-2 course-img-container">
-                                    <img src="/bg-home.jpg" className="img-course-player" alt="bg-home" />
+                                    <img src={`${course.photo}`} className="img-course-player" alt="bg-home" />
                                 </div>
                                 <div className="col-lg-8">
                                     <div className="row">
