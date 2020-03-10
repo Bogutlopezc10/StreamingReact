@@ -58,7 +58,7 @@ class CoursePublished extends React.Component{
         const { course, teacher } = this.props;
         if(moment().diff(course.postedAt, 'days') <= 4 && !teacher){
             return (
-                <div className="card-badge-new shadow rounded-right text-uppercase">Nuevo</div>
+                <div className="card-badge-new rounded-right text-uppercase">Nuevo</div>
             )
         }
     }
@@ -75,7 +75,7 @@ class CoursePublished extends React.Component{
                     <div className="card-footer">
                         {this.renderTeacherExclusive()}
                     </div>
-                    <div className="card-badge shadow rounded-right text-uppercase">{course.categoryName}</div>
+                    <div className="card-badge rounded-right text-uppercase">{course.categoryName}</div>
                     {this.renderNewBadge()}
                     <Link to={`/courses/Detail/${course.name}/${course.id}`} className={`btn ${customizeButton}`}>
                         <div>

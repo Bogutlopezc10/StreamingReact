@@ -92,9 +92,8 @@ class CategoryForm extends React.Component {
         if(isCreating){
             return(
                 <div>
-                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                    <p className="d-inline">ENVIANDO</p> 
-                    <i className="d-inline fas fa-share ml-2 mt-2"></i>
+                    <p className="d-inline">ENVIAR</p> 
+                    <span className="spinner-border spinner-sending spinner-border-sm ml-2" role="status" aria-hidden="true"></span>
                 </div>
             )
         }
@@ -135,16 +134,25 @@ class CategoryForm extends React.Component {
                     <div className="col-lg-12 mb-3">
                         <Field name="description" component={this.renderTextArea} label="Descripción" />
                     </div>
-                </div>
-                <div className="col-lg-12 mb-3 custom-file">
-                        <input className="custom-file-input form-control"
-                            name = "photo"
-                            type='file'
-                            accept="image/x-png,image/gif,image/jpeg"
-                            onChange={e => this.setFile(e)}
-                        />
-                        <label className="custom-file-label">{this.state.name==null ? 'Seleccione una imagen': this.state.name}</label>
+                    <div className="col-lg-12 mb-3">
+                        <label><strong>Imagen</strong></label>
+                        <div className="input-group">
+                            <div className="input-group-prepend">
+                                <span className="input-group-text" id="inputGroupFileAddon01"><i className="far fa-image"></i></span>
+                            </div>
+                            <div className="custom-file">
+                                <input className="custom-file-input form-control"
+                                    name = "photo"
+                                    type='file'
+                                    accept="image/x-png,image/gif,image/jpeg"
+                                    onChange={e => this.setFile(e)}
+                                    onClick={e => (e.target.value = null)}
+                                />
+                                <label className={`${this.state.name==null ? 'color-file':''} custom-file-label`}>{this.state.name==null ? 'Seleccione una imagen': this.state.name}</label>
+                            </div>
+                        </div>
                         {this.renderErrorInputFile()}
+                    </div>
                 </div>
                 <button onClick = {this.onClickSend} className ="btn btn-outline-success mt-2" disabled={this.validateDisable()} style={{ borderRadius: ".25rem" }}>
                     {this.renderButtonSubmit()}

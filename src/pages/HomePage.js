@@ -26,7 +26,7 @@ class HomePage extends React.Component{
                                 <h2>Categorias</h2>
                             </div>
                             <div className="col-12 text mt-4">
-                                <p>En esta sección encontraras categorias</p>
+                                <p>En esta sección encontraras categorias como:</p>
                             </div>
                         </div>
                         <div className="row mt-4 mb-5">
@@ -66,7 +66,7 @@ class HomePage extends React.Component{
                                 <h2>Cursos</h2>
                             </div>
                             <div className="col-12 text mt-4">
-                                <p>En esta sección encontraras cursos</p>
+                                <p>En esta sección encontraras cursos de:</p>
                             </div>
                         </div>
                         <div className="row mt-4 mb-5">
@@ -85,7 +85,7 @@ class HomePage extends React.Component{
                             <div className="col-lg-4 col-md-12 col-sm-12">
                                 <div className="d-flex flex-column main align-items-center">
                                     <i className="fab fa-react mt-1 mb-2"></i>
-                                    <h3>ReactJS</h3>
+                                    <h3>React JS</h3>
                                 </div>
                             </div>
                         </div>
