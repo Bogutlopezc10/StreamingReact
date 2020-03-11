@@ -17,7 +17,7 @@ class OptionList extends React.Component{
                         <Link to={`/options/Create/${this.props.courseName}/${this.props.courseId}/${this.props.questionId}`} className="btn btn-outline-success">
                             <div>
                                 <p className="d-inline">AGREGAR OPCIONES</p> 
-                                <i className="d-inline fas fa-plus-circle ml-2 mt-2"></i>
+                                <i className="d-inline fas fa-cog ml-2 mt-2"></i>
                             </div>
                         </Link>
                     </div>

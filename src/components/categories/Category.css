@@ -14,6 +14,31 @@
     color: gray;
 }
 
+.see-more-button{
+    font-weight: bold;
+    border-radius: 0%;
+    color: gray;
+    border-color: gray;
+}
+
+.see-more-button:hover{
+    box-shadow: 2px 3px 6px 0px rgba(0,0,0,0.87);
+    color: white;
+    border-color: gray;
+    background-color: gray;
+}
+
+.see-more-button i{
+    font-size: 17px;
+    position: relative;
+    top: 1px;
+}
+
+.see-more-button:hover i{
+    transition: all 1s;
+    transform: rotate(360deg) !important;
+}
+
 
 .btn-outline-primary{
     font-weight: bold;
@@ -21,7 +46,7 @@
 }
 
 .btn-outline-primary:hover{
-    box-shadow: 0px 7px 11px -6px rgba(0,0,0,0.75);
+    box-shadow: 2px 3px 6px 0px rgba(0,0,0,0.87);
 }
 
 .btn-outline-primary i{
@@ -72,6 +97,7 @@
     font-size: 12px;
     position: absolute;
     top: 0px;
+    box-shadow: 2px 3px 6px 0px rgba(0,0,0,0.87);
 }
 
 .btn-delete-category{

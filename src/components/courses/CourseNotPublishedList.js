@@ -54,7 +54,7 @@ class CourseNotPublishedList extends React.Component{
                             <Link className="btn btn-outline-success" to="/courses/Create">
                                 <div>
                                     <p className="d-inline">CREAR CURSO</p> 
-                                    <i className="d-inline fas fa-plus-circle ml-2 mt-2"></i>
+                                    <i className="d-inline fas fa-cog ml-2 mt-2"></i>
                                 </div>
                             </Link>
                         </div>

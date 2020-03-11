@@ -12,8 +12,10 @@ class CategoryList extends React.Component{
         if(categories.length == 0 && loadingCategory){
             return (
                 <>
-                    <div className="col-auto d-flex align-items-center justify-content-center mb-4" style={{height:"250px"}}>
-                        <Spinner />
+                    <div className="row d-flex align-items-center justify-content-center" style={{height:"300px"}}>
+                        <div className="col-auto mb-4">
+                            <Spinner />
+                        </div>
                     </div>
                 </>
             )
@@ -21,26 +23,30 @@ class CategoryList extends React.Component{
         if(categories.length == 0 && !loadingCategory){
             return (
                 <>
-                    <div className="col-auto d-flex align-items-center justify-content-center mb-4" style={{height:"250px"}}>
-                        <EmptyData 
-                            message="No se encontraron categorías." 
-                            heightImage="150px"
-                            widthImage="150px" 
-                            marginBottom="10px"
-                        />
-                    </div>                
+                    <div className="row d-flex align-items-center justify-content-center mb-4" style={{height:"300px"}}>
+                        <div className="col-auto mb-4">
+                            <EmptyData 
+                                message="No se encontraron categorías." 
+                                heightImage="150px"
+                                widthImage="150px" 
+                                marginBottom="10px"
+                            />
+                        </div>
+                    </div>           
                 </>
             )
         }
 
         return(
             <>
-                {categories.map( category =>
-                    <Category 
-                        key={category.id} 
-                        category={category} 
+                <div className="row">
+                    {categories.map( category =>
+                        <Category 
+                            key={category.id} 
+                            category={category} 
                         />
-                )}
+                    )}
+                </div>
             </>
         )
     }
@@ -51,7 +57,16 @@ class CategoryList extends React.Component{
 
         if(getAllCategories.length > counterCategories){
             return(
-                <button onClick = {onClickMoresCategories} className="btn btn-primary">More</button>  
+                <div className="row d-flex align-items-center justify-content-center">
+                    <div className="col-4 mb-4">
+                        <button onClick={onClickMoresCategories} className="btn btn-block see-more-button">
+                            <div>
+                                <p className="d-inline">VER MÁS</p> 
+                                <i className="d-inline fas fa-angle-double-down ml-2 mt-2"></i>
+                            </div>
+                        </button>
+                    </div>
+                </div>
             )
         }
     }
@@ -68,16 +83,14 @@ class CategoryList extends React.Component{
                             <Link to="/categories/Create" className="btn btn-outline-success">
                                 <div>
                                     <p className="d-inline">CREAR CATEGORIA</p> 
-                                    <i className="d-inline fas fa-plus-circle ml-2 mt-2"></i>
+                                    <i className="d-inline fas fa-cog ml-2 mt-2"></i>
                                 </div>
                             </Link>
                         </div>
                     </div>
                 </div>
                 <div className="container category-shadow container-categories pt-4 px-4">
-                    <div className="row">
-                        {this.renderData()}
-                    </div>
+                    {this.renderData()}
                     {this.renderButtonMore()}
                 </div>
             </>

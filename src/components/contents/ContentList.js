@@ -13,7 +13,7 @@ class ContentList extends React.Component{
                     <button onClick={this.props.onClickIsCreatingContent} className="btn btn-outline-success">
                         <div>
                             <p className="d-inline">CREAR CONTENIDO</p> 
-                            <i className="d-inline fas fa-plus-circle ml-2 mt-2"></i>
+                            <i className="d-inline fas fa-cog ml-2 mt-2"></i>
                         </div>
                     </button>
                 </div>

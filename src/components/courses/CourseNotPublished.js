@@ -11,32 +11,24 @@ const CourseNotPublished = ({ course }) => {
                     <h5 className="card-title">{course.name}</h5>
                 </div>
                 <div className="card-badge rounded-right text-uppercase">{course.categoryName}</div>
-                <div className="row">
-                    <div className="col-lg-12 py-0">
-                        <Link to={`courses/Edit/${course.name}/${course.id}`} className="btn btn-block teacher-button border-left-0 border-right-0 border-teacher">
-                            <div>
-                            <p className="d-inline">EDITAR</p> 
-                                <i className="d-inline fas fa-edit ml-2 mt-2"></i>
-                            </div>
-                        </Link>
+                <Link to={`courses/Edit/${course.name}/${course.id}`} className="btn teacher-button border-left-0 border-right-0 border-teacher">
+                    <div>
+                        <p className="d-inline">EDITAR</p> 
+                        <i className="d-inline fas fa-edit ml-2 mt-2"></i>
                     </div>
-                    <div className="col-lg-12 py-0">
-                        <Link to={`/courses/Delete/${course.name}/${course.id}`} className="btn btn-block btn-outline-danger border-teacher border-left-0 border-right-0 border-top-0">
-                            <div>
-                                <p className="d-inline">ELIMINAR</p>
-                                <i className="d-inline fas fa-trash-alt ml-2 mt-2"></i>
-                            </div>
-                        </Link>
+                </Link>
+                <Link to={`/courses/Delete/${course.name}/${course.id}`} className="btn btn-outline-danger border-teacher border-left-0 border-right-0 border-top-0">
+                    <div>
+                        <p className="d-inline">ELIMINAR</p>
+                        <i className="d-inline fas fa-trash-alt ml-2 mt-2"></i>
                     </div>
-                    <div className="col-lg-12 py-0">
-                        <Link to={`courses/Post/${course.name}/${course.id}`} className="btn btn-block btn-outline-success border-left-0 border-right-0 border-top-0 border-teacher">
-                            <div>
-                                <p className="d-inline">PUBLICAR</p> 
-                                <i className="d-inline fas fa-share ml-2 mt-2"></i>
-                            </div>
-                        </Link>
+                </Link>
+                <Link to={`courses/Post/${course.name}/${course.id}`} className="btn btn-outline-success border-left-0 border-right-0 border-top-0 border-teacher">
+                    <div>
+                        <p className="d-inline">PUBLICAR</p> 
+                        <i className="d-inline fas fa-share ml-2 mt-2"></i>
                     </div>
-                </div>
+                </Link>
                 <Link to={`/courses/Content/${course.name}/${course.id}`} className="btn btn-success btn-subject">
                     <div>
                         <p>CONTENIDO</p> 

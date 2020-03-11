@@ -14,10 +14,10 @@ class Subject extends React.Component{
             <>
                 <Card className="card-content-course">
                     <Accordion.Toggle as={Card.Header} onClick={()=>onClickUnMountContent()} eventKey={subject.id}>
-                        <div className="row d-flex align-items-center justify-content-between">
+                        <div className="row d-flex align-items-center justify-content-between" style={{ position: "relative" }}>
                             <div className="col-auto">
                                 <div className="row">
-                                    <div className="col-lg-12">
+                                    <div className="col-lg-11">
                                         {subject.name}
                                     </div>
                                     <div className="col-lg-12">
@@ -25,6 +25,7 @@ class Subject extends React.Component{
                                     </div>
                                 </div>
                             </div>
+                            <i className="icon-change fas fa-angle-down"></i>
                         </div>
                     </Accordion.Toggle>
                     <Accordion.Collapse eventKey={subject.id}>
@@ -38,7 +39,7 @@ class Subject extends React.Component{
                     </Accordion.Collapse>
                     <div className="row">
                         <div className="col-6 p-0">
-                            <button onClick={() => onClickEditSubject(subject.id)} className="btn btn-block course-button mr-0 border-subject">
+                            <button onClick={() => onClickEditSubject(subject.id)} className="btn btn-block button-edit-accordion mr-0 border-subject">
                                 <div>
                                 <p className="d-inline">EDITAR TEMA</p> 
                                     <i className="d-inline fas fa-edit ml-2 mt-2"></i>

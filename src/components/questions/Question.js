@@ -12,13 +12,14 @@ const Question = ({question, courseName, courseId, onClickEditQuestion, amountOp
         <>
              <Card className="card-content-course">
                 <Accordion.Toggle as={Card.Header} eventKey={question.id}>
-                    <div className="row d-flex">
+                    <div className="row d-flex" style={{ position: "relative" }}>
                         <div className="col-lg-12">
                             {question.content}
                         </div>
                         <div className="col-lg-12">
                             <small style={{ color:"gray" }}>{amountOptions}/{amountOptions} opciones</small>
                         </div>
+                        <i className="icon-change fas fa-angle-down"></i>
                     </div>
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey={question.id}>
@@ -32,7 +33,7 @@ const Question = ({question, courseName, courseId, onClickEditQuestion, amountOp
                 </Accordion.Collapse>
                 <div className="row">
                     <div className="col-6 p-0">
-                        <button onClick={() => onClickEditQuestion(question.id)}  className="btn btn-block course-button mr-0 border-subject">
+                        <button onClick={() => onClickEditQuestion(question.id)}  className="btn btn-block button-edit-accordion mr-0 border-subject">
                             <div>
                               <p className="d-inline">EDITAR PREGUNTA</p> 
                                 <i className="d-inline fas fa-edit ml-2 mt-2"></i>

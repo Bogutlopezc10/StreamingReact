@@ -47,7 +47,7 @@
 }
 
 .btn-outline-exam:hover{
-    box-shadow: 0px 7px 11px -6px rgba(0,0,0,0.75);
+    box-shadow: 2px 3px 6px 0px rgba(0,0,0,0.87);
     border-color: #379a70;
     background-color: #379a70;
     color: white;
