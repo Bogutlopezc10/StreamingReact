@@ -16,3 +16,12 @@
 .social-network i{
     font-size: 50px;
 }
+
+.social-network a{
+    text-decoration: none !important;
+    color:#2d2d2d;
+}
+
+.social-network a:hover{
+    color:#3c3c3c;
+}
