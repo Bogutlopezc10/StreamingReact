@@ -36,10 +36,24 @@ class CategoryList extends React.Component{
         return(
             <>
                 {categories.map( category =>
-                    <Category key={category.id} category={category} />
+                    <Category 
+                        key={category.id} 
+                        category={category} 
+                        />
                 )}
             </>
         )
+    }
+
+    renderButtonMore () {
+        
+        const {onClickMoresCategories, getAllCategories, counterCategories} = this.props;
+
+        if(getAllCategories.length > counterCategories){
+            return(
+                <button onClick = {onClickMoresCategories} className="btn btn-primary">More</button>  
+            )
+        }
     }
 
     render(){
@@ -60,10 +74,11 @@ class CategoryList extends React.Component{
                         </div>
                     </div>
                 </div>
-                <div className="container category-shadow container-categories pt-4 px-4 testimonial-group">
+                <div className="container category-shadow container-categories pt-4 px-4">
                     <div className="row">
                         {this.renderData()}
-                    </div>              
+                    </div>
+                    {this.renderButtonMore()}
                 </div>
             </>
         )

@@ -183,9 +183,16 @@ export const getUserCoursesByUser = (state) => {
 }
 
 // category selector
-export const getDataOrderByCreatedAt = (data) => {
+export const getDataOrderByCreatedAt = (data, counter) => {
 
   const categories = Object.values(data);
 
-  return categories.sort(compareValuesCreatedAt('createdAt', 'desc'));
+  return categories.sort(compareValuesCreatedAt('createdAt', 'desc')).slice(0, counter);
+}
+
+export const getAllCategories = (data) => {
+
+  const categories = Object.values(data);
+
+  return categories;
 }
