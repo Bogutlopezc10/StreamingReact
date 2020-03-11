@@ -4,10 +4,19 @@
     overflow-y: auto;
     border-bottom: 3px solid #005385;
     border-right: 1px solid #bcbdbd;
+    border-left: 1px solid #bcbdbd;
 }
 
 .card-header-player{
     font-size: 15px !important;
+    position: relative;
+}
+
+.icon-change{
+    position: absolute;
+    top: 2px;
+    right: 20px;
+    font-size: 20px;
 }
 
 .container-subject-header{
