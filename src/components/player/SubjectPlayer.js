@@ -11,11 +11,11 @@ class SubjectPlayer extends React.Component{
         return(
             <>
                 <Card className="card-content-course">
-                    <Accordion.Toggle as={Card.Header} eventKey={subject.id}>
-                        <div className="row d-flex align-items-center justify-content-between">
+                    <Accordion.Toggle as={Card.Header} eventKey={numSubject}>
+                        <div className="row d-flex align-items-center justify-content-between" style={{ position: "relative" }}>
                             <div className="col-auto">
                                 <div className="row">
-                                    <div className="col-lg-12 card-header-player">
+                                    <div className="col-lg-11 card-header-player">
                                         {numSubject}. {subject.name}
                                     </div>
                                     <div className="col-lg-12">
@@ -23,9 +23,10 @@ class SubjectPlayer extends React.Component{
                                     </div>
                                 </div>
                             </div>
+                            <i className="icon-change fas fa-angle-down"></i>
                         </div>
                     </Accordion.Toggle>
-                    <Accordion.Collapse eventKey={subject.id}>
+                    <Accordion.Collapse eventKey={numSubject}>
                         <Card.Body style={{ padding:"0px"}}>
                         <ContentListPlayerContainer
                             subjectId={subject.id} 
