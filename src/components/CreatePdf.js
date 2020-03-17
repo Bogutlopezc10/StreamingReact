@@ -20,7 +20,7 @@ class CreatePdf extends React.Component{
     }
     render(){
         return(
-            <button onClick = {this.downloadPdf} className="btn course-button">
+            <button onClick = {this.downloadPdf} className="btn mr-1 course-button">
                 <div>
                     <p className="d-inline">CERTIFICADO</p>
                     <i className="d-inline far fa-file-pdf ml-2 mt-2"></i>

@@ -9,7 +9,7 @@ class ValidateAnswers extends React.Component{
     renderButton(){
         const {courseId, userCourseId} = this.props;
         return(
-            <Link to={`/Player/${courseId}/${userCourseId}`} className="btn ml-1 btn-outline-danger">
+            <Link to={`/Player/${courseId}/${userCourseId}`} className="btn ml-2 btn-outline-danger">
                 <div>
                     <p className="d-inline">AL CURSO</p>
                     <i className="d-inline fas fa-sign-out-alt ml-2 mt-2"></i>
@@ -32,7 +32,6 @@ class ValidateAnswers extends React.Component{
         if(userCourse.correctAnswers >= 3){
             return(
                 <>
-
                     <div className="row">
                         <div className="col-lg-12 d-flex justify-content-center">
                             <i className="color-icon-good fas fa-graduation-cap"></i>
@@ -56,8 +55,7 @@ class ValidateAnswers extends React.Component{
                             />
                             {this.renderButton()}
                         </div>
-                        </div>
-
+                    </div>
                 </>
             )
         }
