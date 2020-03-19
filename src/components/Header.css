@@ -99,6 +99,10 @@
     padding-bottom: 20px;
 }
 
+.header-prueba{
+  cursor: pointer;
+}
+
 .menu-principal nav a{
     display: block;
     padding: 20px;
