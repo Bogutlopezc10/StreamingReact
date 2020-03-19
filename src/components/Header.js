@@ -10,7 +10,6 @@ const Header = () => {
   const { isAuthenticated, loginWithRedirect, logout, user, loading } = useAuth0();
 
   if (loading) {
-    console.log('cargando')
     return (
       <p>Cargando</p>
     );
@@ -53,7 +52,10 @@ const Header = () => {
           <div className={`col menu-principal ${active ? 'active' : ''}`}>
             <nav>
               {!isAuthenticated &&
-                <a onClick={() => loginWithRedirect({})}><i className="fab fa-google"></i>Iniciar sesión</a>
+                <a className="header-prueba" onClick={() => loginWithRedirect({})}><i className="fab fa-google"></i>Iniciar sesión</a>
+              }
+              {isAuthenticated && 
+                <a className="header-prueba" onClick={() => logout()}><i className="fab fa-google"></i>Cerrar sesión</a>
               }
 
               <Link onClick={() => setActive(false)} to="/"><i className="fas fa-home"></i>Home</Link>
