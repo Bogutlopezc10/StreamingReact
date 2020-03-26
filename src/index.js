@@ -35,6 +35,7 @@ ReactDOM.render(
       domain={'dev-edu.auth0.com'}
       client_id={'Y1cBg3gAh8EzE7sU07ATZ67fpn9gRQOP'}
       redirect_uri={'http://localhost:3000'}
+      audience={'http://localhost:5001/api'}
       onRedirectCallback={onRedirectCallback}
     >
       <Provider store={store}>

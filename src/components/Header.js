@@ -5,15 +5,23 @@ import './Header.css';
 import { useAuth0 } from '../auth0wrapper';
 
 
+const displayToken = async (getTokenCallback) => {
+  const token = await getTokenCallback();
+  console.log('Your token ', token)
+}
+
 const Header = () => {
   const [active, setActive] = useState(false);
-  const { isAuthenticated, loginWithRedirect, logout, user, loading } = useAuth0();
+  const { isAuthenticated, loginWithRedirect, logout, user, loading, getTokenSilently, getIdTokenClaims } = useAuth0();
 
   if (loading) {
     return (
       <p>Cargando</p>
     );
   }
+
+  displayToken(getTokenSilently);
+  displayToken(getIdTokenClaims);
 
   return (
     <>
