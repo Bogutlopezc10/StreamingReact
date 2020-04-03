@@ -1,7 +1,13 @@
 // EndPoints
 
-export const JUAN = 'http://localhost:51066/api';
-export const CAMILO = 'http://localhost:56757/api';
+export const JUAN_URL = 'http://localhost:51066/api';
+export const CAMILO_URL = 'http://localhost:56757/api';
+export const DEFAULT_URL = 'http://localhost:61958/api';
+
+
+// Token
+export const SAVE_TOKEN = 'SAVE_TOKEN';
+export const CLEAR_TOKEN = 'CLEAR_TOKEN';
 
 
 // Categories constant
