@@ -4,15 +4,9 @@ import { FaUserEdit } from 'react-icons/fa';
 import './Header.css';
 import { useAuth0 } from '../auth0wrapper';
 
-
-const displayToken = async (getTokenCallback) => {
-  const token = await getTokenCallback();
-  console.log('Your token ', token)
-}
-
-const Header = () => {
+const Header = ({ isAdmin }) => {
   const [active, setActive] = useState(false);
-  const { isAuthenticated, loginWithRedirect, logout, user, loading, getTokenSilently, getIdTokenClaims } = useAuth0();
+  const { isAuthenticated, loginWithRedirect, logout, user, loading } = useAuth0();
 
   if (loading) {
     return (
@@ -20,15 +14,14 @@ const Header = () => {
     );
   }
 
-  displayToken(getTokenSilently);
-  displayToken(getIdTokenClaims);
-
   return (
     <>
       <div className="nav shadow align-items-stretch justify-content-between bg-default fixed-top">
         <div className="col-md-12 col-lg logo d-flex align-items-center justify-content-center justify-content-lg-start">
           <Link to="/">
-            <h2>Streaming</h2>
+            <h2>Streaming
+              {isAdmin && <span>&nbsp;ADMIN</span>}
+            </h2>
           </Link>
         </div>
         <nav className="col-md-12 col-lg-auto menu d-flex align-items-stretch flex-wrap flex-sm-nowrap flex-nowrap">

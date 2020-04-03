@@ -1,6 +1,12 @@
 // src/react-auth0-spa.js
 import React, { useState, useEffect, useContext } from "react";
+import { useDispatch } from 'react-redux';
 import createAuth0Client from "@auth0/auth0-spa-js";
+
+import {
+  clearToken,
+  saveToken
+} from './actions/auth';
 
 const DEFAULT_REDIRECT_CALLBACK = () =>
   window.history.replaceState({}, document.title, window.location.pathname);
@@ -17,6 +23,7 @@ export const Auth0Provider = ({
   const [auth0Client, setAuth0] = useState();
   const [loading, setLoading] = useState(true);
   const [popupOpen, setPopupOpen] = useState(false);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const initAuth0 = async () => {
@@ -33,10 +40,15 @@ export const Auth0Provider = ({
 
       setIsAuthenticated(isAuthenticated);
 
-      if (isAuthenticated) {
-        const user = await auth0FromHook.getUser();
-        console.log(user)
+      // Save or remove tokens if user is logged-in
+      if (!isAuthenticated) {
+        dispatch(clearToken());
+      } else {
+        const user = await auth0FromHook.getUser();    
         setUser(user);
+
+        const token = await auth0FromHook.getTokenSilently();    
+        dispatch(saveToken(token));
       }
 
       setLoading(false);

@@ -13,7 +13,7 @@ import { Auth0Provider } from "./auth0wrapper";
 import history from "./history";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(
+export const store = createStore(
   reducers,
   composeEnhancers(applyMiddleware(reduxThunk))
 );
@@ -31,6 +31,7 @@ const onRedirectCallback = appState => {
 };
 
 ReactDOM.render(
+  <Provider store={store}>
     <Auth0Provider
       domain={'dev-edu.auth0.com'}
       client_id={'Y1cBg3gAh8EzE7sU07ATZ67fpn9gRQOP'}
@@ -38,9 +39,8 @@ ReactDOM.render(
       audience={'http://localhost:5001/api'}
       onRedirectCallback={onRedirectCallback}
     >
-      <Provider store={store}>
-        <App />
-      </Provider>
+      <App />
     </Auth0Provider>
-    , document.querySelector('#root')
+  </Provider>
+  , document.querySelector('#root')
 );
