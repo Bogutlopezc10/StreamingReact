@@ -12,6 +12,7 @@ import {
 } from './types';
 
 export const fetchUserCoursesByUserName = () => async dispatch => {
+    console.log("fetch");
     const username = CURRENT_USER
     try{
         const streams = getAxios();

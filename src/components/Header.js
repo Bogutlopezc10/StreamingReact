@@ -2,16 +2,31 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaUserEdit } from 'react-icons/fa';
 import './Header.css';
+import Spinner from './Spinner';
 import { useAuth0 } from '../auth0wrapper';
 
 const Header = ({ isAdmin }) => {
   const [active, setActive] = useState(false);
   const { isAuthenticated, loginWithRedirect, logout, user, loading } = useAuth0();
 
-  if (loading) {
-    return (
-      <p>Cargando</p>
-    );
+  const renderImageMenu = () => {
+    if(loading){
+      return(
+        <Spinner />
+      )
+    }else{
+      if(isAuthenticated && user){
+        return(
+          <img src={user.picture}  width="60" height="60" style={{ border: "1px solid gray" }} className="rounded-circle shadow z-depth-0"
+          alt="avatar image" />
+        )
+      }else{
+        return(
+          <img src="/login.png"  width="60" height="60" style={{ border: "1px solid gray" }} className="rounded-circle shadow z-depth-0"
+          alt="avatar image" />
+        )
+      }
+    }
   }
 
   return (
@@ -19,9 +34,7 @@ const Header = ({ isAdmin }) => {
       <div className="nav shadow align-items-stretch justify-content-between bg-default fixed-top">
         <div className="col-md-12 col-lg logo d-flex align-items-center justify-content-center justify-content-lg-start">
           <Link to="/">
-            <h2>Streaming
-              {isAdmin && <span>&nbsp;ADMIN</span>}
-            </h2>
+            <h2>Streaming</h2>
           </Link>
         </div>
         <nav className="col-md-12 col-lg-auto menu d-flex align-items-stretch flex-wrap flex-sm-nowrap flex-nowrap">
@@ -39,11 +52,7 @@ const Header = ({ isAdmin }) => {
           </Link>
           <a onClick={() => setActive(true)} className="c-3 border-0 d-flex align-items-center">
             <div className="d-flex flex-column align-items-center">
-              {
-                isAuthenticated && user &&
-                <img src={user.picture}  width="60" height="60" style={{ border: "1px solid gray" }} className="rounded-circle shadow z-depth-0"
-                  alt="avatar image" />
-              }
+              {renderImageMenu()}
             </div>
           </a>
         </nav>
