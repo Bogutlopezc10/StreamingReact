@@ -8,3 +8,17 @@ export const IsAdmin = (state) => {
   }
   return decoded.permissions.filter(p => p === 'admin:api').length !== 0;
 }
+
+export const GetCurrentUser = (state) => {
+  const userAuth = state.auth.currentUser;
+
+  return {
+    username: userAuth.email,
+    name: userAuth.nickname,
+    photo: userAuth.picture
+  }
+}
+
+export const GetEmailCurrentUser = (state) => state.auth.currentUser.email;
+
+

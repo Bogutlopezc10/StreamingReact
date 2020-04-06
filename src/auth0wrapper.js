@@ -46,7 +46,6 @@ export const Auth0Provider = ({
       } else {
         const user = await auth0FromHook.getUser();
         setUser(user);
-
         const token = await auth0FromHook.getTokenSilently();    
         dispatch(saveToken(token, user));
       }

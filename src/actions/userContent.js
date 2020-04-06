@@ -1,6 +1,8 @@
 import getAxios from '../apis/streams';
 import history from '../history'
 import { createError } from './error';
+import {GetEmailCurrentUser} from '../selectors/authSelectors'
+import {store} from '../index'
 import { 
     FETCH_USER_CONTENTS_BY_USERNAME,
     CURRENT_USER,
@@ -9,7 +11,8 @@ import {
 
 export const fetchUserContentByUserName = () => async dispatch => {
 
-    const username = CURRENT_USER
+    const state = store.getState();
+    const username = GetEmailCurrentUser(state);
     try{
         const streams = getAxios();
         const response = await streams.get(`/UserContents/ByUsername/${username}`);

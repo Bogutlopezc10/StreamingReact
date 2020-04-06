@@ -5,7 +5,7 @@ import { GetToken } from '../selectors/authSelectors';
 
 const getAxios = () => {
   const instance = axios.create({
-    baseURL: CAMILO_URL
+    baseURL: JUAN_URL
   });
 
   // Add token if exists

@@ -1,6 +1,8 @@
 import getAxios from '../apis/streams';
 import history from '../history'
 import { createError } from './error';
+import {GetEmailCurrentUser} from '../selectors/authSelectors'
+import {store} from '../index'
 import { 
     FETCH_USERCOURSES_BY_USERNAME,
     UPDATE_ERROR_WITH_ACTION,
@@ -12,8 +14,9 @@ import {
 } from './types';
 
 export const fetchUserCoursesByUserName = () => async dispatch => {
-    console.log("fetch");
-    const username = CURRENT_USER
+
+    const state = store.getState();
+    const username = GetEmailCurrentUser(state);
     try{
         const streams = getAxios();
         const response = await streams.get(`/UsersCourses/ByUsername/${username}`);
@@ -51,7 +54,8 @@ export const updateRatingUserCourse = (id,rating) => async dispatch => {
 
 export const createUserCourse = courseIdV =>async (dispatch) =>{
 
-    const usernameV = CURRENT_USER
+    const state = store.getState();
+    const usernameV = GetEmailCurrentUser(state);
 
     const userCourseValues={
         username: usernameV,
