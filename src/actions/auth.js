@@ -4,11 +4,12 @@ import {
   CLEAR_TOKEN
 } from './types';
 
-export const saveToken = (token) => ({
+export const saveToken = (token, user) => ({
   type:  SAVE_TOKEN,
   payload: {
     decodedToken : jwt_decode(token),
     token,
+    user
   }
 });
 

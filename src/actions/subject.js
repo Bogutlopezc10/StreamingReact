@@ -1,4 +1,4 @@
-import streams from '../apis/streams';
+import getAxios from '../apis/streams';
 import history from '../history'
 import { createError } from './error';
 import { 
@@ -18,46 +18,70 @@ import {
 
 export const fetchSubjects = (id) => async dispatch => {
     try{
+        const streams = getAxios();
         const response = await streams.get(`/Subjects/ByCourse/${id}`);
         dispatch({ type: FETCH_SUBJECTS, payload: response.data });
     }
     catch(error){
-        dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
-        history.push('/errors');
+        if(error.response && error.response.status == 401){
+            history.push('/login');
+        }
+        else{
+            dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+            history.push('/errors');
+        }
     }
 }
 
 export const fecthEditingSubject = (id) => async dispatch => {
     try{
+        const streams = getAxios();
         const response = await streams.get(`/Subjects/${id}`);
         dispatch({ type: IS_EDITING_SUBJECT, payload: response.data });
     }
     catch(error){
-        dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
-        history.push('/errors');
+        if(error.response && error.response.status == 401){
+            history.push('/login');
+        }
+        else{
+            dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+            history.push('/errors');
+        }
     }
 }
 
 export const createSubject = (formValues, courseId) => async dispatch => {
     try{
+        const streams = getAxios();
         const response = await streams.post('/Subjects',{...formValues, courseId});
         dispatch({ type: CREATE_SUBJECT, payload: response.data });
     }
     catch(error){
-        dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
-        history.push('/errors');
+        if(error.response && error.response.status == 401){
+            history.push('/login');
+        }
+        else{
+            dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+            history.push('/errors');
+        }
     }
 }
 
 export const editSubject = (id, formValues) =>async (dispatch) =>{
 
     try{
+        const streams = getAxios();
         const response = await streams.put(`/Subjects/${id}`,formValues)
         dispatch({type: EDIT_SUBJECT, payload:response.data})
     }
     catch(error){
-        dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
-        history.push('/errors');
+        if(error.response && error.response.status == 401){
+            history.push('/login');
+        }
+        else{
+            dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+            history.push('/errors');
+        }
     }
 };
 
@@ -86,24 +110,36 @@ export const unMountCreateForm = () => async dispatch => {
 export const fetchSubject = (id) => async dispatch => {
 
     try {
+        const streams = getAxios();
         const response = await streams.get(`/Subjects/${id}`);
         dispatch({ type: FETCH_SUBJECT, payload: response.data });
     } catch (error) {
-        dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
-        history.push('/errors');
+        if(error.response && error.response.status == 401){
+            history.push('/login');
+        }
+        else{
+            dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+            history.push('/errors');
+        }
     }
 }
 
 export const deleteSubject = (id, courseName, courseId) =>async dispatch =>{
 
     try{
+        const streams = getAxios();
         await streams.delete(`/Subjects/${id}`);
         dispatch({type: DELETE_SUBJECT, payload:id})
         history.push(`/Courses/Content/${courseName}/${courseId}`);
     }
     catch(error){
-        dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
-        history.push('/errors');
+        if(error.response && error.response.status == 401){
+            history.push('/login');
+        }
+        else{
+            dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+            history.push('/errors');
+        }
     }
 };
 

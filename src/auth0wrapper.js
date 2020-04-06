@@ -44,11 +44,11 @@ export const Auth0Provider = ({
       if (!isAuthenticated) {
         dispatch(clearToken());
       } else {
-        const user = await auth0FromHook.getUser();    
+        const user = await auth0FromHook.getUser();
         setUser(user);
 
         const token = await auth0FromHook.getTokenSilently();    
-        dispatch(saveToken(token));
+        dispatch(saveToken(token, user));
       }
 
       setLoading(false);

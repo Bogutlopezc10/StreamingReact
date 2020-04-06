@@ -6,7 +6,9 @@ import Header from '../components/Header';
 const HeaderContainer = () => {
   const isAdmin = useSelector(IsAdmin);
   return (
-    <Header isAdmin></Header>
+    <Header 
+      isAdmin = {isAdmin}
+    />
   )
 }
 

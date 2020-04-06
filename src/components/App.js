@@ -28,6 +28,7 @@ import OptionDeletePage from '../pages/options/OptionDeletePage';
 import PlayerPage from '../pages/PlayerPage';
 import QuestionExamPage from '../pages/questions/QuestionExamPage';
 import ValidateAnswersPage from '../pages/ValidateAnswersPage';
+import LoginPage from '../pages/LoginPage';
 
 const App = () => {
   return (
@@ -61,6 +62,7 @@ const App = () => {
             <Route path="/questions/exam/:courseId/:userCourseId" exact component={QuestionExamPage} />
             <Route path="/ValidateAnswersPage/:courseId/:userCourseId" exact component={ValidateAnswersPage} />
             <Route path="/errors" exact component={ErrorPage} />
+            <Route path="/login" exact component={LoginPage} />
           </Switch>
           <Footer />
         </div>

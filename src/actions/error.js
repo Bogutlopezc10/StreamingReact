@@ -3,8 +3,6 @@ import {
 } from './types';
 
 export const createError = (error) => {
-  console.log('Error!: ',error);
-  console.log('Detalle: ',error.response);
   if (!error.response) {
     return (
       {
@@ -20,7 +18,7 @@ export const createError = (error) => {
       {
         isError: true,
         statusText: error.response.statusText,
-        data: error.response.status === 401 ? 'No tienes suficientes permisos' : 'Error. Inténtalo más tarde.',
+        data: error.response.status === 403 ? 'No tienes suficientes permisos' : 'Error. Inténtalo más tarde.',
         code: error.response.status
       }
     )

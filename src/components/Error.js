@@ -2,7 +2,6 @@ import React from 'react'
 import './Error.css'
 
 const Error = (props) => {
-    console.log(props.error)
     return (
         <div className="error-container container">
             <div className="row d-flex align-items-center justify-content-center">

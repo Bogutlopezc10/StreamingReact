@@ -26,9 +26,13 @@ export const fetchCourses = () => async dispatch => {
     const response = await streams.get('/Courses');
     dispatch({ type: FETCH_COURSES, payload: response.data });
   } catch (error) {
-    console.log(error);
-    dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
-    history.push('/errors');
+    if(error.response && error.response.status == 401){
+      history.push('/login');
+    }
+    else{
+      dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+      history.push('/errors');
+    }
   }
 
 }
@@ -40,8 +44,13 @@ export const fetchCoursesBycategory = (id) => async dispatch => {
     dispatch({ type: FETCH_COURSE_BY_CATEGORY, payload: response.data });
   }
   catch (error) {
-    dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
-    history.push('/errors');
+    if(error.response && error.response.status == 401){
+      history.push('/login');
+    }
+    else{
+      dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+      history.push('/errors');
+    }
   }
 }
 
@@ -53,8 +62,13 @@ export const fetchCourse = (id) => async dispatch => {
     const response = await streams.get(`/Courses/${id}`);
     dispatch({ type: FETCH_COURSE, payload: response.data });
   } catch (error) {
-    dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
-    history.push('/errors');
+    if(error.response && error.response.status == 401){
+      history.push('/login');
+    }
+    else{
+      dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+      history.push('/errors');
+    }
   }
 }
 
@@ -68,8 +82,13 @@ export const fetchCourseByUsername = (username) => async dispatch => {
     dispatch({ type: FETCH_COURSES_BY_USERNAME, payload: response.data });
   }
   catch (error) {
-    dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
-    history.push('/errors');
+    if(error.response && error.response.status == 401){
+      history.push('/login');
+    }
+    else{
+      dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+      history.push('/errors');
+    }
   }
 }
 
@@ -91,8 +110,13 @@ export const createCourse = (formValues, formData) => async (dispatch) => {
     history.push('/teacher');
   }
   catch (error) {
-    dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
-    history.push('/errors');
+    if(error.response && error.response.status == 401){
+      history.push('/login');
+    }
+    else{
+      dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+      history.push('/errors');
+    }
   }
 
 };
@@ -113,8 +137,13 @@ export const editCourse = (id, formValues, formData) => async (dispatch) => {
     history.push('/teacher');
   }
   catch (error) {
-    dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
-    history.push('/errors');
+    if(error.response && error.response.status == 401){
+      history.push('/login');
+    }
+    else{
+      dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+      history.push('/errors');
+    }
   }
 };
 
@@ -128,8 +157,13 @@ export const CourseCanBePosted = (id) => async (dispatch) => {
     //history.push('/teacher');
   }
   catch (error) {
-    dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
-    history.push('/errors');
+    if(error.response && error.response.status == 401){
+      history.push('/login');
+    }
+    else{
+      dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+      history.push('/errors');
+    }
   }
 };
 
@@ -142,8 +176,13 @@ export const deleteCourse = (id) => async dispatch => {
     history.push('/teacher');
   }
   catch (error) {
-    dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
-    history.push('/errors');
+    if(error.response && error.response.status == 401){
+      history.push('/login');
+    }
+    else{
+      dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+      history.push('/errors');
+    }
   }
 };
 
@@ -157,8 +196,13 @@ export const postCourse = (id) => async (dispatch) => {
     history.push('/teacher');
   }
   catch (error) {
-    dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
-    history.push('/errors');
+    if(error.response && error.response.status == 401){
+      history.push('/login');
+    }
+    else {
+      dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+      history.push('/errors');
+    }
   }
 };
 

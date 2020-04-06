@@ -1,4 +1,4 @@
-import streams from '../apis/streams';
+import getAxios from '../apis/streams';
 import history from '../history'
 import { createError } from './error';
 import { 
@@ -24,24 +24,36 @@ import {
 export const fetchQuestionsByCourseId = (id) => async dispatch => {
 
     try{
+        const streams = getAxios();
         const response = await streams.get(`/Questions/ByCourse/${id}`);
         dispatch({ type: FETCH_QUESTIONS_BY_COURSE_ID, payload: response.data });
     }
     catch(error){
-        dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
-        history.push('/errors');
+        if(error.response && error.response.status == 401){
+            history.push('/login');
+        }
+        else{
+            dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+            history.push('/errors');
+        }
     }
 }
 
 export const fetchQuestionsExamByCourseId = (id) => async dispatch => {
 
     try{
+        const streams = getAxios();
         const response = await streams.get(`/Questions/QuestionExam/${id}`);
         dispatch({ type: FETCH_QUESTIONS_EXAM, payload: response.data });
     }
     catch(error){
-        dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
-        history.push('/errors');
+        if(error.response && error.response.status == 401){
+            history.push('/login');
+        }
+        else{
+            dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+            history.push('/errors');
+        }
     }
 }
 
@@ -60,24 +72,36 @@ export const isNotCreatingQuestion = () => async dispatch => {
 
 export const createQuestion = (formValues, courseId) => async dispatch => {
     try{
+        const streams = getAxios();
         const response = await streams.post('/Questions',{...formValues, courseId});
         dispatch({ type: CREATE_QUESTION, payload: response.data });
     }
     catch(error){
-        dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
-        history.push('/errors');
+        if(error.response && error.response.status == 401){
+            history.push('/login');
+        }
+        else{
+            dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+            history.push('/errors');
+        }
     }
 }
 
 
 export const fecthEditingQuestion = (id) => async dispatch => {
     try{
+        const streams = getAxios();
         const response = await streams.get(`/Questions/${id}`);
         dispatch({ type: IS_EDITING_QUESTION, payload: response.data });
     }
     catch(error){
-        dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
-        history.push('/errors');
+        if(error.response && error.response.status == 401){
+            history.push('/login');
+        }
+        else{
+            dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+            history.push('/errors');
+        }
     }
 }
 
@@ -91,12 +115,18 @@ export const isNotEditingQuestion = () => async dispatch =>{
 export const editQuestion = (id, formValues) =>async (dispatch) =>{
 
     try{
+        const streams = getAxios();
         const response = await streams.put(`/Questions/${id}`,formValues)
         dispatch({type: EDIT_QUESTION, payload:response.data})
     }
     catch(error){
-        dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
-        history.push('/errors');
+        if(error.response && error.response.status == 401){
+            history.push('/login');
+        }
+        else{
+            dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+            history.push('/errors');
+        }
     }
 };
 
@@ -116,11 +146,17 @@ export const unMountCreateQuestionForm = () => async dispatch => {
 export const fetchQuestion = (id) => async dispatch => {
 
     try {
+        const streams = getAxios();
         const response = await streams.get(`/Questions/${id}`);
         dispatch({ type: FETCH_QUESTION, payload: response.data });
     } catch (error) {
-        dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
-        history.push('/errors');
+        if(error.response && error.response.status == 401){
+            history.push('/login');
+        }
+        else{
+            dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+            history.push('/errors');
+        }
     }
 }
 
@@ -128,13 +164,19 @@ export const fetchQuestion = (id) => async dispatch => {
 export const deleteQuestion = (id, courseName, courseId) =>async dispatch =>{
 
     try{
+        const streams = getAxios();
         await streams.delete(`/Questions/${id}`);
         dispatch({type: DELETE_QUESTION, payload:id})
         history.push(`/questions/${courseName}/${courseId}`);
     }
     catch(error){
-        dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
-        history.push('/errors');
+        if(error.response && error.response.status == 401){
+            history.push('/login');
+        }
+        else{
+            dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+            history.push('/errors');
+        }
     }
 };
 
