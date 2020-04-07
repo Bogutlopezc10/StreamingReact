@@ -5,14 +5,51 @@ import './Header.css';
 import Spinner from './Spinner';
 import { useAuth0 } from '../auth0wrapper';
 
-const Header = ({ isAdmin }) => {
+const Header = ({ isAdmin, isTeacher }) => {
   const [active, setActive] = useState(false);
   const { isAuthenticated, loginWithRedirect, logout, user, loading } = useAuth0();
+
+  const renderItemsMenu = () => {
+    if(!isAuthenticated){
+      return (
+        <a className="header-prueba" onClick={() => loginWithRedirect({})}><i className="fas fa-sign-in-alt"></i>Iniciar sesión</a>
+      )
+    }else{
+      if(isAdmin){
+        return(
+          <>
+            <a className="header-prueba" onClick={() => logout()}><i className="fas fa-sign-out-alt"></i>Cerrar sesión</a>
+            <Link onClick={() => setActive(false)} to="/"><i className="fas fa-home"></i>Home</Link>
+            <Link onClick={() => setActive(false)} to="/categories"><i className="fas fa-cogs"></i>Gestionar categorías</Link>
+            <Link onClick={() => setActive(false)} to="/courses"><i className="fas fa-folder-open"></i>Cursos ofertados</Link>
+          </>
+        )
+      }else if(isTeacher){
+        return(
+          <>
+            <a className="header-prueba" onClick={() => logout()}><i className="fas fa-sign-out-alt"></i>Cerrar sesión</a>
+            <Link onClick={() => setActive(false)} to="/"><i className="fas fa-home"></i>Home</Link>
+            <Link onClick={() => setActive(false)} to="/courses"><i className="fas fa-folder-open"></i>Cursos ofertados</Link>
+            <Link onClick={() => setActive(false)} to="/teacher"><i className="fas fa-cogs"></i>Panel de control</Link>
+          </>
+        )
+      }
+      return(
+        <>
+          <a className="header-prueba" onClick={() => logout()}><i className="fas fa-sign-out-alt"></i>Cerrar sesión</a>
+          <Link onClick={() => setActive(false)} to="/"><i className="fas fa-home"></i>Home</Link>
+          <Link onClick={() => setActive(false)} to="/courses"><i className="fas fa-folder-open"></i>Cursos ofertados</Link>
+          <Link onClick={() => setActive(false)} to="/userCourses"><i className="fas fa-list-alt"></i>Mis cursos</Link>
+        </>
+      )
+    }
+  }
 
   const renderImageMenu = () => {
     if(loading){
       return(
-        <Spinner />
+        <img src="/login.png"  width="60" height="60" style={{ border: "1px solid gray" }} className="rounded-circle shadow z-depth-0"
+        alt="avatar image" />      
       )
     }else{
       if(isAuthenticated && user){
@@ -54,6 +91,9 @@ const Header = ({ isAdmin }) => {
             <div className="d-flex flex-column align-items-center">
               {renderImageMenu()}
             </div>
+            <div className="d-flex flex-column align-items-center">
+              <i className="fas fa-caret-down menu-dropdown-icon"></i>
+            </div>
           </a>
         </nav>
       </div>
@@ -61,18 +101,7 @@ const Header = ({ isAdmin }) => {
         <div className="row">
           <div className={`col menu-principal ${active ? 'active' : ''}`}>
             <nav>
-              {!isAuthenticated &&
-                <a className="header-prueba" onClick={() => loginWithRedirect({})}><i className="fab fa-google"></i>Iniciar sesión</a>
-              }
-              {isAuthenticated && 
-                <a className="header-prueba" onClick={() => logout()}><i className="fab fa-google"></i>Cerrar sesión</a>
-              }
-
-              <Link onClick={() => setActive(false)} to="/"><i className="fas fa-home"></i>Home</Link>
-              <Link onClick={() => setActive(false)} to="/"><FaUserEdit style={{ marginRight: "15px", marginTop: "-3px" }} size={21} />Editar perfil</Link>
-              <Link onClick={() => setActive(false)} to="/courses"><i className="fas fa-folder-open"></i>Cursos ofertados</Link>
-              <Link onClick={() => setActive(false)} to="/teacher"><i className="fas fa-cogs"></i>Panel de control</Link>
-              <Link onClick={() => setActive(false)} to="/userCourses"><i className="fas fa-list-alt"></i>Mis cursos</Link>
+              {renderItemsMenu()}
             </nav>
           </div>
           <a className="col" onClick={() => setActive(false)} className={`fondo-enlace ${active ? 'active' : ''}`}></a>

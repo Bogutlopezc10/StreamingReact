@@ -84,10 +84,21 @@ body, html{
     transform: scale(1.2) rotate(360deg) !important;
 }
 
+.error-login-container{
+  min-height: calc(100vh - 80px);
+  margin-top: 80px;
+}
+
+
 @media screen and (max-width: 991px) {
     .text-home p{
         font-size: 25px;
     }
+
+    .error-login-container{
+      min-height: calc(100vh - 150px);
+      margin-top: 150px;
+  }  
 }
 
 @media screen and (max-width: 575px){

@@ -3,6 +3,7 @@ import CategoryList from '../../components/categories/CategoryList';
 import MainHeader from '../../components/MainHeader';
 import { connect } from 'react-redux';
 import { fetchCategories, unMountCategory, countCategories } from '../../actions/category.js';
+import { IsAdmin } from '../../selectors/authSelectors';
 import {getDataOrderByCreatedAt, getAllCategories} from '../../selectors/index'
 
 class CategoryListContainer extends React.Component{
@@ -29,6 +30,7 @@ class CategoryListContainer extends React.Component{
                     onClickMoresCategories = {this.onClickMoresCategories}
                     counterCategories = {this.props.counterCategories}
                     getAllCategories = {this.props.getAllCategories}
+                    isAdmin = {this.props.isAdmin}
                 />
             </>
         );
@@ -40,7 +42,8 @@ const mapStateToProps = (state) => {
         counterCategories: state.categories.countCategories,
         getAllCategories: getAllCategories(state.categories.data),
         categories: getDataOrderByCreatedAt(state.categories.data, state.categories.countCategories),
-        loadingCategory: state.categories.isLoading
+        loadingCategory: state.categories.isLoading,
+        isAdmin: IsAdmin(state)
     }
 }
 

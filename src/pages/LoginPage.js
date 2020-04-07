@@ -5,7 +5,9 @@ class LoginPage extends React.Component {
 
     render(){
         return(
+          <div className="error-login-container">
             <Login />
+          </div>
         )
     }
 }

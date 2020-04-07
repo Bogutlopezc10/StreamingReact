@@ -1,0 +1,35 @@
+.login-image{
+  margin-top: 90px;
+  width: 200px;
+  height: 200px;
+}
+
+.login-col{
+  margin: 0 auto!important;
+  top: auto !important;
+  left: auto !important;
+  transform-origin: center !important;
+}
+
+.login-col h1{
+  color: gray;
+  font-size: 35px;
+  font-weight: 700;
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.login-col h4{
+  color: gray;
+  font-size: 20px;
+  font-weight: 300;
+  font-style: italic;
+}
+
+@media screen and (max-width: 991px) {
+  .login-image{
+    margin-top: 60px;
+    width: 180px;
+    height: 180px;
+  }
+}

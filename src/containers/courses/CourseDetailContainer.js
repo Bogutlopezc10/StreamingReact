@@ -4,6 +4,7 @@ import CourseDetail from '../../components/courses/CourseDetail'
 import MainHeader from '../../components/MainHeader';
 import {fetchCourse, unMountDetailCourse} from '../../actions/course';
 import {createUserCourse, fetchUserCoursesByUserName} from '../../actions/userCourse'
+import {IsAdmin, IsTeacher} from '../../selectors/authSelectors';
 import {getById, getUserCoursesByUser} from '../../selectors/index';
 
 class CourseDetailContainer extends React.Component{
@@ -31,6 +32,8 @@ class CourseDetailContainer extends React.Component{
                     borderTopColor="#005385"
                     onClickCreateUserCourse={this.onClickCreateUserCourse}
                     loadingUserCourse = {this.props.loadingUserCourse}
+                    isAdmin = {this.props.isAdmin}
+                    isTeacher = {this.props.isTeacher}
                 />
             </>
         );
@@ -43,7 +46,9 @@ const mapStateToProps = (state, ownProps) =>{
          course: getById(state.courses.data,ownProps.courseId),
          userCourses: getUserCoursesByUser(state),
          errorUserCourse:state.userCourses.isError,
-         loadingUserCourse: state.userCourses.isLoading
+         loadingUserCourse: state.userCourses.isLoading,
+         isAdmin: IsAdmin(state),
+         isTeacher: IsTeacher(state)
     }
 }
 
