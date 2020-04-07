@@ -17,7 +17,7 @@ const Category = ({ category, isAdmin }) => {
                     </div>
                 </Link>
                 {isAdmin &&
-                  <Link to={`/categories/Edit/${category.name}/${category.id}`} className="btn btn-primary btn-edit-category">
+                  <Link to={`/categories/Edit/categoryName/${category.id}`} className="btn btn-primary btn-edit-category">
                       <div>
                           <p>EDITAR</p> 
                           <i className="fas fa-edit mt-1 mb-1"></i>
