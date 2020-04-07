@@ -35,10 +35,6 @@ export const UNMOUNT_DETAIL_COURSE = 'UNMOUNT_DETAIL_COURSE';
 export const CREATING_COURSE = 'CREATING_COURSE';
 export const EDITING_COURSE = 'EDITING_COURSE';
 
-//current user
-export const CURRENT_USER = 'Mr. Sample';
-
-
 //error constant
 export const UPDATE_ERROR_WITH_ACTION = 'UPDATE_ERROR_WITH_ACTION'
 export const UPDATE_ERROR_UNMOUNT = 'UPDATE_ERROR_UNMOUNT'

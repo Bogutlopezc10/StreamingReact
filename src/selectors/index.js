@@ -1,4 +1,3 @@
-import { CURRENT_USER } from '../actions/types'
 import {GetEmailCurrentUser} from '../selectors/authSelectors'
 
 // OrderBy
@@ -123,12 +122,12 @@ export const getContentsBySubjectId = (state, subjectId) => {
 }
 
 //userContent Selector 
-export const getUserContentsByUsername = (state, username) => {
+export const getUserContentsByUsername = (state) => {
 
   const userContents = Object.values(state.userContents);
 
   return userContents.filter((userContent) => {
-    return userContent.username == username
+    return userContent.username == GetEmailCurrentUser(state)
   });
 }
 

@@ -5,14 +5,13 @@ import MainHeader from '../components/MainHeader';
 import { connect } from 'react-redux';
 import {fetchCourseByUsername, unMountLoadingCourse} from '../actions/course'
 import { getCoursesPublishedByUser, getCoursesNotPublishedByUser } from '../selectors/index.js'
-import { CURRENT_USER } from '../actions/types'
 import {updateSuccessUnmount} from '../actions/success'
 import Success from '../components/Success'
 
 class TeacherContainer extends React.Component{
 
     componentDidMount(){
-        this.props.fetchCourseByUsername(CURRENT_USER);
+        this.props.fetchCourseByUsername();
 
         this.timerID = setTimeout(
             () => this.props.updateSuccessUnmount(),

@@ -5,7 +5,6 @@ import {GetEmailCurrentUser} from '../selectors/authSelectors'
 import {store} from '../index'
 import { 
     FETCH_USER_CONTENTS_BY_USERNAME,
-    CURRENT_USER,
     UPDATE_ERROR_WITH_ACTION
 } from './types';
 

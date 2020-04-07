@@ -10,7 +10,6 @@ import {
   FETCH_COURSES_BY_USERNAME,
   CREATE_COURSE,
   EDIT_COURSE,
-  CURRENT_USER,
   DELETE_COURSE,
   UPDATE_ERROR_WITH_ACTION,
   POST_COURSE,
@@ -76,10 +75,12 @@ export const fetchCourse = (id) => async dispatch => {
 
 
 
-export const fetchCourseByUsername = (username) => async dispatch => {
+export const fetchCourseByUsername = () => async dispatch => {
 
   try {
     const streams = getAxios();
+    const state = store.getState();
+    const username = GetEmailCurrentUser(state);
     const response = await streams.get(`/Courses/ByUsername/${username}`);
     dispatch({ type: FETCH_COURSES_BY_USERNAME, payload: response.data });
   }

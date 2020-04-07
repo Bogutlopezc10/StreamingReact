@@ -37,7 +37,7 @@ class ContentListPlayerContainer  extends React.Component{
 const mapStateToProps = (state, ownProps) =>{
     return {
         contents: getContentsBySubjectId(state,ownProps.subjectId),
-        userContents: getUserContentsByUsername(state, "Mr. Sample"),
+        userContents: getUserContentsByUsername(state),
         currentContent: state.contents.currentPlayerContent
     }
 }
