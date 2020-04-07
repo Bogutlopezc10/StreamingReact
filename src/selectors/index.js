@@ -1,4 +1,5 @@
 import { CURRENT_USER } from '../actions/types'
+import {GetEmailCurrentUser} from '../selectors/authSelectors'
 
 // OrderBy
 const compareValuesCreatedAt = (key, order = 'asc') => {
@@ -77,7 +78,7 @@ export const getCoursesPublishedByUser = (state) => {
   const courses = Object.values(state.courses.data);
 
   return courses.filter((course) => {
-    return course.isPublished == true && course.username == CURRENT_USER
+    return course.isPublished == true && course.username == GetEmailCurrentUser(state)
   }).sort(compareValuesPostedAt('postedAt', 'desc'));;
 }
 
@@ -86,7 +87,7 @@ export const getCoursesNotPublishedByUser = (state) => {
   const courses = Object.values(state.courses.data);
 
   return courses.filter((course) => {
-    return course.isPublished == false && course.username == CURRENT_USER
+    return course.isPublished == false && course.username == GetEmailCurrentUser(state)
   }).sort(function (a, b) {
     if (a.updatedAt < b.updatedAt) {
       return 1;
@@ -160,7 +161,7 @@ export const getUserCoursesFinishedByUser = (state) => {
   const userCourses = Object.values(state.userCourses.data);
 
   return userCourses.filter((userCourse) => {
-    return userCourse.isEnd == true && userCourse.username == CURRENT_USER
+    return userCourse.isEnd == true && userCourse.username == GetEmailCurrentUser(state)
   }).sort(compareValuesCreatedAt('createdAt', 'desc'));
 }
 
@@ -169,7 +170,7 @@ export const getUserCoursesNotFinishedByUser = (state) => {
   const userCourses = Object.values(state.userCourses.data);
 
   return userCourses.filter((userCourse) => {
-    return userCourse.isEnd == false && userCourse.username == CURRENT_USER
+    return userCourse.isEnd == false && userCourse.username == GetEmailCurrentUser(state)
   }).sort(compareValuesCreatedAt('createdAt', 'desc'));
 }
 
@@ -178,7 +179,7 @@ export const getUserCoursesByUser = (state) => {
   const userCourses = Object.values(state.userCourses.data);
 
   return userCourses.filter((userCourse) => {
-    return userCourse.username == CURRENT_USER
+    return userCourse.username == GetEmailCurrentUser(state)
   });
 }
 

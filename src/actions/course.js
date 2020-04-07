@@ -1,6 +1,8 @@
 import getAxios from '../apis/streams';
 import history from '../history'
 import { createError } from './error';
+import {GetEmailCurrentUser} from '../selectors/authSelectors'
+import {store} from '../index'
 import {
   FETCH_COURSES,
   FETCH_COURSE_BY_CATEGORY,
@@ -95,7 +97,8 @@ export const fetchCourseByUsername = (username) => async dispatch => {
 
 export const createCourse = (formValues, formData) => async (dispatch) => {
 
-  const username = CURRENT_USER
+  const state = store.getState();
+  const username = GetEmailCurrentUser(state);
   try {
     const config = {
       headers: {

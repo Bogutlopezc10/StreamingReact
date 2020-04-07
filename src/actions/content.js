@@ -1,6 +1,8 @@
 import history from '../history'
 import getAxios from '../apis/streams';
 import { createError } from './error';
+import { store } from '../index';
+import {GetEmailCurrentUser} from '../selectors/authSelectors'
 import { 
     FETCH_CONTENTS, 
     UPDATE_ERROR_WITH_ACTION,
@@ -152,7 +154,8 @@ export const deleteContent = (id, courseName, courseId) =>async dispatch =>{
 
 export const fetchContentCurrentPlayer = (id) => async dispatch => {
 
-    const username = CURRENT_USER
+    const state = store.getState();
+    const username = GetEmailCurrentUser(state);
 
     try{
         const streams = getAxios();
@@ -172,7 +175,9 @@ export const fetchContentCurrentPlayer = (id) => async dispatch => {
 
 export const fetchLastContentByUserNameDescending = (courseId) => async dispatch => {
 
-    const username = CURRENT_USER
+    const state = store.getState();
+    const username = GetEmailCurrentUser(state);
+
     try{
         const streams = getAxios();
         const response = await streams.get(`/Contents/GetLastContentDescending/${courseId}/${username}`);

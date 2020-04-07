@@ -9,10 +9,16 @@ export const IsAdmin = (state) => {
   return decoded.permissions.filter(p => p === 'admin:api').length !== 0;
 }
 
-export const IsTeacher = (state) => {
-  const decoded = GetDecodedToken(state);
-  if (!decoded || !decoded.permissions) {
-    return false;
+export const GetCurrentUser = (state) => {
+  const userAuth = state.auth.currentUser;
+
+  return {
+    username: userAuth.email,
+    name: userAuth.nickname,
+    photo: userAuth.picture
   }
-  return decoded.permissions.filter(p => p === 'teacher:api').length !== 0;
 }
+
+export const GetEmailCurrentUser = (state) => state.auth.currentUser.email;
+
+
