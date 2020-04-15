@@ -40,6 +40,7 @@ const Header = ({ isAdmin, isTeacher }) => {
           <Link onClick={() => setActive(false)} to="/"><i className="fas fa-home"></i>Home</Link>
           <Link onClick={() => setActive(false)} to="/courses"><i className="fas fa-folder-open"></i>Cursos ofertados</Link>
           <Link onClick={() => setActive(false)} to="/userCourses"><i className="fas fa-list-alt"></i>Mis cursos</Link>
+          <Link onClick={() => setActive(false)} to="/stream/list"><i className="fas fa-list-alt"></i>En vivo</Link>
         </>
       )
     }

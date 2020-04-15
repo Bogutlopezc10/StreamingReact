@@ -166,6 +166,15 @@ export const getUserCoursesFinishedByUser = (state) => {
   }).sort(compareValuesCreatedAt('createdAt', 'desc'));
 }
 
+export const getUserCoursesIstreamingByUser = (state) => {
+
+  const userCourses = Object.values(state.userCourses.data);
+
+  return userCourses.filter((userCourse) => {
+    return userCourse.isStreaming == true && userCourse.username == GetEmailCurrentUser(state)
+  });
+}
+
 export const getUserCoursesNotFinishedByUser = (state) => {
 
   const userCourses = Object.values(state.userCourses.data);

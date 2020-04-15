@@ -10,6 +10,7 @@ import {
     FETCH_USERCOURSE,
     UPDATE_RATING_USERCOURSE,
     UNMOUNT_LOADING_USERCOURSE,
+    FETCH_USERCOURSE_STREAMING_BY_USER
 } from './types';
 
 export const fetchUserCoursesByUserName = () => async dispatch => {
@@ -65,6 +66,27 @@ export const createUserCourse = courseIdV =>async (dispatch) =>{
         const response = await streams.post('/UsersCourses',userCourseValues)
         dispatch({type: CREATE_USERCOURSE_BY_USERNAME, payload:response.data})
         history.push('/userCourses');
+    }
+    catch(error){
+        if(error.response && error.response.status == 401){
+            history.push('/login');
+        }
+        else{
+            dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+            history.push('/errors');
+        }
+    }
+
+};
+
+export const fetchUserCoursesStreamingByUser = () =>async (dispatch) =>{
+
+    const state = store.getState();
+    const username = GetEmailCurrentUser(state);
+    try{
+        const streams = getAxios();
+        const response = await streams.get(`/UsersCourses/StreamingByUsername/${username}`)
+        dispatch({type: FETCH_USERCOURSE_STREAMING_BY_USER, payload:response.data})
     }
     catch(error){
         if(error.response && error.response.status == 401){

@@ -8,6 +8,7 @@ import {
     UPDATE_USER_COURSE_CORRECTANSWERS,
     UNMOUNT_DETAIL_COURSE,
     UNMOUNT_LOADING_USERCOURSE,
+    FETCH_USERCOURSE_STREAMING_BY_USER
 } from '../actions/types';
 
 
@@ -28,6 +29,12 @@ export default (state= defaultState, action) => {
                  ...state, 
                  data:{...state.data,..._.mapKeys(action.payload,'id')},
                  isLoading: false
+            };
+        case FETCH_USERCOURSE_STREAMING_BY_USER:
+            return {
+                    ...state, 
+                    data:{...state.data,..._.mapKeys(action.payload,'id')},
+                    isLoading: false
             };
         case CREATE_USERCOURSE_BY_USERNAME:
             return {

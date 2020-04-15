@@ -29,7 +29,7 @@ import PlayerPage from '../pages/PlayerPage';
 import QuestionExamPage from '../pages/questions/QuestionExamPage';
 import ValidateAnswersPage from '../pages/ValidateAnswersPage';
 import LoginPage from '../pages/LoginPage';
-import StudentStreamPage from '../pages/courses/streaming/StudentStreamPage'
+import StudentStreamListPage from '../pages/courses/streaming/StudentStreamListPage'
 import TeacherStreamPage from '../pages/courses/streaming/TeacherStreamPage'
 
 const App = () => {
@@ -63,7 +63,7 @@ const App = () => {
             <Route path="/player/:courseId/:userCourseId" exact component={PlayerPage} />
             <Route path="/questions/exam/:courseId/:userCourseId" exact component={QuestionExamPage} />
             <Route path="/ValidateAnswersPage/:courseId/:userCourseId" exact component={ValidateAnswersPage} />
-            <Route path="/stream/:courseId" exact component={StudentStreamPage} />
+            <Route path="/stream/list" exact component={StudentStreamListPage} />
             <Route path="/teacher/stream/:courseId" exact component={TeacherStreamPage} />
             <Route path="/errors" exact component={ErrorPage} />
             <Route path="/login" exact component={LoginPage} />

@@ -26,7 +26,7 @@ class CoursePublished extends React.Component{
                     <div className="col-lg-12 d-flex align-items-center justify-content-center">
                         <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" width="30" height="30" className="rounded-circle d-inline z-depth-0"
                         alt="avatar image"/>
-                        <p className="d-inline ml-2">{`${course.nameTeacher} ${course.lastNameTeacher}`}</p>
+                        <p className="d-inline ml-2">{`${course.nameTeacher}`}</p>
                     </div>
                     <div className="col-lg-12 mt-2 d-flex align-items-center justify-content-center">
                         <div className="stars-outer">
