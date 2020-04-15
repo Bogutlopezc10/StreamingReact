@@ -18,7 +18,7 @@ const Content = ({ content,onClickIsEditingContent,courseName, courseId }) =>{
                         <i className="fas fa-edit mt-1 mb-1"></i>
                     </div>
                 </button>
-                <Link to={`/contents/Delete/${courseName}/${courseId}/${content.name}/${content.id}`} className="btn btn-danger btn-delete-content">
+                <Link to={`/contents/Delete/courseName/${courseId}/contentName/${content.id}`} className="btn btn-danger btn-delete-content">
                     <div>
                         <p>ELIMINAR</p> 
                         <i className="fas fa-times mt-1 mb-1"></i>

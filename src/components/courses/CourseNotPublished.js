@@ -17,25 +17,25 @@ const CourseNotPublished = ({ course }) => {
                         <i className="d-inline fas fa-edit ml-2 mt-2"></i>
                     </div>
                 </Link>
-                <Link to={`/courses/Delete/${course.name}/${course.id}`} className="btn btn-outline-danger border-teacher border-left-0 border-right-0 border-top-0">
+                <Link to={`/courses/Delete/courseName/${course.id}`} className="btn btn-outline-danger border-teacher border-left-0 border-right-0 border-top-0">
                     <div>
                         <p className="d-inline">ELIMINAR</p>
                         <i className="d-inline fas fa-trash-alt ml-2 mt-2"></i>
                     </div>
                 </Link>
-                <Link to={`courses/Post/${course.name}/${course.id}`} className="btn btn-outline-success border-left-0 border-right-0 border-top-0 border-teacher">
+                <Link to={`courses/Post/courseName/${course.id}`} className="btn btn-outline-success border-left-0 border-right-0 border-top-0 border-teacher">
                     <div>
                         <p className="d-inline">PUBLICAR</p> 
                         <i className="d-inline fas fa-share ml-2 mt-2"></i>
                     </div>
                 </Link>
-                <Link to={`/courses/Content/${course.name}/${course.id}`} className="btn btn-success btn-subject">
+                <Link to={`/courses/Content/courseName/${course.id}`} className="btn btn-success btn-subject">
                     <div>
                         <p>CONTENIDO</p> 
                         <i className="fas fa-file-alt mt-1 mb-1"></i>
                     </div>
                 </Link>
-                <Link to={`/questions/${course.name}/${course.id}`} className="btn btn-danger btn-question">
+                <Link to={`/questions/courseName/${course.id}`} className="btn btn-danger btn-question">
                     <div>
                         <p>PREGUNTAS</p> 
                         <i className="fas fa-question mt-1 mb-1"></i>

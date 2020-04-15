@@ -18,7 +18,8 @@ import {
   UNMOUNT_LOADING_COURSE,
   UNMOUNT_DETAIL_COURSE,
   CREATING_COURSE,
-  EDITING_COURSE
+  EDITING_COURSE,
+  UPDATE_IS_STREAMING_COURSE,
 } from './types';
 
 export const fetchCourses = () => async dispatch => {
@@ -209,6 +210,32 @@ export const postCourse = (id) => async (dispatch) => {
     }
   }
 };
+
+
+export const updateIsStreamingCourse = (id, isStreaming) => async dispatch => {
+
+  try {
+    const streams = getAxios();
+    const isStreamingCommand = {
+      isStreaming: isStreaming
+    }
+    const response = await streams.put(`/Courses/Streaming/${id}`, isStreamingCommand);
+    dispatch({ type: UPDATE_IS_STREAMING_COURSE, payload: response.data });
+
+    if(!isStreaming){
+      history.push('/teacher');
+    }
+  }
+  catch (error) {
+    if(error.response && error.response.status == 401){
+      history.push('/login');
+    }
+    else{
+      dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+      history.push('/errors');
+    }
+  }
+}
 
 export const unMountCourseContent = () => async dispatch => {
 

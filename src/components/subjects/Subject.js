@@ -47,7 +47,7 @@ class Subject extends React.Component{
                             </button>
                         </div>
                         <div className="col-6 p-0">
-                            <Link to={`/subjects/Delete/${courseName}/${courseId}/${subject.name}/${subject.id}`} className="btn btn-block btn-outline-danger ml-0 border-subject">
+                            <Link to={`/subjects/Delete/courseName/${courseId}/subjectName/${subject.id}`} className="btn btn-block btn-outline-danger ml-0 border-subject">
                                 <div>
                                 <p className="d-inline">ELIMINAR TEMA</p> 
                                     <i className="d-inline fas fa-trash-alt ml-2 mt-2"></i>

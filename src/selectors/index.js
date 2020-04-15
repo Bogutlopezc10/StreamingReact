@@ -155,6 +155,8 @@ export const getOptionsByQuestionId = (state, questionId) => {
 
 // UserCourse Selector
 
+export const countUserCourseById = (state) => state.userCourses.countByCourseId;
+
 export const getUserCoursesFinishedByUser = (state) => {
 
   const userCourses = Object.values(state.userCourses.data);

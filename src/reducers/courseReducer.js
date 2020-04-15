@@ -12,9 +12,9 @@ import {
     COURSE_CAN_BE_POSTED,
     UNMOUNT_CAN_BE_POSTED,
     UNMOUNT_LOADING_COURSE,
-    UNMOUNT_DETAIL_COURSE,
     CREATING_COURSE,
-    EDITING_COURSE
+    EDITING_COURSE,
+    UPDATE_IS_STREAMING_COURSE
 } from '../actions/types';
 
 
@@ -31,15 +31,20 @@ export default (state= defaultState, action) => {
     switch (action.type){
         case FETCH_COURSES:
             return {
-                 ...state, 
-                 data:{...state.data,..._.mapKeys(action.payload,'id')},
-                 isLoading: false
+                ...state, 
+                data:{...state.data,..._.mapKeys(action.payload,'id')},
+                isLoading: false
             };
         case FETCH_COURSE:
             return {
                 ...state,
                 data:{...state.data, [action.payload.id]:action.payload},
                 isLoading: false,
+            }
+        case UPDATE_IS_STREAMING_COURSE:
+            return {
+                ...state,
+                data:{...state.data, [action.payload.id]:action.payload},
             }
         case EDIT_COURSE:
             return {
@@ -71,10 +76,10 @@ export default (state= defaultState, action) => {
             };
         case DELETE_COURSE:
             return {
-            ...state,
-            data: _.omit(state.data, action.payload),
-            isSuccess:true,
-            messageSuccess:"El curso fue eliminado exitosamente."
+                ...state,
+                data: _.omit(state.data, action.payload),
+                isSuccess:true,
+                messageSuccess:"El curso fue eliminado exitosamente."
             };
         case COURSE_CAN_BE_POSTED:
             if(action.payload.status == 204){
@@ -99,7 +104,7 @@ export default (state= defaultState, action) => {
                 return {
                     ...state,
                     canBePosted: null,
-            };
+                };
         case POST_COURSE:
                 return {
                     ...state,
@@ -111,12 +116,12 @@ export default (state= defaultState, action) => {
             return {
                 ...state,
                 isLoading: true,
-        };
+            };
         case CREATING_COURSE:
             return {
                 ...state,
                 isCreating: true
-        };
+            };
         case EDITING_COURSE:
             return {
                 ...state,

@@ -43,12 +43,20 @@ class CoursePublished extends React.Component{
         const { course, teacher } = this.props;
         if(teacher){
             return(
-                <Link to={`/questions/${course.name}/${course.id}`} className="btn btn-danger btn-question-published">
-                    <div>
-                        <p>PREGUNTAS</p> 
-                        <i className="fas fa-question mt-1 mb-1"></i>
-                    </div>
-                </Link>
+                <>
+                    <Link to={`/questions/courseName/${course.id}`} className="btn btn-danger btn-question-published">
+                        <div>
+                            <p>PREGUNTAS</p> 
+                            <i className="fas fa-question mt-1 mb-1"></i>
+                        </div>
+                    </Link>
+                    <Link to={`teacher/stream/${course.id}`} className="btn btn-primary btn-live">
+                        <div>
+                            <p>EN VIVO</p> 
+                            <i className="fas fa-question mt-1 mb-1"></i>
+                        </div>
+                    </Link>
+                </>
             )            
         }
         
@@ -77,7 +85,7 @@ class CoursePublished extends React.Component{
                     </div>
                     <div className="card-badge rounded-right text-uppercase">{course.categoryName}</div>
                     {this.renderNewBadge()}
-                    <Link to={`/courses/Detail/${course.name}/${course.id}`} className={`btn ${customizeButton}`}>
+                    <Link to={`/courses/Detail/courseName/${course.id}`} className={`btn ${customizeButton}`}>
                         <div>
                             <p className="d-inline">VER DETALLE</p> 
                             <i className="d-inline fas fa-angle-double-right ml-2 mt-2"></i>

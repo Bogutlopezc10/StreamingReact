@@ -10,7 +10,7 @@ const Category = ({ category, isAdmin }) => {
                     <h5 className="card-title">{category.name}</h5>
                     <p className="card-text">{category.description}</p>
                 </div>
-                <Link to={`/courses/${category.name}/${category.id}`} className="btn btn-outline-primary">
+                <Link to={`/courses/Cursos/${category.id}`} className="btn btn-outline-primary">
                     <div>
                         <p className="d-inline">VER CURSOS</p> 
                         <i className="d-inline fas fa-angle-double-right ml-2 mt-2"></i>

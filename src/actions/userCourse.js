@@ -9,7 +9,7 @@ import {
     CREATE_USERCOURSE_BY_USERNAME,
     FETCH_USERCOURSE,
     UPDATE_RATING_USERCOURSE,
-    UNMOUNT_LOADING_USERCOURSE
+    UNMOUNT_LOADING_USERCOURSE,
 } from './types';
 
 export const fetchUserCoursesByUserName = () => async dispatch => {

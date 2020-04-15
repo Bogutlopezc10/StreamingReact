@@ -123,6 +123,9 @@ class CoursePlayer extends React.Component{
                                         <div className="col-lg-12">
                                            <span><strong>Fecha en que te matriculaste: </strong><Moment format="DD/MM/YYYY">{course.createdAt}</Moment></span> 
                                         </div>
+                                        <div className="col-lg-12">
+                                           <span><strong>Estudiantes matriculados: </strong>{course.enrolledStudents}</span> 
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -134,7 +137,7 @@ class CoursePlayer extends React.Component{
                                 <div className="col-lg-12 img-teacher mt-1 mb-3 d-flex align-items-center justify-content-center">
                                     <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" width="50" height="50" className="rounded-circle d-inline z-depth-0"
                                     alt="avatar image"/>
-                                    <p className="d-inline text-contact-teacher ml-3">{`${course.nameTeacher} ${course.lastNameTeacher}`}</p>
+                                    <p className="d-inline text-contact-teacher ml-3">{`${course.nameTeacher} `}</p>
                                 </div>
                                 <div className="col-lg-12 mb-3 d-flex justify-content-center">
                                     <span><strong>Email: </strong>{course.emailTeacher}</span> 

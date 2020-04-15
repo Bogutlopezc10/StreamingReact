@@ -19,7 +19,7 @@ class CourseByCategoryListContainer extends React.Component{
     render(){
         return (
             <>
-                <MainHeader backgroundHeaderColor="#30b3ff" textHeader={this.props.categoryName} />
+                <MainHeader backgroundHeaderColor="#30b3ff" textHeader= "Cursos" />
                 <CoursePublishedList 
                     courses={this.props.courses} 
                     borderTopColor="#30b3ff" 

@@ -56,7 +56,6 @@ class CourseDetail extends React.Component {
 
   renderData = () => {
     const { course } = this.props;
-
     if (!course) {
       return (
         <>
@@ -96,10 +95,13 @@ class CourseDetail extends React.Component {
               <div className="col-lg-12 img-teacher mt-3 d-flex align-items-center justify-content-start">
                 <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" width="50" height="50" className="rounded-circle d-inline z-depth-0"
                   alt="avatar image" />
-                <p className="d-inline text-muted ml-2">{`${course.nameTeacher} ${course.lastNameTeacher}`}</p>
+                <p className="d-inline text-muted ml-2">{`${course.nameTeacher}`}</p>
               </div>
               <div className="col-lg-12 info-teacher mt-2">
                 <h6 className="d-inline">Contacto: </h6><p className="d-inline">{course.emailTeacher}</p>
+              </div>
+              <div className="col-lg-12 info-teacher mt-2">
+                <h6 className="d-inline">Estudiantes Matriculados: </h6><p className="d-inline">{course.enrolledStudents}</p>
               </div>
               <div className="col-lg-12 info-teacher mt-2">
                 <h6 className="d-inline">Publicado: </h6><p className="d-inline"><Moment format="DD/MM/YYYY">{course.postedAt}</Moment></p>

@@ -297,6 +297,7 @@
 }
 
 .btn-question,
+.btn-live,
 .btn-question-published{
     font-weight: bold;
     border-radius: 0%;
@@ -308,23 +309,30 @@
     box-shadow: 2px 3px 6px 0px rgba(0,0,0,0.87);
 }
 
+.btn-live{
+    top: 98px;
+}
+
 .btn-question-published{
     top: 62px;
 }
 
 .btn-question p,
+.btn-live p,
 .btn-question-published p,
 .btn-subject p{
     display: none;
 }
 
 .btn-question i,
+.btn-live i,
 .btn-question-published i,
 .btn-subject i{
     margin-left: 5px;
 }
 
 .btn-question:hover p,
+.btn-live:hover p,
 .btn-question-published:hover p,
 .btn-subject:hover p{
     display: inline;
@@ -342,6 +350,7 @@
 }
 
 .btn-subject:hover,
+.btn-live:hover,
 .btn-question-published:hover,
 .btn-question:hover{
     transition-delay: 1s;

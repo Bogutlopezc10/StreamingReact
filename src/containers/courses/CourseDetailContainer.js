@@ -48,7 +48,7 @@ const mapStateToProps = (state, ownProps) =>{
          errorUserCourse:state.userCourses.isError,
          loadingUserCourse: state.userCourses.isLoading,
          isAdmin: IsAdmin(state),
-         isTeacher: IsTeacher(state)
+         isTeacher: IsTeacher(state),
     }
 }
 

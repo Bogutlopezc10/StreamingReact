@@ -7,7 +7,7 @@ import {
     UPDATE_RATING_USERCOURSE,
     UPDATE_USER_COURSE_CORRECTANSWERS,
     UNMOUNT_DETAIL_COURSE,
-    UNMOUNT_LOADING_USERCOURSE
+    UNMOUNT_LOADING_USERCOURSE,
 } from '../actions/types';
 
 
@@ -17,7 +17,8 @@ const defaultState = {
     messageSuccess:null,
     isError:false,
     messageError:null,
-    isLoading:true
+    isLoading:true,
+    countByCourseId: null
 }
 
 export default (state= defaultState, action) => {
