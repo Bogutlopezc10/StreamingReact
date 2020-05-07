@@ -31,6 +31,7 @@ import ValidateAnswersPage from '../pages/ValidateAnswersPage';
 import LoginPage from '../pages/LoginPage';
 import StudentStreamListPage from '../pages/courses/streaming/StudentStreamListPage'
 import TeacherStreamPage from '../pages/courses/streaming/TeacherStreamPage'
+import ShowStreamPage from '../pages/courses/streaming/ShowStreamPage';
 
 const App = () => {
   return (
@@ -64,6 +65,7 @@ const App = () => {
             <Route path="/questions/exam/:courseId/:userCourseId" exact component={QuestionExamPage} />
             <Route path="/ValidateAnswersPage/:courseId/:userCourseId" exact component={ValidateAnswersPage} />
             <Route path="/stream/list" exact component={StudentStreamListPage} />
+            <Route path="/stream/streamShow/:courseId" exact component={ShowStreamPage} />
             <Route path="/teacher/stream/:courseId" exact component={TeacherStreamPage} />
             <Route path="/errors" exact component={ErrorPage} />
             <Route path="/login" exact component={LoginPage} />

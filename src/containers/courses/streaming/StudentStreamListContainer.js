@@ -17,6 +17,7 @@ class StudentStreamListContainer extends React.Component{
                 <StudentStreamList
                     isLoading = {this.props.loadingUserCourse}
                     userCourses = {this.props.userCourses}
+                    borderTopColor="#005385"
                 />
             </>
         )

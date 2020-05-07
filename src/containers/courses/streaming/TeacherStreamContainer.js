@@ -17,6 +17,7 @@ class TeacherStreamContainer extends React.Component {
                 <MainHeader backgroundHeaderColor="#005385" textHeader="Live del curso" />
                 <TeacherStream
                     course = {this.props.course}
+                    borderTopColor="#005385" 
                 />
             </>
         )

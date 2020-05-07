@@ -3,6 +3,9 @@ import {Link} from 'react-router-dom'
 
 class StudentStream extends React.Component {
 
+    MaysFirst(string){
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
 
     renderInfoTeacher = () => {
         const { userCourse } = this.props;
@@ -11,9 +14,9 @@ class StudentStream extends React.Component {
             return(
                 <div className="row">
                     <div className="col-lg-12 d-flex align-items-center justify-content-center">
-                        <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" width="30" height="30" className="rounded-circle d-inline z-depth-0"
+                        <img src={userCourse.photoTeacher} width="30" height="30" className="rounded-circle d-inline z-depth-0"
                         alt="avatar image"/>
-                        <p className="d-inline ml-2">{`${userCourse.nameTeacher} `}</p>
+                        <p className="d-inline ml-2">{`${this.MaysFirst(userCourse.nameTeacher)} `}</p>
                     </div>
                     <div className="col-lg-12 mt-2 d-flex align-items-center justify-content-center">
                         <div className="stars-outer">
@@ -38,7 +41,7 @@ class StudentStream extends React.Component {
                         {this.renderInfoTeacher()}
                     </div>
                     <div className="card-badge rounded-right text-uppercase">{userCourse.categoryName}</div>
-                    <Link to={`/courses/Detail/courseName/${userCourse.id}`} className={`btn course-button`}>
+                    <Link to={`/stream/streamShow/${userCourse.courseId}`} className={`btn course-button`}>
                         <div>
                             <p className="d-inline">IR A EN VIVO</p> 
                             <i className="d-inline fas fa-angle-double-right ml-2 mt-2"></i>

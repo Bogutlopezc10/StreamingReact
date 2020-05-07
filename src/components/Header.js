@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaUserEdit } from 'react-icons/fa';
 import './Header.css';
-import Spinner from './Spinner';
 import { useAuth0 } from '../auth0wrapper';
+import { FaChromecast } from 'react-icons/fa';
 
 const Header = ({ isAdmin, isTeacher }) => {
   const [active, setActive] = useState(false);
@@ -40,7 +39,7 @@ const Header = ({ isAdmin, isTeacher }) => {
           <Link onClick={() => setActive(false)} to="/"><i className="fas fa-home"></i>Home</Link>
           <Link onClick={() => setActive(false)} to="/courses"><i className="fas fa-folder-open"></i>Cursos ofertados</Link>
           <Link onClick={() => setActive(false)} to="/userCourses"><i className="fas fa-list-alt"></i>Mis cursos</Link>
-          <Link onClick={() => setActive(false)} to="/stream/list"><i className="fas fa-list-alt"></i>En vivo</Link>
+          <Link onClick={() => setActive(false)} to="/stream/list"><FaChromecast className="live-item"/>En vivo</Link>
         </>
       )
     }
@@ -49,19 +48,28 @@ const Header = ({ isAdmin, isTeacher }) => {
   const renderImageMenu = () => {
     if(loading){
       return(
-        <img src="/login.png"  width="60" height="60" style={{ border: "1px solid gray" }} className="rounded-circle shadow z-depth-0"
-        alt="avatar image" />      
+        <div className="div-image-menu d-flex justify-content-center">
+          <img src="/login.png"  width="60" height="60" style={{ border: "1px solid gray", filter:"grayscale(100%)" }} className="rounded-circle shadow z-depth-0"
+          alt="avatar image" />  
+          <i className="fas fa-caret-down menu-dropdown-icon arrow-menu"></i>
+        </div>    
       )
     }else{
       if(isAuthenticated && user){
         return(
-          <img src={user.picture}  width="60" height="60" style={{ border: "1px solid gray" }} className="rounded-circle shadow z-depth-0"
-          alt="avatar image" />
+          <div className="div-image-menu d-flex justify-content-center">
+            <img src={user.picture}  width="60" height="60" style={{ border: "1px solid gray" }} className="rounded-circle shadow z-depth-0"
+            alt="avatar image" />          
+            <i className="fas fa-caret-down menu-dropdown-icon arrow-menu"></i>
+          </div>
         )
       }else{
         return(
-          <img src="/login.png"  width="60" height="60" style={{ border: "1px solid gray" }} className="rounded-circle shadow z-depth-0"
-          alt="avatar image" />
+          <div className="div-image-menu d-flex justify-content-center">
+            <img src="/login.png"  width="60" height="60" style={{ border: "1px solid gray" }} className="rounded-circle shadow z-depth-0"
+            alt="avatar image" /> 
+            <i className="fas fa-caret-down menu-dropdown-icon arrow-menu"></i>
+          </div>    
         )
       }
     }
@@ -91,9 +99,6 @@ const Header = ({ isAdmin, isTeacher }) => {
           <a onClick={() => setActive(true)} className="c-3 border-0 d-flex align-items-center">
             <div className="d-flex flex-column align-items-center">
               {renderImageMenu()}
-            </div>
-            <div className="d-flex flex-column align-items-center">
-              <i className="fas fa-caret-down menu-dropdown-icon"></i>
             </div>
           </a>
         </nav>

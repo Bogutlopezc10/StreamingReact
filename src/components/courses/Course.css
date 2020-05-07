@@ -32,6 +32,28 @@
     box-shadow: 2px 3px 6px 0px rgba(0,0,0,0.87);
 }
 
+.card .card-badge-live {
+    position:absolute;
+    top: 50px;
+    padding:5px;
+    padding-top: 2px;
+    background:white;
+    box-shadow: 2px 3px 6px 0px rgba(0,0,0,0.87);
+}
+
+.card .card-badge-live span{
+    color:red;
+    font-weight: bold;
+    font-size: 11px;
+    animation: blink 1s linear infinite;
+}
+
+@keyframes blink{
+    0%{opacity: 0;}
+    50%{opacity: .5;}
+    100%{opacity: 1;}
+}
+
 .course-shadow{
     box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
 }
@@ -314,7 +336,7 @@
 }
 
 .btn-question-published{
-    top: 62px;
+    top: 70px;
 }
 
 .btn-question p,

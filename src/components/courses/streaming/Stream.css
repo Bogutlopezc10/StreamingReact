@@ -1,0 +1,22 @@
+.live-image{
+    width: 200px;
+    height: 200px;
+}
+
+.live-description p{
+    color: gray;
+    font-size: 15px;
+    font-style: italic;
+}
+
+.live-container span{
+    color: gray;
+    font-size: 15px;
+    font-style: italic;
+}
+
+.video-live{
+    width: 100%;
+    height: calc(100vh - 225px);
+    border-bottom: 5px solid #005385;
+}

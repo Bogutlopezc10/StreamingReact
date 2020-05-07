@@ -8,6 +8,10 @@ import { Link } from 'react-router-dom';
 
 class CourseDetail extends React.Component {
 
+  MaysFirst(string){
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
   renderButtons() {
     const { course, userCourses, onClickCreateUserCourse, loadingUserCourse, isAdmin, isTeacher } = this.props;
     const isEnroll = userCourses.find(e => e.courseId == course.id);
@@ -93,9 +97,9 @@ class CourseDetail extends React.Component {
                 </div>
               </div>
               <div className="col-lg-12 img-teacher mt-3 d-flex align-items-center justify-content-start">
-                <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" width="50" height="50" className="rounded-circle d-inline z-depth-0"
+                <img src={course.photoTeacher} width="50" height="50" className="rounded-circle d-inline z-depth-0"
                   alt="avatar image" />
-                <p className="d-inline text-muted ml-2">{`${course.nameTeacher}`}</p>
+                <p className="d-inline text-muted ml-2">{`${this.MaysFirst(course.nameTeacher)}`}</p>
               </div>
               <div className="col-lg-12 info-teacher mt-2">
                 <h6 className="d-inline">Contacto: </h6><p className="d-inline">{course.emailTeacher}</p>

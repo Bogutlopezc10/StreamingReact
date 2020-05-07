@@ -19,6 +19,13 @@ class UserCourse extends React.Component{
         }
     }
 
+    renderLiveBadge = () =>{
+        const { userCourse } = this.props;
+        if(userCourse.isStreaming){
+            return <div className="card-badge-live rounded-right text-uppercase"><span>En vivo</span></div>
+        }       
+    }
+
     render(){
         const { userCourse } = this.props;
         const starPercentage = (userCourse.rating / 5) * 100;
@@ -50,6 +57,7 @@ class UserCourse extends React.Component{
                         </div>
                         <i className="icon-play-usercourse far fa-play-circle"></i>
                         <div className="card-badge rounded-right text-uppercase">{userCourse.categoryName}</div>
+                        {this.renderLiveBadge()}
                         <div className="progress">
                             <div className="progress-bar" style={{ width:`${userCourse.progress}%`}}></div>
                         </div>
