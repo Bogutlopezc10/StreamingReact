@@ -28,7 +28,7 @@ export const fetchCourses = () => async dispatch => {
     const response = await streams.get('/Courses');
     dispatch({ type: FETCH_COURSES, payload: response.data });
   } catch (error) {
-    if(error.response && error.response.status == 401){
+    if(error.response && error.response.status === 401){
       history.push('/login');
     }
     else{
@@ -46,7 +46,7 @@ export const fetchCoursesBycategory = (id) => async dispatch => {
     dispatch({ type: FETCH_COURSE_BY_CATEGORY, payload: response.data });
   }
   catch (error) {
-    if(error.response && error.response.status == 401){
+    if(error.response && error.response.status === 401){
       history.push('/login');
     }
     else{
@@ -64,7 +64,7 @@ export const fetchCourse = (id) => async dispatch => {
     const response = await streams.get(`/Courses/${id}`);
     dispatch({ type: FETCH_COURSE, payload: response.data });
   } catch (error) {
-    if(error.response && error.response.status == 401){
+    if(error.response && error.response.status === 401){
       history.push('/login');
     }
     else{
@@ -86,7 +86,7 @@ export const fetchCourseByUsername = () => async dispatch => {
     dispatch({ type: FETCH_COURSES_BY_USERNAME, payload: response.data });
   }
   catch (error) {
-    if(error.response && error.response.status == 401){
+    if(error.response && error.response.status === 401){
       history.push('/login');
     }
     else{
@@ -115,7 +115,7 @@ export const createCourse = (formValues, formData) => async (dispatch) => {
     history.push('/teacher');
   }
   catch (error) {
-    if(error.response && error.response.status == 401){
+    if(error.response && error.response.status === 401){
       history.push('/login');
     }
     else{
@@ -142,7 +142,7 @@ export const editCourse = (id, formValues, formData) => async (dispatch) => {
     history.push('/teacher');
   }
   catch (error) {
-    if(error.response && error.response.status == 401){
+    if(error.response && error.response.status === 401){
       history.push('/login');
     }
     else{
@@ -162,7 +162,7 @@ export const CourseCanBePosted = (id) => async (dispatch) => {
     //history.push('/teacher');
   }
   catch (error) {
-    if(error.response && error.response.status == 401){
+    if(error.response && error.response.status === 401){
       history.push('/login');
     }
     else{
@@ -181,7 +181,7 @@ export const deleteCourse = (id) => async dispatch => {
     history.push('/teacher');
   }
   catch (error) {
-    if(error.response && error.response.status == 401){
+    if(error.response && error.response.status === 401){
       history.push('/login');
     }
     else{
@@ -201,7 +201,7 @@ export const postCourse = (id) => async (dispatch) => {
     history.push('/teacher');
   }
   catch (error) {
-    if(error.response && error.response.status == 401){
+    if(error.response && error.response.status === 401){
       history.push('/login');
     }
     else {
@@ -227,7 +227,7 @@ export const updateIsStreamingCourse = (id, isStreaming) => async dispatch => {
     }
   }
   catch (error) {
-    if(error.response && error.response.status == 401){
+    if(error.response && error.response.status === 401){
       history.push('/login');
     }
     else{

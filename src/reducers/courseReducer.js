@@ -82,7 +82,7 @@ export default (state= defaultState, action) => {
                 messageSuccess:"El curso fue eliminado exitosamente."
             };
         case COURSE_CAN_BE_POSTED:
-            if(action.payload.status == 204){
+            if(action.payload.status === 204){
                 return {
                     ...state,
                     canBePosted: false

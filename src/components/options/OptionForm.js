@@ -3,10 +3,6 @@ import {Field, reduxForm} from 'redux-form';
 import './Option.css'
 
 class OptionForm extends React.Component {
-
-    constructor(props){
-        super(props);
-    }
     
     renderSelectError({meta}){
         if(meta.touched && meta.error){
@@ -55,7 +51,7 @@ class OptionForm extends React.Component {
     
     onSubmit = (formValues)=>{
 
-        if(formValues.isCorrect == "isCorrect1"){
+        if(formValues.isCorrect === "isCorrect1"){
            this.options = {
                     options: [
                       {
@@ -79,7 +75,7 @@ class OptionForm extends React.Component {
                     questionId: this.props.questionId
             }
         }
-        if(formValues.isCorrect == "isCorrect2"){
+        if(formValues.isCorrect === "isCorrect2"){
             this.options = {
                 options: [
                   {
@@ -103,7 +99,7 @@ class OptionForm extends React.Component {
                 questionId: this.props.questionId
             }
         }
-        if(formValues.isCorrect == "isCorrect3"){
+        if(formValues.isCorrect === "isCorrect3"){
             this.options = {
                 options: [
                   {
@@ -127,7 +123,7 @@ class OptionForm extends React.Component {
                 questionId: this.props.questionId
             }
         }
-        if(formValues.isCorrect == "isCorrect4"){
+        if(formValues.isCorrect === "isCorrect4"){
             this.options = {
                 options: [
                   {

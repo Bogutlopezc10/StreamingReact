@@ -21,7 +21,7 @@ export const fetchOptionsByQuestionId = (id) => async dispatch => {
         dispatch({ type: FETCH_OPTIONS_BY_QUESTION_ID, payload: response.data });
     }
     catch(error){
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
             history.push('/login');
         }
         else{
@@ -39,7 +39,7 @@ export const fetchOptions = () => async dispatch => {
         dispatch({ type: FETCH_OPTIONS, payload: response.data });
     }
     catch(error){
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
             history.push('/login');
         }
         else{
@@ -58,7 +58,7 @@ export const createOptions = (options, courseName, courseId) => async dispatch =
         history.push(`/questions/${courseName}/${courseId}`);
     }
     catch(error){
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
             history.push('/login');
         }
         else{
@@ -77,7 +77,7 @@ export const editOptions = (options, courseName, courseId) => async dispatch => 
         history.push(`/questions/${courseName}/${courseId}`);
     }
     catch(error){
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
             history.push('/login');
         }
         else{
@@ -96,7 +96,7 @@ export const deleteOptions = (questionId, courseName, courseId) => async dispatc
         history.push(`/questions/${courseName}/${courseId}`);
     }
     catch(error){
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
             history.push('/login');
         }
         else{
@@ -121,7 +121,7 @@ export const validateAnswersExam = (answersExam, courseId, userCourseId) => asyn
         history.push(`/ValidateAnswersPage/${courseId}/${userCourseId}`);
     }
     catch(error){
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
             history.push('/login');
         }
         else{
@@ -139,7 +139,7 @@ export const fetchOptionsExamByCourseId = (id) => async dispatch => {
         dispatch({ type: FETCH_OPTIONS_EXAMS_BY_COURSE_ID, payload: response.data });
     }
     catch(error){
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
             history.push('/login');
         }
         else{

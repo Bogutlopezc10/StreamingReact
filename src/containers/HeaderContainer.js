@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { IsAdmin, IsTeacher, GetToken } from '../selectors/authSelectors';
+import { IsAdmin, IsTeacher } from '../selectors/authSelectors';
 import Header from '../components/Header';
 
 const HeaderContainer = () => {

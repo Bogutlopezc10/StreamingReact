@@ -14,7 +14,7 @@ class CourseCreate extends React.Component{
     renderData = () =>{
         const {loadingCategory, categories} = this.props;
 
-        if(categories.length == 0 && loadingCategory){
+        if(categories.length === 0 && loadingCategory){
             return(
                 <>
                     <div className="col-auto container-spinner-edit d-flex align-items-center justify-content-center">
@@ -23,7 +23,7 @@ class CourseCreate extends React.Component{
                 </>
             )
         }
-        else if (categories.length == 0 && !loadingCategory){
+        else if (categories.length === 0 && !loadingCategory){
             return(
                 <>
                     <div className="col-auto container-spinner-edit d-flex align-items-center justify-content-center">

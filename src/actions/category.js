@@ -20,7 +20,7 @@ export const fetchCategories = () => async dispatch => {
         dispatch({ type: FETCH_CATEGORIES, payload: response.data });
     }
     catch (error) {
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
           history.push('/login');
         }
         else{
@@ -37,7 +37,7 @@ export const fetchCategory = (id) => async dispatch => {
         const response = await streams.get(`/Categories/${id}`);
         dispatch({ type: FETCH_CATEGORY, payload: response.data });
     } catch (error) {
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
             history.push('/login');
         }
         else{
@@ -62,7 +62,7 @@ export const createCategory = (formValues, formData) => async (dispatch) =>{
         history.push('/categories');
     }
     catch(error){
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
             history.push('/login');
         }
         else{
@@ -88,7 +88,7 @@ export const editCategory = (id, formValues, formData) =>async (dispatch) =>{
         history.push('/categories');
     }
     catch(error){
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
             history.push('/login');
         }
         else{

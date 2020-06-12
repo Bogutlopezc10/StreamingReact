@@ -8,7 +8,7 @@ class StudentStreamList extends React.Component {
     renderData(){
         const { userCourses, isLoading} = this.props;
 
-        if(userCourses.length == 0 && isLoading){
+        if(userCourses.length === 0 && isLoading){
             return (
                 <>
                     <div className="col-auto d-flex align-items-center justify-content-center mb-4" style={{height:"280px"}}>
@@ -17,7 +17,7 @@ class StudentStreamList extends React.Component {
                 </>
             )
         }
-        if(userCourses.length == 0 && !isLoading){
+        if(userCourses.length === 0 && !isLoading){
             return (
                 <>
                     <div className="col-auto d-flex align-items-center justify-content-center mb-4" style={{height:"280px"}}>

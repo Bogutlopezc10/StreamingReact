@@ -15,7 +15,7 @@ class StudentStream extends React.Component {
                 <div className="row">
                     <div className="col-lg-12 d-flex align-items-center justify-content-center">
                         <img src={userCourse.photoTeacher} width="30" height="30" className="rounded-circle d-inline z-depth-0"
-                        alt="avatar image"/>
+                        alt="photoTeacherStudentStream"/>
                         <p className="d-inline ml-2">{`${this.MaysFirst(userCourse.nameTeacher)} `}</p>
                     </div>
                     <div className="col-lg-12 mt-2 d-flex align-items-center justify-content-center">

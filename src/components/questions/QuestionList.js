@@ -7,9 +7,9 @@ import Accordion from 'react-bootstrap/Accordion';
 class QuestionList extends React.Component{
 
     renderData = () => {
-        const {questions, courseName, id, borderTopColor, onClickEditQuestion, loadingQuestions } = this.props;
+        const {questions, courseName, id, onClickEditQuestion, loadingQuestions } = this.props;
 
-        if(questions.length == 0 && loadingQuestions){
+        if(questions.length === 0 && loadingQuestions){
             return(
                 <>
                     <div className="row d-flex align-items-center justify-content-center" style={{height:"250px"}}>
@@ -20,7 +20,7 @@ class QuestionList extends React.Component{
                 </>
             )
         }
-        else if(questions.length == 0 && !loadingQuestions){
+        else if(questions.length === 0 && !loadingQuestions){
             return(
                 <>
                     <div className="row d-flex align-items-center justify-content-center" style={{height:"250px"}}>

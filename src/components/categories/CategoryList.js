@@ -9,7 +9,7 @@ import './Category.css'
 class CategoryList extends React.Component {
   renderData = () => {
     const { categories, loadingCategory, isAdmin } = this.props;
-    if (categories.length == 0 && loadingCategory) {
+    if (categories.length === 0 && loadingCategory) {
       return (
         <>
           <div className="row d-flex align-items-center justify-content-center" style={{ height: "300px" }}>
@@ -20,7 +20,7 @@ class CategoryList extends React.Component {
         </>
       )
     }
-    if (categories.length == 0 && !loadingCategory) {
+    if (categories.length === 0 && !loadingCategory) {
       return (
         <>
           <div className="row d-flex align-items-center justify-content-center mb-4" style={{ height: "300px" }}>

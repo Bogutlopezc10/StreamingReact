@@ -10,7 +10,7 @@ class SubjectList extends React.Component{
     renderData = () => {
         const {subjects, onClickEditSubject, onClickUnMountContent, courseName, courseId, loadingSubjects } = this.props;
 
-        if(subjects.length == 0 && loadingSubjects){
+        if(subjects.length === 0 && loadingSubjects){
             return(
                 <>  
                     <div className="row d-flex align-items-center justify-content-center" style={{height:"250px"}}>
@@ -21,7 +21,7 @@ class SubjectList extends React.Component{
                 </>
             )
         }
-        else if(subjects.length == 0 && !loadingSubjects){
+        else if(subjects.length === 0 && !loadingSubjects){
             return(
                 <>
                     <div className="row d-flex align-items-center justify-content-center" style={{height:"250px"}}>

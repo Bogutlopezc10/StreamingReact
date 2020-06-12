@@ -29,7 +29,7 @@ export const fetchQuestionsByCourseId = (id) => async dispatch => {
         dispatch({ type: FETCH_QUESTIONS_BY_COURSE_ID, payload: response.data });
     }
     catch(error){
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
             history.push('/login');
         }
         else{
@@ -47,7 +47,7 @@ export const fetchQuestionsExamByCourseId = (id) => async dispatch => {
         dispatch({ type: FETCH_QUESTIONS_EXAM, payload: response.data });
     }
     catch(error){
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
             history.push('/login');
         }
         else{
@@ -77,7 +77,7 @@ export const createQuestion = (formValues, courseId) => async dispatch => {
         dispatch({ type: CREATE_QUESTION, payload: response.data });
     }
     catch(error){
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
             history.push('/login');
         }
         else{
@@ -95,7 +95,7 @@ export const fecthEditingQuestion = (id) => async dispatch => {
         dispatch({ type: IS_EDITING_QUESTION, payload: response.data });
     }
     catch(error){
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
             history.push('/login');
         }
         else{
@@ -120,7 +120,7 @@ export const editQuestion = (id, formValues) =>async (dispatch) =>{
         dispatch({type: EDIT_QUESTION, payload:response.data})
     }
     catch(error){
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
             history.push('/login');
         }
         else{
@@ -150,7 +150,7 @@ export const fetchQuestion = (id) => async dispatch => {
         const response = await streams.get(`/Questions/${id}`);
         dispatch({ type: FETCH_QUESTION, payload: response.data });
     } catch (error) {
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
             history.push('/login');
         }
         else{
@@ -170,7 +170,7 @@ export const deleteQuestion = (id, courseName, courseId) =>async dispatch =>{
         history.push(`/questions/${courseName}/${courseId}`);
     }
     catch(error){
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
             history.push('/login');
         }
         else{

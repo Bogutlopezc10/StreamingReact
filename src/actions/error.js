@@ -13,7 +13,7 @@ export const createError = (error) => {
       }
     )
   }
-  else if (error.response.statusText != "Bad Request") {
+  else if (error.response.statusText !== "Bad Request") {
     return (
       {
         isError: true,

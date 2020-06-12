@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { CAMILO_URL, JUAN_URL, DEFAULT_URL } from '../actions/types';
+import { JUAN_URL } from '../actions/types';
 import { store } from '../index';
 import { GetToken } from '../selectors/authSelectors';
 

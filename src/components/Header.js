@@ -11,13 +11,13 @@ const Header = ({ isAdmin, isTeacher }) => {
   const renderItemsMenu = () => {
     if(!isAuthenticated){
       return (
-        <a className="header-prueba" onClick={() => loginWithRedirect({})}><i className="fas fa-sign-in-alt"></i>Iniciar sesión</a>
+        <Link to ="/" className="header-prueba btn-block" onClick={() => loginWithRedirect({})}><i className="fas fa-sign-in-alt"></i>Iniciar sesión </Link>
       )
     }else{
       if(isAdmin){
         return(
           <>
-            <a className="header-prueba" onClick={() => logout()}><i className="fas fa-sign-out-alt"></i>Cerrar sesión</a>
+            <Link to="/"  className="header-prueba" onClick={() => logout()}><i className="fas fa-sign-out-alt"></i>Cerrar sesión</Link>
             <Link onClick={() => setActive(false)} to="/"><i className="fas fa-home"></i>Home</Link>
             <Link onClick={() => setActive(false)} to="/categories"><i className="fas fa-cogs"></i>Gestionar categorías</Link>
             <Link onClick={() => setActive(false)} to="/courses"><i className="fas fa-folder-open"></i>Cursos ofertados</Link>
@@ -26,7 +26,7 @@ const Header = ({ isAdmin, isTeacher }) => {
       }else if(isTeacher){
         return(
           <>
-            <a className="header-prueba" onClick={() => logout()}><i className="fas fa-sign-out-alt"></i>Cerrar sesión</a>
+            <Link to="/"  className="header-prueba" onClick={() => logout()}><i className="fas fa-sign-out-alt"></i>Cerrar sesión</Link>
             <Link onClick={() => setActive(false)} to="/"><i className="fas fa-home"></i>Home</Link>
             <Link onClick={() => setActive(false)} to="/courses"><i className="fas fa-folder-open"></i>Cursos ofertados</Link>
             <Link onClick={() => setActive(false)} to="/teacher"><i className="fas fa-cogs"></i>Panel de control</Link>
@@ -35,7 +35,7 @@ const Header = ({ isAdmin, isTeacher }) => {
       }
       return(
         <>
-          <a className="header-prueba" onClick={() => logout()}><i className="fas fa-sign-out-alt"></i>Cerrar sesión</a>
+          <Link to="/"  className="header-prueba" onClick={() => logout()}><i className="fas fa-sign-out-alt"></i>Cerrar sesión </Link>
           <Link onClick={() => setActive(false)} to="/"><i className="fas fa-home"></i>Home</Link>
           <Link onClick={() => setActive(false)} to="/courses"><i className="fas fa-folder-open"></i>Cursos ofertados</Link>
           <Link onClick={() => setActive(false)} to="/userCourses"><i className="fas fa-list-alt"></i>Mis cursos</Link>
@@ -50,7 +50,7 @@ const Header = ({ isAdmin, isTeacher }) => {
       return(
         <div className="div-image-menu d-flex justify-content-center">
           <img src="/login.png"  width="60" height="60" style={{ border: "1px solid gray", filter:"grayscale(100%)" }} className="rounded-circle shadow z-depth-0"
-          alt="avatar image" />  
+          alt="photoHeaderLoading" />  
           <i className="fas fa-caret-down menu-dropdown-icon arrow-menu"></i>
         </div>    
       )
@@ -59,7 +59,7 @@ const Header = ({ isAdmin, isTeacher }) => {
         return(
           <div className="div-image-menu d-flex justify-content-center">
             <img src={user.picture}  width="60" height="60" style={{ border: "1px solid gray" }} className="rounded-circle shadow z-depth-0"
-            alt="avatar image" />          
+            alt="photoHeaderUser" />          
             <i className="fas fa-caret-down menu-dropdown-icon arrow-menu"></i>
           </div>
         )
@@ -67,7 +67,7 @@ const Header = ({ isAdmin, isTeacher }) => {
         return(
           <div className="div-image-menu d-flex justify-content-center">
             <img src="/login.png"  width="60" height="60" style={{ border: "1px solid gray" }} className="rounded-circle shadow z-depth-0"
-            alt="avatar image" /> 
+            alt="photoHeaderNotAuthenticator" /> 
             <i className="fas fa-caret-down menu-dropdown-icon arrow-menu"></i>
           </div>    
         )
@@ -96,11 +96,11 @@ const Header = ({ isAdmin, isTeacher }) => {
               <i className="icono fa fa-folder-open mt-1"></i>
             </div>
           </Link>
-          <a onClick={() => setActive(true)} className="c-3 border-0 d-flex align-items-center">
+          <button onClick={() => setActive(true)} className="c-3 border-0 d-flex align-items-center">
             <div className="d-flex flex-column align-items-center">
               {renderImageMenu()}
             </div>
-          </a>
+          </button>
         </nav>
       </div>
       <div className="container">
@@ -110,7 +110,7 @@ const Header = ({ isAdmin, isTeacher }) => {
               {renderItemsMenu()}
             </nav>
           </div>
-          <a className="col" onClick={() => setActive(false)} className={`fondo-enlace ${active ? 'active' : ''}`}></a>
+          <button onClick={() => setActive(false)} className={`col fondo-enlace ${active ? 'active' : ''}`}></button>
         </div>
       </div>
     </>

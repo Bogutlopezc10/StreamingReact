@@ -27,7 +27,7 @@ export const fetchContentsByCourseId = (id) => async dispatch => {
         dispatch({ type: FETCH_CONTENTS, payload: response.data });
     }
     catch(error){
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
             history.push('/login');
         }
         else{
@@ -44,7 +44,7 @@ export const createContent = (formValues, subjectId) => async dispatch => {
         dispatch({ type: CREATE_CONTENT, payload: response.data });
     }
     catch(error){
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
             history.push('/login');
         }
         else{
@@ -63,7 +63,7 @@ export const editContent = (id, formValues) =>async (dispatch) =>{
         dispatch({type: EDIT_CONTENT, payload:response.data})
     }
     catch(error){
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
             history.push('/login');
         }
         else{
@@ -80,7 +80,7 @@ export const fecthEditingContent = (id) => async dispatch => {
         dispatch({ type: IS_EDITING_CONTENT, payload: response.data });
     }
     catch(error){
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
             history.push('/login');
         }
         else{
@@ -122,7 +122,7 @@ export const fetchContent = (id) => async dispatch => {
         dispatch({ type: FETCH_CONTENT, payload: response.data });
     }
     catch(error){
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
             history.push('/login');
         }
         else{
@@ -141,7 +141,7 @@ export const deleteContent = (id, courseName, courseId) =>async dispatch =>{
         history.push(`/Courses/Content/${courseName}/${courseId}`);
     }
     catch(error){
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
             history.push('/login');
         }
         else{
@@ -162,7 +162,7 @@ export const fetchContentCurrentPlayer = (id) => async dispatch => {
         dispatch({ type: CURRENT_CONTENT_PLAYER, payload: response.data});
     }
     catch(error){
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
             history.push('/login');
         }
         else{
@@ -183,7 +183,7 @@ export const fetchLastContentByUserNameDescending = (courseId) => async dispatch
         dispatch({ type: FETCH_LAST_CONTENT_DESCENDING, payload: response.data });
     }
     catch(error){
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
             history.push('/login');
         }
         else{

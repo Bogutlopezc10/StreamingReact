@@ -18,7 +18,7 @@ export const fetchUserContentByUserName = () => async dispatch => {
         dispatch({ type: FETCH_USER_CONTENTS_BY_USERNAME, payload: response.data });
     }
     catch(error){
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
             history.push('/login');
         }
         else{

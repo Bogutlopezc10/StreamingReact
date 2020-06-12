@@ -3,7 +3,7 @@ import ContentList from '../../components/contents/ContentList';
 import ContentCreateContainer from '../../containers/contents/ContentCreateContainer';
 import ContentEditContainer from '../../containers/contents/ContentEditContainer';
 import { connect } from 'react-redux';
-import { fetchContents, isCreatingContent, isNotCreatingContent, fecthEditingContent } from '../../actions/content';
+import { isCreatingContent, isNotCreatingContent, fecthEditingContent } from '../../actions/content';
 import { getContentsBySubjectId } from '../../selectors/index';
 
 class ContentListContainer extends React.Component{

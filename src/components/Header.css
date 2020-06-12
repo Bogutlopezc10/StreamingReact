@@ -111,11 +111,13 @@
     font-size: 16px;
 }
 
+
 .menu-principal nav a:hover{
     color: #3d3c3c;
     background: white;
     text-decoration: none;
 }
+
 
 .menu-principal i,
 .live-item{

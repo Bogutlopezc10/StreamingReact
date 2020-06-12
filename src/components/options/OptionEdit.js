@@ -29,7 +29,7 @@ class OptionEdit extends React.Component{
 
     renderData = () =>{
         const {optionsEdit} = this.props
-        if(optionsEdit.length == 0){
+        if(optionsEdit.length === 0){
             return (
                 <>  
                     <div className="row container-spinner-option d-flex align-items-center justify-content-center">

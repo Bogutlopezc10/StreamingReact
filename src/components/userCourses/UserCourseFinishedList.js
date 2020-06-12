@@ -9,7 +9,7 @@ class UserCourseFinishedList extends React.Component{
     renderData = () =>{
         const {userCoursesFinished, userCoursesLoading } = this.props;
 
-        if(userCoursesFinished.length == 0 && userCoursesLoading){
+        if(userCoursesFinished.length === 0 && userCoursesLoading){
             return(
                 <>
                     <div className="row d-flex align-items-center justify-content-center mb-4" style={{height:"172px", marginRight:"0px"}}>
@@ -20,7 +20,7 @@ class UserCourseFinishedList extends React.Component{
                 </>
             )
         }
-        else if(userCoursesFinished.length == 0 && !userCoursesLoading){
+        else if(userCoursesFinished.length === 0 && !userCoursesLoading){
             return(
                 <>
                     <div className="row d-flex align-items-center justify-content-center mb-4" style={{height:"172px", marginRight:"0px"}}>
