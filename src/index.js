@@ -15,6 +15,8 @@ import reducers from './reducers';
 import { Auth0Provider } from "./auth0wrapper";
 import history from "./history";
 
+import { DOMAIN, CLIENT_ID, REDIRECT_URL, AUDIENCE, REDIRECT_URL_PRODUCTION } from './actions/types';
+
 const persistConfig = {
   key: 'root',
   storage: storage,
@@ -44,10 +46,10 @@ const onRedirectCallback = appState => {
 ReactDOM.render(
   <Provider store={store}>
     <Auth0Provider
-      domain={'dev-edu.auth0.com'}
-      client_id={'Y1cBg3gAh8EzE7sU07ATZ67fpn9gRQOP'}
-      redirect_uri={'http://localhost:3000'}
-      audience={'http://localhost:5001/api'}
+      domain={DOMAIN}
+      client_id={CLIENT_ID}
+      redirect_uri={process.env.NODE_ENV !== 'production' ? REDIRECT_URL : REDIRECT_URL_PRODUCTION}
+      audience={AUDIENCE}
       onRedirectCallback={onRedirectCallback}
     >
       <PersistGate persistor={persistor}>

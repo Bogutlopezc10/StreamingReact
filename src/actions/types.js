@@ -1,8 +1,15 @@
 // EndPoints
-
+export const PRODUCTION_URL = 'https://streamingapi.azurewebsites.net/api';
 export const JUAN_URL = 'http://localhost:51066/api';
 export const CAMILO_URL = 'http://localhost:56757/api';
 export const DEFAULT_URL = 'http://localhost:61958/api';
+
+// AUTH0
+export const DOMAIN = 'dev-edu.auth0.com';
+export const CLIENT_ID = 'Y1cBg3gAh8EzE7sU07ATZ67fpn9gRQOP';
+export const REDIRECT_URL = 'http://localhost:3000';
+export const REDIRECT_URL_PRODUCTION = '';
+export const AUDIENCE = 'http://localhost:5001/api';
 
 
 // Token
