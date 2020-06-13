@@ -7,7 +7,7 @@ class OptionExamList extends React.Component {
     onSubmit = (formValues)=>{
         const {currentNumberQuestion} = this.props;
         var endExam = false;
-        if(currentNumberQuestion == 5){
+        if(currentNumberQuestion === 5){
             endExam = true;
             this.props.onSubmit(formValues, endExam);
         }
@@ -19,8 +19,8 @@ class OptionExamList extends React.Component {
 
     renderButtonExam = ({ meta }) => {
         const {currentNumberQuestion} = this.props;
-        if(meta.error == true){
-            if(currentNumberQuestion == 5){
+        if(meta.error === true){
+            if(currentNumberQuestion === 5){
                 return(
                     <button className ="btn btn-outline-exam mt-1 mb-4" disabled style={{ borderRadius: ".25rem" }}>
                         <div>
@@ -40,7 +40,7 @@ class OptionExamList extends React.Component {
                 );
             }
         }else{
-            if(currentNumberQuestion == 5){
+            if(currentNumberQuestion === 5){
                 return(
                     <button className ="btn btn-outline-exam mt-1 mb-4" style={{ borderRadius: ".25rem" }}>
                         <div>
@@ -64,19 +64,19 @@ class OptionExamList extends React.Component {
     }
 
     renderIconNumberQuestion = (currentNumberQuestion) =>{
-        if(currentNumberQuestion==1){
+        if(currentNumberQuestion === 1){
             return(
                 <img src="/QuestionIcon1.png" className="img-question-icon" alt="question-1" />
             )
-        }else  if(currentNumberQuestion==2){
+        }else  if(currentNumberQuestion === 2){
             return(
                 <img src="/QuestionIcon2.png" className="img-question-icon" alt="question-2" />
             )
-        }else  if(currentNumberQuestion==3){
+        }else  if(currentNumberQuestion === 3){
             return(
                 <img src="/QuestionIcon3.png" className="img-question-icon" alt="question-3" />
             )
-        }else  if(currentNumberQuestion==4){
+        }else  if(currentNumberQuestion === 4){
             return(
                 <img src="/QuestionIcon4.png" className="img-question-icon" alt="question-4" />
             )

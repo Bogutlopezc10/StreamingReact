@@ -9,7 +9,7 @@ class SubjectListPlayer extends React.Component{
     renderData = () =>{
         const {courseId, subjects} = this.props;
 
-        if(subjects.length == 0){
+        if(subjects.length === 0){
             return(
                 <>
                     <div className="row d-flex align-items-center justify-content-center" style={{height:"100%", marginRight:"0px"}}>

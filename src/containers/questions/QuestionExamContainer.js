@@ -7,7 +7,6 @@ import {getById} from '../../selectors/index'
 import MainHeader from '../../components/MainHeader'
 import {validateAnswersExam} from '../../actions/option'
 import {fetchUserCourse} from '../../actions/userCourse'
-import history from '../../history'
 import {unMountQuestionExam} from '../../actions/question'
 
 class QuestionExamContainer extends React.Component{

@@ -2,7 +2,6 @@ import React from 'react';
 import _ from 'lodash';
 import { connect } from 'react-redux';
 import QuestionForm from './QuestionForm';
-import {scrollUp} from '../../scroll'
 import {editQuestion} from '../../actions/question'
 
 class QuestionEdit extends React.Component{

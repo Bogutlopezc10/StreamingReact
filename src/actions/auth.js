@@ -31,7 +31,7 @@ export const saveToken = (token, user) => async dispatch => {
     const streams = getAxios();
     await streams.post(`/Users/`,currentUser);
   } catch (error) {
-    if(error.response && error.response.status == 401){
+    if(error.response && error.response.status === 401){
         history.push('/login');
     }
     else{

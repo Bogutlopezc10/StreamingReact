@@ -15,7 +15,7 @@ class CourseEdit extends React.Component{
     renderData = () =>{
         const {categories,course} = this.props;
 
-        if(!course || categories.length == 0){
+        if(!course || categories.length === 0){
             return(
                 <>
                     <div className="col-auto container-spinner-edit d-flex align-items-center justify-content-center">

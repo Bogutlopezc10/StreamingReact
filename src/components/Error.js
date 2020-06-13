@@ -8,7 +8,7 @@ const Error = (props) => {
       <div className="col-lg-6 error-col">
         <div className="row">
           <div className="col-lg-12 d-flex align-items-center justify-content-center">
-            <img src="/error.png" className="error-image" alt="avatar image" />
+            <img src="/error.png" className="error-image" alt="photoError" />
           </div>
           <div className="col-lg-12 mt-4 d-flex align-items-center justify-content-center">
             <h1>¡ALGO SALIÓ MAL!</h1>

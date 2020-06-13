@@ -159,7 +159,7 @@ class CoursePlayer extends React.Component {
                             <div className="row">
                                 <div className="col-lg-12 img-teacher mt-1 mb-3 d-flex align-items-center justify-content-center">
                                     <img src={course.photoTeacher} width="50" height="50" className="rounded-circle d-inline z-depth-0"
-                                        alt="avatar image" />
+                                        alt="photoTeacherCoursePlayer" />
                                     <p className="d-inline text-contact-teacher ml-3">{`${this.MaysFirst(course.nameTeacher)} `}</p>
                                 </div>
                                 <div className="col-lg-12 mb-3 d-flex justify-content-center">

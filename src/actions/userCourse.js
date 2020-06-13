@@ -23,7 +23,7 @@ export const fetchUserCoursesByUserName = () => async dispatch => {
         dispatch({ type: FETCH_USERCOURSES_BY_USERNAME, payload: response.data });
     }
     catch(error){
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
             history.push('/login');
         }
         else{
@@ -41,7 +41,7 @@ export const updateRatingUserCourse = (id,rating) => async dispatch => {
         dispatch({ type: UPDATE_RATING_USERCOURSE, payload: response.data });
     }
     catch(error){
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
             history.push('/login');
         }
         else{
@@ -68,7 +68,7 @@ export const createUserCourse = courseIdV =>async (dispatch) =>{
         history.push('/userCourses');
     }
     catch(error){
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
             history.push('/login');
         }
         else{
@@ -89,7 +89,7 @@ export const fetchUserCoursesStreamingByUser = () =>async (dispatch) =>{
         dispatch({type: FETCH_USERCOURSE_STREAMING_BY_USER, payload:response.data})
     }
     catch(error){
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
             history.push('/login');
         }
         else{
@@ -108,7 +108,7 @@ export const fetchUserCourse = (id) => async dispatch => {
         dispatch({ type: FETCH_USERCOURSE, payload: response.data });
     }
     catch(error){
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
             history.push('/login');
         }
         else{

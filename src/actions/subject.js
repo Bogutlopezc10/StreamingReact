@@ -23,7 +23,7 @@ export const fetchSubjects = (id) => async dispatch => {
         dispatch({ type: FETCH_SUBJECTS, payload: response.data });
     }
     catch(error){
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
             history.push('/login');
         }
         else{
@@ -40,7 +40,7 @@ export const fecthEditingSubject = (id) => async dispatch => {
         dispatch({ type: IS_EDITING_SUBJECT, payload: response.data });
     }
     catch(error){
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
             history.push('/login');
         }
         else{
@@ -57,7 +57,7 @@ export const createSubject = (formValues, courseId) => async dispatch => {
         dispatch({ type: CREATE_SUBJECT, payload: response.data });
     }
     catch(error){
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
             history.push('/login');
         }
         else{
@@ -75,7 +75,7 @@ export const editSubject = (id, formValues) =>async (dispatch) =>{
         dispatch({type: EDIT_SUBJECT, payload:response.data})
     }
     catch(error){
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
             history.push('/login');
         }
         else{
@@ -114,7 +114,7 @@ export const fetchSubject = (id) => async dispatch => {
         const response = await streams.get(`/Subjects/${id}`);
         dispatch({ type: FETCH_SUBJECT, payload: response.data });
     } catch (error) {
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
             history.push('/login');
         }
         else{
@@ -133,7 +133,7 @@ export const deleteSubject = (id, courseName, courseId) =>async dispatch =>{
         history.push(`/Courses/Content/${courseName}/${courseId}`);
     }
     catch(error){
-        if(error.response && error.response.status == 401){
+        if(error.response && error.response.status === 401){
             history.push('/login');
         }
         else{

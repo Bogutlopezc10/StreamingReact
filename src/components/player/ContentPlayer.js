@@ -1,12 +1,11 @@
 import React from 'react'
-import {Link} from 'react-router-dom';
 import './Player.css';
 
 class ContentPlayer extends React.Component{
     
     isReadContent(){
         const {userContents, content} = this.props;
-        const isRead = userContents.some(e=> e.contentId == content.id);
+        const isRead = userContents.some(e=> e.contentId === content.id);
 
         if(isRead){
             return(
@@ -22,7 +21,7 @@ class ContentPlayer extends React.Component{
         var classNameContainer = 'col-12 p-3 container-player-content'
         var classNameIcon = 'd-inline fas fa-play-circle'
         if(currentContent){
-            if(currentContent.id == content.id){
+            if(currentContent.id === content.id){
                 classNameContainer = 'col-12 p-3 container-player-content selected-content'
                 classNameIcon = 'd-inline fas fa-play-circle selected-icon'
             }

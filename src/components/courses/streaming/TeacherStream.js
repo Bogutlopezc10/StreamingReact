@@ -12,7 +12,7 @@ class TeacherStream extends React.Component {
             return(
                 <>
                     <div className="col-12 mb-4 d-flex align-items-center justify-content-center">
-                        <img src="/live.png" className="live-image" alt="avatar image" />
+                        <img src="/live.png" className="live-image" alt="photoLive" />
                     </div>
                     <div className="col-12 mb-4 d-flex align-items-center justify-content-center live-description">
                         <p><strong>¡El curso se está transmitiendo en vivo!</strong></p>
@@ -37,12 +37,12 @@ class TeacherStream extends React.Component {
         return(
             <>
                 <div className="col-12 mb-4 d-flex align-items-center justify-content-center">
-                    <img src="/live.png" className="live-image" alt="avatar image" />
+                    <img src="/live.png" className="live-image" alt="photoTeacherStreaming" />
                 </div>
                 <div className="col-12 mb-4 d-flex align-items-center justify-content-center live-description">
                     <p>
                         Para realizar el streaming debes de abrir
-                        Open Broadcaster Software, ir a ajustes, y en la parte de transmision poner lo siguiente:
+                        Open Broadcaster Software, ir a ajustes, y en la parte de emisión poner lo siguiente:
                     </p>
                 </div>
                 <div className="col-12 mb-2 d-flex align-items-center justify-content-center">
@@ -50,6 +50,11 @@ class TeacherStream extends React.Component {
                 </div>
                 <div className="col-12 mb-4 d-flex align-items-center justify-content-center">
                     <span><strong>Clave de retransmisión:</strong> {course.id}</span>
+                </div>
+                <div className="col-12 mb-4 d-flex align-items-center justify-content-center live-description">
+                    <p>
+                        Después debes darle click en el boton de iniciar transmisión en Open Broadcaster Software, por último darle click en el siguiente botón
+                    </p>
                 </div>
                 <div className="col-12 d-flex align-items-center justify-content-center">
                     <button className="btn mb-4 btn-outline-success" onClick = {()=>this.props.updateIsStreamingCourse(course.id, true)}>

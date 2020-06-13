@@ -22,7 +22,7 @@ class ContentList extends React.Component{
     }
 
     render(){
-        if(this.props.contents.length == 0){
+        if(this.props.contents.length === 0){
             return (
                 <div className="container">
                     {this.renderButton()}

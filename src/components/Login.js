@@ -11,7 +11,7 @@ const Login = () => {
       <div className="col-lg-6 login-col">
         <div className="row">
           <div className="col-lg-12 d-flex align-items-center justify-content-center">
-            <img src="/iniciar-sesion.png" className="login-image" alt="avatar image" />
+            <img src="/iniciar-sesion.png" className="login-image" alt="photoLogin" />
           </div>
           <div className="col-lg-12 mt-4 d-flex align-items-center justify-content-center">
             <h1>¡ESPERA UN MOMENTO!</h1>

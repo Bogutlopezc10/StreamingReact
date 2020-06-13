@@ -27,7 +27,7 @@ class CoursePost extends React.Component {
                 </>
             )
         }
-        else if(this.props.canBeposted == false){
+        else if(this.props.canBeposted === false){
             return(
                 <>
                     <button  type="button" className="btn btn-outline-danger" data-dismiss="modal" onClick={()=>history.push('/Teacher')} style={{ borderRadius: ".25rem" }}>
@@ -62,7 +62,7 @@ class CoursePost extends React.Component {
                 </div>
             )
         }
-        else if(this.props.canBeposted == false){
+        else if(this.props.canBeposted === false){
             return (
                 <div className="row">
                     <div className="col-12 d-flex justify-content-center">

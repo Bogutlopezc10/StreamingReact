@@ -1,6 +1,5 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {fetchContents} from '../../actions/content'
 import {getContentsBySubjectId} from '../../selectors/index'
 import ContentListPlayer from '../../components/player/ContentListPlayer'
 import {fetchUserContentByUserName} from '../../actions/userContent'

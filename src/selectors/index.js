@@ -51,11 +51,11 @@ const compareValuesPostedAt = (key, order = 'asc') => {
 // Course Selector
 export const getCourseByCategory = (state, category) => {
 
+  console.log(category);
   const courses = Object.values(state.courses.data);
 
-  return courses.filter((course) => {
-    return course.categoryId == category.categoryId && course.isPublished == true
-  }).sort(compareValuesPostedAt('postedAt', 'desc'));
+    return courses.filter(course => parseInt(course.categoryId) === parseInt(category.categoryId) && course.isPublished === true)
+    .sort(compareValuesPostedAt('postedAt', 'desc'));
 }
 
 export const getById = (state, Id) => {
@@ -67,7 +67,7 @@ export const getCoursesPublished = (state) => {
 
   const courses = Object.values(state.courses.data);
   return courses.filter((course) => {
-    return course.isPublished == true
+    return course.isPublished === true
   }).sort(compareValuesPostedAt('postedAt', 'desc'));
 }
 
@@ -77,8 +77,8 @@ export const getCoursesPublishedByUser = (state) => {
   const courses = Object.values(state.courses.data);
 
   return courses.filter((course) => {
-    return course.isPublished == true && course.username == GetEmailCurrentUser(state)
-  }).sort(compareValuesPostedAt('postedAt', 'desc'));;
+    return course.isPublished === true && course.username === GetEmailCurrentUser(state)
+  }).sort(compareValuesPostedAt('postedAt', 'desc'));
 }
 
 export const getCoursesNotPublishedByUser = (state) => {
@@ -86,7 +86,7 @@ export const getCoursesNotPublishedByUser = (state) => {
   const courses = Object.values(state.courses.data);
 
   return courses.filter((course) => {
-    return course.isPublished == false && course.username == GetEmailCurrentUser(state)
+    return course.isPublished === false && course.username === GetEmailCurrentUser(state)
   }).sort(function (a, b) {
     if (a.updatedAt < b.updatedAt) {
       return 1;
@@ -106,7 +106,7 @@ export const getSubjectsByCourseId = (state, courseId) => {
   const subjects = Object.values(state.subjects.data);
 
   return subjects.filter((subject) => {
-    return subject.courseId == courseId
+    return parseInt(subject.courseId) === parseInt(courseId)
   }).sort(compareValuesCreatedAt('createdAt', 'desc'));;
 }
 
@@ -117,7 +117,7 @@ export const getContentsBySubjectId = (state, subjectId) => {
   const contents = Object.values(state.contents.data);
 
   return contents.filter((content) => {
-    return content.subjectId == subjectId
+    return parseInt(content.subjectId) === parseInt(subjectId)
   });
 }
 
@@ -127,7 +127,7 @@ export const getUserContentsByUsername = (state) => {
   const userContents = Object.values(state.userContents);
 
   return userContents.filter((userContent) => {
-    return userContent.username == GetEmailCurrentUser(state)
+    return userContent.username === GetEmailCurrentUser(state)
   });
 }
 
@@ -138,7 +138,7 @@ export const getQuestionsByCourseId = (state, courseId) => {
   const questions = Object.values(state.questions.data);
 
   return questions.filter((question) => {
-    return question.courseId == courseId
+    return parseInt(question.courseId) === parseInt(courseId)
   }).sort(compareValuesCreatedAt('createdAt', 'desc'));
 }
 
@@ -149,7 +149,7 @@ export const getOptionsByQuestionId = (state, questionId) => {
   const options = Object.values(state.options.data);
 
   return options.filter((option) => {
-    return option.questionId == questionId
+    return parseInt(option.questionId) === parseInt(questionId)
   });
 }
 
@@ -162,7 +162,7 @@ export const getUserCoursesFinishedByUser = (state) => {
   const userCourses = Object.values(state.userCourses.data);
 
   return userCourses.filter((userCourse) => {
-    return userCourse.isEnd == true && userCourse.username == GetEmailCurrentUser(state)
+    return userCourse.isEnd === true && userCourse.username === GetEmailCurrentUser(state)
   }).sort(compareValuesCreatedAt('createdAt', 'desc'));
 }
 
@@ -171,7 +171,7 @@ export const getUserCoursesIstreamingByUser = (state) => {
   const userCourses = Object.values(state.userCourses.data);
 
   return userCourses.filter((userCourse) => {
-    return userCourse.isStreaming == true && userCourse.username == GetEmailCurrentUser(state)
+    return userCourse.isStreaming === true && userCourse.username === GetEmailCurrentUser(state)
   });
 }
 
@@ -180,7 +180,7 @@ export const getUserCoursesNotFinishedByUser = (state) => {
   const userCourses = Object.values(state.userCourses.data);
 
   return userCourses.filter((userCourse) => {
-    return userCourse.isEnd == false && userCourse.username == GetEmailCurrentUser(state)
+    return userCourse.isEnd === false && userCourse.username === GetEmailCurrentUser(state)
   }).sort(compareValuesCreatedAt('createdAt', 'desc'));
 }
 
@@ -189,7 +189,7 @@ export const getUserCoursesByUser = (state) => {
   const userCourses = Object.values(state.userCourses.data);
 
   return userCourses.filter((userCourse) => {
-    return userCourse.username == GetEmailCurrentUser(state)
+    return userCourse.username === GetEmailCurrentUser(state)
   });
 }
 

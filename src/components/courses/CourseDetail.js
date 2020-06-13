@@ -14,7 +14,7 @@ class CourseDetail extends React.Component {
 
   renderButtons() {
     const { course, userCourses, onClickCreateUserCourse, loadingUserCourse, isAdmin, isTeacher } = this.props;
-    const isEnroll = userCourses.find(e => e.courseId == course.id);
+    const isEnroll = userCourses.find(e => e.courseId === course.id);
 
     if (!isAdmin && !isTeacher) {
       if (!isEnroll && loadingUserCourse) {
@@ -98,7 +98,7 @@ class CourseDetail extends React.Component {
               </div>
               <div className="col-lg-12 img-teacher mt-3 d-flex align-items-center justify-content-start">
                 <img src={course.photoTeacher} width="50" height="50" className="rounded-circle d-inline z-depth-0"
-                  alt="avatar image" />
+                  alt="photoTeacherCourseDetail" />
                 <p className="d-inline text-muted ml-2">{`${this.MaysFirst(course.nameTeacher)}`}</p>
               </div>
               <div className="col-lg-12 info-teacher mt-2">

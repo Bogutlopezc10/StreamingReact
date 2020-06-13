@@ -7,7 +7,7 @@ const Content = ({ content,onClickIsEditingContent,courseName, courseId }) =>{
     return(
         <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6 mb-3">
             <div className="card card-shadow">
-                <iframe src={content.url.replace('watch?v=','embed/')}
+                <iframe src={content.url.replace('watch?v=','embed/')} title = {content.id}
                 height="150" frameBorder="0" style={{ width: "100%" }} allowFullScreen></iframe>   
                 <div className="card-body content-name">
                     <p>{content.name}</p>

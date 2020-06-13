@@ -7,7 +7,7 @@ import './Option.css'
 class OptionList extends React.Component{
 
     renderButton = () => {
-        if(this.props.options.length == 0){
+        if(this.props.options.length === 0){
             return(
                 <div className="row mb-3 align-items-center justify-content-between">
                     <div className="col-auto">
@@ -49,7 +49,7 @@ class OptionList extends React.Component{
 
 
     render(){
-        if(this.props.options.length == 0){
+        if(this.props.options.length === 0){
             return (
                 <div className="container">
                     {this.renderButton()}
