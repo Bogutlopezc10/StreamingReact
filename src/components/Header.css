@@ -148,6 +148,11 @@
   font-size: 17px;
 }
 
+nav button:active,
+nav button:focus{
+    outline: 0px;
+}
+
 .div-image-menu{
     position: relative;
 }

@@ -1,7 +1,7 @@
 // EndPoints
 
 export const JUAN_URL = 'http://localhost:54541/api';
-export const CAMILO_URL = 'http://localhost:56757/api';
+export const CAMILO_URL = 'http://localhost:53614/api';
 export const DEFAULT_URL = 'http://localhost:61958/api';
 
 
