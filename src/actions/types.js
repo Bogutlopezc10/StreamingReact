@@ -1,7 +1,7 @@
 // EndPoints
 export const PRODUCTION_URL = 'https://streamingapi.azurewebsites.net/api';
 export const JUAN_URL = 'http://localhost:51066/api';
-export const CAMILO_URL = 'http://localhost:56757/api';
+export const CAMILO_URL = 'http://localhost:53614/api';
 export const DEFAULT_URL = 'http://localhost:61958/api';
 
 // AUTH0
