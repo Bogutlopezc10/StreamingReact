@@ -82,7 +82,7 @@ class CategoryList extends React.Component {
               <div className="col-auto">
                 <h1 className="title-published">Gestionar categorias</h1>
               </div>
-              <div className="col-auto">
+              <div className="col-auto mt-3 mb-2">
                 <Link to="/categories/Create" className="btn btn-outline-success">
                   <div>
                     <p className="d-inline">CREAR CATEGORIA</p>
