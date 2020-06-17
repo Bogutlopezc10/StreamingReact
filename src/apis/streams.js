@@ -1,11 +1,11 @@
 import axios from 'axios';
-import { CAMILO_URL, PRODUCTION_URL } from '../actions/types';
+import { PRODUCTION_URL } from '../actions/types';
 import { store } from '../index';
 import { GetToken } from '../selectors/authSelectors';
 
 const getAxios = () => {
   const instance = axios.create({
-    baseURL: process.env.NODE_ENV !== 'production' ? CAMILO_URL : PRODUCTION_URL
+    baseURL: PRODUCTION_URL
   });
 
   // Add token if exists
