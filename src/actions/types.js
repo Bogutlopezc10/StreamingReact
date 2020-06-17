@@ -8,7 +8,7 @@ export const DEFAULT_URL = 'http://localhost:61958/api';
 export const DOMAIN = 'dev-edu.auth0.com';
 export const CLIENT_ID = 'Y1cBg3gAh8EzE7sU07ATZ67fpn9gRQOP';
 export const REDIRECT_URL = 'http://localhost:3000';
-export const REDIRECT_URL_PRODUCTION = '';
+export const REDIRECT_URL_PRODUCTION = 'https://streamingreact.azurewebsites.net';
 export const AUDIENCE = 'http://localhost:5001/api';
 
 
