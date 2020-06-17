@@ -142,6 +142,10 @@
     margin: 0;
 }
 
+.fondo-enlace.active:focus{
+    outline: gray auto 5px; 
+}
+
 .menu-dropdown-icon{
   margin-left: 7px;
   color: gray;
