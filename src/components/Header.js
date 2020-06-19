@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 import { useAuth0 } from '../auth0wrapper';
 import { FaChromecast } from 'react-icons/fa';
+import { REDIRECT_URL, REDIRECT_URL_PRODUCTION } from '../actions/types';
 
 const Header = ({ isAdmin, isTeacher }) => {
   const [active, setActive] = useState(false);
   const { isAuthenticated, loginWithRedirect, logout, user, loading } = useAuth0();
 
   const renderItemsMenu = () => {
+    const redirectUrlLogout = process.env.NODE_ENV !== 'production' ? REDIRECT_URL : REDIRECT_URL_PRODUCTION
     if(!isAuthenticated){
       return (
         <Link to ="/" className="header-prueba btn-block" onClick={() => loginWithRedirect({})}><i className="fas fa-sign-in-alt"></i>Iniciar sesión </Link>
@@ -17,7 +19,7 @@ const Header = ({ isAdmin, isTeacher }) => {
       if(isAdmin){
         return(
           <>
-            <Link to="/"  className="header-prueba" onClick={() => logout()}><i className="fas fa-sign-out-alt"></i>Cerrar sesión</Link>
+            <Link to="/"  className="header-prueba" onClick={() => logout({returnTo: redirectUrlLogout })}><i className="fas fa-sign-out-alt"></i>Cerrar sesión</Link>
             <Link onClick={() => setActive(false)} to="/"><i className="fas fa-home"></i>Home</Link>
             <Link onClick={() => setActive(false)} to="/categories"><i className="fas fa-cogs"></i>Gestionar categorías</Link>
             <Link onClick={() => setActive(false)} to="/courses"><i className="fas fa-folder-open"></i>Cursos ofertados</Link>
@@ -26,7 +28,7 @@ const Header = ({ isAdmin, isTeacher }) => {
       }else if(isTeacher){
         return(
           <>
-            <Link to="/"  className="header-prueba" onClick={() => logout()}><i className="fas fa-sign-out-alt"></i>Cerrar sesión</Link>
+            <Link to="/"  className="header-prueba" onClick={() => logout({returnTo: redirectUrlLogout })}><i className="fas fa-sign-out-alt"></i>Cerrar sesión</Link>
             <Link onClick={() => setActive(false)} to="/"><i className="fas fa-home"></i>Home</Link>
             <Link onClick={() => setActive(false)} to="/courses"><i className="fas fa-folder-open"></i>Cursos ofertados</Link>
             <Link onClick={() => setActive(false)} to="/teacher"><i className="fas fa-cogs"></i>Panel de control</Link>
@@ -35,7 +37,7 @@ const Header = ({ isAdmin, isTeacher }) => {
       }
       return(
         <>
-          <Link to="/"  className="header-prueba" onClick={() => logout()}><i className="fas fa-sign-out-alt"></i>Cerrar sesión </Link>
+          <Link to="/"  className="header-prueba" onClick={() => logout({returnTo: redirectUrlLogout })}><i className="fas fa-sign-out-alt"></i>Cerrar sesión </Link>
           <Link onClick={() => setActive(false)} to="/"><i className="fas fa-home"></i>Home</Link>
           <Link onClick={() => setActive(false)} to="/courses"><i className="fas fa-folder-open"></i>Cursos ofertados</Link>
           <Link onClick={() => setActive(false)} to="/userCourses"><i className="fas fa-list-alt"></i>Mis cursos</Link>
