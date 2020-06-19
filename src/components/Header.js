@@ -19,7 +19,7 @@ const Header = ({ isAdmin, isTeacher }) => {
       if(isAdmin){
         return(
           <>
-            <Link to="/"  className="header-prueba" onClick={() => logout({returnTo: redirectUrlLogout })}><i className="fas fa-sign-out-alt"></i>Cerrar sesión</Link>
+            <Link to="/"  className="header-prueba" onClick={() => logout({returnTo: redirectUrlLogout})}><i className="fas fa-sign-out-alt"></i>Cerrar sesión</Link>
             <Link onClick={() => setActive(false)} to="/"><i className="fas fa-home"></i>Home</Link>
             <Link onClick={() => setActive(false)} to="/categories"><i className="fas fa-cogs"></i>Gestionar categorías</Link>
             <Link onClick={() => setActive(false)} to="/courses"><i className="fas fa-folder-open"></i>Cursos ofertados</Link>
@@ -28,7 +28,7 @@ const Header = ({ isAdmin, isTeacher }) => {
       }else if(isTeacher){
         return(
           <>
-            <Link to="/"  className="header-prueba" onClick={() => logout({returnTo: redirectUrlLogout })}><i className="fas fa-sign-out-alt"></i>Cerrar sesión</Link>
+            <Link to="/"  className="header-prueba" onClick={() => logout({returnTo: redirectUrlLogout})}><i className="fas fa-sign-out-alt"></i>Cerrar sesión</Link>
             <Link onClick={() => setActive(false)} to="/"><i className="fas fa-home"></i>Home</Link>
             <Link onClick={() => setActive(false)} to="/courses"><i className="fas fa-folder-open"></i>Cursos ofertados</Link>
             <Link onClick={() => setActive(false)} to="/teacher"><i className="fas fa-cogs"></i>Panel de control</Link>
@@ -37,7 +37,7 @@ const Header = ({ isAdmin, isTeacher }) => {
       }
       return(
         <>
-          <Link to="/"  className="header-prueba" onClick={() => logout({returnTo: redirectUrlLogout })}><i className="fas fa-sign-out-alt"></i>Cerrar sesión </Link>
+          <Link to="/"  className="header-prueba" onClick={() => logout({returnTo: redirectUrlLogout})}><i className="fas fa-sign-out-alt"></i>Cerrar sesión </Link>
           <Link onClick={() => setActive(false)} to="/"><i className="fas fa-home"></i>Home</Link>
           <Link onClick={() => setActive(false)} to="/courses"><i className="fas fa-folder-open"></i>Cursos ofertados</Link>
           <Link onClick={() => setActive(false)} to="/userCourses"><i className="fas fa-list-alt"></i>Mis cursos</Link>
@@ -82,7 +82,7 @@ const Header = ({ isAdmin, isTeacher }) => {
       <div className="nav shadow align-items-stretch justify-content-between bg-default fixed-top">
         <div className="col-md-12 col-lg logo d-flex align-items-center justify-content-center justify-content-lg-start">
           <Link to="/">
-            <h2>Streaming</h2>
+            <img src="/Logo.png" width="170" height="60" style={{marginTop:"4px"}} alt="photoHeaderLogo"></img>
           </Link>
         </div>
         <nav className="col-md-12 col-lg-auto menu d-flex align-items-stretch flex-wrap flex-sm-nowrap flex-nowrap">
