@@ -107,7 +107,7 @@ export const getSubjectsByCourseId = (state, courseId) => {
 
   return subjects.filter((subject) => {
     return parseInt(subject.courseId) === parseInt(courseId)
-  }).sort(compareValuesCreatedAt('createdAt', 'desc'));;
+  }).sort(compareValuesCreatedAt('createdAt', 'asc'));;
 }
 
 // Content Selector

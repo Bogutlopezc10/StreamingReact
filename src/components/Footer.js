@@ -26,7 +26,7 @@ const Footer = () => {
                         </div>
                         <div className="row">
                             <div className="col-12 d-flex justify-content-center foot-text">
-                                <p>&copy; 2020 Streaming</p>
+                                <p>&copy; 2020 Educational Sotware Live</p>
                             </div>
                         </div>
                     </div>
