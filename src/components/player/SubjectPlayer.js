@@ -19,7 +19,7 @@ class SubjectPlayer extends React.Component{
                                         {numSubject}. {subject.name}
                                     </div>
                                     <div className="col-lg-12">
-                                        <small style={{ color:"gray" }}>{amountContent}/{amountContent} | 42min</small>
+                                        <small style={{ color:"gray" }}>{amountContent}/{amountContent} contenidos</small>
                                     </div>
                                 </div>
                             </div>

@@ -41,7 +41,6 @@ class ContentPlayer extends React.Component{
                             </div>
                             <div className="col-12">
                                 <i className={classNameIcon}></i>
-                                <p className="d-inline ml-2">6 min.</p>
                             </div>
                         </div>
                     </div>
