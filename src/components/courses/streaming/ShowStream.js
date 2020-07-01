@@ -1,27 +1,11 @@
 import React from 'react'
-import flv from 'flv.js'
 import Spinner from '../../Spinner';
 import './Stream.css'
+import HLSPlayer from 'react-hls';
 
 class ShowStream extends React.Component {
     constructor(props){
         super(props);
-
-        this.videoRef = React.createRef();
-    }
-
-    componentDidMount(){
-        const {courseId} = this.props;
-        this.player = flv.createPlayer({
-            type :'flv',
-            url: `http://localhost:8000/live/${courseId}.flv` 
-        });
-        this.player.attachMediaElement(this.videoRef.current);
-        this.player.load();
-    }
-
-    componentWillUnmount(){
-       this.player.destroy();
     }
 
     MaysFirst(string){
@@ -90,12 +74,13 @@ class ShowStream extends React.Component {
     }
 
     render(){
+      const source = 'https://streaminglive-usea.streaming.media.azure.net/57f6f63e-653a-486b-a3b9-2330f9cbb7f7/aaacdd66-b3a2-4ebb-b86a-d4874638cb09.ism/manifest(format=m3u8-cmaf)';
         return(
             <>
                 <div className="container course-shadow container-published mb-5" style={{ borderTopColor: this.props.borderTopColor }}>
                     <div className="row">
                         <div className="col-lg-12 pl-0 pr-0">
-                            <video  ref={this.videoRef} className="video-live" controls/>
+                          <HLSPlayer source={source} />
                         </div>
                         {this.renderDataCourse()}
                     </div>
