@@ -4,9 +4,6 @@ import './Stream.css'
 import HLSPlayer from 'react-hls';
 
 class ShowStream extends React.Component {
-    constructor(props){
-        super(props);
-    }
 
     MaysFirst(string){
         return string.charAt(0).toUpperCase() + string.slice(1);
