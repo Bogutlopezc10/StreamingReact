@@ -1,11 +1,48 @@
 import React from 'react'
 import {updateIsStreamingCourse} from '../../../actions/course'
+import { saveStreamUrl, clearStreamUrl } from '../../../actions/auth'
 import {connect} from 'react-redux'
 import Spinner from '../../Spinner';
 import './Stream.css'
 
 class TeacherStream extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: '',
+      error: false
+    };
 
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+    if(event.target.value === ''){
+      this.setState({error: true});
+    }
+    else{
+      this.setState({error: false});
+    }
+  }
+
+  startStream = () => {
+    const {course} = this.props;
+    if(this.state.value === ''){
+      this.setState({error: true});
+    }
+    else{
+      this.setState({error: false});
+      this.props.updateIsStreamingCourse(course.id, true)
+      this.props.saveStreamUrl(this.state.value);
+    }
+  }
+
+  stopStream = () => {
+    const {course} = this.props;
+    this.props.updateIsStreamingCourse(course.id, false)
+    this.props.clearStreamUrl()
+  }
     renderParametersLive(){
         const {course} = this.props;
         if(course.isStreaming){
@@ -24,7 +61,7 @@ class TeacherStream extends React.Component {
                         </p>
                     </div>
                     <div className="col-12 d-flex align-items-center justify-content-center">
-                        <button className="btn mb-4 btn-outline-danger" onClick = {()=>this.props.updateIsStreamingCourse(course.id, false)}>
+                        <button className="btn mb-4 btn-outline-danger" onClick = {this.stopStream}>
                             <div>
                                 <p className="d-inline">DETENER TRANSMISION</p>
                                 <i className="d-inline fas fa-angle-double-right ml-2 mt-2"></i>
@@ -48,8 +85,18 @@ class TeacherStream extends React.Component {
                 <div className="col-12 mb-2 d-flex align-items-center justify-content-center">
                     <span><strong>Servidor:</strong> rtmp://localhost/live</span>
                 </div>
-                <div className="col-12 mb-4 d-flex align-items-center justify-content-center">
-                    <span><strong>Clave de retransmisión:</strong> {course.id}</span>
+                <div className="col-12 d-flex justify-content-center align-items-center">
+                  <div className="col-8">
+                      <input type = "text" class="form-control" value={this.state.value} onChange={this.handleChange}   autoComplete="off" placeholder="Ingrese la URL del streaming"/>
+                  </div>
+                </div>
+                <div className="col-12 mb-4 d-flex align-items-center field justify-content-center">
+                  {this.state.error &&(
+                        <div className="mt-2 error-message">
+                          <i className="d-inline fas fa-exclamation-circle"></i>
+                          <p className="d-inline ml-2">Debes ingresar una URL</p>
+                        </div>
+                  )}
                 </div>
                 <div className="col-12 mb-4 d-flex align-items-center justify-content-center live-description">
                     <p>
@@ -57,7 +104,7 @@ class TeacherStream extends React.Component {
                     </p>
                 </div>
                 <div className="col-12 d-flex align-items-center justify-content-center">
-                    <button className="btn mb-4 btn-outline-success" onClick = {()=>this.props.updateIsStreamingCourse(course.id, true)}>
+                    <button className="btn mb-4 btn-outline-success" onClick = {this.startStream}>
                         <div>
                             <p className="d-inline">INICIAR TRANSMISION</p>
                             <i className="d-inline fas fa-angle-double-right ml-2 mt-2"></i>
@@ -92,4 +139,4 @@ class TeacherStream extends React.Component {
     }
 }
 
-export default connect(null, {updateIsStreamingCourse})(TeacherStream);
+export default connect(null, { updateIsStreamingCourse,saveStreamUrl, clearStreamUrl })(TeacherStream);

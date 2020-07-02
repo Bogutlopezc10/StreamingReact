@@ -18,6 +18,7 @@ class ShowStreamContainer extends React.Component{
                     courseId = {this.props.courseId}
                     course = {this.props.course}
                     borderTopColor="#005385"
+                    urlStream = {this.props.urlStream}
                 />
             </>
         )
@@ -25,7 +26,10 @@ class ShowStreamContainer extends React.Component{
 }
 
 const mapStateToProps = (state, ownProps) =>{
-    return { course: getById(state.courses.data,ownProps.courseId) }
+    return { 
+      course: getById(state.courses.data,ownProps.courseId),
+      urlStream: state.auth.streamUrl
+    }
 }
 
 export default connect(mapStateToProps, {fetchCourse})(ShowStreamContainer);

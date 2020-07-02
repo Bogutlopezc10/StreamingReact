@@ -7,7 +7,9 @@ import {GetCurrentUser} from '../selectors/authSelectors'
 import {
   SAVE_TOKEN,
   CLEAR_TOKEN,
-  UPDATE_ERROR_WITH_ACTION
+  UPDATE_ERROR_WITH_ACTION,
+  CLEAR_STREAM_URL,
+  SAVE_STREAM_URL
 } from './types';
 
 export const saveToken = (token, user) => async dispatch => {
@@ -45,3 +47,13 @@ export const saveToken = (token, user) => async dispatch => {
 export const clearToken = () => ({
   type:  CLEAR_TOKEN,
 });
+
+//streaming
+export const clearStreamUrl = () => ({
+  type:  CLEAR_STREAM_URL,
+});
+
+export const saveStreamUrl = (url)=> ({
+  type: SAVE_STREAM_URL,
+  payload: url
+})
