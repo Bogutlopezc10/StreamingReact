@@ -8,8 +8,8 @@ import {
   SAVE_TOKEN,
   CLEAR_TOKEN,
   UPDATE_ERROR_WITH_ACTION,
-  CLEAR_STREAM_URL,
-  SAVE_STREAM_URL
+  SAVE_STREAM_URL,
+  FETCH_STREAM_URL
 } from './types';
 
 export const saveToken = (token, user) => async dispatch => {
@@ -48,12 +48,39 @@ export const clearToken = () => ({
   type:  CLEAR_TOKEN,
 });
 
-//streaming
-export const clearStreamUrl = () => ({
-  type:  CLEAR_STREAM_URL,
-});
+export const saveStreamUrl = (url)=> async dispatch => {
+  try{
+    const streams = getAxios();
+    const streamCommand = {
+      url: url
+    }
+    const response = await streams.put('/Streams', streamCommand);
+    dispatch({ type: SAVE_STREAM_URL, payload: response.data.url });
+  }
+  catch(error){
+    if(error.response && error.response.status === 401){
+      history.push('/login');
+    }
+    else{
+      dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+      history.push('/errors');
+    }
+  }
+}
 
-export const saveStreamUrl = (url)=> ({
-  type: SAVE_STREAM_URL,
-  payload: url
-})
+export const getStreamUrl = ()=> async dispatch => {
+  try{
+    const streams = getAxios();
+    const response = await streams.get('/Streams');
+    dispatch({ type:FETCH_STREAM_URL, payload: response.data.url });
+  }
+  catch(error){
+    if(error.response && error.response.status === 401){
+      history.push('/login');
+    }
+    else{
+      dispatch({ type: UPDATE_ERROR_WITH_ACTION, payload: createError(error) });
+      history.push('/errors');
+    }
+  }
+}

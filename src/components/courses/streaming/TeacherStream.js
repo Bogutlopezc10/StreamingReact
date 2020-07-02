@@ -1,6 +1,6 @@
 import React from 'react'
 import {updateIsStreamingCourse} from '../../../actions/course'
-import { saveStreamUrl, clearStreamUrl } from '../../../actions/auth'
+import { saveStreamUrl } from '../../../actions/auth'
 import {connect} from 'react-redux'
 import Spinner from '../../Spinner';
 import './Stream.css'
@@ -40,8 +40,9 @@ class TeacherStream extends React.Component {
 
   stopStream = () => {
     const {course} = this.props;
+    const url = "";
     this.props.updateIsStreamingCourse(course.id, false)
-    this.props.clearStreamUrl()
+    this.props.saveStreamUrl(url)
   }
     renderParametersLive(){
         const {course} = this.props;
@@ -139,4 +140,4 @@ class TeacherStream extends React.Component {
     }
 }
 
-export default connect(null, { updateIsStreamingCourse,saveStreamUrl, clearStreamUrl })(TeacherStream);
+export default connect(null, { updateIsStreamingCourse,saveStreamUrl })(TeacherStream);

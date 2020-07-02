@@ -1,15 +1,15 @@
 import {
   SAVE_TOKEN,
   CLEAR_TOKEN,
-  CLEAR_STREAM_URL,
-  SAVE_STREAM_URL
+  SAVE_STREAM_URL,
+  FETCH_STREAM_URL
 } from '../actions/types';
 
 export const initialState = {
   token: undefined,
   decodedToken: undefined,
   currentUser: undefined,
-  streamUrl: null
+  streamUrl: ""
 }
 
 export default (state = initialState, action) => {
@@ -33,10 +33,10 @@ export default (state = initialState, action) => {
         ...state,
         streamUrl: action.payload
       }
-    case CLEAR_STREAM_URL:
+    case FETCH_STREAM_URL:
       return {
         ...state,
-        streamUrl: null
+        streamUrl: action.payload
       }
     default:
       return state;
