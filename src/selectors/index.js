@@ -50,12 +50,9 @@ const compareValuesPostedAt = (key, order = 'asc') => {
 
 // Course Selector
 export const getCourseByCategory = (state, category) => {
-
-  console.log(category);
   const courses = Object.values(state.courses.data);
-
-    return courses.filter(course => parseInt(course.categoryId) === parseInt(category.categoryId) && course.isPublished === true)
-    .sort(compareValuesPostedAt('postedAt', 'desc'));
+  return courses.filter(course => parseInt(course.categoryId) === parseInt(category.categoryId) && course.isPublished === true)
+  .sort(compareValuesPostedAt('postedAt', 'desc'));
 }
 
 export const getById = (state, Id) => {

@@ -13,7 +13,8 @@ class ShowStream extends React.Component {
   componentDidMount() {
     const video = this.videoRef.current;
     let {urlStream} = this.props;
-    
+
+    console.log(urlStream);
     // load hls video source base on hls.js
     if (Hls.isSupported()) {
       this.hls.loadSource(urlStream);
