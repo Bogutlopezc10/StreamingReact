@@ -10,7 +10,6 @@ class CurrentContentPlayer extends React.Component{
                 height="100%" frameBorder="0" style={{ width: "100%" }} allowFullScreen></iframe>  
             )
         }else{
-            console.log(this.props.currentContent);
             return(
                 <iframe allow="autoplay" src={this.props.currentContent.url.replace('watch?v=','embed/').concat("?autoplay=1&enablejsapi=1")} title = {this.props.currentContent.id}
                 height="100%" frameBorder="0" style={{ width: "100%" }} allowFullScreen></iframe> 

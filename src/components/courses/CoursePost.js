@@ -94,7 +94,6 @@ class CoursePost extends React.Component {
     }
 
     render (){
-        console.log(this.props.course)
         return(
             <>
                 <div style={{ height: "100vh"}}>
