@@ -11,10 +11,19 @@ class ShowStream extends React.Component {
   }
 
   componentDidMount() {
-    const video = this.videoRef.current;
-    let {urlStream} = this.props;
+    this.buildPlayer();
+  }
 
-    console.log(urlStream);
+  componentDidUpdate(prevProps) {
+    if (prevProps.urlStream !== this.props.urlStream) {
+      this.buildPlayer();
+    }
+  }
+
+  buildPlayer() {
+    const video = this.videoRef.current;
+    let { urlStream } = this.props;
+
     // load hls video source base on hls.js
     if (Hls.isSupported()) {
       this.hls.loadSource(urlStream);
@@ -24,7 +33,7 @@ class ShowStream extends React.Component {
       });
     }
   }
-
+  
   componentWillUnmount() {
     if (this.hls) {
       this.hls.destroy();
@@ -102,7 +111,7 @@ class ShowStream extends React.Component {
         <div className="container course-shadow container-published mb-5" style={{ borderTopColor: this.props.borderTopColor }}>
           <div className="row">
             <div className="col-lg-12 pl-0 pr-0">
-              <video ref={this.videoRef} className="video-live" controls />
+              <video ref={this.videoRef} className="video-live" controls autoPlay={true} muted="muted" />
             </div>
             {this.renderDataCourse()}
           </div>
