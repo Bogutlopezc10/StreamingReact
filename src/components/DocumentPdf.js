@@ -52,7 +52,7 @@ const DocumentPdf = (props) =>{
                 <Text  style = {Styles.title}>
                     CERTIFICADO DE APROBACIÓN
                 </Text>
-                <Image style = {Styles.image} src= {props.course.photo} />
+                <Image style = {Styles.image} src= "/Diploma.jpg" />
                 <Text style = {Styles.header}>
                     Felicitaciones a
                 </Text>
