@@ -57,8 +57,8 @@ class TeacherStream extends React.Component {
           </div>
           <div className="col-12 mb-4 d-flex align-items-center justify-content-center live-description">
             <p>
-              Para detener el streaming debes primero detener el evento en vivo de <strong>Microsoft Azure Portal</strong>, luego
-              detener la transmisión de <strong>Open Broadcaster Software</strong> y por último darle click en el botón detener
+              Para detener el streaming debes primero detener la transmisión de <strong>Open Broadcaster Software</strong>, luego
+              detener el evento en vivo de <strong>Microsoft Azure Portal</strong> y por último darle click en el botón detener
             </p>
           </div>
           <div className="col-12 d-flex align-items-center justify-content-center">
@@ -83,7 +83,7 @@ class TeacherStream extends React.Component {
           </p>
         </div>
         <div className="col-12 mb-4 d-flex align-items-center justify-content-center live-description">
-          <a href="https://www.youtube.com/watch?v=2TOj-t-_EYw" target="_blank" rel="noopener noreferrer">Ver instrucciones</a>
+          <a href="https://www.youtube.com/watch?v=bohENYcXLng" target="_blank" rel="noopener noreferrer">Ver instrucciones</a>
         </div>
         <div className="col-12 mb-2 d-flex align-items-center justify-content-center">
           <strong><span>Ingrese la URL del streaming</span></strong>
