@@ -156,7 +156,7 @@ class CourseForm extends React.Component {
                         <Field name="name" type="text" component={this.renderInput} label="Nombre" />
                     </div>
                     <div className="col-lg-6 mb-3">
-                        <Field name="categoryId" component={this.renderSelect} label="Categoria" />
+                        <Field name="categoryId" component={this.renderSelect} label="Categoría" />
                     </div>
                     <div className="col-lg-12 mb-3">
                         <Field name="description" component={this.renderTextArea} label="Descripción" />
@@ -205,7 +205,7 @@ const validate = (formValues) => {
     }
 
     if (!formValues.categoryId){
-        errors.categoryId = 'Debes seleccionar una categoria'
+        errors.categoryId = 'Debes seleccionar una categoría'
     }
     return errors;
 }

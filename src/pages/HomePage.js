@@ -23,10 +23,10 @@ class HomePage extends React.Component{
                     <div className="container">
                         <div className="row">
                             <div className="col-12 title mt-4">
-                                <h2>Categorias</h2>
+                                <h2>Categorías</h2>
                             </div>
                             <div className="col-12 text mt-4">
-                                <p>En esta sección encontraras categorias como:</p>
+                                <p>En esta sección encontraras categorías como:</p>
                             </div>
                         </div>
                         <div className="row mt-4 mb-5">

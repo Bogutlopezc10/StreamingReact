@@ -6,7 +6,7 @@ class CategoryCreateContainer extends React.Component{
     render(){
         return (
             <>
-                <MainHeader backgroundHeaderColor="#30b3ff" textHeader="Crear categoria" />
+                <MainHeader backgroundHeaderColor="#30b3ff" textHeader="Crear categoría" />
                 <CategoryCreate borderTopColor="#30b3ff"/>
             </>
         );

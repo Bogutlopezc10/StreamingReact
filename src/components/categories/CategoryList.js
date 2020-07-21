@@ -80,12 +80,12 @@ class CategoryList extends React.Component {
           <div className="container mb-3">
             <div className="row align-items-center justify-content-between">
               <div className="col-auto">
-                <h1 className="title-published">Gestionar categorias</h1>
+                <h1 className="title-published">Gestionar categorías</h1>
               </div>
               <div className="col-auto mt-3 mb-2">
                 <Link to="/categories/Create" className="btn btn-outline-success">
                   <div>
-                    <p className="d-inline">CREAR CATEGORIA</p>
+                    <p className="d-inline">CREAR CATEGORÍA</p>
                     <i className="d-inline fas fa-cog ml-2 mt-2"></i>
                   </div>
                 </Link>

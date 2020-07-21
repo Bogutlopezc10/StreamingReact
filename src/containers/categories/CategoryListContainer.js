@@ -23,7 +23,7 @@ class CategoryListContainer extends React.Component{
     render(){
         return (
             <>
-                <MainHeader backgroundHeaderColor="#30b3ff" textHeader="Categorias" />
+                <MainHeader backgroundHeaderColor="#30b3ff" textHeader="Categorías" />
                 <CategoryList 
                     categories={this.props.categories}
                     loadingCategory = {this.props.loadingCategory}

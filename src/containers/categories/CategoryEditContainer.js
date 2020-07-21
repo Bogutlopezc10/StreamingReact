@@ -13,7 +13,7 @@ class CategoryEditContainer extends React.Component{
     render(){
         return (
             <>
-                <MainHeader backgroundHeaderColor="#30b3ff" textHeader="Editar categoria" />
+                <MainHeader backgroundHeaderColor="#30b3ff" textHeader="Editar categoría" />
                 <CategoryEdit 
                     category={this.props.category} 
                     borderTopColor="#30b3ff"

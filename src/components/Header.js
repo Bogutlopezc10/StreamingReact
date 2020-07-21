@@ -30,8 +30,8 @@ const Header = ({ isAdmin, isTeacher }) => {
           <>
             <Link to="/"  className="header-prueba" onClick={() => logout({returnTo: redirectUrlLogout})}><i className="fas fa-sign-out-alt"></i>Cerrar sesión</Link>
             <Link onClick={() => setActive(false)} to="/"><i className="fas fa-home"></i>Home</Link>
+            <Link onClick={() => setActive(false)} to="/teacher"><i className="fas fa-cogs"></i>Gestionar cursos</Link>
             <Link onClick={() => setActive(false)} to="/courses"><i className="fas fa-folder-open"></i>Cursos ofertados</Link>
-            <Link onClick={() => setActive(false)} to="/teacher"><i className="fas fa-cogs"></i>Panel de control</Link>
           </>
         )
       }
@@ -88,7 +88,7 @@ const Header = ({ isAdmin, isTeacher }) => {
         <nav className="col-md-12 col-lg-auto menu d-flex align-items-stretch flex-wrap flex-sm-nowrap flex-nowrap">
           <Link className="c-1 d-flex align-items-center" to={'/categories'}>
             <div className="d-flex flex-column text-center">
-              <span>Categorias</span>
+              <span>Categorías</span>
               <i className="icono fa fa-briefcase mt-1"></i>
             </div>
           </Link>
